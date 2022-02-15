@@ -1,0 +1,114 @@
+﻿
+---================================================
+---描 述 :  
+---作 者 : 杜鑫 
+---创建时间 : 2021-07-11 23-59-09  
+---修改作者 : 杜鑫 
+---修改时间 : 2021-07-11 23-59-09  
+---版 本 : 0.1 
+---===============================================
+---@class LuaCharacterManager : BaseClass
+---@field m_characterController UnityEngine.CharacterController
+LuaCharacterManager = Class("LuaCharacterManager", BaseClass)
+
+function LuaCharacterManager:SetOwner(owner)
+    self.m_owner = owner
+end
+---@return LuaCharacterBase
+function LuaCharacterManager:GetOwner()
+    return self.m_owner
+end
+---是否可以移动
+function LuaCharacterManager:IsCanMove()
+    return self.m_isCanMove
+end
+
+---是否在地面上
+function LuaCharacterManager:IsInGround()
+    return self.m_isGround
+end
+
+function LuaCharacterManager:SetCharacterGravitySpeed(value)
+    self.m_characterGravitySpeed = value
+end
+
+function LuaCharacterManager:__init(owner,characterController)
+    self.m_owner = owner
+    self.m_characterController = characterController
+    self.m_moveDir = Vector3.zero
+    self.m_isCanMove = true
+    self.m_characterGravitySpeed = 0
+    self.m_isGround = false
+end
+
+function LuaCharacterManager:__delete()
+    
+end
+
+function LuaCharacterManager:OnUpdate()
+    self:UpdateGravity()
+    self:UpdateMove()
+end
+
+
+function LuaCharacterManager:UpdateMove()
+    if (self.m_moveDir ~= Vector3.zero and not self:IsCanMove()) then
+        self.m_moveDir.x = 0
+        self.m_moveDir.z = 0
+    end
+    if self.m_moveDir ~= Vector3.zero then
+        self.m_characterController:Move(self.m_moveDir)
+    end
+    self.m_moveDir = Vector3.zero
+end
+
+function LuaCharacterManager:UpdateGravity()
+    if self.m_characterController == nil or not self.m_characterController.enabled then
+        return
+    end
+    if not self.m_characterController.isGrounded then
+        self.m_isGround = self:__GetCharacterIsInGround()
+        self.m_characterGravitySpeed = self.m_characterGravitySpeed - UnityEngine.Time.deltaTime * self:GetOwner():GetData():GetGravity()
+    else
+        self.m_isGround = true
+    end
+    if self.m_characterController.isGrounded and 
+        not self:GetOwner():GetStateController():IsInState(CharacterStateEnum.JumpState) then
+        self.m_characterGravitySpeed = 0
+    end
+    if self.m_characterGravitySpeed == 0 then
+        return
+    end
+    if not self:GetOwner():GetCsEntity().gameObject.activeInHierarchy then
+        return
+    end
+    self:Move(Vector3(0, self.m_characterGravitySpeed * UnityEngine.Time.deltaTime, 0));
+end
+
+function LuaCharacterManager:Move(dir)
+    self.m_moveDir = self.m_moveDir + dir
+end
+
+function LuaCharacterManager:OnMove()
+    local currMoveSpeed = 0
+    if self:GetOwner():GetMoveMode() == MoveMode.Forward then
+        currMoveSpeed = self:GetOwner():GetData():GetWalkSpeed()
+    else
+        currMoveSpeed = self:GetOwner():GetData():GetRunSpeed()
+    end
+    local targetDirection = self:GetOwner():GetJoyStickDirection()
+    if targetDirection.magnitude ~= 0 then
+        self:Move(self:GetOwner():GetJoyStickDirection() * currMoveSpeed * UnityEngine.Time.deltaTime)
+        self:GetOwner():SetToDir(targetDirection.normalized)
+    end
+end
+
+function LuaCharacterManager:__GetCharacterIsInGround()
+    local startPos = self:GetOwner():GetCsEntity().CachedTransform.position + Vector3.up * 2
+    if UnityEngine.Application.isEditor then
+        Logger.DrawLine(startPos, self:GetOwner():GetCsEntity().CachedTransform.position, Color.blue);
+    end
+    return UnityEngine.Physics.Raycast(startPos, Vector3.down, 2.1, math.ldexp(1, LayerConstant.GroundLayerId))
+end
+
+return LuaCharacterManager

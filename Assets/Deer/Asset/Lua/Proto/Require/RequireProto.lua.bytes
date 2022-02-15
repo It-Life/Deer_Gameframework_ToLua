@@ -1,0 +1,14 @@
+﻿
+---================================================
+---描 述 :  
+---作 者 : 杜鑫 
+---创建时间 : 2021-08-14 23-50-34  
+---修改作者 : 杜鑫 
+---修改时间 : 2021-08-14 23-50-34  
+---版 本 : 0.1 
+---===============================================
+
+DeerProtoBase_pb = require "Proto.DeerProtoBase_pb"
+DeerGameBase_pb = require "Proto.DeerGameBase_pb"
+DeerConfigModel_pb = require "Proto.DeerConfigModel_pb"
+DeerLogin_pb = require "Proto.DeerLogin_pb"

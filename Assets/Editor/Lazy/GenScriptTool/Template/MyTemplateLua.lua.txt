@@ -1,0 +1,3 @@
+MyTemplateScript = Class("MyTemplateScript")
+
+return MyTemplateScript

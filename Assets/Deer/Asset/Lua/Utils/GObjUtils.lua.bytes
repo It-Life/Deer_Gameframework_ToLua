@@ -1,0 +1,44 @@
+﻿
+---================================================
+---描 述 :  GameObjectUtils
+---作 者 : 杜鑫 
+---创建时间 : 2021-07-20 07-57-26  
+---修改作者 : 杜鑫 
+---修改时间 : 2021-07-20 07-57-26  
+---版 本 : 0.1 
+---===============================================
+GObjUtils = {}
+
+function GObjUtils.IsNull(gameObject)
+    if not gameObject then
+        return true
+    end
+    if type(gameObject) == "userdata" then
+        return gameObject:Equals(nil);
+    end
+    return false
+end
+
+function GObjUtils.GetOrAddComponent(gameObject,compTypeof)
+    if GObjUtils.IsNull(gameObject) then
+        return nil
+    end
+    local comp = gameObject.transform:GetComponent(compTypeof)
+    if not comp then
+        comp = gameObject:AddComponent(compTypeof)
+    end
+    return comp
+end 
+
+function GObjUtils.GetFrezzeModeDirection(dirX,dirZ)
+    local forward = GameEntry.Camera.MainCamera.transform:TransformDirection(Vector3.forward);
+    forward.y = 0;
+    local right = GameEntry.Camera.MainCamera.transform:TransformDirection(Vector3.right);
+    local v = dirZ;
+    local h = dirX;
+    local targetDirection = right * h + forward * v
+    if (targetDirection ~= Vector3.zero) then
+        targetDirection = targetDirection.normalized
+    end
+    return targetDirection;
+end

@@ -1,0 +1,33 @@
+﻿
+---================================================
+---描 述 :  
+---作 者 : 杜鑫 
+---创建时间 : 2021-07-05 08-12-52  
+---修改作者 : 杜鑫 
+---修改时间 : 2021-07-05 08-12-52  
+---版 本 : 0.1 
+---===============================================
+---@class DataConfigDefine
+---@field LoadFileConfig table
+DataConfigDefine = {}
+DataConfigDefine.LoadFileConfig = 
+{
+    { --语言表
+        strName                 = DataConfigNames.DataConfigLanguageInfo,    
+        strProtoParseName       = "LanguageInfoList",
+        strProtoDataListName    = "listInfo",
+        tbConfigPbModule        = DeerConfigModel_pb,
+        strCsvName              = "Language",
+        tbModuleClass           = require "DataConfig/Info/DataConfigLanguageInfo",
+    },
+    { --角色表
+        strName                 = DataConfigNames.DataConfigCharacterInfo,
+        strProtoParseName       = "CharacterInfoInfoList",
+        strProtoDataListName    = "listInfo",
+        tbConfigPbModule        = DeerConfigModel_pb,
+        strCsvName              = "CharacterInfo",
+        tbModuleClass           = require "DataConfig/Info/DataConfigCharacterInfo",
+    },
+}
+
+return DataConfigDefine

@@ -1,0 +1,54 @@
+ManifestFileVersion: 0
+CRC: 1932822584
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 787d786a532cdf4352a84f81e224bbf4
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4df8c69f2c8a6ad9e3cbf82bb83e4dc3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1019.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1036.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1005.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1041.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1002.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1021.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1034.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1001.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1016.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1011.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1010.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1013.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1024.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1017.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1012.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1006.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1004.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1023.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1038.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1031.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1015.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1037.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1028.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1007.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1018.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1027.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1025.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1032.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1033.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1026.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1035.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1040.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1022.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1039.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1014.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1003.png
+Dependencies: []

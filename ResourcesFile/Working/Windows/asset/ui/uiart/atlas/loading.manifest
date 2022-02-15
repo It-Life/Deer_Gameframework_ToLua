@@ -1,0 +1,24 @@
+ManifestFileVersion: 0
+CRC: 1551544275
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b88ffcc1cbb7653528a40802f6fb9124
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9eed6bd6979e117455ab653d8983d28a
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 197e2ba133173ca43ba3419bdb7aba12, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Deer/Asset/UI/UIArt/Atlas/Loading/loading.png
+- Assets/Deer/Asset/UI/UIArt/Atlas/Loading/loading.asset
+Dependencies: []

@@ -1,0 +1,33 @@
+ManifestFileVersion: 0
+CRC: 1448706386
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 00a174a2119a5bf220040fb072b92d90
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c4864efcf2033fca967711d91589e22c
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Deer/Asset/Effect/Material/ClickEffect.mat
+- Assets/Deer/Asset/Effect/Prefabs/UI/click_effect.prefab
+- Assets/Deer/Asset/Effect/Texture/click_effect.png
+Dependencies: []

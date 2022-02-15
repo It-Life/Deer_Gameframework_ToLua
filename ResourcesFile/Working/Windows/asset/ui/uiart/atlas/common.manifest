@@ -1,0 +1,24 @@
+ManifestFileVersion: 0
+CRC: 4227216087
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f3737223c874396e0dd425ffcef69a16
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9eed6bd6979e117455ab653d8983d28a
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 197e2ba133173ca43ba3419bdb7aba12, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Deer/Asset/UI/UIArt/Atlas/Common/common.asset
+- Assets/Deer/Asset/UI/UIArt/Atlas/Common/common.png
+Dependencies: []

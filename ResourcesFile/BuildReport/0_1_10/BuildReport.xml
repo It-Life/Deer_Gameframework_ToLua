@@ -1,0 +1,1242 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<UnityGameFramework>
+  <BuildReport>
+    <Summary>
+      <ProductName>未来原子方</ProductName>
+      <CompanyName>juheyuanzi</CompanyName>
+      <GameIdentifier>com.juheyuanzi.</GameIdentifier>
+      <GameFrameworkVersion>2020.07.30</GameFrameworkVersion>
+      <UnityVersion>2020.3.15f1</UnityVersion>
+      <ApplicableGameVersion>0.1</ApplicableGameVersion>
+      <InternalResourceVersion>10</InternalResourceVersion>
+      <Platforms>Windows</Platforms>
+      <ZipSelected>True</ZipSelected>
+      <BuildAssetBundleOptions>272</BuildAssetBundleOptions>
+    </Summary>
+    <Resources Count="26">
+      <Resource Name="Asset/Effect" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="3">
+          <Asset Guid="4e7410eaae087924a8ffb52be3901886" Name="Assets/Deer/Asset/Effect/Texture/click_effect.png" Length="5525" HashCode="752963833" />
+          <Asset Guid="5cab807bce59e5b4c8ab67d85f206917" Name="Assets/Deer/Asset/Effect/Material/ClickEffect.mat" Length="2062" HashCode="-299399026" />
+          <Asset Guid="9ce26d15e2e0fa44790955b936626bfc" Name="Assets/Deer/Asset/Effect/Prefabs/UI/click_effect.prefab" Length="120440" HashCode="-627209024">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/Effect/Texture/click_effect.png" />
+            </DependencyAssets>
+          </Asset>
+        </Assets>
+        <Codes>
+          <Windows Length="92447" HashCode="-827445321" ZipLength="64620" ZipHashCode="-1224335111" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/EntityPrefabs/Character/Blade_Warrior" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="1">
+          <Asset Guid="224be5632d916ff4ca7ceb570b2c54b8" Name="Assets/Deer/Asset/EntityPrefabs/Character/Blade_Warrior/Blade_Warrior.prefab" Length="6500" HashCode="-1934621592">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/blade_warrior.controller" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/prefab/blade_warrior_model.prefab" />
+            </DependencyAssets>
+          </Asset>
+        </Assets>
+        <Codes>
+          <Windows Length="11715" HashCode="-1238173434" ZipLength="10616" ZipHashCode="978598260" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/EntityPrefabs/Character/Blade_girl" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="2">
+          <Asset Guid="be71bfeb1088e824abccf6559fd133ed" Name="Assets/Deer/Asset/EntityPrefabs/Character/Blade_girl/Blade_Girl_Prefab.prefab" Length="5931" HashCode="-23999478">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl.controller" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/prefab/blade_girl_model.prefab" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="da4da167c6135204289bc24bc8abad34" Name="Assets/Deer/Asset/EntityPrefabs/Character/Blade_girl/Blade_Girl.prefab" Length="5924" HashCode="-792712737">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl.controller" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/prefab/blade_girl_model.prefab" />
+            </DependencyAssets>
+          </Asset>
+        </Assets>
+        <Codes>
+          <Windows Length="14531" HashCode="-1924726555" ZipLength="13103" ZipHashCode="-1098485314" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/EntityResources/Character/Blade_Warrior" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="31">
+          <Asset Guid="0663265eeb531f24a8d314bf895325cc" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Idle.FBX" Length="1878288" HashCode="663893915">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_Warrior_diff65.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/blade04 copy.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="0c26dcb5c55568049b30a035b7911dca" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Run00.FBX" Length="1205232" HashCode="1867014430">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_Warrior_diff65.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/blade04 copy.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="0ca826bdb72192748a7e578e627f13f4" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@PickUp.FBX" Length="1415280" HashCode="1642091199">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_warrior@PickUp-02 - Default.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_warrior@PickUp-default.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="11b1a89e0657c9a4299719545f82e4d8" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_Warrior_diff.mat" Length="828" HashCode="-1601590140">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Textures/Blade_Warrior_diff.psd" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="168d8bd44a060064b91f958750e31cb4" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Textures/Blade_Warrior_diff.psd" Length="10953389" HashCode="-233079233" />
+          <Asset Guid="1ecdb6e9f2ce30f4abe49f630c444093" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Textures/blade04 copy.PSD" Length="3477971" HashCode="284780273" />
+          <Asset Guid="2763c257cbbc84f458309fa3966a53a6" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Attack02.FBX" Length="1089552" HashCode="1796745592">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_Warrior_diff.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/blade04 copy.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="2acd867234a61bd4ab58fb727e0c15bf" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Shelf.FBX" Length="27072" HashCode="93151240">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/default.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="34c722e4332df63448fc9e7a36be5533" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade.FBX" Length="60464" HashCode="-2034223125">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/blade04 copy.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="472465367004d714ba259fdb12197b3c" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Walk.FBX" Length="962640" HashCode="-1891188732">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_Warrior_diff65.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/blade04 copy.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="586481c3218bc774498e3dfbf9558384" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/default.mat" Length="2041" HashCode="-166219758" />
+          <Asset Guid="60eeacf66d897a541949058e3dfc34b7" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/blade04 copy.mat" Length="823" HashCode="672321938">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Textures/blade04 copy.PSD" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="64d90b435dd9c404e9ef58e8d72d5bbd" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_Warrior_diff65.mat" Length="2054" HashCode="-934326435" />
+          <Asset Guid="78a1e95630148a04ba8ed579421b1817" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior.FBX" Length="1032880" HashCode="1389044265">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_Warrior_diff65.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/blade04 copy.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="7dfa9dda1aa223a448872447e3495900" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@DrawBlade.FBX" Length="1186736" HashCode="-303687402">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_Warrior_diff65.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/blade04 copy.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="917d00561d426a64aa680f73dd96eed4" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Combo.FBX" Length="1094960" HashCode="103770853">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_Warrior_diff.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/blade04 copy.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="a0c3ce47fcf0af8489e08168c081c160" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Run.FBX" Length="1203856" HashCode="-453432999">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_Warrior_diff65.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/blade04 copy.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="aa372a94ecfce814d82cbc19dbf89aab" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/shelf.mat" Length="814" HashCode="59249693">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Textures/shelf04.PNG" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="ae23812e5339b8d49838197f331a60f2" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Damage.FBX" Length="1248960" HashCode="777218949">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_Warrior_diff.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/blade04 copy.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="b56b51a69ec9f2d49958c0e0537a64b1" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_warrior@PickUp-02 - Default.mat" Length="2134" HashCode="721797735">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Textures/blade04 copy.PSD" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="c4d6cc741d00204439aa06c64a938bb4" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/prefab/blade_warrior_model.prefab" Length="105290" HashCode="2089425171">
+            <DependencyAssets Count="3">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_Warrior_diff.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/blade04 copy.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior.FBX" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="c63c9c4d21c4cd249be1bbcfeffc775b" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Skill.FBX" Length="1559280" HashCode="189331105">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_Warrior_diff.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/blade04 copy.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="c776ced93d014fa4f89815750ef9ad86" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Attack_standy.FBX" Length="1408704" HashCode="1795465241">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_Warrior_diff.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/blade04 copy.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="ca769ebb6766cf54586dee456dc217b8" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Talk.FBX" Length="1746752" HashCode="-1960152963">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_Warrior_diff65.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/blade04 copy.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="cb98912a71fe31d4fbbcf5a3f0b8c1b6" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Attack01.FBX" Length="1413312" HashCode="-2115193007">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_Warrior_diff.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/blade04 copy.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="cce083416ffd93944822232682031c3c" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Attack.FBX" Length="1284720" HashCode="1087757996">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_Warrior_diff.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/blade04 copy.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="cdfe0f44fe0c01b46a76cae533c43c10" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Textures/shelf04.PNG" Length="723591" HashCode="1748356711" />
+          <Asset Guid="e0ad613bfa572e344a1804cf8cefb12a" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/blade_warrior.controller" Length="15084" HashCode="1883285097">
+            <DependencyAssets Count="16">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Attack.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Attack_standy.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Attack01.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Attack02.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Combo.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Damage.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Death.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@DrawBlade.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Idle.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Jump.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@PickUp.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Run.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Run00.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Skill.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Talk.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Walk.FBX" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="e41bc1bc219eb5841bf81013a1504765" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Death.FBX" Length="1655344" HashCode="-1419383013">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_Warrior_diff.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/blade04 copy.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="e58212584f694e14284e9c7f845de85a" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Jump.FBX" Length="1080256" HashCode="1667765077">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_Warrior_diff65.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/blade04 copy.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="ed85ee3eb0ca65247af940f132db2893" Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_warrior@PickUp-default.mat" Length="2117" HashCode="213742770">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Textures/Blade_Warrior_diff.psd" />
+            </DependencyAssets>
+          </Asset>
+        </Assets>
+        <Codes>
+          <Windows Length="2837884" HashCode="1167222975" ZipLength="2508418" ZipHashCode="1006263854" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/EntityResources/Character/Blade_girl" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="85">
+          <Asset Guid="032c77bbc733b554dbdb01b54294e9e2" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Attack.FBX" Length="952672" HashCode="-1021862603">
+            <DependencyAssets Count="3">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="0519713ffa2bd1b4a97bb199f18cb45b" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Talk.FBX" Length="1505856" HashCode="1321925434">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="0727bf9eac9d5ce4abc49ec2d2bdcd77" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Run00.FBX" Length="1180816" HashCode="1917093041">
+            <DependencyAssets Count="4">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/blade04copy.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/body_21.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/blade04 copy.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="092f38b80762dbf499dc284a496dbd33" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Walk.FBX" Length="815040" HashCode="-1676414533">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="09c073dcc0c0de149935455211d3fc1e" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Run.FBX" Length="1172160" HashCode="-324220677">
+            <DependencyAssets Count="3">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="0c2f53eee4d58614f8e0f04273fe5ad7" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@B_Run.FBX" Length="1129264" HashCode="-1012243522">
+            <DependencyAssets Count="3">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="0ca31bcb801c709439eb59c2f8496bb5" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@B_Run00.FBX" Length="1143136" HashCode="-995535231">
+            <DependencyAssets Count="4">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/blade04copy.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/body_21.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/blade04 copy.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="0fb4b84e184f63c41a6b6c3cb62b0e24" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_ComboAttack.FBX" Length="953936" HashCode="1492733185">
+            <DependencyAssets Count="5">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdfdd.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdfdd.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="122b5d5ce082b9e4a977e593fa010c30" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Attack00.FBX" Length="1180832" HashCode="-1769436278">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="13c34e873dd40e64a84db56f3786db8e" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_B_Run.FBX" Length="1129264" HashCode="-1012243522">
+            <DependencyAssets Count="3">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="1b8727b32a423e64a8962b395bfecc15" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Idle.FBX" Length="1690336" HashCode="1571010818">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="203729cadb1b806489e81f0d47ccb18d" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@L_Walk.FBX" Length="1192400" HashCode="-1130162371">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="2bfca9713ccd52c418bdeeb39cf737fb" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Run00.FBX" Length="1180816" HashCode="1917093041">
+            <DependencyAssets Count="4">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/blade04copy.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/body_21.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/blade04 copy.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="2df7eec5b62d7fc48924adba00d11414" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_L_Run.FBX" Length="1172240" HashCode="1710255476">
+            <DependencyAssets Count="3">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="32a570a82f875e54fb17e087569e2ddb" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_R_Avoid.FBX" Length="1214368" HashCode="-1485065424">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="3485f7fb033b1ba4fac0682ce3ed04ea" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@R_Run.FBX" Length="1172160" HashCode="1634686170">
+            <DependencyAssets Count="3">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="36ea96fcdcff1974ea517efe19713b28" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Death.FBX" Length="1351232" HashCode="1878340002">
+            <DependencyAssets Count="3">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="3c781c240b425e048aebb2486eb9c2bb" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@GanamStyle.FBX" Length="1357728" HashCode="-122886985">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="3cdd48bbd933e204f974c7eef90332c5" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Damage.FBX" Length="803120" HashCode="-1180401011">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="433ac8f3ed22c814a9e5dd5dc50d038c" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdfret.mat" Length="2078" HashCode="1261291622" />
+          <Asset Guid="43e97c1549feb204a856d851e06bff35" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/prefab/blade_girl_model.prefab" Length="77641" HashCode="650985289">
+            <DependencyAssets Count="3">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/Body.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/Weapon.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl.FBX" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="4489a1e5887e763489a277708dbeb4f0" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Attack01.FBX" Length="896944" HashCode="1980927376">
+            <DependencyAssets Count="3">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="462b58a8e55b2204f9a023b6056cd410" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_R_Run.FBX" Length="1172160" HashCode="1634686170">
+            <DependencyAssets Count="3">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="486bf572edacd1c4ead451e98ce8e1df" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Jump.FBX" Length="955568" HashCode="-2098426501">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="4b43362df9945064aa96b700875a3bae" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/Body.mat" Length="1028" HashCode="-1647815196">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Textures/body_22.PSD" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="5112c4ac96bb95c43b2acdaada7e01c1" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Death.FBX" Length="1351232" HashCode="1878340002">
+            <DependencyAssets Count="3">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="57dd586590103ce4a8641642560ee7a5" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_L_Walk.FBX" Length="1192400" HashCode="-1130162371">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="5901f05c0982e0e46a7e467a4fcb1351" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Jump_NoBlade.FBX" Length="520736" HashCode="-771738557" />
+          <Asset Guid="5acbcf8425a460141a6419129614ad72" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_L_Avoid.FBX" Length="1214368" HashCode="-165537352">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="5e0a9a3e1215f344ebd1e03e83be62fa" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Block.FBX" Length="1158672" HashCode="1426816919">
+            <DependencyAssets Count="3">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="6bc2544cd31342c4ba1bd16489883db1" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/Shelf.mat" Length="815" HashCode="-1564225116">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Textures/shelf02.TGA" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="6f3463be3069d5947bb2374ebb58529f" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@very_low.FBX" Length="1869024" HashCode="622535170">
+            <DependencyAssets Count="4">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdfret.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdfret.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="6f7c68c2e63dbbb4eb1f4339b4b922b6" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Skill.FBX" Length="1501072" HashCode="-2038724460">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="6f972ee29a786604bbc01331ee8e8533" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Walk.FBX" Length="815040" HashCode="-1676414533">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="70f7a0bd607a9b54aa5112c636c695d2" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@L_Run00.FBX" Length="1180912" HashCode="-1867971965">
+            <DependencyAssets Count="4">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/blade04copy.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/body_21.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/blade04 copy.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="73e5cd8af6641ab4a851a0d30e1f8ac5" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Skill.FBX" Length="1501072" HashCode="-2038724460">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="73ede691105c5e94abc1b4edb88bf2da" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdfdd.mat" Length="735" HashCode="-571705655" />
+          <Asset Guid="7bfcaa2401b79814abdcfcf8dd81b23e" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Block.FBX" Length="1158672" HashCode="1426816919">
+            <DependencyAssets Count="3">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="7eb78071f3d3dc941ac39e46f7269478" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Talk.FBX" Length="1505856" HashCode="1321925434">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="7fe7fb69b72be3644bb88b9c03d0fbd2" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@M_Avoid.FBX" Length="1214448" HashCode="1904175515">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="80e1697efc05da0459b589eaa8b0d834" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@L_Run.FBX" Length="1172240" HashCode="1710255476">
+            <DependencyAssets Count="3">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="83e5d9d39f19f6b4bb36e1db1076f37e" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdfdd.mat" Length="2077" HashCode="-179044012" />
+          <Asset Guid="881b34bfdd52f1140b8e925b44263c03" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_B_Run00.FBX" Length="1143136" HashCode="-995535231">
+            <DependencyAssets Count="4">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/blade04copy.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/body_21.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/blade04 copy.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="892e00559d6281b4c8e3708912d10f0a" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Textures/blade04copy.PSD" Length="3477971" HashCode="284780273" />
+          <Asset Guid="8e3a0e47c6a5b8c45b7b63c4a53a3cfd" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/Weapon.mat" Length="815" HashCode="70341994">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Textures/blade04copy.PSD" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="8ea6b80ab872a7d4dbbfbcf1e78024aa" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_jump.FBX" Length="955568" HashCode="-2098426501">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="8f17db378be452a4a8b2588095651d08" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" Length="2081" HashCode="-903316246" />
+          <Asset Guid="9428fcf2444b74348b3bd1d3c5632657" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl.controller" Length="27436" HashCode="1677386592">
+            <DependencyAssets Count="31">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Attack.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Attack00.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Attack01.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@AttackStandy.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@B_Run.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@B_Run00.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@B_Walk.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Block.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@ComboAttack.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Damage.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Death.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@DrawBlade.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@GanamStyle.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Idle.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Jump.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Jump_NoBlade.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@L_Avoid.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@L_Run.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@L_Run00.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@L_Walk.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@M_Avoid.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Pickup.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@R_Avoid.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@R_Run.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@R_Run00.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@R_Walk.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Run.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Run00.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Skill.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Talk.FBX" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Walk.FBX" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="982b4cf628006bd4fbed8722f38a0df7" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_B_Walk.FBX" Length="1473440" HashCode="77260245">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="9854a8dc1e453f04ea9b9ff1c95c23ea" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Pickup.FBX" Length="924336" HashCode="-805319850">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="9e79d9865c7136848b555bb5b462e5fa" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_DrawBlade.FBX" Length="1116144" HashCode="-254981812">
+            <DependencyAssets Count="3">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/blade04copy.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/body_21.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/blade04 copy.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="a2f6f824f65f32d4297a3ec90f714424" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Damage.FBX" Length="803120" HashCode="-1180401011">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="a4867808c62813f4d95ca64859149307" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@R_Avoid.FBX" Length="1214368" HashCode="-1485065424">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="a4b19fcfadbfff74d93d622f055f4319" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" Length="2075" HashCode="-1948409653" />
+          <Asset Guid="a6e77abe2bde05c4390375b3113e066d" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Jump_NoBlade.FBX" Length="520736" HashCode="-771738557" />
+          <Asset Guid="ab6c81b76b089da418122483196d6d95" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_R_Walk.FBX" Length="1192496" HashCode="1137063070">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="ae040eae6ed923847a998012a56f9286" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/body_21.mat" Length="730" HashCode="2076740554" />
+          <Asset Guid="ae0baa29fe52f834998a68edb77c2690" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@AttackStandy.FBX" Length="952000" HashCode="-1193877900">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="b15222b24c580ba46aff91d5ce5e6d96" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_AttackStandy.FBX" Length="952000" HashCode="-1193877900">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="b1a7365aac5c335459d9d4661f285ef7" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Textures/shelf02.TGA" Length="3145772" HashCode="-1806128744" />
+          <Asset Guid="b3df1ca8d687d2a489848dae1431ef25" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Shelf.FBX" Length="27104" HashCode="1249826713">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/default.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="b6b0a949c887efe48adaf6e3bfcd570f" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Attack00.FBX" Length="1180832" HashCode="-1769436278">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="c2cb08dae240aad4e80bd7f35c339d8e" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/blade04copy.mat" Length="789" HashCode="1370561269">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Textures/blade04copy.PSD" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="cf8a1d17e8520a440a65cfd108d6a2c4" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_R_Run00.FBX" Length="1180912" HashCode="599598635">
+            <DependencyAssets Count="4">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/blade04copy.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/body_21.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/blade04 copy.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="d00823c9845880f47a0e21f7b110a3a1" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@B_Walk.FBX" Length="1473440" HashCode="77260245">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="d0344b2c5eaa51249892e06245810537" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@DrawBlade.FBX" Length="1116144" HashCode="-254981812">
+            <DependencyAssets Count="3">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/blade04copy.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/body_21.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/blade04 copy.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="d74ec626f1b3c9b4eaf7b3627e2678f1" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_GanamStyle.FBX" Length="1357728" HashCode="-122886985">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="d901003b4546ace4f943b8211202b2aa" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/default.mat" Length="2041" HashCode="-166219758" />
+          <Asset Guid="d91fe844729048a48b6e591bde8b3e1c" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" Length="843" HashCode="-126496864" />
+          <Asset Guid="db40aedd4f6dfa44795bc781dcca4ad9" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl.FBX" Length="1538336" HashCode="650235687" />
+          <Asset Guid="db899a830b174bd4faf2b3496021e86d" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@R_Walk.FBX" Length="1192496" HashCode="1137063070">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="dbb28dc6d32c38f4ebcb8337c27d1734" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_L_Run00.FBX" Length="1180912" HashCode="-1867971965">
+            <DependencyAssets Count="4">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/blade04copy.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/body_21.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/blade04 copy.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="dfb6e25f664288544b23b65b2d73c127" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_very_low.FBX" Length="1869024" HashCode="622535170">
+            <DependencyAssets Count="4">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdfret.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdfret.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="e31789668d5b67a40b93a7c897091bfc" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/blade04 copy.mat" Length="2176" HashCode="2039147663">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Textures/blade04 copy.PSD" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="edbd07c33c8b19d45a0ba538a4e6510d" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Run.FBX" Length="1172160" HashCode="-324220677">
+            <DependencyAssets Count="3">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="f0e013032515858489650cc5be43ddf1" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Textures/body_22.PSD" Length="40393739" HashCode="834355053" />
+          <Asset Guid="f23c5735361a78f4a85f0e4afe76a056" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Pickup.FBX" Length="924336" HashCode="-805319850">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="f75772bd848fcbd498a9ca7b1523539b" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Idle.FBX" Length="1690336" HashCode="1571010818">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="f8617ff9c2c7c1a49aab39a9945d90ad" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@L_Avoid.FBX" Length="1214368" HashCode="-165537352">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="fae6b955e4e25144095a805b0bcbf6c9" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_M_Avoid.FBX" Length="1214448" HashCode="1904175515">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="fbe47d3b359212d4bb0513aee5d4ffce" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@ComboAttack.FBX" Length="953936" HashCode="1492733185">
+            <DependencyAssets Count="5">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdfdd.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdfdd.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="fbe5e6bcb29b66344955f82ee7173a7e" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Attack01.FBX" Length="896944" HashCode="1980927376">
+            <DependencyAssets Count="3">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="fc768f280184f1046b33cfa9a1222370" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@R_Run00.FBX" Length="1180912" HashCode="599598635">
+            <DependencyAssets Count="4">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/blade04copy.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/body_21.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/blade04 copy.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="fcf93c241a0352541b412d752b9a8d32" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Attack.FBX" Length="952672" HashCode="-1021862603">
+            <DependencyAssets Count="3">
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat" />
+              <DependencyAsset Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/칼.mat" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="ff192bf30a8c7414fa1a67aad9d7208e" Name="Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdfret.mat" Length="736" HashCode="384632195" />
+        </Assets>
+        <Codes>
+          <Windows Length="8404452" HashCode="1006373762" ZipLength="7399977" ZipHashCode="261173278" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/Font" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="3">
+          <Asset Guid="0c210c5b35c48d4408b1fdf6cd3f3061" Name="Assets/Deer/Asset/Font/zh-cn_Commonly_used.txt" Length="10753" HashCode="1342504325" />
+          <Asset Guid="963f291c647b7114bb2e4309257b018c" Name="Assets/Deer/Asset/Font/wryh SDF.asset" Length="10020083" HashCode="1687928340">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/Font/wryh.ttf" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="fdad260faa353bc4ca6bee5bd618827f" Name="Assets/Deer/Asset/Font/wryh.ttf" Length="15043584" HashCode="-1163560190">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/TTF/wryh.ttf" />
+            </DependencyAssets>
+          </Asset>
+        </Assets>
+        <Codes>
+          <Windows Length="12595063" HashCode="2129189634" ZipLength="11529751" ZipHashCode="883550942" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/GF" Extension="dat" LoadType="0" Packed="True">
+        <Assets Count="1">
+          <Asset Guid="fc68dccc459bc634a9d29665962c7221" Name="Assets/Deer/Asset/GF/DeerGF.prefab" Length="98976" HashCode="-561266597">
+            <DependencyAssets Count="5">
+              <DependencyAsset Name="Assets/Deer/Asset/Effect/Prefabs/UI/click_effect.prefab" />
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIArt/Atlas/Common/common.png" />
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIArt/Sprite/BigBG/login_bg.png" />
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIArt/Sprite/Common/001.png" />
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIPrefab/InitForm/InitForm.prefab" />
+            </DependencyAssets>
+          </Asset>
+        </Assets>
+        <Codes>
+          <Windows Length="41168" HashCode="-1150179557" ZipLength="28220" ZipHashCode="-1678295163" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/GameConfigs" Extension="dat" LoadType="0" Packed="True">
+        <Assets Count="1">
+          <Asset Guid="f25c76f34c850f04dafdec7d73880c91" Name="Assets/Deer/Asset/GameConfigs/ResourcePathCollection.txt" Length="12619" HashCode="1158229941" />
+        </Assets>
+        <Codes>
+          <Windows Length="3075" HashCode="-435795786" ZipLength="2644" ZipHashCode="1915511946" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/Lua" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="159">
+          <Asset Guid="00dc7975fa9ccc340a3751614e52bb02" Name="Assets/Deer/Asset/Lua/Procedure/ProcedureLogin.lua.bytes" Length="688" HashCode="1131345726" />
+          <Asset Guid="01e3a93da1010184bb14a9764602362a" Name="Assets/Deer/Asset/Lua/DataConfig/Require/RequireDataConfig.lua.bytes" Length="439" HashCode="1649556508" />
+          <Asset Guid="05f6d2f367b0f844aa3c0342c5ecb64a" Name="Assets/Deer/Asset/Lua/protobuf/text_format.lua.bytes" Length="2688" HashCode="-1354798301" />
+          <Asset Guid="06c8408142546d242bc2c4f92df4ba26" Name="Assets/Deer/Asset/Lua/UnityEngine/Profiler.lua.bytes" Length="7852" HashCode="-1111597099" />
+          <Asset Guid="0968ce3206ab4b241b5fe29ce485166d" Name="Assets/Deer/Asset/Lua/Component/NetWork/NetWorkComponent.lua.bytes" Length="5346" HashCode="-639773309" />
+          <Asset Guid="0d88cf6aef02c5e449767aba459ff969" Name="Assets/Deer/Asset/Lua/Framework/Common/ConfigBaseClass.lua.bytes" Length="396" HashCode="-1062156571" />
+          <Asset Guid="0efc412a654e96442aef1ce7ac0b0458" Name="Assets/Deer/Asset/Lua/Framework/Common/Stack.lua.bytes" Length="1593" HashCode="-196406851" />
+          <Asset Guid="115bd45571d468748911edb581254081" Name="Assets/Deer/Asset/Lua/UnityEngine/Mathf.lua.bytes" Length="5111" HashCode="-1052509806" />
+          <Asset Guid="134763b7ea242434ab5587b625b6bc7e" Name="Assets/Deer/Asset/Lua/UnityEngine/Vector4.lua.bytes" Length="4795" HashCode="1001423095" />
+          <Asset Guid="1591c2ca8486613459a98da681f44c72" Name="Assets/Deer/Asset/Lua/Entity/Base/LuaEntityBase.lua.bytes" Length="476" HashCode="813637625" />
+          <Asset Guid="15c1ca99ed628394db922f6117516f96" Name="Assets/Deer/Asset/Lua/Component/Base/LuaComponentBase.lua.bytes" Length="511" HashCode="1617957818" />
+          <Asset Guid="15dbba007986cde40b93e1dd7a44eaee" Name="Assets/Deer/Asset/Lua/Entity/Require/RequireEntity.lua.bytes" Length="848" HashCode="669041647" />
+          <Asset Guid="15e37d33ecaa00049939f1680713e163" Name="Assets/Deer/Asset/Lua/Proto/DeerGameBase_pb.lua.bytes" Length="225586" HashCode="-1612624328" />
+          <Asset Guid="15e83a5b6f711aa4294292aeba56334c" Name="Assets/Deer/Asset/Lua/Framework/Common/Queue.lua.bytes" Length="2043" HashCode="1461801414" />
+          <Asset Guid="174bfd0383691834090f667cf07f8f70" Name="Assets/Deer/Asset/Lua/Utils/Require/RequireUtils.lua.bytes" Length="450" HashCode="562126640" />
+          <Asset Guid="17956edc52fae6f489faea5f05ed0f63" Name="Assets/Deer/Asset/Lua/misc/strict.lua.bytes" Length="1092" HashCode="-2067996677" />
+          <Asset Guid="193be484e79a3764b9a1f683e0e12aec" Name="Assets/Deer/Asset/Lua/jit/dis_mips.lua.bytes" Length="14216" HashCode="182853917" />
+          <Asset Guid="1ae8d926949445f4ba6f9d92a292bfe6" Name="Assets/Deer/Asset/Lua/Proto/Require/RequireProto.lua.bytes" Length="489" HashCode="-1502488099" />
+          <Asset Guid="1efdd1653116526479713aee3c9d8183" Name="Assets/Deer/Asset/Lua/protobuf/decoder.lua.bytes" Length="12139" HashCode="1396401541" />
+          <Asset Guid="1f8e0ebbab90fb34190107b1f214fd1d" Name="Assets/Deer/Asset/Lua/DataUser/Info/DataNoticeInfoManager.lua.bytes" Length="3112" HashCode="-1488465273" />
+          <Asset Guid="1f9e0435c4ee6114b9ee2160fa628da8" Name="Assets/Deer/Asset/Lua/Procedure/Config/ProcedureConfig.lua.bytes" Length="505" HashCode="-354229057" />
+          <Asset Guid="200f620dd0a3f2841bed9722bfdc1a76" Name="Assets/Deer/Asset/Lua/System/Reflection/BindingFlags.lua.bytes" Length="918" HashCode="1558892182" />
+          <Asset Guid="20802e46765228d4083f196bd4fedfd3" Name="Assets/Deer/Asset/Lua/UI/Config/UIPrefabPathConfig.lua.bytes" Length="558" HashCode="-1082371461" />
+          <Asset Guid="225834bda4d85374c9e8a71ba9b3212f" Name="Assets/Deer/Asset/Lua/System/Injection/LuaInjectionStation.lua.bytes" Length="2477" HashCode="-1979476495" />
+          <Asset Guid="22ab7001e1a9e9f4b8f113cab56343eb" Name="Assets/Deer/Asset/Lua/DataUser/Require/RequireDataUser.lua.bytes" Length="473" HashCode="-271831042" />
+          <Asset Guid="24ffa1360e9867640ab13ae27fcf89f1" Name="Assets/Deer/Asset/Lua/lpeg/re.lua.bytes" Length="6717" HashCode="-423815682" />
+          <Asset Guid="2648bbce0eda72744b411d82748ea9b4" Name="Assets/Deer/Asset/Lua/UI/UILogin/UILoginPanel.lua.bytes" Length="3113" HashCode="288200548" />
+          <Asset Guid="26c06ebc5b6faa44891812f024374f70" Name="Assets/Deer/Asset/Lua/Framework/Common/SingletonClass.lua.bytes" Length="877" HashCode="-1584104069" />
+          <Asset Guid="2777bfabf33daa74dae9e1bfddd17bf7" Name="Assets/Deer/Asset/Lua/Entity/Common/LuaCharacterManager.lua.bytes" Length="3766" HashCode="-1248519996" />
+          <Asset Guid="27eddfda3de37704688b3830742d7f7f" Name="Assets/Deer/Asset/Lua/misc/utf8.lua.bytes" Length="8895" HashCode="-447143907" />
+          <Asset Guid="28b0ef4bddfe1f74e80f589f99100c4c" Name="Assets/Deer/Asset/Lua/Component/Update/TimerManager.lua.bytes" Length="1187" HashCode="1682422106" />
+          <Asset Guid="2c4c6cb0cd1f5a34694c817b73451f51" Name="Assets/Deer/Asset/Lua/protobuf/type_checkers.lua.bytes" Length="2571" HashCode="-987860182" />
+          <Asset Guid="2dcb1ad1e2e623a4da9d3007ea6ae8a9" Name="Assets/Deer/Asset/Lua/misc/functions.lua.bytes" Length="3414" HashCode="1097730729" />
+          <Asset Guid="312364ca741446e498700115e98a129b" Name="Assets/Deer/Asset/Lua/Definition/Constant/EventConstantId.lua.bytes" Length="762" HashCode="-1351294225" />
+          <Asset Guid="36099e12dd46a1646b06b9a851cc29cc" Name="Assets/Deer/Asset/Lua/jit/p.lua.bytes" Length="9446" HashCode="138777204" />
+          <Asset Guid="37260cf501f2d264a8a5b4ae989f2a04" Name="Assets/Deer/Asset/Lua/protobuf/listener.lua.bytes" Length="1460" HashCode="-2073185018" />
+          <Asset Guid="382c61908814b8949893afb5879b72ca" Name="Assets/Deer/Asset/Lua/System/ValueType.lua.bytes" Length="1026" HashCode="-112063468" />
+          <Asset Guid="38a68f77f26707c45aa485bf31aedbc4" Name="Assets/Deer/Asset/Lua/UnityEngine/Plane.lua.bytes" Length="1927" HashCode="1522073279" />
+          <Asset Guid="38bfb0af2e8467448a8900c870041330" Name="Assets/Deer/Asset/Lua/System/Timer.lua.bytes" Length="4111" HashCode="-1892793536" />
+          <Asset Guid="3c76bc37e32c4404bbe4c5d92d0f3c50" Name="Assets/Deer/Asset/Lua/protobuf/protobuf.lua.bytes" Length="37733" HashCode="779473100" />
+          <Asset Guid="3d61c1564a64b814db2689dd0b3958c5" Name="Assets/Deer/Asset/Lua/Framework/Require/RequireTable.lua.bytes" Length="865" HashCode="2037335066" />
+          <Asset Guid="3de8889ccd202e647b774fb0c2873088" Name="Assets/Deer/Asset/Lua/UnityEngine/Color.lua.bytes" Length="6060" HashCode="-1635362149" />
+          <Asset Guid="3dee4adaccbe67f4bba055615c2981f3" Name="Assets/Deer/Asset/Lua/typeof.lua.bytes" Length="874" HashCode="-736744755" />
+          <Asset Guid="43fcc5d9d8fa47043b62554238d71019" Name="Assets/Deer/Asset/Lua/protobuf/encoder.lua.bytes" Length="16351" HashCode="-1043144974" />
+          <Asset Guid="47ddcd0e0929b2c40a8bc6c3063c314a" Name="Assets/Deer/Asset/Lua/Base/LuaGameEntry.lua.bytes" Length="2490" HashCode="-1009206794" />
+          <Asset Guid="49a47b8406e8c794aafbbaee8e33b217" Name="Assets/Deer/Asset/Lua/jit/dis_mips64.lua.bytes" Length="723" HashCode="1103770277" />
+          <Asset Guid="4c058217e1a5ace4da5f66cae0ab432f" Name="Assets/Deer/Asset/Lua/Main.lua.bytes" Length="529" HashCode="1000877577" />
+          <Asset Guid="4d6a0021e6e5d5d4989d20136e1c66de" Name="Assets/Deer/Asset/Lua/Framework/Common/BaseClass.lua.bytes" Length="847" HashCode="1692585358" />
+          <Asset Guid="52ed5c298ace9ac4d9b2be1471a1aa9e" Name="Assets/Deer/Asset/Lua/Component/UI/LuaUIComponent.lua.bytes" Length="871" HashCode="-874782951" />
+          <Asset Guid="56068a1b34c5a9a4da92fe2d27e4eb24" Name="Assets/Deer/Asset/Lua/socket/headers.lua.bytes" Length="3801" HashCode="1375107314" />
+          <Asset Guid="57889b0d2ada97144821206e31b5d094" Name="Assets/Deer/Asset/Lua/UnityEngine/Vector3.lua.bytes" Length="11446" HashCode="-1897289752" />
+          <Asset Guid="5a93c5a36a585c847810ea94d9273650" Name="Assets/Deer/Asset/Lua/EmmyDebugger.lua.bytes" Length="508" HashCode="-1981822616" />
+          <Asset Guid="5b6cacbccf9eebc4ba1391b0fa0021a1" Name="Assets/Deer/Asset/Lua/Definition/Enum/LuaUIFormsEnum.lua.bytes" Length="1260" HashCode="2080184754" />
+          <Asset Guid="5bc3f4c29688a774598a1ce5770d69cb" Name="Assets/Deer/Asset/Lua/Component/UI/UIManager.lua.bytes" Length="5999" HashCode="534972261" />
+          <Asset Guid="5e545d11f6d25ad4e805c3c7a2ae6818" Name="Assets/Deer/Asset/Lua/UnityEngine/Vector2.lua.bytes" Length="6908" HashCode="-1345912493" />
+          <Asset Guid="5ed0fd766aad43a4b80c7e1d4ec4e347" Name="Assets/Deer/Asset/Lua/Component/Config/LuaConfigComponent.lua.bytes" Length="733" HashCode="-1924420358" />
+          <Asset Guid="601fec0e743243b4793362d4eb1c5f13" Name="Assets/Deer/Asset/Lua/Utils/LuaGameUtils.lua.bytes" Length="1195" HashCode="453224646" />
+          <Asset Guid="60d373f4d04670344854113ea976f9db" Name="Assets/Deer/Asset/Lua/System/Injection/InjectionBridgeInfo.lua.bytes" Length="11792" HashCode="683188893" />
+          <Asset Guid="64cd02bbe79972c439178b39efaad8c8" Name="Assets/Deer/Asset/Lua/DataConfig/Config/DataConfigNames.lua.bytes" Length="518" HashCode="-662449812" />
+          <Asset Guid="67323050d15267a4bb03af46e4e57475" Name="Assets/Deer/Asset/Lua/Framework/Common/UIBaseClass.lua.bytes" Length="1129" HashCode="123492964" />
+          <Asset Guid="67bbc2cff2e687c4f8f96c2ccc2bc54f" Name="Assets/Deer/Asset/Lua/DataConfig/Info/DataConfigLanguageInfo.lua.bytes" Length="1981" HashCode="1147435994" />
+          <Asset Guid="68023c0658ec0554fa3690c7c9765258" Name="Assets/Deer/Asset/Lua/Entity/Character/LuaCharacterMonster.lua.bytes" Length="524" HashCode="-754965836" />
+          <Asset Guid="6833bf5751684af42bbeab902146c1d5" Name="Assets/Deer/Asset/Lua/Entity/State/MoveState.lua.bytes" Length="1531" HashCode="-16123635" />
+          <Asset Guid="68b41ce01d4a2b543919d536e5024dab" Name="Assets/Deer/Asset/Lua/Entity/CharacterData/Base/CharacterDataBase.lua.bytes" Length="1216" HashCode="1950725631" />
+          <Asset Guid="6e4754ed8d3a88b4db22da82d18e8693" Name="Assets/Deer/Asset/Lua/event.lua.bytes" Length="5317" HashCode="376889862" />
+          <Asset Guid="6ed0ade568cbb83448e1c620c93fa7f0" Name="Assets/Deer/Asset/Lua/Definition/Require/RequireDefinition.lua.bytes" Length="576" HashCode="-1625222180" />
+          <Asset Guid="720eefdb4b834904c9ba1d023b88b503" Name="Assets/Deer/Asset/Lua/misc/misc.lua.bytes" Length="948" HashCode="-1217290431" />
+          <Asset Guid="7455e1aac0f454c4b8353e35c7793324" Name="Assets/Deer/Asset/Lua/Proto/Config/ServerDecodeProtoConfig.lua.bytes" Length="1347" HashCode="1097778726" />
+          <Asset Guid="765a6986ee49f2740903996ffd145137" Name="Assets/Deer/Asset/Lua/Framework/Common/UISubBaseClass.lua.bytes" Length="1227" HashCode="589425658" />
+          <Asset Guid="76cb197a19de7ce4392bc0988c971adb" Name="Assets/Deer/Asset/Lua/jit/vmdef.lua.bytes" Length="7744" HashCode="-210494341" />
+          <Asset Guid="7a6428c68860b5e4289068a69a58cab8" Name="Assets/Deer/Asset/Lua/Proto/DeerLogin_pb.lua.bytes" Length="69792" HashCode="-940936633" />
+          <Asset Guid="7a85acc4d5c7e814e81a06a0f4674737" Name="Assets/Deer/Asset/Lua/UnityEngine/Touch.lua.bytes" Length="2080" HashCode="-1115940159" />
+          <Asset Guid="7cec8be40fb9a11419423102a28e7357" Name="Assets/Deer/Asset/Lua/cjson/util.lua.bytes" Length="7147" HashCode="-998511086" />
+          <Asset Guid="7d0edeb12cd07b048a699718dd3abf2c" Name="Assets/Deer/Asset/Lua/Entity/Character/LuaCharacterPlayer.lua.bytes" Length="5807" HashCode="631769403" />
+          <Asset Guid="8057d5c994abf7b4380a6b7d8b4c0276" Name="Assets/Deer/Asset/Lua/Component/Entity/LuaEntityComponent.lua.bytes" Length="1577" HashCode="212879788" />
+          <Asset Guid="806b2685f09ca294ba93d2e08b2241d8" Name="Assets/Deer/Asset/Lua/protobuf/containers.lua.bytes" Length="2490" HashCode="124691385" />
+          <Asset Guid="811e13b3c5ccecc458c9c34b2130e14a" Name="Assets/Deer/Asset/Lua/tolua.lua.bytes" Length="1427" HashCode="-164973095" />
+          <Asset Guid="82bd36e1c3723f74fb5895bacee4d307" Name="Assets/Deer/Asset/Lua/jit/dis_arm.lua.bytes" Length="20033" HashCode="-739274371" />
+          <Asset Guid="8402332015d90414899a06e8fa9118b3" Name="Assets/Deer/Asset/Lua/DataUser/Config/DataUserDefine.lua.bytes" Length="549" HashCode="1691646123" />
+          <Asset Guid="85ff0a8c8c782074cb34f6e0f76ddf63" Name="Assets/Deer/Asset/Lua/Component/Event/MessengerManager.lua.bytes" Length="2071" HashCode="-1018884320" />
+          <Asset Guid="8699d0d17ab901a41b85e1a3d306e396" Name="Assets/Deer/Asset/Lua/Component/Procedure/LuaProcedureComponent.lua.bytes" Length="2583" HashCode="185273430" />
+          <Asset Guid="86a4242a93e3d6b4e93bafe1f02b6b74" Name="Assets/Deer/Asset/Lua/jit/zone.lua.bytes" Length="1047" HashCode="-1719747013" />
+          <Asset Guid="8844085b90093bb4a94f97959a0b3035" Name="Assets/Deer/Asset/Lua/Framework/DataUser/DataUserManager.lua.bytes" Length="2679" HashCode="1933754303" />
+          <Asset Guid="89d2169387e27494aae91acc81861a77" Name="Assets/Deer/Asset/Lua/Framework/DataConfig/DataConfigBase.lua.bytes" Length="3116" HashCode="32535966" />
+          <Asset Guid="8bbf2db12ee050747bedc98681c67d18" Name="Assets/Deer/Asset/Lua/Entity/CharacterData/CharacterPlayerData.lua.bytes" Length="533" HashCode="382879329" />
+          <Asset Guid="8c5e922f0e0d1be49a069a4d3eb138e4" Name="Assets/Deer/Asset/Lua/socket.lua.bytes" Length="4597" HashCode="-329487703" />
+          <Asset Guid="8c8785ec7c0391348a1397df59b27a28" Name="Assets/Deer/Asset/Lua/jit/bc.lua.bytes" Length="5810" HashCode="683713647" />
+          <Asset Guid="8cfc624c44a01d541bbb14dce7f99858" Name="Assets/Deer/Asset/Lua/Definition/Constant/LayerConstant.lua.bytes" Length="1600" HashCode="1709626152" />
+          <Asset Guid="923fcaca77cea5340bca4d45ae29e058" Name="Assets/Deer/Asset/Lua/UnityEngine/LayerMask.lua.bytes" Length="1173" HashCode="-639054068" />
+          <Asset Guid="925ca9e73d920054cae139309291d982" Name="Assets/Deer/Asset/Lua/UnityEngine/RaycastHit.lua.bytes" Length="1998" HashCode="-747791423" />
+          <Asset Guid="96d078d5c4aab70488d98c331e07f457" Name="Assets/Deer/Asset/Lua/jit/dis_arm64be.lua.bytes" Length="631" HashCode="-1582138683" />
+          <Asset Guid="98bfdf692554fef4ab411a093aa0ca89" Name="Assets/Deer/Asset/Lua/Entity/Common/InputController.lua.bytes" Length="474" HashCode="417706503" />
+          <Asset Guid="9a0e47f2d1fa7d9478ff0f41572f9c61" Name="Assets/Deer/Asset/Lua/protobuf/descriptor.lua.bytes" Length="2118" HashCode="-393785740" />
+          <Asset Guid="9a1383183b451b147bc85915f9b11de0" Name="Assets/Deer/Asset/Lua/jit/dis_x64.lua.bytes" Length="729" HashCode="1516155862" />
+          <Asset Guid="9a28a6974f7f06541b7b5c4488e46f33" Name="Assets/Deer/Asset/Lua/Procedure/ProcedureChangeScene.lua.bytes" Length="3828" HashCode="-2085984655" />
+          <Asset Guid="9c0927a8fe52d7540b1aa76b18fa8e26" Name="Assets/Deer/Asset/Lua/Component/Require/RequireComponent.lua.bytes" Length="1027" HashCode="1991819744" />
+          <Asset Guid="9dfeae3af0de2944d878fbe8c37cfa6a" Name="Assets/Deer/Asset/Lua/socket/http.lua.bytes" Length="15008" HashCode="-440219314" />
+          <Asset Guid="9e765b56b13e77f4cabd91a608e23dc7" Name="Assets/Deer/Asset/Lua/Utils/LogUtils.lua.bytes" Length="3834" HashCode="588510609" />
+          <Asset Guid="a2c7a00f4e8adbe43ba7f30b4eeba63f" Name="Assets/Deer/Asset/Lua/jit/dis_arm64.lua.bytes" Length="32120" HashCode="-509004845" />
+          <Asset Guid="a348a5e12e50a07428adace13054af80" Name="Assets/Deer/Asset/Lua/Utils/GObjUtils.lua.bytes" Length="1334" HashCode="772199031" />
+          <Asset Guid="a44dc8aeae96a4747b14ea7121814a77" Name="Assets/Deer/Asset/Lua/jit/dis_ppc.lua.bytes" Length="20892" HashCode="-405517568" />
+          <Asset Guid="ad162ee5667e2624696e59fa88277ec8" Name="Assets/Deer/Asset/Lua/DataConfig/Config/DataConfigDefine.lua.bytes" Length="1229" HashCode="1613374458" />
+          <Asset Guid="ae48e4026f7a54b4a9b86325533e3e50" Name="Assets/Deer/Asset/Lua/Procedure/Require/RequireProcedure.lua.bytes" Length="517" HashCode="-1130492921" />
+          <Asset Guid="ae542b87151599c4ea8877b701daac7d" Name="Assets/Deer/Asset/Lua/Entity/State/IdleState.lua.bytes" Length="719" HashCode="678201012" />
+          <Asset Guid="ae87cd1b5f5ff4c4c8c66fc92eec92a0" Name="Assets/Deer/Asset/Lua/Definition/Enum/CharacterStateEnum.lua.bytes" Length="1108" HashCode="340466888" />
+          <Asset Guid="b09163637fe4eaf43abd4ab47455ae63" Name="Assets/Deer/Asset/Lua/jit/dis_x86.lua.bytes" Length="33749" HashCode="1621336723" />
+          <Asset Guid="b0fff859df2b48241947473bc4f3498f" Name="Assets/Deer/Asset/Lua/Procedure/ProcedureMain.lua.bytes" Length="619" HashCode="416096605" />
+          <Asset Guid="b1d83a12fa2cf1b46b1e34302bfae8a4" Name="Assets/Deer/Asset/Lua/jit/v.lua.bytes" Length="5932" HashCode="141784931" />
+          <Asset Guid="b6df98e71edb548468b50badd882d617" Name="Assets/Deer/Asset/Lua/jit/dis_mips64el.lua.bytes" Length="734" HashCode="-818939812" />
+          <Asset Guid="b6fed1d418cf2f441ad056911ad0f6db" Name="Assets/Deer/Asset/Lua/UI/Require/RequireUI.lua.bytes" Length="371" HashCode="-1304099360" />
+          <Asset Guid="baa895cc0ac526a4dad59307f88e6589" Name="Assets/Deer/Asset/Lua/Entity/State/JumpState.lua.bytes" Length="1213" HashCode="1402214395" />
+          <Asset Guid="bbf258013532feb46a202fad5a369071" Name="Assets/Deer/Asset/Lua/DataUser/Config/DataUserNames.lua.bytes" Length="391" HashCode="1411824452" />
+          <Asset Guid="bd9622c31f6006d45a0e4138869ee257" Name="Assets/Deer/Asset/Lua/Component/LocalPrefs/LocalPrefComponent.lua.bytes" Length="1924" HashCode="2066215566" />
+          <Asset Guid="be14c36cb957c004990d868966e02b07" Name="Assets/Deer/Asset/Lua/System/coroutine.lua.bytes" Length="3369" HashCode="1781284196" />
+          <Asset Guid="c1098958a184d8446822bf3f18120b12" Name="Assets/Deer/Asset/Lua/Framework/Common/ManagerBaseClass.lua.bytes" Length="400" HashCode="-1441790284" />
+          <Asset Guid="c3f44f40f1eb1a348a5c98a4fff19c21" Name="Assets/Deer/Asset/Lua/socket/ftp.lua.bytes" Length="10960" HashCode="-1786496845" />
+          <Asset Guid="c43d21e1d506ff445adbfa2765396d2a" Name="Assets/Deer/Asset/Lua/jit/dump.lua.bytes" Length="20824" HashCode="1964419273" />
+          <Asset Guid="c9c396c8e3e35544e9d6befc53e26f38" Name="Assets/Deer/Asset/Lua/protobuf/wire_format.lua.bytes" Length="4028" HashCode="-1784214535" />
+          <Asset Guid="cabd91ea484981c4c8dab0cf06fb4c4f" Name="Assets/Deer/Asset/Lua/list.lua.bytes" Length="3316" HashCode="-671414723" />
+          <Asset Guid="caeb4d019b6823942ad5b5e6b8be4b95" Name="Assets/Deer/Asset/Lua/Component/TPSprite/LuaTPSpriteComponent.lua.bytes" Length="1354" HashCode="-1390806099" />
+          <Asset Guid="cc0dba5d19e7a5d4881c3e4f6c3758dc" Name="Assets/Deer/Asset/Lua/Entity/State/StateController.lua.bytes" Length="2517" HashCode="-1448807110" />
+          <Asset Guid="cee2ab128b9cc9b4482cef33da4c926c" Name="Assets/Deer/Asset/Lua/Definition/Constant/PrefsConstantId.lua.bytes" Length="344" HashCode="238819199" />
+          <Asset Guid="d04123e676f5f1747a80e80d34449beb" Name="Assets/Deer/Asset/Lua/UI/Config/UINameConfig.lua.bytes" Length="444" HashCode="-902092320" />
+          <Asset Guid="d18eee6bb05280048973ac80acc434ae" Name="Assets/Deer/Asset/Lua/Procedure/Base/ProcedureBase.lua.bytes" Length="1101" HashCode="-117845911" />
+          <Asset Guid="d27da9fcee6dc1c42bcba56b627f80a5" Name="Assets/Deer/Asset/Lua/socket/tp.lua.bytes" Length="3900" HashCode="-838783038" />
+          <Asset Guid="d30f96b3190356648beba7c788894518" Name="Assets/Deer/Asset/Lua/System/Injection/LuaInjectionBus.lua.bytes" Length="1178" HashCode="-348227299" />
+          <Asset Guid="d5070d91a8e3e5c4cac1bd1d5216d521" Name="Assets/Deer/Asset/Lua/socket/mbox.lua.bytes" Length="2746" HashCode="-2117361044" />
+          <Asset Guid="d56ca7ff0dc4ab14a8ba97274420ddc8" Name="Assets/Deer/Asset/Lua/Entity/Character/Base/LuaCharacterBase.lua.bytes" Length="3804" HashCode="-1403569658" />
+          <Asset Guid="d5fe028bf451b324f9f184e7849ce53b" Name="Assets/Deer/Asset/Lua/Framework/Common/Class.lua.bytes" Length="8768" HashCode="-1496928700" />
+          <Asset Guid="d6a22cde68930124693ac0f2c376450b" Name="Assets/Deer/Asset/Lua/UnityEngine/Ray.lua.bytes" Length="1480" HashCode="1527586959" />
+          <Asset Guid="d725d3549521d4d4ab0775fe9e15c7c3" Name="Assets/Deer/Asset/Lua/UnityEngine/Time.lua.bytes" Length="2966" HashCode="-2081843913" />
+          <Asset Guid="d7ac3506dc52cdc4a8f0bcd0d9e7a5f2" Name="Assets/Deer/Asset/Lua/Definition/Enum/LanguageTypeEnum.lua.bytes" Length="342" HashCode="601517258" />
+          <Asset Guid="d9551900a5209014c9a427884c947c65" Name="Assets/Deer/Asset/Lua/slot.lua.bytes" Length="849" HashCode="1731318401" />
+          <Asset Guid="d9e00e70ae16d8e498558e9be95b304a" Name="Assets/Deer/Asset/Lua/Component/Entity/LuaEntityManager.lua.bytes" Length="2455" HashCode="-1768292694" />
+          <Asset Guid="da6d84769df9bbf4b97abf004c0df9b0" Name="Assets/Deer/Asset/Lua/socket/url.lua.bytes" Length="12006" HashCode="262795621" />
+          <Asset Guid="db429792b8c141b41bb7bd5991bd9ef1" Name="Assets/Deer/Asset/Lua/jit/dis_mipsel.lua.bytes" Length="732" HashCode="426443733" />
+          <Asset Guid="ddfde593a1a00fe42a55c9a137160d84" Name="Assets/Deer/Asset/Lua/Procedure/ProcedureMainHall.lua.bytes" Length="1186" HashCode="483781892" />
+          <Asset Guid="e1c156ea718746d49a7b5369d3a51588" Name="Assets/Deer/Asset/Lua/Component/Update/LuaUpdateComponent.lua.bytes" Length="2426" HashCode="-1808945601" />
+          <Asset Guid="e28dd01771778714dba42e13448e4204" Name="Assets/Deer/Asset/Lua/UnityEngine/Quaternion.lua.bytes" Length="15070" HashCode="1014277582" />
+          <Asset Guid="e40f7255e435a9f4fbedaad845c06dd6" Name="Assets/Deer/Asset/Lua/UI/UICommon/UILoadingPanel.lua.bytes" Length="1500" HashCode="-1577569864" />
+          <Asset Guid="e4592932673b25347842dc0cf7bad5ee" Name="Assets/Deer/Asset/Lua/Framework/DataUser/DataUserBase.lua.bytes" Length="3326" HashCode="799609261" />
+          <Asset Guid="e49eca30590a5c747b6d6f41baa4bf7c" Name="Assets/Deer/Asset/Lua/ltn12.lua.bytes" Length="9191" HashCode="742858821" />
+          <Asset Guid="e57b6b378d2b7314b988440733b5f02d" Name="Assets/Deer/Asset/Lua/UI/UIMainHall/UIMainHallPanel.lua.bytes" Length="2379" HashCode="-1814488710" />
+          <Asset Guid="e66d27df660c59e448163557108bba06" Name="Assets/Deer/Asset/Lua/lpeg/test.lua.bytes" Length="47798" HashCode="-2050857312" />
+          <Asset Guid="e8d61c32b454a2047af939e01c8604ca" Name="Assets/Deer/Asset/Lua/Utils/StringUtils.lua.bytes" Length="738" HashCode="-1430002134" />
+          <Asset Guid="eceb57e5a1e14d445a6f15aab5a16d76" Name="Assets/Deer/Asset/Lua/jit/bcsave.lua.bytes" Length="19005" HashCode="2144342137" />
+          <Asset Guid="ed7b36199d9a6204999464f1f0737559" Name="Assets/Deer/Asset/Lua/Component/Event/LuaEventComponent.lua.bytes" Length="2233" HashCode="1963995019" />
+          <Asset Guid="ef25cc53b66879f4389451dafd0d2919" Name="Assets/Deer/Asset/Lua/DataConfig/Info/DataConfigCharacterInfo.lua.bytes" Length="1254" HashCode="-13520214" />
+          <Asset Guid="efdc98816460f1442b9b4d650b33fa01" Name="Assets/Deer/Asset/Lua/Component/Update/UpdateManager.lua.bytes" Length="2936" HashCode="-1331698902" />
+          <Asset Guid="efee94285178efc4288e430edc02bc45" Name="Assets/Deer/Asset/Lua/socket/smtp.lua.bytes" Length="8329" HashCode="262090774" />
+          <Asset Guid="f0e08c06603965c468d9c8ce587e1955" Name="Assets/Deer/Asset/Lua/Entity/Character/LuaCharacterNpc.lua.bytes" Length="500" HashCode="-172135957" />
+          <Asset Guid="f25409a55b0e15e4a89bd491c7e124d8" Name="Assets/Deer/Asset/Lua/Component/Config/DataConfigManager.lua.bytes" Length="1340" HashCode="2049534084" />
+          <Asset Guid="f41faec3968a91a46933863331d8e618" Name="Assets/Deer/Asset/Lua/Proto/DeerProtoBase_pb.lua.bytes" Length="256109" HashCode="904619903" />
+          <Asset Guid="f59b1c04f2abfc04699f4cd17a069ab4" Name="Assets/Deer/Asset/Lua/UnityEngine/Bounds.lua.bytes" Length="4456" HashCode="-45447646" />
+          <Asset Guid="f81a70a342b71f741b13eb5d5c2d4778" Name="Assets/Deer/Asset/Lua/mime.lua.bytes" Length="2552" HashCode="1786211788" />
+          <Asset Guid="f8833cfb553455a47bb5495d20ceee8c" Name="Assets/Deer/Asset/Lua/Proto/DeerConfigModel_pb.lua.bytes" Length="514507" HashCode="-1437200264" />
+          <Asset Guid="fdd06e380c6c659478582cea75729740" Name="Assets/Deer/Asset/Lua/Utils/TableUtils.lua.bytes" Length="2512" HashCode="-247276978" />
+          <Asset Guid="fe3aea05061277e43bd0de77f84c5f55" Name="Assets/Deer/Asset/Lua/Utils/GlobalUtils.lua.bytes" Length="2672" HashCode="-558341946" />
+          <Asset Guid="fe57e5bfc357e2044b1e81ac94cb5302" Name="Assets/Deer/Asset/Lua/Entity/State/Base/StateBase.lua.bytes" Length="1121" HashCode="-1952203626" />
+        </Assets>
+        <Codes>
+          <Windows Length="370704" HashCode="1934650240" ZipLength="298909" ZipHashCode="864196593" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/Sounds/MusicSounds" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="2">
+          <Asset Guid="8e69d1409028c764c83459295e9ed1ef" Name="Assets/Deer/Asset/Sounds/MusicSounds/bgm-main-0.mp3" Length="390593" HashCode="-68066937" />
+          <Asset Guid="bd6862f46680c9c4ebf5a82b3aeca8e6" Name="Assets/Deer/Asset/Sounds/MusicSounds/bgm-login-0.mp3" Length="264106" HashCode="-96942803" />
+        </Assets>
+        <Codes>
+          <Windows Length="423563" HashCode="1545641070" ZipLength="420456" ZipHashCode="-443443528" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/Sounds/UISounds" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="1">
+          <Asset Guid="d50d9394600bb874789ca9b6d09d247a" Name="Assets/Deer/Asset/Sounds/UISounds/popup.wav" Length="9466" HashCode="667697518" />
+        </Assets>
+        <Codes>
+          <Windows Length="15100" HashCode="1393788150" ZipLength="12614" ZipHashCode="-258642779" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/TTF" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="3">
+          <Asset Guid="66e3aafc3462b8d41b38169c254eb227" Name="Assets/Deer/Asset/TTF/wryh.ttf" Length="15043584" HashCode="-1163560190" />
+          <Asset Guid="8199b5ca04ab49d4ebedac565cb7f5d3" Name="Assets/Deer/Asset/TTF/zh-cn_Commonly_used.txt" Length="7172" HashCode="-1758223825" />
+          <Asset Guid="92168346e7c06ca4892981037498dd9b" Name="Assets/Deer/Asset/TTF/wryhSDF.asset" Length="578484" HashCode="222926098">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/Font/wryh.ttf" />
+            </DependencyAssets>
+          </Asset>
+        </Assets>
+        <Codes>
+          <Windows Length="10252281" HashCode="-857686905" ZipLength="9405191" ZipHashCode="684090423" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/UI/UIArt/Atlas/Common" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="2">
+          <Asset Guid="5d22e4e6594144b4abd58eccde422448" Name="Assets/Deer/Asset/UI/UIArt/Atlas/Common/common.png" Length="115222" HashCode="1910432220" />
+          <Asset Guid="b8724fa065b844c45b17581571418067" Name="Assets/Deer/Asset/UI/UIArt/Atlas/Common/common.asset" Length="3409" HashCode="1705984581">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIArt/Atlas/Common/common.png" />
+            </DependencyAssets>
+          </Asset>
+        </Assets>
+        <Codes>
+          <Windows Length="104658" HashCode="474625976" ZipLength="89542" ZipHashCode="-300594113" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/UI/UIArt/Atlas/Currency" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="2">
+          <Asset Guid="8aafb9f2eeffcb24a9b1b618d6713ff9" Name="Assets/Deer/Asset/UI/UIArt/Atlas/Currency/currency.png" Length="27389" HashCode="-2082254889" />
+          <Asset Guid="a6e01696dbc628546be1ea5901deb5d9" Name="Assets/Deer/Asset/UI/UIArt/Atlas/Currency/currency.asset" Length="824" HashCode="1938015101">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIArt/Atlas/Currency/currency.png" />
+            </DependencyAssets>
+          </Asset>
+        </Assets>
+        <Codes>
+          <Windows Length="19679" HashCode="1053703542" ZipLength="17204" ZipHashCode="-1831240909" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/UI/UIArt/Atlas/EquipIcon" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="2">
+          <Asset Guid="49b0a90453636cc47b18d4cb73c72c26" Name="Assets/Deer/Asset/UI/UIArt/Atlas/EquipIcon/equipIcon.png" Length="387938" HashCode="-1601339194" />
+          <Asset Guid="7ac7efee6e548b147b0c81ca5cd7b783" Name="Assets/Deer/Asset/UI/UIArt/Atlas/EquipIcon/equipIcon.asset" Length="3747" HashCode="-1127484629">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIArt/Atlas/EquipIcon/equipIcon.png" />
+            </DependencyAssets>
+          </Asset>
+        </Assets>
+        <Codes>
+          <Windows Length="209887" HashCode="-959147827" ZipLength="189606" ZipHashCode="1338433867" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/UI/UIArt/Atlas/Home" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="2">
+          <Asset Guid="6152c436a886229458cc960cd4e5f5c8" Name="Assets/Deer/Asset/UI/UIArt/Atlas/Home/home.asset" Length="1241" HashCode="1928943446">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIArt/Atlas/Home/home.png" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="8defd0563c28af646a1a09f4cbcb995d" Name="Assets/Deer/Asset/UI/UIArt/Atlas/Home/home.png" Length="206656" HashCode="1485621617" />
+        </Assets>
+        <Codes>
+          <Windows Length="102136" HashCode="718938182" ZipLength="91738" ZipHashCode="1904700225" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/UI/UIArt/Atlas/Loading" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="2">
+          <Asset Guid="4a1eac1abf3d5644090b2a158afccdc8" Name="Assets/Deer/Asset/UI/UIArt/Atlas/Loading/loading.png" Length="47921" HashCode="-1240431591" />
+          <Asset Guid="d90b4dd7fad4d8047880990ce1cde464" Name="Assets/Deer/Asset/UI/UIArt/Atlas/Loading/loading.asset" Length="1326" HashCode="-1933380098">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIArt/Atlas/Loading/loading.png" />
+            </DependencyAssets>
+          </Asset>
+        </Assets>
+        <Codes>
+          <Windows Length="40999" HashCode="-843771607" ZipLength="35439" ZipHashCode="-1060455117" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/UI/UIArt/Sprite/BigBG" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="4">
+          <Asset Guid="23b54d36ba4e8a54abd9fd60c6a53a06" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BigBG/home_bg.png" Length="2675248" HashCode="1480337701" />
+          <Asset Guid="58d77f042953c084ab5b3090b79101de" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BigBG/login_bg.png" Length="2650088" HashCode="-2062038471" />
+          <Asset Guid="b05a2f3bb3da490419fe5c724bd64407" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BigBG/loading_bg.png" Length="1735656" HashCode="1416626443" />
+          <Asset Guid="d109d29031203d3458c23d3662304060" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BigBG/battle_bg.png" Length="4747276" HashCode="140716824" />
+        </Assets>
+        <Codes>
+          <Windows Length="2997473" HashCode="1811472729" ZipLength="2745477" ZipHashCode="116843284" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/UI/UIArt/Sprite/BossCard" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="36">
+          <Asset Guid="091190e6fc1d564488b6f42c21a75ef9" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1026.png" Length="291090" HashCode="936341712" />
+          <Asset Guid="15c428aba70d7e84fa39fb5871f80759" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1036.png" Length="261639" HashCode="1838639924" />
+          <Asset Guid="1c8a6354b3530e542a1dc15288604786" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1010.png" Length="248897" HashCode="1609649578" />
+          <Asset Guid="1ce16c51d2c1fd848ac1adc68a304c1e" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1040.png" Length="234556" HashCode="-131863368" />
+          <Asset Guid="1d1a630053425fa49a59497af58da97a" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1022.png" Length="303452" HashCode="1730707196" />
+          <Asset Guid="2467f65ddb53a7b498e48c0ebdb1fbf1" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1028.png" Length="266564" HashCode="-1731868509" />
+          <Asset Guid="275d9ddfadcbc6345a4160a576b732eb" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1018.png" Length="279516" HashCode="361768496" />
+          <Asset Guid="2b0081fe487658042bcaed54e3ca89f7" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1031.png" Length="240904" HashCode="-519072621" />
+          <Asset Guid="2c7da3be25da9a04980180670e6fac07" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1024.png" Length="268483" HashCode="-1601277329" />
+          <Asset Guid="42ec27dfc2c44a449822e6010ea374f7" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1025.png" Length="265605" HashCode="793200404" />
+          <Asset Guid="4ea3c16a84db3dd44be9b0f12d3921fc" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1001.png" Length="255493" HashCode="761479020" />
+          <Asset Guid="50be8f51bad705042ba234732fe266d0" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1034.png" Length="209515" HashCode="252764264" />
+          <Asset Guid="55424e68619054e4e8e72efeaa9ee35b" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1017.png" Length="277463" HashCode="-1479179501" />
+          <Asset Guid="711fc54db05713445b2aeee237f16e02" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1023.png" Length="292698" HashCode="-811773783" />
+          <Asset Guid="747380cdc36dc1e498cc6647e6a1ee16" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1039.png" Length="241068" HashCode="1991731923" />
+          <Asset Guid="870322e285ccb734587dfb46c2404340" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1012.png" Length="298901" HashCode="-694654433" />
+          <Asset Guid="891bc7a56db51074ba47d0e6d9a8fa14" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1035.png" Length="276500" HashCode="131345428" />
+          <Asset Guid="8dc548479886a1c44a4fb627d3dd6206" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1038.png" Length="287135" HashCode="-1295752892" />
+          <Asset Guid="92d4d40ec0818954da5d2b247dd445a7" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1019.png" Length="248009" HashCode="1572647456" />
+          <Asset Guid="94a535c938a67314daedce15d251a050" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1016.png" Length="271054" HashCode="-2092959600" />
+          <Asset Guid="9de3ab9e69751bd4abcffbf13e8d8288" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1041.png" Length="237461" HashCode="-1003317159" />
+          <Asset Guid="a2249406c566d26438a5777899c77635" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1006.png" Length="282118" HashCode="1249809756" />
+          <Asset Guid="a3935c105d9fb674c93f409f6796f8fb" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1002.png" Length="245989" HashCode="1813786466" />
+          <Asset Guid="a727321d63afe214f8df4f84b23f2c7d" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1015.png" Length="234099" HashCode="-928567438" />
+          <Asset Guid="aba85163d3760e34fb1ed01fdfbda726" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1007.png" Length="231765" HashCode="1998172023" />
+          <Asset Guid="b62a6d224ba2fd44fa3ab7ca7f717683" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1021.png" Length="237558" HashCode="1546913210" />
+          <Asset Guid="b7201ff04f42c4045a50fb1e1bf6735f" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1014.png" Length="254279" HashCode="150023375" />
+          <Asset Guid="c8856ce8f9e97cc42bebbede4f5925b0" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1013.png" Length="255725" HashCode="443801234" />
+          <Asset Guid="c99eca099466ed34281f84123bfb1e2c" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1005.png" Length="245822" HashCode="462737630" />
+          <Asset Guid="d434699790306104dad6d4f6781a7085" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1003.png" Length="280498" HashCode="933447650" />
+          <Asset Guid="d4717d85bedc2044485da520f36d7ad6" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1004.png" Length="238114" HashCode="-602880819" />
+          <Asset Guid="d7bfa8a23c7cc324f9e3feec316de1b1" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1011.png" Length="286935" HashCode="-729733824" />
+          <Asset Guid="dab019be3e907b044bd105a7cd887e3e" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1027.png" Length="240416" HashCode="-204799867" />
+          <Asset Guid="e7bdfdae1ccbe114fb28465c36816650" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1033.png" Length="271573" HashCode="312680485" />
+          <Asset Guid="ed3532b26c9a4bc4c8f37fc665f5a6ae" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1032.png" Length="273013" HashCode="1514775203" />
+          <Asset Guid="f1c9c3019ff875844a6cf49339ce3ffb" Name="Assets/Deer/Asset/UI/UIArt/Sprite/BossCard/card_boss1037.png" Length="225422" HashCode="-702665734" />
+        </Assets>
+        <Codes>
+          <Windows Length="10022946" HashCode="-1358667091" ZipLength="9197666" ZipHashCode="-1474778366" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/UI/UIArt/Sprite/Common/001" Extension="dat" LoadType="0" Packed="True">
+        <Assets Count="1">
+          <Asset Guid="ee2b00ac2a8b86b4696816652a4079e2" Name="Assets/Deer/Asset/UI/UIArt/Sprite/Common/001.png" Length="455139" HashCode="-353418176" />
+        </Assets>
+        <Codes>
+          <Windows Length="1787881" HashCode="1727920393" ZipLength="1585096" ZipHashCode="-143616459" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/UI/UIArt/Sprite/Common/002" Extension="dat" LoadType="0" Packed="True">
+        <Assets Count="1">
+          <Asset Guid="2de569420acb20b48a0e91b9af1acce7" Name="Assets/Deer/Asset/UI/UIArt/Sprite/Common/002.png" Length="399640" HashCode="1866904593" />
+        </Assets>
+        <Codes>
+          <Windows Length="279625" HashCode="-688654850" ZipLength="249668" ZipHashCode="718772025" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/UI/UIArt/Sprite/Common/003" Extension="dat" LoadType="0" Packed="True">
+        <Assets Count="1">
+          <Asset Guid="c7561cee58039d6499747e1ee78b8680" Name="Assets/Deer/Asset/UI/UIArt/Sprite/Common/003.png" Length="445560" HashCode="1829634618" />
+        </Assets>
+        <Codes>
+          <Windows Length="1425142" HashCode="-820463167" ZipLength="1268740" ZipHashCode="-2032853373" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/UI/UIArt/Sprite/Common/bg_ltx_03" Extension="dat" LoadType="0" Packed="True">
+        <Assets Count="1">
+          <Asset Guid="fe977f60d1a84c04b83367f51534e494" Name="Assets/Deer/Asset/UI/UIArt/Sprite/Common/bg_ltx_03.png" Length="7743" HashCode="-280795080" />
+        </Assets>
+        <Codes>
+          <Windows Length="10348" HashCode="1983560690" ZipLength="8301" ZipHashCode="-1929633868" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/UI/UIArt/Sprite/Common/tips" Extension="dat" LoadType="0" Packed="True">
+        <Assets Count="1">
+          <Asset Guid="6b23e207e2203da40b1b79868d70e9e3" Name="Assets/Deer/Asset/UI/UIArt/Sprite/Common/tips.png" Length="44651" HashCode="338425103" />
+        </Assets>
+        <Codes>
+          <Windows Length="53917" HashCode="-1005799638" ZipLength="41195" ZipHashCode="-1684734461" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/UI/UIArt/Sprite/Joystick/JoyStick" Extension="dat" LoadType="0" Packed="True">
+        <Assets Count="1">
+          <Asset Guid="c49d214d34c99db43bd8a730f9d145dd" Name="Assets/Deer/Asset/UI/UIArt/Sprite/Joystick/JoyStick.png" Length="60621" HashCode="1279218442" />
+        </Assets>
+        <Codes>
+          <Windows Length="36415" HashCode="2053556794" ZipLength="32303" ZipHashCode="-402656635" />
+        </Codes>
+      </Resource>
+      <Resource Name="Asset/UI/UIPrefab" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="14">
+          <Asset Guid="022e3a7a56dcd374b99c91524e195749" Name="Assets/Deer/Asset/UI/UIPrefab/UITemplate/ScrollView/VGridScroll View.prefab" Length="19651" HashCode="-1848477646">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIPrefab/UITemplate/ScrollView/ScrollVItemPrefab.prefab" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="1933ea8013f08d644bac0beabf442d59" Name="Assets/Deer/Asset/UI/UIPrefab/UITemplate/ScrollView/HListScroll View.prefab" Length="19565" HashCode="-112190772">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIPrefab/UITemplate/ScrollView/ScrollVItemPrefab.prefab" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="29dacddc647a5a442aca96ecedde223d" Name="Assets/Deer/Asset/UI/UIPrefab/InitForm/InitForm.prefab" Length="11498" HashCode="2078777357">
+            <DependencyAssets Count="3">
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIArt/Atlas/Common/common.png" />
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIArt/Sprite/Common/002.png" />
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIPrefab/UITemplate/Progress.prefab" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="7247e1fea0760b54caa253020097fcdf" Name="Assets/Deer/Asset/UI/UIPrefab/UITemplate/ScrollView/ScrollVItemPrefab.prefab" Length="5810" HashCode="-1824294376" />
+          <Asset Guid="745e65d5ee916dd47944050290a22205" Name="Assets/Deer/Asset/UI/UIPrefab/UITemplate/Joystick/Joystick.prefab" Length="9811" HashCode="2037718604">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIArt/Sprite/Joystick/JoyStick.png" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="7a9f463bbbf30f34e8fdabaff22e9e86" Name="Assets/Deer/Asset/UI/UIPrefab/UILoading/UILoadingPanel.prefab" Length="21773" HashCode="863123157">
+            <DependencyAssets Count="4">
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIArt/Atlas/Common/common.png" />
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIArt/Sprite/BigBG/loading_bg.png" />
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIPrefab/UITemplate/Progress.prefab" />
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIPrefab/UITemplate/UIPanel.prefab" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="9017c463e11a03f409eef6b3c4c4f134" Name="Assets/Deer/Asset/UI/UIPrefab/UILogin/UILoginPanel.prefab" Length="37806" HashCode="741644688">
+            <DependencyAssets Count="3">
+              <DependencyAsset Name="Assets/Deer/Asset/Font/wryh SDF.asset" />
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIArt/Atlas/Common/common.png" />
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIArt/Sprite/BigBG/login_bg.png" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="975d78522d5bdca42a5af541a724aef2" Name="Assets/Deer/Asset/UI/UIPrefab/UITemplate/Progress.prefab" Length="4450" HashCode="-1286106020">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIArt/Atlas/Common/common.png" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="a493fd7876190a04b972bf7b3f90d962" Name="Assets/Deer/Asset/UI/UIPrefab/UITemplate/ScrollView/HGridScroll View.prefab" Length="19715" HashCode="-1818056511">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIPrefab/UITemplate/ScrollView/ScrollVItemPrefab.prefab" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="bb0e9cf937f287740baf4060380e434f" Name="Assets/Deer/Asset/UI/UIPrefab/UIBag/UIBagPanel.prefab" Length="72319" HashCode="-962512288">
+            <DependencyAssets Count="5">
+              <DependencyAsset Name="Assets/Deer/Asset/Font/wryh SDF.asset" />
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIArt/Atlas/Common/common.png" />
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIPrefab/UITemplate/ScrollView/VGridScroll View.prefab" />
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIPrefab/UITemplate/ScrollView/VListScroll View.prefab" />
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIPrefab/UITemplate/UIPanel.prefab" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="e22368733c27bee41b210b7f310da6fc" Name="Assets/Deer/Asset/UI/UIPrefab/UIMainHall/UIMainHallPanel.prefab" Length="97479" HashCode="-1546060310">
+            <DependencyAssets Count="5">
+              <DependencyAsset Name="Assets/Deer/Asset/Font/wryh SDF.asset" />
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIArt/Atlas/Common/common.png" />
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIArt/Atlas/Home/home.png" />
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIArt/Sprite/BigBG/home_bg.png" />
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIPrefab/UITemplate/Joystick/Joystick.prefab" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="e46529cf4167ef042bbe906853aa2ea6" Name="Assets/Deer/Asset/UI/UIPrefab/UICommon/UIConfirmBoxPanel.prefab" Length="8221" HashCode="-837528397">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIArt/Sprite/Common/003.png" />
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIPrefab/UITemplate/UIPanel.prefab" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="ee434b8e75f92804ca01e3be759e7c7f" Name="Assets/Deer/Asset/UI/UIPrefab/UITemplate/UIPanel.prefab" Length="4342" HashCode="-132751222" />
+          <Asset Guid="f4fa68baee1efc34e801c1853c42e375" Name="Assets/Deer/Asset/UI/UIPrefab/UITemplate/ScrollView/VListScroll View.prefab" Length="19563" HashCode="1564370468">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/Deer/Asset/UI/UIPrefab/UITemplate/ScrollView/ScrollVItemPrefab.prefab" />
+            </DependencyAssets>
+          </Asset>
+        </Assets>
+        <Codes>
+          <Windows Length="39353" HashCode="-575096603" ZipLength="32276" ZipHashCode="-193079792" />
+        </Codes>
+      </Resource>
+    </Resources>
+  </BuildReport>
+</UnityGameFramework>

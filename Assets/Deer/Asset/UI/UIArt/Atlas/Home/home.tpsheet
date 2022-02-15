@@ -1,0 +1,25 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# https://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:e924a6f4c31b16b6d27ff337e7ce1459:d92877c60d3a3a7d5cbe86c53b5d2112:e4741abfb0645c1e40ecd08a0e2a2bc7$
+#
+:format=40300
+:texture=home.png
+:size=512x512
+:pivotpoints=enabled
+:borders=disabled
+:alphahandling=ClearTransparentPixels
+
+chat;202;7;125;100; 0.5;0.5; 0;0;0;0
+renwu;414;275;80;79; 0.5;0.5; 0;0;0;0
+shezhi;414;356;84;85; 0.5;0.5; 0;0;0;0
+tex_1;212;311;200;200; 0.5;0.5; 0;0;0;0
+tex_2;1;262;199;200; 0.5;0.5; 0;0;0;0
+tex_3;202;109;199;200; 0.5;0.5; 0;0;0;0
+tex_4;1;60;199;200; 0.5;0.5; 0;0;0;0
+wodehaoyou;403;210;74;63; 0.5;0.5; 0;0;0;0
+youxiang;414;443;90;68; 0.5;0.5; 0;0;0;0
+zican_di;1;464;209;47; 0.5;0.5; 0;0;0;0

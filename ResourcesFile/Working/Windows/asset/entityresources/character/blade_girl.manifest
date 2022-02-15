@@ -1,0 +1,125 @@
+ManifestFileVersion: 0
+CRC: 3326197144
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 475491617535ea6842029461a2b57d20
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: a0390d6da4a77c36aa2631a0a2149df1
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 111
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/blade04
+  copy.mat
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdfdd.mat
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdf.mat
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@R_Avoid.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Run00.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_ComboAttack.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_R_Walk.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Skill.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Attack01.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Jump.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_L_Run.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@R_Run.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/Textures/shelf02.TGA
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Death.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_GanamStyle.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Block.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@AttackStandy.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_DrawBlade.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@B_Walk.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_B_Run.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/default.mat
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Run00.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Run.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Attack.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@L_Avoid.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_R_Avoid.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@L_Run00.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@GanamStyle.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdf.mat
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Talk.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@DrawBlade.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_M_Avoid.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@R_Walk.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/01 - Defaultdfret.mat
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@R_Run00.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/Textures/body_22.PSD
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_R_Run.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/Body.mat
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@L_Walk.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Talk.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/body_21.mat
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Pickup.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Jump_NoBlade.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_R_Run00.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Block.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Damage.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@B_Run00.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/Weapon.mat
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Pickup.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_L_Walk.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@very_low.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_L_Avoid.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_jump.FBX
+- "Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Materials/\uCE7C.mat"
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Attack00.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/blade04copy.mat
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Attack01.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@M_Avoid.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Attack00.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_very_low.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Walk.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdfdd.mat
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_B_Run00.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@B_Run.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl.controller
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Idle.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Skill.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Run.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_B_Walk.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Death.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Walk.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_AttackStandy.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@L_Run.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/01Defaultdfret.mat
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/prefab/blade_girl_model.prefab
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Jump_NoBlade.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/Materials/Shelf.mat
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@ComboAttack.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/Shelf.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Idle.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/Textures/blade04copy.PSD
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_Damage.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_L_Run00.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_girl/model/blade_girl_@Attack.FBX
+Dependencies:
+- D:/Working/DeerGameFramework/card/xGame/GameFramework200730/ResourcesFile/Working/Windows/asset/entityresources/character/blade_warrior

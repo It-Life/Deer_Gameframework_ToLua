@@ -1,0 +1,100 @@
+ManifestFileVersion: 0
+CRC: 985018479
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: asset/effect
+      Dependencies: {}
+    Info_1:
+      Name: asset/entityprefabs/character/blade_warrior
+      Dependencies:
+        Dependency_0: asset/entityresources/character/blade_warrior
+    Info_2:
+      Name: asset/entityprefabs/character/blade_girl
+      Dependencies:
+        Dependency_0: asset/entityresources/character/blade_girl
+    Info_3:
+      Name: asset/entityresources/character/blade_warrior
+      Dependencies: {}
+    Info_4:
+      Name: asset/entityresources/character/blade_girl
+      Dependencies:
+        Dependency_0: asset/entityresources/character/blade_warrior
+    Info_5:
+      Name: asset/font
+      Dependencies:
+        Dependency_0: asset/ttf
+    Info_6:
+      Name: asset/gf
+      Dependencies:
+        Dependency_0: asset/effect
+        Dependency_1: asset/ui/uiart/atlas/common
+        Dependency_2: asset/ui/uiart/sprite/bigbg
+        Dependency_3: asset/ui/uiart/sprite/common/001
+        Dependency_4: asset/ui/uiprefab
+    Info_7:
+      Name: asset/gameconfigs
+      Dependencies: {}
+    Info_8:
+      Name: asset/lua
+      Dependencies: {}
+    Info_9:
+      Name: asset/sounds/musicsounds
+      Dependencies: {}
+    Info_10:
+      Name: asset/sounds/uisounds
+      Dependencies: {}
+    Info_11:
+      Name: asset/ttf
+      Dependencies:
+        Dependency_0: asset/font
+    Info_12:
+      Name: asset/ui/uiart/atlas/common
+      Dependencies: {}
+    Info_13:
+      Name: asset/ui/uiart/atlas/currency
+      Dependencies: {}
+    Info_14:
+      Name: asset/ui/uiart/atlas/equipicon
+      Dependencies: {}
+    Info_15:
+      Name: asset/ui/uiart/atlas/home
+      Dependencies: {}
+    Info_16:
+      Name: asset/ui/uiart/atlas/loading
+      Dependencies: {}
+    Info_17:
+      Name: asset/ui/uiart/sprite/bigbg
+      Dependencies: {}
+    Info_18:
+      Name: asset/ui/uiart/sprite/bosscard
+      Dependencies: {}
+    Info_19:
+      Name: asset/ui/uiart/sprite/common/001
+      Dependencies: {}
+    Info_20:
+      Name: asset/ui/uiart/sprite/common/002
+      Dependencies: {}
+    Info_21:
+      Name: asset/ui/uiart/sprite/common/003
+      Dependencies: {}
+    Info_22:
+      Name: asset/ui/uiart/sprite/common/bg_ltx_03
+      Dependencies: {}
+    Info_23:
+      Name: asset/ui/uiart/sprite/common/tips
+      Dependencies: {}
+    Info_24:
+      Name: asset/ui/uiart/sprite/joystick/joystick
+      Dependencies: {}
+    Info_25:
+      Name: asset/ui/uiprefab
+      Dependencies:
+        Dependency_0: asset/font
+        Dependency_1: asset/ui/uiart/atlas/common
+        Dependency_2: asset/ui/uiart/atlas/equipicon
+        Dependency_3: asset/ui/uiart/atlas/home
+        Dependency_4: asset/ui/uiart/sprite/bigbg
+        Dependency_5: asset/ui/uiart/sprite/common/002
+        Dependency_6: asset/ui/uiart/sprite/common/003
+        Dependency_7: asset/ui/uiart/sprite/joystick/joystick

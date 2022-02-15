@@ -1,0 +1,25 @@
+
+---================================================
+---描 述 :  
+---作 者 : 杜鑫 
+---创建时间 : 2021-09-04 17-37-42  
+---修改作者 : 杜鑫 
+---修改时间 : 2021-09-04 17-37-42  
+---版 本 : 0.1 
+---===============================================
+
+---服务器发送协议的proto解码信息
+
+ServerDecodeProtoConfig = {
+    [PTC_G2C_PING] = { ModulePb = DeerLogin_pb, ProtoName = "BGPingResp" },
+    [PTC_G2C_ACC_VERIFY_RESULT] = { ModulePb = DeerLogin_pb, ProtoName = "BGAccountVerifyResultResp" },
+    [PTC_S2C_LOGICLOIN_RET] = { ModulePb = DeerLogin_pb, ProtoName = "BGGSLogicLoginRetResp" },
+    [PTC_G2C_ROLELIST_RESPONE] = { ModulePb = DeerLogin_pb, ProtoName = "BGRoleListResponeResp" },
+    [PTC_G2C_CREATEROLE_RESULT] = { ModulePb = DeerLogin_pb, ProtoName = "BGCreateRoleResultResp" },
+    [PTC_G2C_KICKOUTCLIENT] = { ModulePb = DeerLogin_pb, ProtoName = "BGKickOutClientResp" },
+    [PTC_S2C_LOGINSYNCPLAYERSTART] = { ModulePb = DeerLogin_pb, ProtoName = "BGGSLoginSyncPlayerStartResp" },
+    [PTC_S2C_LOGIC_END] = { ModulePb = DeerLogin_pb, ProtoName = "BGGSLoginEndResp" },
+    [PTC_S2C_SYNCPLAYEREND] = { ModulePb = DeerLogin_pb, ProtoName = "BGGSSyncPlayerEndResp" },
+    [PTC_S2C_SYNC_PLAYER_FCMAGE] = { ModulePb = DeerLogin_pb, ProtoName = "BGGSSyncPlayerFangChenMiAgeResp" },
+};
+

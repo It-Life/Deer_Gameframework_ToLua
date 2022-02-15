@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 1905252195
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 63ebeae0a58adfd1ab15446d39fe8f68
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9a2ca7bdbd1871f7131daf57de908e0c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Deer/Asset/Sounds/MusicSounds/bgm-main-0.mp3
+- Assets/Deer/Asset/Sounds/MusicSounds/bgm-login-0.mp3
+Dependencies: []

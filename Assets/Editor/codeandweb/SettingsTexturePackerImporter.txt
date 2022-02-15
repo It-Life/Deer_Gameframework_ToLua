@@ -1,0 +1,24 @@
+version: 2
+importPivots: 1
+tpsheetFileNames:
+- Assets/Deer/Asset/UI/UIArt/Atlas/Common/common.tpsheet
+- Assets/Deer/Asset/UI/UIArt/Atlas/Currency/currency.tpsheet
+- Assets/Deer/Asset/UI/UIArt/Atlas/EquipIcon/equipIcon.tpsheet
+- Assets/Deer/Asset/UI/UIArt/Atlas/Home/home.tpsheet
+- Assets/Deer/Asset/UI/UIArt/Atlas/Loading/loading.tpsheet
+- Assets/Deer/Asset/UI/UIArt/Sprite/Common/item1.tpsheet
+textureFileNames:
+- Assets/Deer/Asset/UI/UIArt/Atlas/Common/common.png
+- Assets/Deer/Asset/UI/UIArt/Atlas/Currency/currency.png
+- Assets/Deer/Asset/UI/UIArt/Atlas/EquipIcon/equipIcon.png
+- Assets/Deer/Asset/UI/UIArt/Atlas/Home/home.png
+- Assets/Deer/Asset/UI/UIArt/Atlas/Loading/loading.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/Common/item1.png
+normalmapFileNames:
+- 
+- 
+- 
+- 
+- 
+- 
+enableDebugOutput: 0

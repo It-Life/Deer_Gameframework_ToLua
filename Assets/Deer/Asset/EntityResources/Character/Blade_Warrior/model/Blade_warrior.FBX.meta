@@ -1,0 +1,168 @@
+fileFormatVersion: 2
+guid: 78a1e95630148a04ba8ed579421b1817
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      43: 4300000
+    second: Head
+  - first:
+      43: 4300002
+    second: Glove
+  - first:
+      43: 4300004
+    second: boots
+  - first:
+      43: 4300006
+    second: Hair
+  - first:
+      43: 4300008
+    second: shirts
+  - first:
+      43: 4300010
+    second: uper_cloth
+  - first:
+      43: 4300012
+    second: Object006
+  - first:
+      43: 4300014
+    second: body_band
+  - first:
+      43: 4300016
+    second: pants
+  - first:
+      43: 4300018
+    second: Shoulder
+  - first:
+      43: 4300020
+    second: Hair_bandf
+  - first:
+      43: 4300022
+    second: Object007
+  - first:
+      43: 4300024
+    second: Object009
+  - first:
+      43: 4300026
+    second: headusOBJexport009
+  - first:
+      74: 1827226128182048838
+    second: Take 001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 02 - Default
+    second: {fileID: 2100000, guid: 60eeacf66d897a541949058e3dfc34b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: default
+    second: {fileID: 2100000, guid: 64d90b435dd9c404e9ef58e8d72d5bbd, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips:
+  - cce083416ffd93944822232682031c3c
+  - cb98912a71fe31d4fbbcf5a3f0b8c1b6
+  - 2763c257cbbc84f458309fa3966a53a6
+  - c776ced93d014fa4f89815750ef9ad86
+  - 917d00561d426a64aa680f73dd96eed4
+  - ae23812e5339b8d49838197f331a60f2
+  - e41bc1bc219eb5841bf81013a1504765
+  - 7dfa9dda1aa223a448872447e3495900
+  - 0663265eeb531f24a8d314bf895325cc
+  - e58212584f694e14284e9c7f845de85a
+  - 0ca826bdb72192748a7e578e627f13f4
+  - a0c3ce47fcf0af8489e08168c081c160
+  - 0c26dcb5c55568049b30a035b7911dca
+  - c63c9c4d21c4cd249be1bbcfeffc775b
+  - ca769ebb6766cf54586dee456dc217b8
+  - 472465367004d714ba259fdb12197b3c
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.01
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 1
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

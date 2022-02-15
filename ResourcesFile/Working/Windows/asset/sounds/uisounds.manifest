@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 3059692883
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a5f50222f075c75b3bf6f780a5779207
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9a2ca7bdbd1871f7131daf57de908e0c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Deer/Asset/Sounds/UISounds/popup.wav
+Dependencies: []

@@ -1,0 +1,157 @@
+﻿
+---================================================
+---描 述 :  
+---作 者 : 杜鑫 
+---创建时间 : 2021-09-04 17-37-42  
+---修改作者 : 杜鑫 
+---修改时间 : 2021-09-04 17-37-42  
+---版 本 : 0.1 
+---===============================================
+---@class NetWorkComponent:LuaComponentBase
+NetWorkComponent = Class("NetWorkComponent",LuaComponentBase)
+
+---忽略显示协议消息列表
+---@class tbIgnoreShowProtocolMsgList
+local tbIgnoreShowProtocolMsgList = {
+    Network 
+};
+
+---不需要输出Log的协议ID列表
+---@class tbNoLogProto
+local tbNoLogProto = {
+    2016,
+}
+---网络频道
+---@class tbNetworkChannel
+local tbNetworkChannel = 
+{
+    DEFINE = "Define",
+}
+
+function NetWorkComponent:__init()
+    self.m_listCreateNetworkChannel = {}
+    self:RegisterLuaEvent()
+    self:CreateTcpNetworkChannel(tbNetworkChannel.DEFINE,"121.4.195.168",60000)
+end
+
+function NetWorkComponent:__delete()
+    self:UnRegisterLuaEvent()
+end
+
+function NetWorkComponent:RegisterLuaEvent()
+    self._onhandlesendsocketrequest = LuaGameEntry.LuaEvent:RegisterLuaEvent(EventId.EVENT_LUA_SEND_SOCKET_REQUEST,self.OnHandleSendSocketRequest,self)
+    self._onhandlereceivesocketrequest = LuaGameEntry.LuaEvent:RegisterCSEvent(EventName.EVENT_CS_NET_RECEIVE,self.OnHandleReceiveSocketRequest,self)
+end
+
+function NetWorkComponent:UnRegisterLuaEvent()
+    LuaGameEntry.LuaEvent:UnRegisterLuaEvent(EventId.EVENT_LUA_SEND_SOCKET_REQUEST,self._onhandlesendsocketrequest)
+    LuaGameEntry.LuaEvent:UnRegisterCSEvent(EventName.EVENT_CS_NET_RECEIVE,self._onhandlereceivesocketrequest)
+end
+
+---创建服务频道
+---@param strName string
+function NetWorkComponent:CreateTcpNetworkChannel(strName)
+    if table.containsKey(self.m_listCreateNetworkChannel,strName) then
+        return
+    end
+    GameEntry.NetConnector:CreateTcpNetworkChannel(strName)
+    table.insert(self.m_listCreateNetworkChannel,strName)
+end
+
+---连接服务器
+---@param strName string
+---@param strIp string
+---@param nPort number
+function NetWorkComponent:Connect(strName,strIp,nPort,userData)
+    if table.containsKey(self.m_listCreateNetworkChannel,strName) then
+        return
+    end
+    GameEntry.NetConnector:Connect(strName,strIp,nPort,userData)
+end
+
+---是否打印proto消息
+---@param nProtocolId number
+---@return boolean
+function NetWorkComponent:IsShowProtoMsg(nProtocolId)
+    if (not nProtocolId) then
+        return false;
+    end
+    if (tbIgnoreShowProtocolMsgList[nProtocolId]) then
+        return false;
+    end
+    return true;
+end
+---寻找协议解析数据
+---@param nProtocolId number
+function NetWorkComponent:FindBodyProtoModule(nProtocolId)
+    local info_tb = ServerDecodeProtoConfig[nProtocolId];
+    if (not info_tb) then
+        return nil;
+    end
+    return info_tb.ModulePb, info_tb.ProtoName;
+end
+
+---解析包体
+---@param nProtocolId number
+---@param byteBody any
+function NetWorkComponent:ParseFromBodyBuffer(nProtocolId, byteBody)
+    local tbProtoModulePB, strBodyProtoName = self:FindBodyProtoModule(nProtocolId)
+    if (not tbProtoModulePB or not strBodyProtoName) then
+        Log.ProtoColorInfo(ColorType.red, nProtocolId, "[NetworkManager] ParseFromBodyBuffer FindBodyProtoModule nil ")
+        return nil
+    end
+
+    if (not tbProtoModulePB[strBodyProtoName]) then
+        Log.ProtoColorInfo(ColorType.red, nProtocolId, "[NetworkManager] ParseFromBodyBuffer tbProtoModulePB[strBodyProtoName] nil " .. strBodyProtoName)
+        return nil
+    end
+
+    local proto_info_tb = tbProtoModulePB[strBodyProtoName]()
+    if (not proto_info_tb) then
+        return nil
+    end
+
+    proto_info_tb:ParseFromString(byteBody)
+    return proto_info_tb
+end
+
+---发送消息
+---@private OnHandleSendSocketRequest
+---@param nProtocolId number
+---@param protoBody any
+function NetWorkComponent:OnHandleSendSocketRequest(nProtocolId, protoBody)
+    local nRetCode = self:IsShowProtoMsg(nProtocolId)
+    if (nRetCode == true and table.indexof(tbNoLogProto, nProtocolId) == false) then
+        local strProtocolPrint = text_format.msg_format(protoBody) or "nil"
+        Log.ProtoColorInfo(ColorType.pink, nProtocolId, "Show_Send_ProtoMsg = " .. strProtocolPrint)
+    end
+    -- 包体序列化
+    local byteBody = protoBody:SerializeToString();
+    GameEntry.NetConnector:Send(tbNetworkChannel.DEFINE,nProtocolId,byteBody)
+end
+
+---接收消息
+---private OnHandleReceiveSocketRequest
+function NetWorkComponent:OnHandleReceiveSocketRequest(csMessengerInfo)
+    if not csMessengerInfo then
+        return 0
+    end
+    local sCBodyBeat = csMessengerInfo.param1
+    if not sCBodyBeat then
+        return 0
+    end
+    local receive = sCBodyBeat.NetPacketBuffer
+    if (receive == nil) then
+        Logger.Error("[NetWorkComponent] OnHandleReceiveSocketRequest receive nil")
+        return 0
+    end
+    local nProtocolId = receive:ReadShort();
+    local byteBody = receive:ReadBuffer();
+    local tbProtoParseResult = self:ParseFromBodyBuffer(nProtocolId, byteBody)
+    if (not tbProtoParseResult) then
+        Log.ProtoColorInfo(ColorType.red, nProtocolId, "[NetWorkComponent] OnHandleReceiveSocketRequest ParseFromBodyBuffer failed ")
+        return 0
+    end
+end
+
+return NetWorkComponent

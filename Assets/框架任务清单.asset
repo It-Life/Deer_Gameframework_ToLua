@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 478531cf99638f947a17f3838cc389f7, type: 3}
+  m_Name: "\u6846\u67B6\u4EFB\u52A1\u6E05\u5355"
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  TaskConfigs:
+  - Enabled: 1
+    Title: "\u6DFB\u52A0\u7EA2\u70B9\u7CFB\u7EDF"
+    Description: "\u7528\u524D\u7F00\u6811\u5B9E\u73B0\nLua"
+  - Enabled: 1
+    Title: "\u62BD\u770B\u6240\u6709\u4EE3\u7801\u89C4\u8303"
+    Description: "\u6574\u5408\u4EE3\u7801\u89C4\u8303"
+  - Enabled: 1
+    Title: "\u5B9E\u73B0Config\u7248\u672C\u5217\u8868"
+    Description: "C#\u5DE5\u7A0B\u5B9E\u73B0"
+  - Enabled: 1
+    Title: 
+    Description: "\u63CF\u8FF0"

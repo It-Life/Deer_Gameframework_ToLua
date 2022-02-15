@@ -1,0 +1,20 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# https://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:e9d98c0c3b6620ef8d4baa799f6d8cab:76d32f38d76354ed72e908a3d1f8acc2:184d9d9d2f6718fd47d28841e1a09de0$
+#
+:format=40300
+:texture=currency.png
+:size=256x256
+:pivotpoints=enabled
+:borders=disabled
+:alphahandling=ClearTransparentPixels
+
+icon_gold;1;175;80;80; 0.5;0.5; 0;0;0;0
+icon_gonghui;1;93;80;80; 0.5;0.5; 0;0;0;0
+icon_jingyan;1;11;80;80; 0.5;0.5; 0;0;0;0
+icon_quan;83;175;80;80; 0.5;0.5; 0;0;0;0
+icon_rmb;165;175;80;80; 0.5;0.5; 0;0;0;0

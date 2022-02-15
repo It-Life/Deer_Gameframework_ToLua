@@ -1,0 +1,22 @@
+ManifestFileVersion: 0
+CRC: 3710249512
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c9adb2774fa6bc131ef3ce62118be18a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4df8c69f2c8a6ad9e3cbf82bb83e4dc3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Deer/Asset/UI/UIArt/Sprite/BigBG/loading_bg.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BigBG/home_bg.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BigBG/login_bg.png
+- Assets/Deer/Asset/UI/UIArt/Sprite/BigBG/battle_bg.png
+Dependencies: []

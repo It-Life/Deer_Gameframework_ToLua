@@ -1,0 +1,1 @@
+{"ForceUpdateGame":true,"LatestGameVersion":"","InternalGameVersion":0,"InternalResourceVersion":9,"GameUpdateUrl":"","VersionListLength":103972,"VersionListHashCode":1529488000,"VersionListZipLength":22862,"VersionListZipHashCode":-1002249636}

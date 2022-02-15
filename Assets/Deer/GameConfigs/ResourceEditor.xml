@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<UnityGameFramework>
+  <ResourceEditor>
+    <Settings>
+      <SourceAssetRootPath>Assets/Deer</SourceAssetRootPath>
+      <SourceAssetSearchPaths>
+        <SourceAssetSearchPath RelativePath="Asset" />
+        <SourceAssetSearchPath RelativePath="Fantasy-Environment" />
+      </SourceAssetSearchPaths>
+      <SourceAssetUnionTypeFilter>
+	  t:Scene t:Prefab t:Shader t:Model t:Material t:Texture t:AudioClip t:AnimationClip t:AnimatorController t:Font t:TextAsset t:ScriptableObject t:asset
+      </SourceAssetUnionTypeFilter>
+      <SourceAssetUnionLabelFilter>
+	  l:AssetBundleInclusive
+      </SourceAssetUnionLabelFilter>
+      <SourceAssetExceptTypeFilter>
+	  t:Script t:cs
+      </SourceAssetExceptTypeFilter>
+      <SourceAssetExceptLabelFilter>
+	  l:AssetBundleExclusive
+      </SourceAssetExceptLabelFilter>
+      <AssetSorter>Path</AssetSorter>
+    </Settings>
+  </ResourceEditor>
+</UnityGameFramework>

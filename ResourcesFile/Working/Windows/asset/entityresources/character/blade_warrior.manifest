@@ -1,0 +1,70 @@
+ManifestFileVersion: 0
+CRC: 2624327468
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d996e3f5c7008c8f2ee8b25148e253ee
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: a0390d6da4a77c36aa2631a0a2149df1
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 111
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_warrior@PickUp-02
+  - Default.mat
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Textures/Blade_Warrior_diff.psd
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Talk.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Run.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@PickUp.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_Warrior_diff.mat
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Walk.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Damage.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Textures/shelf04.PNG
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Idle.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Textures/blade04 copy.PSD
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Attack02.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/default.mat
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/blade_warrior.controller
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_Warrior_diff65.mat
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Attack.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Shelf.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/prefab/blade_warrior_model.prefab
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Jump.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Skill.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Death.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@DrawBlade.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Combo.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/Blade_warrior@PickUp-default.mat
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Run00.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Attack01.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/model/Blade_warrior@Attack_standy.FBX
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/blade04 copy.mat
+- Assets/Deer/Asset/EntityResources/Character/Blade_Warrior/Materials/shelf.mat
+Dependencies: []

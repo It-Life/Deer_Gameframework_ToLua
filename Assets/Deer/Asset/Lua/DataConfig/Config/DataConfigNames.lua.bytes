@@ -1,0 +1,16 @@
+﻿
+---================================================
+---描 述 :  
+---作 者 : 杜鑫 
+---创建时间 : 2021-07-05 08-12-32  
+---修改作者 : 杜鑫 
+---修改时间 : 2021-07-05 08-12-32  
+---版 本 : 0.1 
+---===============================================
+DataConfigNames = 
+{
+    DataConfigLanguageInfo                                      = "DataConfigLanguageInfo",
+    DataConfigCharacterInfo                                      = "DataConfigCharacterInfo"
+}
+
+return DataConfigNames

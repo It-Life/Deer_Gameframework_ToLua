@@ -1,0 +1,41 @@
+﻿
+---================================================
+---描 述 :  
+---作 者 : 杜鑫 
+---创建时间 : 2021-07-24 16-27-08  
+---修改作者 : 杜鑫 
+---修改时间 : 2021-07-24 16-27-08  
+---版 本 : 0.1 
+---===============================================
+---@class DataConfigManager:SingletonClass
+DataConfigManager = Class("DataConfigManager",SingletonClass)
+
+function DataConfigManager:__init(...)
+    self.m_listConfigLoadData = {}
+end
+
+function DataConfigManager:__delete(...)
+
+end
+
+function DataConfigManager:LoadAllUserConfig()
+    self.m_listConfigLoadData = {}
+    for _, tbInfo in pairs(DataConfigDefine.LoadFileConfig) do
+        local tbClass = tbInfo.tbModuleClass
+        --print(tbInfo.strCsvName)
+        local tbInst = tbClass.New()
+        -- strName, strProtoParseName, strCsvName, tbConfigPbModule, strProtoDataListName
+        tbInst:Create(tbInfo.strName, tbInfo.strProtoParseName, tbInfo.strCsvName, tbInfo.tbConfigPbModule, tbInfo.strProtoDataListName)
+        self.m_listConfigLoadData[tbInfo.strName] = tbInst
+    end
+end
+
+-- 获取配置表实例
+function DataConfigManager:GetConfigInst(strConfigName)
+    if (not self.m_listConfigLoadData) then
+        return nil;
+    end
+    return self.m_listConfigLoadData[strConfigName];
+end
+
+return DataConfigManager

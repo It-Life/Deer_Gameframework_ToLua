@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d8a5bd8c-a9ef-410c-8720-1cac4a68f740" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="NewLua" />
+      </list>
+    </option>
+  </component>
+  <component name="JupyterTrust" id="2bbba3db-36a5-43e1-aff6-5013b92aff14" />
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ztUGRlhZlfx1sz39LSgyFXtLPS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.PYTHON_MODULE" value="Python 3.7 (LuaScripts)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../xProject/Excel2Protobuf/src/python" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RunManager" selected="Lua Application.test2.lua">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test2.lua" type="lua.app" factoryName="Lua Application" temporary="true">
+      <option name="program" value="lua.exe" />
+      <option name="file" value="$PROJECT_DIR$/test2.lua" />
+      <option name="workingDir" value="$PROJECT_DIR$/../../ToLua/src" />
+      <option name="debuggerType" value="2" />
+      <option name="params" value="" />
+      <option name="charset" value="UTF-8" />
+      <option name="showConsole" value="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test.lua" type="lua.app" factoryName="Lua Application" temporary="true">
+      <option name="program" value="lua.exe" />
+      <option name="file" value="$PROJECT_DIR$/test.lua" />
+      <option name="workingDir" value="$PROJECT_DIR$/../../ToLua/src" />
+      <option name="debuggerType" value="2" />
+      <option name="params" value="" />
+      <option name="charset" value="UTF-8" />
+      <option name="showConsole" value="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="DebuggerLua" type="lua.emmy.debugger" factoryName="Emmy Debugger(NEW)">
+      <module name="LuaScripts" />
+      <option name="TYPE" value="1" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="9966" />
+      <option name="PIPE" value="emmy" />
+      <option name="WIN_ARCH" value="1" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Lua Application.test2.lua" />
+        <item itemvalue="Lua Application.test.lua" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="UTF-8" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d8a5bd8c-a9ef-410c-8720-1cac4a68f740" name="Default Changelist" comment="" />
+      <created>1634966783286</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1634966783286</updated>
+      <workItem from="1634966786017" duration="12000" />
+      <workItem from="1634966816020" duration="1283000" />
+      <workItem from="1635055141505" duration="9971000" />
+      <workItem from="1635519025645" duration="1568000" />
+      <workItem from="1635578567310" duration="17662000" />
+      <workItem from="1635644985378" duration="3291000" />
+      <workItem from="1635669811473" duration="12990000" />
+      <workItem from="1636249855829" duration="752000" />
+      <workItem from="1636262444311" duration="3141000" />
+      <workItem from="1636797298795" duration="1492000" />
+      <workItem from="1636801035036" duration="14000" />
+      <workItem from="1636860960853" duration="1848000" />
+      <workItem from="1636886516502" duration="1104000" />
+      <workItem from="1637161415931" duration="3336000" />
+      <workItem from="1637379018606" duration="3143000" />
+      <workItem from="1638088153149" duration="20720000" />
+      <workItem from="1638798724056" duration="792000" />
+      <workItem from="1638890555292" duration="1246000" />
+      <workItem from="1639284718697" duration="18275000" />
+      <workItem from="1639578537984" duration="995000" />
+      <workItem from="1639579950064" duration="2187000" />
+      <workItem from="1639614425982" duration="4089000" />
+      <workItem from="1639908064396" duration="6709000" />
+      <workItem from="1640222800932" duration="4958000" />
+      <workItem from="1640837877629" duration="67000" />
+      <workItem from="1640838013846" duration="10020000" />
+      <workItem from="1642215666167" duration="4887000" />
+      <workItem from="1642240346951" duration="6000" />
+      <workItem from="1643120775574" duration="925000" />
+      <workItem from="1643361690998" duration="805000" />
+      <workItem from="1643528975376" duration="29000" />
+      <workItem from="1644885800539" duration="20000" />
+      <workItem from="1644885829255" duration="9053000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1061" height="466" key="DebuggerActiveHint" timestamp="1644896027208">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1061" height="466" key="DebuggerActiveHint/2560.162.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1644896027208" />
+    <state x="957" y="310" key="FileChooserDialogImpl" timestamp="1642237460504">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="957" y="310" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1636608358136" />
+    <state x="957" y="310" key="FileChooserDialogImpl/2560.162.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1642237460504" />
+    <state width="2005" height="274" key="GridCell.Tab.0.bottom" timestamp="1644896270533">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="323" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1639582433525" />
+    <state width="2005" height="274" key="GridCell.Tab.0.bottom/2560.162.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1644896270533" />
+    <state width="2005" height="274" key="GridCell.Tab.0.center" timestamp="1644896270533">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="323" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1639582433525" />
+    <state width="2005" height="274" key="GridCell.Tab.0.center/2560.162.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1644896270533" />
+    <state width="2005" height="274" key="GridCell.Tab.0.left" timestamp="1644896270533">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="323" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1639582433525" />
+    <state width="2005" height="274" key="GridCell.Tab.0.left/2560.162.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1644896270533" />
+    <state width="2005" height="274" key="GridCell.Tab.0.right" timestamp="1644896270533">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="323" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1639582433525" />
+    <state width="2005" height="274" key="GridCell.Tab.0.right/2560.162.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1644896270533" />
+    <state width="2005" height="274" key="GridCell.Tab.1.bottom" timestamp="1644896270534">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="323" key="GridCell.Tab.1.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1639582433525" />
+    <state width="2005" height="274" key="GridCell.Tab.1.bottom/2560.162.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1644896270534" />
+    <state width="2005" height="274" key="GridCell.Tab.1.center" timestamp="1644896270534">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="323" key="GridCell.Tab.1.center/0.0.2048.1112@0.0.2048.1112" timestamp="1639582433525" />
+    <state width="2005" height="274" key="GridCell.Tab.1.center/2560.162.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1644896270534" />
+    <state width="2005" height="274" key="GridCell.Tab.1.left" timestamp="1644896270533">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="323" key="GridCell.Tab.1.left/0.0.2048.1112@0.0.2048.1112" timestamp="1639582433525" />
+    <state width="2005" height="274" key="GridCell.Tab.1.left/2560.162.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1644896270533" />
+    <state width="2005" height="274" key="GridCell.Tab.1.right" timestamp="1644896270534">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="323" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1639582433525" />
+    <state width="2005" height="274" key="GridCell.Tab.1.right/2560.162.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1644896270534" />
+    <state x="93" y="93" width="1862" height="926" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1641026107017">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="93" y="93" width="1862" height="926" key="com.intellij.history.integration.ui.views.FileHistoryDialog/2560.162.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1641026107017" />
+    <state x="551" y="158" width="1233" height="866" key="find.popup" timestamp="1643120936914">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="551" y="158" width="1233" height="866" key="find.popup/2560.162.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1643120936914" />
+    <state x="607" y="248" key="new project wizard" timestamp="1642237478695">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="607" y="248" key="new project wizard/2560.162.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1642237478695" />
+    <state x="681" y="259" key="run.anything.popup" timestamp="1638368411396">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="681" y="259" key="run.anything.popup/2560.162.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1638368411396" />
+    <state x="687" y="243" key="search.everywhere.popup" timestamp="1636860999818">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="687" y="243" key="search.everywhere.popup/2560.162.1536.824/0.0.2048.1112@0.0.2048.1112" timestamp="1636860999818" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="lua.emmy.debugger">
+        <watch expression="self" language="Lua" />
+        <watch expression="protoConfig[strProtoDataListName]" language="Lua" />
+        <watch expression="tbConfigPbModule[&quot;Heroes_Config_Data&quot;]()" language="Lua" />
+        <watch expression="protoConfig[strProtoDataListName..&quot;Entry&quot;]" language="Lua" />
+        <watch expression="protoConfig[1]" language="Lua" />
+        <watch expression="WIRETYPE_TO_SKIPPER[wire_type]" language="Lua" />
+      </configuration>
+      <configuration name="lua.app">
+        <watch expression="string.sub(str,2,2)" language="Lua" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

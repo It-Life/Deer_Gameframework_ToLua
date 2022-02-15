@@ -1,0 +1,17 @@
+
+---================================================
+---描 述 :  
+---作 者 : 杜鑫 
+---创建时间 : 2021-07-13 01-03-38  
+---修改作者 : 杜鑫 
+---修改时间 : 2021-07-13 01-03-38  
+---版 本 : 0.1 
+---===============================================
+---@class UINameConfig
+UINameConfig = 
+{
+    UILoginPanel = "UILoginPanel",
+    UIMainHallPanel = "UIMainHallPanel",
+    UILoadingPanel = "UILoadingPanel",
+    UIBagPanel="UIBagPanel",
+}

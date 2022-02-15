@@ -1,0 +1,32 @@
+ManifestFileVersion: 0
+CRC: 2727457727
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f18cdcefdb921ccbe4ec19644d55dadf
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3755acd1a91bfacf2d6634256f56bd26
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Deer/Asset/Font/zh-cn_Commonly_used.txt
+- Assets/Deer/Asset/Font/wryh SDF.asset
+- Assets/Deer/Asset/Font/wryh.ttf
+Dependencies:
+- D:/Working/DeerGameFramework/card/xGame/GameFramework200730/ResourcesFile/Working/Windows/asset/ttf

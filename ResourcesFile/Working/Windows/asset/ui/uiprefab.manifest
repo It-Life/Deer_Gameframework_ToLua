@@ -1,0 +1,95 @@
+ManifestFileVersion: 0
+CRC: 2882730668
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 308c1f6c72612d9348be0f817e2ee1f5
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2928ade524b58f6c9b0158395cce46ef
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d199490a83bb2b844b9695cbf13b01ef, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2a4db7a114972834c8e4117be1d82ba3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e190d043ef387ee4fad4acea6146931e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 89963884377a37d4da7543e849593102, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e0a3aa0c9331dc641a6585dbabb1860d, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b509d37a016b4b9419665292627db670, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 17e9881a7bce8124a8f855b96a8ca11a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: cdf1dab267f15144ea7504e8d0227e3f, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 223
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Deer/Asset/UI/UIPrefab/InitForm/InitForm.prefab
+- Assets/Deer/Asset/UI/UIPrefab/UIBattle/UIBattlePanel.prefab
+- Assets/Deer/Asset/UI/UIPrefab/UITemplate/ScrollView/VGridScroll View.prefab
+- Assets/Deer/Asset/UI/UIPrefab/UIMainHall/UIMainHallPanel.prefab
+- Assets/Deer/Asset/UI/UIPrefab/UIBag/UIBagPanel.prefab
+- Assets/Deer/Asset/UI/UIPrefab/UITemplate/ScrollView/HListScroll View.prefab
+- Assets/Deer/Asset/UI/UIPrefab/UITemplate/Progress.prefab
+- Assets/Deer/Asset/UI/UIPrefab/UITemplate/Joystick/Joystick.prefab
+- Assets/Deer/Asset/UI/UIPrefab/UILogin/UILoginPanel.prefab
+- Assets/Deer/Asset/UI/UIPrefab/UICommon/UIConfirmBoxPanel.prefab
+- Assets/Deer/Asset/UI/UIPrefab/UITemplate/ScrollView/VListScroll View.prefab
+- Assets/Deer/Asset/UI/UIPrefab/UILoading/UILoadingPanel.prefab
+- Assets/Deer/Asset/UI/UIPrefab/UITemplate/UIPanel.prefab
+- Assets/Deer/Asset/UI/UIPrefab/UITemplate/ScrollView/HGridScroll View.prefab
+- Assets/Deer/Asset/UI/UIPrefab/UITemplate/ScrollView/ScrollVItemPrefab.prefab
+Dependencies:
+- D:/Working/DeerGameFramework/card/xGame/GameFramework200730/ResourcesFile/Working/Windows/asset/font
+- D:/Working/DeerGameFramework/card/xGame/GameFramework200730/ResourcesFile/Working/Windows/asset/ui/uiart/atlas/common
+- D:/Working/DeerGameFramework/card/xGame/GameFramework200730/ResourcesFile/Working/Windows/asset/ui/uiart/atlas/equipicon
+- D:/Working/DeerGameFramework/card/xGame/GameFramework200730/ResourcesFile/Working/Windows/asset/ui/uiart/atlas/home
+- D:/Working/DeerGameFramework/card/xGame/GameFramework200730/ResourcesFile/Working/Windows/asset/ui/uiart/sprite/bigbg
+- D:/Working/DeerGameFramework/card/xGame/GameFramework200730/ResourcesFile/Working/Windows/asset/ui/uiart/sprite/common/002
+- D:/Working/DeerGameFramework/card/xGame/GameFramework200730/ResourcesFile/Working/Windows/asset/ui/uiart/sprite/common/003
+- D:/Working/DeerGameFramework/card/xGame/GameFramework200730/ResourcesFile/Working/Windows/asset/ui/uiart/sprite/joystick/joystick
