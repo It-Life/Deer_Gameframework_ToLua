@@ -472,7 +472,7 @@ public static class ToLuaExport
             {
                 ParameterInfo param = paramInfos[j];
                 string arg = "arg" + j;
-                bool beOutArg = param.Attributes == ParameterAttributes.Out;
+                bool beOutArg = param.ParameterType.IsByRef && ((param.Attributes & ParameterAttributes.Out) != ParameterAttributes.None);
                 bool beParams = IsParams(param);
                 Type t = GetGenericBaseType(method, param.ParameterType);
                 ProcessArg(t, head, arg, offset + j, j >= checkTypePos, beParams, beOutArg);
@@ -482,14 +482,14 @@ public static class ToLuaExport
             {
                 ParameterInfo param = paramInfos[j];
 
-                if (!param.ParameterType.IsByRef)
+                if (!param.ParameterType.IsByRef || ((param.Attributes & ParameterAttributes.In) != ParameterAttributes.None))
                 {
                     sbArgs.Append("arg");
                 }
                 else
                 {
-                    if (param.Attributes == ParameterAttributes.Out)
-                    {
+                    if ((param.Attributes & ParameterAttributes.Out) != ParameterAttributes.None)
+					{
                         sbArgs.Append("out arg");
                     }
                     else
