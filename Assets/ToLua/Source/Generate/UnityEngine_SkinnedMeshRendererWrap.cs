@@ -10,6 +10,8 @@ public class UnityEngine_SkinnedMeshRendererWrap
 		L.RegFunction("GetBlendShapeWeight", new LuaCSFunction(GetBlendShapeWeight));
 		L.RegFunction("SetBlendShapeWeight", new LuaCSFunction(SetBlendShapeWeight));
 		L.RegFunction("BakeMesh", new LuaCSFunction(BakeMesh));
+		L.RegFunction("GetVertexBuffer", new LuaCSFunction(GetVertexBuffer));
+		L.RegFunction("GetPreviousVertexBuffer", new LuaCSFunction(GetPreviousVertexBuffer));
 		L.RegFunction("New", new LuaCSFunction(_CreateUnityEngine_SkinnedMeshRenderer));
 		L.RegFunction("__eq", new LuaCSFunction(op_Equality));
 		L.RegFunction("__tostring", new LuaCSFunction(ToLua.op_ToString));
@@ -20,7 +22,7 @@ public class UnityEngine_SkinnedMeshRendererWrap
 		L.RegVar("bones", new LuaCSFunction(get_bones), new LuaCSFunction(set_bones));
 		L.RegVar("sharedMesh", new LuaCSFunction(get_sharedMesh), new LuaCSFunction(set_sharedMesh));
 		L.RegVar("skinnedMotionVectors", new LuaCSFunction(get_skinnedMotionVectors), new LuaCSFunction(set_skinnedMotionVectors));
-		L.RegVar("localBounds", new LuaCSFunction(get_localBounds), new LuaCSFunction(set_localBounds));
+		L.RegVar("vertexBufferTarget", new LuaCSFunction(get_vertexBufferTarget), new LuaCSFunction(set_vertexBufferTarget));
 		L.EndClass();
 	}
 
@@ -110,6 +112,40 @@ public class UnityEngine_SkinnedMeshRendererWrap
 			{
 				return LuaDLL.luaL_throw(L, "invalid arguments to method: UnityEngine.SkinnedMeshRenderer.BakeMesh");
 			}
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetVertexBuffer(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 1);
+			UnityEngine.SkinnedMeshRenderer obj = (UnityEngine.SkinnedMeshRenderer)ToLua.CheckObject<UnityEngine.SkinnedMeshRenderer>(L, 1);
+			UnityEngine.GraphicsBuffer o = obj.GetVertexBuffer();
+			ToLua.PushSealed(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetPreviousVertexBuffer(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 1);
+			UnityEngine.SkinnedMeshRenderer obj = (UnityEngine.SkinnedMeshRenderer)ToLua.CheckObject<UnityEngine.SkinnedMeshRenderer>(L, 1);
+			UnityEngine.GraphicsBuffer o = obj.GetPreviousVertexBuffer();
+			ToLua.PushSealed(L, o);
+			return 1;
 		}
 		catch (Exception e)
 		{
@@ -269,7 +305,7 @@ public class UnityEngine_SkinnedMeshRendererWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int get_localBounds(IntPtr L)
+	static int get_vertexBufferTarget(IntPtr L)
 	{
 		object o = null;
 
@@ -277,13 +313,13 @@ public class UnityEngine_SkinnedMeshRendererWrap
 		{
 			o = ToLua.ToObject(L, 1);
 			UnityEngine.SkinnedMeshRenderer obj = (UnityEngine.SkinnedMeshRenderer)o;
-			UnityEngine.Bounds ret = obj.localBounds;
+			UnityEngine.GraphicsBuffer.Target ret = obj.vertexBufferTarget;
 			ToLua.Push(L, ret);
 			return 1;
 		}
 		catch(Exception e)
 		{
-			return LuaDLL.toluaL_exception(L, e, o, "attempt to index localBounds on a nil value");
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index vertexBufferTarget on a nil value");
 		}
 	}
 
@@ -421,7 +457,7 @@ public class UnityEngine_SkinnedMeshRendererWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int set_localBounds(IntPtr L)
+	static int set_vertexBufferTarget(IntPtr L)
 	{
 		object o = null;
 
@@ -429,13 +465,13 @@ public class UnityEngine_SkinnedMeshRendererWrap
 		{
 			o = ToLua.ToObject(L, 1);
 			UnityEngine.SkinnedMeshRenderer obj = (UnityEngine.SkinnedMeshRenderer)o;
-			UnityEngine.Bounds arg0 = ToLua.ToBounds(L, 2);
-			obj.localBounds = arg0;
+			UnityEngine.GraphicsBuffer.Target arg0 = (UnityEngine.GraphicsBuffer.Target)ToLua.CheckObject(L, 2, TypeTraits<UnityEngine.GraphicsBuffer.Target>.type);
+			obj.vertexBufferTarget = arg0;
 			return 0;
 		}
 		catch(Exception e)
 		{
-			return LuaDLL.toluaL_exception(L, e, o, "attempt to index localBounds on a nil value");
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index vertexBufferTarget on a nil value");
 		}
 	}
 }

@@ -10,8 +10,10 @@ public class UnityEngine_QualitySettingsWrap
 		L.RegFunction("IncreaseLevel", new LuaCSFunction(IncreaseLevel));
 		L.RegFunction("DecreaseLevel", new LuaCSFunction(DecreaseLevel));
 		L.RegFunction("SetQualityLevel", new LuaCSFunction(SetQualityLevel));
+		L.RegFunction("SetLODSettings", new LuaCSFunction(SetLODSettings));
 		L.RegFunction("GetRenderPipelineAssetAt", new LuaCSFunction(GetRenderPipelineAssetAt));
 		L.RegFunction("GetQualityLevel", new LuaCSFunction(GetQualityLevel));
+		L.RegFunction("GetQualitySettings", new LuaCSFunction(GetQualitySettings));
 		L.RegFunction("__eq", new LuaCSFunction(op_Equality));
 		L.RegVar("pixelLightCount", new LuaCSFunction(get_pixelLightCount), new LuaCSFunction(set_pixelLightCount));
 		L.RegVar("shadows", new LuaCSFunction(get_shadows), new LuaCSFunction(set_shadows));
@@ -141,6 +143,39 @@ public class UnityEngine_QualitySettingsWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int SetLODSettings(IntPtr L)
+	{
+		try
+		{
+			int count = LuaDLL.lua_gettop(L);
+
+			if (count == 2)
+			{
+				float arg0 = (float)LuaDLL.luaL_checknumber(L, 1);
+				int arg1 = (int)LuaDLL.luaL_checkinteger(L, 2);
+				UnityEngine.QualitySettings.SetLODSettings(arg0, arg1);
+				return 0;
+			}
+			else if (count == 3)
+			{
+				float arg0 = (float)LuaDLL.luaL_checknumber(L, 1);
+				int arg1 = (int)LuaDLL.luaL_checkinteger(L, 2);
+				bool arg2 = LuaDLL.luaL_checkboolean(L, 3);
+				UnityEngine.QualitySettings.SetLODSettings(arg0, arg1, arg2);
+				return 0;
+			}
+			else
+			{
+				return LuaDLL.luaL_throw(L, "invalid arguments to method: UnityEngine.QualitySettings.SetLODSettings");
+			}
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int GetRenderPipelineAssetAt(IntPtr L)
 	{
 		try
@@ -165,6 +200,22 @@ public class UnityEngine_QualitySettingsWrap
 			ToLua.CheckArgsCount(L, 0);
 			int o = UnityEngine.QualitySettings.GetQualityLevel();
 			LuaDLL.lua_pushinteger(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetQualitySettings(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 0);
+			UnityEngine.Object o = UnityEngine.QualitySettings.GetQualitySettings();
+			ToLua.Push(L, o);
 			return 1;
 		}
 		catch (Exception e)

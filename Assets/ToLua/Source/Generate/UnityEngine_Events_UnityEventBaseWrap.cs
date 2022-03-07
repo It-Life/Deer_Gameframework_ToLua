@@ -11,6 +11,7 @@ public class UnityEngine_Events_UnityEventBaseWrap
 		L.RegFunction("GetPersistentTarget", new LuaCSFunction(GetPersistentTarget));
 		L.RegFunction("GetPersistentMethodName", new LuaCSFunction(GetPersistentMethodName));
 		L.RegFunction("SetPersistentListenerState", new LuaCSFunction(SetPersistentListenerState));
+		L.RegFunction("GetPersistentListenerState", new LuaCSFunction(GetPersistentListenerState));
 		L.RegFunction("RemoveAllListeners", new LuaCSFunction(RemoveAllListeners));
 		L.RegFunction("ToString", new LuaCSFunction(ToString));
 		L.RegFunction("GetValidMethodInfo", new LuaCSFunction(GetValidMethodInfo));
@@ -82,6 +83,24 @@ public class UnityEngine_Events_UnityEventBaseWrap
 			UnityEngine.Events.UnityEventCallState arg1 = (UnityEngine.Events.UnityEventCallState)ToLua.CheckObject(L, 3, TypeTraits<UnityEngine.Events.UnityEventCallState>.type);
 			obj.SetPersistentListenerState(arg0, arg1);
 			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetPersistentListenerState(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			UnityEngine.Events.UnityEventBase obj = (UnityEngine.Events.UnityEventBase)ToLua.CheckObject<UnityEngine.Events.UnityEventBase>(L, 1);
+			int arg0 = (int)LuaDLL.luaL_checkinteger(L, 2);
+			UnityEngine.Events.UnityEventCallState o = obj.GetPersistentListenerState(arg0);
+			ToLua.Push(L, o);
+			return 1;
 		}
 		catch (Exception e)
 		{

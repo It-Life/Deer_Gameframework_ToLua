@@ -7,7 +7,6 @@ public class TMPro_TextMeshProUGUIWrap
 	public static void Register(LuaState L)
 	{
 		L.BeginClass(typeof(TMPro.TextMeshProUGUI), typeof(TMPro.TMP_Text));
-		L.RegFunction("ComputeMarginSize", new LuaCSFunction(ComputeMarginSize));
 		L.RegFunction("CalculateLayoutInputHorizontal", new LuaCSFunction(CalculateLayoutInputHorizontal));
 		L.RegFunction("CalculateLayoutInputVertical", new LuaCSFunction(CalculateLayoutInputVertical));
 		L.RegFunction("SetVerticesDirty", new LuaCSFunction(SetVerticesDirty));
@@ -25,6 +24,7 @@ public class TMPro_TextMeshProUGUIWrap
 		L.RegFunction("UpdateGeometry", new LuaCSFunction(UpdateGeometry));
 		L.RegFunction("UpdateVertexData", new LuaCSFunction(UpdateVertexData));
 		L.RegFunction("UpdateFontAsset", new LuaCSFunction(UpdateFontAsset));
+		L.RegFunction("ComputeMarginSize", new LuaCSFunction(ComputeMarginSize));
 		L.RegFunction("__eq", new LuaCSFunction(op_Equality));
 		L.RegFunction("__tostring", new LuaCSFunction(ToLua.op_ToString));
 		L.RegVar("materialForRendering", new LuaCSFunction(get_materialForRendering), null);
@@ -34,22 +34,6 @@ public class TMPro_TextMeshProUGUIWrap
 		L.RegVar("maskOffset", new LuaCSFunction(get_maskOffset), new LuaCSFunction(set_maskOffset));
 		L.RegVar("OnPreRenderText", new LuaCSFunction(get_OnPreRenderText), new LuaCSFunction(set_OnPreRenderText));
 		L.EndClass();
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int ComputeMarginSize(IntPtr L)
-	{
-		try
-		{
-			ToLua.CheckArgsCount(L, 1);
-			TMPro.TextMeshProUGUI obj = (TMPro.TextMeshProUGUI)ToLua.CheckObject<TMPro.TextMeshProUGUI>(L, 1);
-			obj.ComputeMarginSize();
-			return 0;
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
@@ -378,6 +362,22 @@ public class TMPro_TextMeshProUGUIWrap
 			ToLua.CheckArgsCount(L, 1);
 			TMPro.TextMeshProUGUI obj = (TMPro.TextMeshProUGUI)ToLua.CheckObject<TMPro.TextMeshProUGUI>(L, 1);
 			obj.UpdateFontAsset();
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int ComputeMarginSize(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 1);
+			TMPro.TextMeshProUGUI obj = (TMPro.TextMeshProUGUI)ToLua.CheckObject<TMPro.TextMeshProUGUI>(L, 1);
+			obj.ComputeMarginSize();
 			return 0;
 		}
 		catch (Exception e)

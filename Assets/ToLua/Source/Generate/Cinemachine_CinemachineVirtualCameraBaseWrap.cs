@@ -7,19 +7,28 @@ public class Cinemachine_CinemachineVirtualCameraBaseWrap
 	public static void Register(LuaState L)
 	{
 		L.BeginClass(typeof(Cinemachine.CinemachineVirtualCameraBase), typeof(UnityEngine.MonoBehaviour));
+		L.RegFunction("GetMaxDampTime", new LuaCSFunction(GetMaxDampTime));
+		L.RegFunction("DetachedFollowTargetDamp", new LuaCSFunction(DetachedFollowTargetDamp));
+		L.RegFunction("DetachedLookAtTargetDamp", new LuaCSFunction(DetachedLookAtTargetDamp));
 		L.RegFunction("AddExtension", new LuaCSFunction(AddExtension));
 		L.RegFunction("RemoveExtension", new LuaCSFunction(RemoveExtension));
 		L.RegFunction("IsLiveChild", new LuaCSFunction(IsLiveChild));
 		L.RegFunction("UpdateCameraState", new LuaCSFunction(UpdateCameraState));
 		L.RegFunction("InternalUpdateCameraState", new LuaCSFunction(InternalUpdateCameraState));
 		L.RegFunction("OnTransitionFromCamera", new LuaCSFunction(OnTransitionFromCamera));
+		L.RegFunction("GetInputAxisProvider", new LuaCSFunction(GetInputAxisProvider));
+		L.RegFunction("ResolveLookAt", new LuaCSFunction(ResolveLookAt));
+		L.RegFunction("ResolveFollow", new LuaCSFunction(ResolveFollow));
 		L.RegFunction("MoveToTopOfPrioritySubqueue", new LuaCSFunction(MoveToTopOfPrioritySubqueue));
 		L.RegFunction("OnTargetObjectWarped", new LuaCSFunction(OnTargetObjectWarped));
+		L.RegFunction("ForceCameraPosition", new LuaCSFunction(ForceCameraPosition));
 		L.RegFunction("__eq", new LuaCSFunction(op_Equality));
 		L.RegFunction("__tostring", new LuaCSFunction(ToLua.op_ToString));
 		L.RegVar("m_ExcludedPropertiesInInspector", new LuaCSFunction(get_m_ExcludedPropertiesInInspector), new LuaCSFunction(set_m_ExcludedPropertiesInInspector));
 		L.RegVar("m_LockStageInInspector", new LuaCSFunction(get_m_LockStageInInspector), new LuaCSFunction(set_m_LockStageInInspector));
 		L.RegVar("m_Priority", new LuaCSFunction(get_m_Priority), new LuaCSFunction(set_m_Priority));
+		L.RegVar("FollowTargetAttachment", new LuaCSFunction(get_FollowTargetAttachment), new LuaCSFunction(set_FollowTargetAttachment));
+		L.RegVar("LookAtTargetAttachment", new LuaCSFunction(get_LookAtTargetAttachment), new LuaCSFunction(set_LookAtTargetAttachment));
 		L.RegVar("m_StandbyUpdate", new LuaCSFunction(get_m_StandbyUpdate), new LuaCSFunction(set_m_StandbyUpdate));
 		L.RegVar("ValidatingStreamVersion", new LuaCSFunction(get_ValidatingStreamVersion), null);
 		L.RegVar("Name", new LuaCSFunction(get_Name), null);
@@ -32,7 +41,126 @@ public class Cinemachine_CinemachineVirtualCameraBaseWrap
 		L.RegVar("LookAt", new LuaCSFunction(get_LookAt), new LuaCSFunction(set_LookAt));
 		L.RegVar("Follow", new LuaCSFunction(get_Follow), new LuaCSFunction(set_Follow));
 		L.RegVar("PreviousStateIsValid", new LuaCSFunction(get_PreviousStateIsValid), new LuaCSFunction(set_PreviousStateIsValid));
+		L.RegVar("FollowTargetChanged", new LuaCSFunction(get_FollowTargetChanged), null);
+		L.RegVar("LookAtTargetChanged", new LuaCSFunction(get_LookAtTargetChanged), null);
+		L.RegVar("AbstractFollowTargetGroup", new LuaCSFunction(get_AbstractFollowTargetGroup), null);
+		L.RegVar("FollowTargetAsVcam", new LuaCSFunction(get_FollowTargetAsVcam), null);
+		L.RegVar("AbstractLookAtTargetGroup", new LuaCSFunction(get_AbstractLookAtTargetGroup), null);
+		L.RegVar("LookAtTargetAsVcam", new LuaCSFunction(get_LookAtTargetAsVcam), null);
 		L.EndClass();
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetMaxDampTime(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 1);
+			Cinemachine.CinemachineVirtualCameraBase obj = (Cinemachine.CinemachineVirtualCameraBase)ToLua.CheckObject<Cinemachine.CinemachineVirtualCameraBase>(L, 1);
+			float o = obj.GetMaxDampTime();
+			LuaDLL.lua_pushnumber(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int DetachedFollowTargetDamp(IntPtr L)
+	{
+		try
+		{
+			int count = LuaDLL.lua_gettop(L);
+
+			if (count == 4 && TypeChecker.CheckTypes<float, float, float>(L, 2))
+			{
+				Cinemachine.CinemachineVirtualCameraBase obj = (Cinemachine.CinemachineVirtualCameraBase)ToLua.CheckObject<Cinemachine.CinemachineVirtualCameraBase>(L, 1);
+				float arg0 = (float)LuaDLL.lua_tonumber(L, 2);
+				float arg1 = (float)LuaDLL.lua_tonumber(L, 3);
+				float arg2 = (float)LuaDLL.lua_tonumber(L, 4);
+				float o = obj.DetachedFollowTargetDamp(arg0, arg1, arg2);
+				LuaDLL.lua_pushnumber(L, o);
+				return 1;
+			}
+			else if (count == 4 && TypeChecker.CheckTypes<UnityEngine.Vector3, float, float>(L, 2))
+			{
+				Cinemachine.CinemachineVirtualCameraBase obj = (Cinemachine.CinemachineVirtualCameraBase)ToLua.CheckObject<Cinemachine.CinemachineVirtualCameraBase>(L, 1);
+				UnityEngine.Vector3 arg0 = ToLua.ToVector3(L, 2);
+				float arg1 = (float)LuaDLL.lua_tonumber(L, 3);
+				float arg2 = (float)LuaDLL.lua_tonumber(L, 4);
+				UnityEngine.Vector3 o = obj.DetachedFollowTargetDamp(arg0, arg1, arg2);
+				ToLua.Push(L, o);
+				return 1;
+			}
+			else if (count == 4 && TypeChecker.CheckTypes<UnityEngine.Vector3, UnityEngine.Vector3, float>(L, 2))
+			{
+				Cinemachine.CinemachineVirtualCameraBase obj = (Cinemachine.CinemachineVirtualCameraBase)ToLua.CheckObject<Cinemachine.CinemachineVirtualCameraBase>(L, 1);
+				UnityEngine.Vector3 arg0 = ToLua.ToVector3(L, 2);
+				UnityEngine.Vector3 arg1 = ToLua.ToVector3(L, 3);
+				float arg2 = (float)LuaDLL.lua_tonumber(L, 4);
+				UnityEngine.Vector3 o = obj.DetachedFollowTargetDamp(arg0, arg1, arg2);
+				ToLua.Push(L, o);
+				return 1;
+			}
+			else
+			{
+				return LuaDLL.luaL_throw(L, "invalid arguments to method: Cinemachine.CinemachineVirtualCameraBase.DetachedFollowTargetDamp");
+			}
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int DetachedLookAtTargetDamp(IntPtr L)
+	{
+		try
+		{
+			int count = LuaDLL.lua_gettop(L);
+
+			if (count == 4 && TypeChecker.CheckTypes<float, float, float>(L, 2))
+			{
+				Cinemachine.CinemachineVirtualCameraBase obj = (Cinemachine.CinemachineVirtualCameraBase)ToLua.CheckObject<Cinemachine.CinemachineVirtualCameraBase>(L, 1);
+				float arg0 = (float)LuaDLL.lua_tonumber(L, 2);
+				float arg1 = (float)LuaDLL.lua_tonumber(L, 3);
+				float arg2 = (float)LuaDLL.lua_tonumber(L, 4);
+				float o = obj.DetachedLookAtTargetDamp(arg0, arg1, arg2);
+				LuaDLL.lua_pushnumber(L, o);
+				return 1;
+			}
+			else if (count == 4 && TypeChecker.CheckTypes<UnityEngine.Vector3, float, float>(L, 2))
+			{
+				Cinemachine.CinemachineVirtualCameraBase obj = (Cinemachine.CinemachineVirtualCameraBase)ToLua.CheckObject<Cinemachine.CinemachineVirtualCameraBase>(L, 1);
+				UnityEngine.Vector3 arg0 = ToLua.ToVector3(L, 2);
+				float arg1 = (float)LuaDLL.lua_tonumber(L, 3);
+				float arg2 = (float)LuaDLL.lua_tonumber(L, 4);
+				UnityEngine.Vector3 o = obj.DetachedLookAtTargetDamp(arg0, arg1, arg2);
+				ToLua.Push(L, o);
+				return 1;
+			}
+			else if (count == 4 && TypeChecker.CheckTypes<UnityEngine.Vector3, UnityEngine.Vector3, float>(L, 2))
+			{
+				Cinemachine.CinemachineVirtualCameraBase obj = (Cinemachine.CinemachineVirtualCameraBase)ToLua.CheckObject<Cinemachine.CinemachineVirtualCameraBase>(L, 1);
+				UnityEngine.Vector3 arg0 = ToLua.ToVector3(L, 2);
+				UnityEngine.Vector3 arg1 = ToLua.ToVector3(L, 3);
+				float arg2 = (float)LuaDLL.lua_tonumber(L, 4);
+				UnityEngine.Vector3 o = obj.DetachedLookAtTargetDamp(arg0, arg1, arg2);
+				ToLua.Push(L, o);
+				return 1;
+			}
+			else
+			{
+				return LuaDLL.luaL_throw(L, "invalid arguments to method: Cinemachine.CinemachineVirtualCameraBase.DetachedLookAtTargetDamp");
+			}
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
@@ -160,6 +288,59 @@ public class Cinemachine_CinemachineVirtualCameraBaseWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetInputAxisProvider(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 1);
+			Cinemachine.CinemachineVirtualCameraBase obj = (Cinemachine.CinemachineVirtualCameraBase)ToLua.CheckObject<Cinemachine.CinemachineVirtualCameraBase>(L, 1);
+			Cinemachine.AxisState.IInputAxisProvider o = obj.GetInputAxisProvider();
+			ToLua.PushObject(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int ResolveLookAt(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			Cinemachine.CinemachineVirtualCameraBase obj = (Cinemachine.CinemachineVirtualCameraBase)ToLua.CheckObject<Cinemachine.CinemachineVirtualCameraBase>(L, 1);
+			UnityEngine.Transform arg0 = (UnityEngine.Transform)ToLua.CheckObject<UnityEngine.Transform>(L, 2);
+			UnityEngine.Transform o = obj.ResolveLookAt(arg0);
+			ToLua.Push(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int ResolveFollow(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			Cinemachine.CinemachineVirtualCameraBase obj = (Cinemachine.CinemachineVirtualCameraBase)ToLua.CheckObject<Cinemachine.CinemachineVirtualCameraBase>(L, 1);
+			UnityEngine.Transform arg0 = (UnityEngine.Transform)ToLua.CheckObject<UnityEngine.Transform>(L, 2);
+			UnityEngine.Transform o = obj.ResolveFollow(arg0);
+			ToLua.Push(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int MoveToTopOfPrioritySubqueue(IntPtr L)
 	{
 		try
@@ -185,6 +366,24 @@ public class Cinemachine_CinemachineVirtualCameraBaseWrap
 			UnityEngine.Transform arg0 = (UnityEngine.Transform)ToLua.CheckObject<UnityEngine.Transform>(L, 2);
 			UnityEngine.Vector3 arg1 = ToLua.ToVector3(L, 3);
 			obj.OnTargetObjectWarped(arg0, arg1);
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int ForceCameraPosition(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 3);
+			Cinemachine.CinemachineVirtualCameraBase obj = (Cinemachine.CinemachineVirtualCameraBase)ToLua.CheckObject<Cinemachine.CinemachineVirtualCameraBase>(L, 1);
+			UnityEngine.Vector3 arg0 = ToLua.ToVector3(L, 2);
+			UnityEngine.Quaternion arg1 = ToLua.ToQuaternion(L, 3);
+			obj.ForceCameraPosition(arg0, arg1);
 			return 0;
 		}
 		catch (Exception e)
@@ -265,6 +464,44 @@ public class Cinemachine_CinemachineVirtualCameraBaseWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o, "attempt to index m_Priority on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_FollowTargetAttachment(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Cinemachine.CinemachineVirtualCameraBase obj = (Cinemachine.CinemachineVirtualCameraBase)o;
+			float ret = obj.FollowTargetAttachment;
+			LuaDLL.lua_pushnumber(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index FollowTargetAttachment on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_LookAtTargetAttachment(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Cinemachine.CinemachineVirtualCameraBase obj = (Cinemachine.CinemachineVirtualCameraBase)o;
+			float ret = obj.LookAtTargetAttachment;
+			LuaDLL.lua_pushnumber(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index LookAtTargetAttachment on a nil value");
 		}
 	}
 
@@ -497,6 +734,120 @@ public class Cinemachine_CinemachineVirtualCameraBaseWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_FollowTargetChanged(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Cinemachine.CinemachineVirtualCameraBase obj = (Cinemachine.CinemachineVirtualCameraBase)o;
+			bool ret = obj.FollowTargetChanged;
+			LuaDLL.lua_pushboolean(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index FollowTargetChanged on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_LookAtTargetChanged(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Cinemachine.CinemachineVirtualCameraBase obj = (Cinemachine.CinemachineVirtualCameraBase)o;
+			bool ret = obj.LookAtTargetChanged;
+			LuaDLL.lua_pushboolean(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index LookAtTargetChanged on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_AbstractFollowTargetGroup(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Cinemachine.CinemachineVirtualCameraBase obj = (Cinemachine.CinemachineVirtualCameraBase)o;
+			Cinemachine.ICinemachineTargetGroup ret = obj.AbstractFollowTargetGroup;
+			ToLua.PushObject(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index AbstractFollowTargetGroup on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_FollowTargetAsVcam(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Cinemachine.CinemachineVirtualCameraBase obj = (Cinemachine.CinemachineVirtualCameraBase)o;
+			Cinemachine.CinemachineVirtualCameraBase ret = obj.FollowTargetAsVcam;
+			ToLua.Push(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index FollowTargetAsVcam on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_AbstractLookAtTargetGroup(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Cinemachine.CinemachineVirtualCameraBase obj = (Cinemachine.CinemachineVirtualCameraBase)o;
+			Cinemachine.ICinemachineTargetGroup ret = obj.AbstractLookAtTargetGroup;
+			ToLua.PushObject(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index AbstractLookAtTargetGroup on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_LookAtTargetAsVcam(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Cinemachine.CinemachineVirtualCameraBase obj = (Cinemachine.CinemachineVirtualCameraBase)o;
+			Cinemachine.CinemachineVirtualCameraBase ret = obj.LookAtTargetAsVcam;
+			ToLua.Push(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index LookAtTargetAsVcam on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int set_m_ExcludedPropertiesInInspector(IntPtr L)
 	{
 		object o = null;
@@ -550,6 +901,44 @@ public class Cinemachine_CinemachineVirtualCameraBaseWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o, "attempt to index m_Priority on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_FollowTargetAttachment(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Cinemachine.CinemachineVirtualCameraBase obj = (Cinemachine.CinemachineVirtualCameraBase)o;
+			float arg0 = (float)LuaDLL.luaL_checknumber(L, 2);
+			obj.FollowTargetAttachment = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index FollowTargetAttachment on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_LookAtTargetAttachment(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Cinemachine.CinemachineVirtualCameraBase obj = (Cinemachine.CinemachineVirtualCameraBase)o;
+			float arg0 = (float)LuaDLL.luaL_checknumber(L, 2);
+			obj.LookAtTargetAttachment = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index LookAtTargetAttachment on a nil value");
 		}
 	}
 

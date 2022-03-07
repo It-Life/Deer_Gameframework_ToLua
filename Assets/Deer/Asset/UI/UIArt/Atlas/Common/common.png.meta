@@ -132,6 +132,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -952,6 +953,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      21_frame_dj_B01_k: -2444700278832231320
+      minus1: -3684155759617143701
+      pic_num_3_move: 3750387038236739601
+      21_frame_ty01_04: 4544491077748854408
+      21_frame_dj_B: -8341395298372798577
+      21_frame_ty01_03: 3646268024216535986
+      jindut: -6586794739977687383
+      cion_A: -1347904750352289074
+      21_frame_dj_A01_k: -596702330513133836
+      21_frame_dj_A: 6205476256298971281
+      21_frame_ty01_06: -6817494464882153635
+      21_frame_ty01_02: -3472210788881403815
+      button_ty2_01: 8837368897706044277
+      pic_num_2: 9156942278773647067
+      21_frame_dj_S: 3070861021997532507
+      btn_kaiguandi: 1963386995107660791
+      jindut_di: 419167448230602440
+      21_frame_00z: -4358076136301453227
+      btn_kaiguanshang: 2243121244705324241
+      21_frame_ty01_05: 1673368480131894871
+      button_ty1_01: -8405003820567355335
+      plus1: 3916806739092377866
+      button_ty2_02: -2768633264854455305
+      21_card_1: 4617401081128689349
+      pic_num_2_move: -895840793874707807
+      pic_num_1: -5747318958009646303
+      pic_num_3: 5382290361122763594
+      pic_num_1_move: 3863835997642902171
+      cion_B: -1984662701325909737
+      cion_S: 6144992649645442481
+      plus2: 1135335253115971505
+      21_frame_djbi_S01_k: 3740319067904367754
+      21_frame_ty01_01: -6339094610135422762
+      21_frame_ty01_07: 7557100673972018115
+      minus2: 8200831665062299582
+      21_button_ty1_03: -6358449179346638084
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

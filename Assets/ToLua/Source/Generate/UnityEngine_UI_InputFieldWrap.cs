@@ -42,6 +42,7 @@ public class UnityEngine_UI_InputFieldWrap
 		L.RegVar("customCaretColor", new LuaCSFunction(get_customCaretColor), new LuaCSFunction(set_customCaretColor));
 		L.RegVar("selectionColor", new LuaCSFunction(get_selectionColor), new LuaCSFunction(set_selectionColor));
 		L.RegVar("onEndEdit", new LuaCSFunction(get_onEndEdit), new LuaCSFunction(set_onEndEdit));
+		L.RegVar("onSubmit", new LuaCSFunction(get_onSubmit), new LuaCSFunction(set_onSubmit));
 		L.RegVar("onValueChanged", new LuaCSFunction(get_onValueChanged), new LuaCSFunction(set_onValueChanged));
 		L.RegVar("onValidateInput", new LuaCSFunction(get_onValidateInput), new LuaCSFunction(set_onValidateInput));
 		L.RegVar("characterLimit", new LuaCSFunction(get_characterLimit), new LuaCSFunction(set_characterLimit));
@@ -655,13 +656,32 @@ public class UnityEngine_UI_InputFieldWrap
 		{
 			o = ToLua.ToObject(L, 1);
 			UnityEngine.UI.InputField obj = (UnityEngine.UI.InputField)o;
-			UnityEngine.UI.InputField.SubmitEvent ret = obj.onEndEdit;
+			UnityEngine.UI.InputField.EndEditEvent ret = obj.onEndEdit;
 			ToLua.PushObject(L, ret);
 			return 1;
 		}
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o, "attempt to index onEndEdit on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_onSubmit(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.UI.InputField obj = (UnityEngine.UI.InputField)o;
+			UnityEngine.UI.InputField.SubmitEvent ret = obj.onSubmit;
+			ToLua.PushObject(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index onSubmit on a nil value");
 		}
 	}
 
@@ -1301,13 +1321,32 @@ public class UnityEngine_UI_InputFieldWrap
 		{
 			o = ToLua.ToObject(L, 1);
 			UnityEngine.UI.InputField obj = (UnityEngine.UI.InputField)o;
-			UnityEngine.UI.InputField.SubmitEvent arg0 = (UnityEngine.UI.InputField.SubmitEvent)ToLua.CheckObject<UnityEngine.UI.InputField.SubmitEvent>(L, 2);
+			UnityEngine.UI.InputField.EndEditEvent arg0 = (UnityEngine.UI.InputField.EndEditEvent)ToLua.CheckObject<UnityEngine.UI.InputField.EndEditEvent>(L, 2);
 			obj.onEndEdit = arg0;
 			return 0;
 		}
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o, "attempt to index onEndEdit on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_onSubmit(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.UI.InputField obj = (UnityEngine.UI.InputField)o;
+			UnityEngine.UI.InputField.SubmitEvent arg0 = (UnityEngine.UI.InputField.SubmitEvent)ToLua.CheckObject<UnityEngine.UI.InputField.SubmitEvent>(L, 2);
+			obj.onSubmit = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index onSubmit on a nil value");
 		}
 	}
 

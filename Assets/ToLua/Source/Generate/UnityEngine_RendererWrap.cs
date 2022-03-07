@@ -7,6 +7,8 @@ public class UnityEngine_RendererWrap
 	public static void Register(LuaState L)
 	{
 		L.BeginClass(typeof(UnityEngine.Renderer), typeof(UnityEngine.Component));
+		L.RegFunction("ResetBounds", new LuaCSFunction(ResetBounds));
+		L.RegFunction("ResetLocalBounds", new LuaCSFunction(ResetLocalBounds));
 		L.RegFunction("HasPropertyBlock", new LuaCSFunction(HasPropertyBlock));
 		L.RegFunction("SetPropertyBlock", new LuaCSFunction(SetPropertyBlock));
 		L.RegFunction("GetPropertyBlock", new LuaCSFunction(GetPropertyBlock));
@@ -16,12 +18,14 @@ public class UnityEngine_RendererWrap
 		L.RegFunction("New", new LuaCSFunction(_CreateUnityEngine_Renderer));
 		L.RegFunction("__eq", new LuaCSFunction(op_Equality));
 		L.RegFunction("__tostring", new LuaCSFunction(ToLua.op_ToString));
-		L.RegVar("bounds", new LuaCSFunction(get_bounds), null);
+		L.RegVar("bounds", new LuaCSFunction(get_bounds), new LuaCSFunction(set_bounds));
+		L.RegVar("localBounds", new LuaCSFunction(get_localBounds), new LuaCSFunction(set_localBounds));
 		L.RegVar("enabled", new LuaCSFunction(get_enabled), new LuaCSFunction(set_enabled));
 		L.RegVar("isVisible", new LuaCSFunction(get_isVisible), null);
 		L.RegVar("shadowCastingMode", new LuaCSFunction(get_shadowCastingMode), new LuaCSFunction(set_shadowCastingMode));
 		L.RegVar("receiveShadows", new LuaCSFunction(get_receiveShadows), new LuaCSFunction(set_receiveShadows));
 		L.RegVar("forceRenderingOff", new LuaCSFunction(get_forceRenderingOff), new LuaCSFunction(set_forceRenderingOff));
+		L.RegVar("staticShadowCaster", new LuaCSFunction(get_staticShadowCaster), new LuaCSFunction(set_staticShadowCaster));
 		L.RegVar("motionVectorGenerationMode", new LuaCSFunction(get_motionVectorGenerationMode), new LuaCSFunction(set_motionVectorGenerationMode));
 		L.RegVar("lightProbeUsage", new LuaCSFunction(get_lightProbeUsage), new LuaCSFunction(set_lightProbeUsage));
 		L.RegVar("reflectionProbeUsage", new LuaCSFunction(get_reflectionProbeUsage), new LuaCSFunction(set_reflectionProbeUsage));
@@ -65,6 +69,38 @@ public class UnityEngine_RendererWrap
 			{
 				return LuaDLL.luaL_throw(L, "invalid arguments to ctor method: UnityEngine.Renderer.New");
 			}
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int ResetBounds(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 1);
+			UnityEngine.Renderer obj = (UnityEngine.Renderer)ToLua.CheckObject<UnityEngine.Renderer>(L, 1);
+			obj.ResetBounds();
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int ResetLocalBounds(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 1);
+			UnityEngine.Renderer obj = (UnityEngine.Renderer)ToLua.CheckObject<UnityEngine.Renderer>(L, 1);
+			obj.ResetLocalBounds();
+			return 0;
 		}
 		catch (Exception e)
 		{
@@ -244,6 +280,25 @@ public class UnityEngine_RendererWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_localBounds(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.Renderer obj = (UnityEngine.Renderer)o;
+			UnityEngine.Bounds ret = obj.localBounds;
+			ToLua.Push(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index localBounds on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int get_enabled(IntPtr L)
 	{
 		object o = null;
@@ -335,6 +390,25 @@ public class UnityEngine_RendererWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o, "attempt to index forceRenderingOff on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_staticShadowCaster(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.Renderer obj = (UnityEngine.Renderer)o;
+			bool ret = obj.staticShadowCaster;
+			LuaDLL.lua_pushboolean(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index staticShadowCaster on a nil value");
 		}
 	}
 
@@ -776,6 +850,44 @@ public class UnityEngine_RendererWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_bounds(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.Renderer obj = (UnityEngine.Renderer)o;
+			UnityEngine.Bounds arg0 = ToLua.ToBounds(L, 2);
+			obj.bounds = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index bounds on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_localBounds(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.Renderer obj = (UnityEngine.Renderer)o;
+			UnityEngine.Bounds arg0 = ToLua.ToBounds(L, 2);
+			obj.localBounds = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index localBounds on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int set_enabled(IntPtr L)
 	{
 		object o = null;
@@ -848,6 +960,25 @@ public class UnityEngine_RendererWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o, "attempt to index forceRenderingOff on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_staticShadowCaster(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.Renderer obj = (UnityEngine.Renderer)o;
+			bool arg0 = LuaDLL.luaL_checkboolean(L, 2);
+			obj.staticShadowCaster = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index staticShadowCaster on a nil value");
 		}
 	}
 

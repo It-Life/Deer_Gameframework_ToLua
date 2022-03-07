@@ -8,6 +8,12 @@ public class UnityEngine_AudioSourceWrap
 	public static void Register(LuaState L)
 	{
 		L.BeginClass(typeof(UnityEngine.AudioSource), typeof(UnityEngine.AudioBehaviour));
+		L.RegFunction("PlayOnGamepad", new LuaCSFunction(PlayOnGamepad));
+		L.RegFunction("DisableGamepadOutput", new LuaCSFunction(DisableGamepadOutput));
+		L.RegFunction("SetGamepadSpeakerMixLevel", new LuaCSFunction(SetGamepadSpeakerMixLevel));
+		L.RegFunction("SetGamepadSpeakerMixLevelDefault", new LuaCSFunction(SetGamepadSpeakerMixLevelDefault));
+		L.RegFunction("SetGamepadSpeakerRestrictedAudio", new LuaCSFunction(SetGamepadSpeakerRestrictedAudio));
+		L.RegFunction("GamepadSpeakerSupportsOutputType", new LuaCSFunction(GamepadSpeakerSupportsOutputType));
 		L.RegFunction("Play", new LuaCSFunction(Play));
 		L.RegFunction("PlayDelayed", new LuaCSFunction(PlayDelayed));
 		L.RegFunction("PlayScheduled", new LuaCSFunction(PlayScheduled));
@@ -47,6 +53,7 @@ public class UnityEngine_AudioSourceWrap
 		L.RegVar("timeSamples", new LuaCSFunction(get_timeSamples), new LuaCSFunction(set_timeSamples));
 		L.RegVar("clip", new LuaCSFunction(get_clip), new LuaCSFunction(set_clip));
 		L.RegVar("outputAudioMixerGroup", new LuaCSFunction(get_outputAudioMixerGroup), new LuaCSFunction(set_outputAudioMixerGroup));
+		L.RegVar("gamepadSpeakerOutputType", new LuaCSFunction(get_gamepadSpeakerOutputType), new LuaCSFunction(set_gamepadSpeakerOutputType));
 		L.RegVar("isPlaying", new LuaCSFunction(get_isPlaying), null);
 		L.RegVar("isVirtual", new LuaCSFunction(get_isVirtual), null);
 		L.RegVar("loop", new LuaCSFunction(get_loop), new LuaCSFunction(set_loop));
@@ -89,6 +96,114 @@ public class UnityEngine_AudioSourceWrap
 			{
 				return LuaDLL.luaL_throw(L, "invalid arguments to ctor method: UnityEngine.AudioSource.New");
 			}
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int PlayOnGamepad(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			UnityEngine.AudioSource obj = (UnityEngine.AudioSource)ToLua.CheckObject<UnityEngine.AudioSource>(L, 1);
+			int arg0 = (int)LuaDLL.luaL_checkinteger(L, 2);
+			bool o = obj.PlayOnGamepad(arg0);
+			LuaDLL.lua_pushboolean(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int DisableGamepadOutput(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 1);
+			UnityEngine.AudioSource obj = (UnityEngine.AudioSource)ToLua.CheckObject<UnityEngine.AudioSource>(L, 1);
+			bool o = obj.DisableGamepadOutput();
+			LuaDLL.lua_pushboolean(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int SetGamepadSpeakerMixLevel(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 3);
+			UnityEngine.AudioSource obj = (UnityEngine.AudioSource)ToLua.CheckObject<UnityEngine.AudioSource>(L, 1);
+			int arg0 = (int)LuaDLL.luaL_checkinteger(L, 2);
+			int arg1 = (int)LuaDLL.luaL_checkinteger(L, 3);
+			bool o = obj.SetGamepadSpeakerMixLevel(arg0, arg1);
+			LuaDLL.lua_pushboolean(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int SetGamepadSpeakerMixLevelDefault(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			UnityEngine.AudioSource obj = (UnityEngine.AudioSource)ToLua.CheckObject<UnityEngine.AudioSource>(L, 1);
+			int arg0 = (int)LuaDLL.luaL_checkinteger(L, 2);
+			bool o = obj.SetGamepadSpeakerMixLevelDefault(arg0);
+			LuaDLL.lua_pushboolean(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int SetGamepadSpeakerRestrictedAudio(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 3);
+			UnityEngine.AudioSource obj = (UnityEngine.AudioSource)ToLua.CheckObject<UnityEngine.AudioSource>(L, 1);
+			int arg0 = (int)LuaDLL.luaL_checkinteger(L, 2);
+			bool arg1 = LuaDLL.luaL_checkboolean(L, 3);
+			bool o = obj.SetGamepadSpeakerRestrictedAudio(arg0, arg1);
+			LuaDLL.lua_pushboolean(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GamepadSpeakerSupportsOutputType(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 1);
+			UnityEngine.GamepadSpeakerOutputType arg0 = (UnityEngine.GamepadSpeakerOutputType)ToLua.CheckObject(L, 1, TypeTraits<UnityEngine.GamepadSpeakerOutputType>.type);
+			bool o = UnityEngine.AudioSource.GamepadSpeakerSupportsOutputType(arg0);
+			LuaDLL.lua_pushboolean(L, o);
+			return 1;
 		}
 		catch (Exception e)
 		{
@@ -879,6 +994,25 @@ public class UnityEngine_AudioSourceWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_gamepadSpeakerOutputType(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.AudioSource obj = (UnityEngine.AudioSource)o;
+			UnityEngine.GamepadSpeakerOutputType ret = obj.gamepadSpeakerOutputType;
+			ToLua.Push(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index gamepadSpeakerOutputType on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int get_isPlaying(IntPtr L)
 	{
 		object o = null;
@@ -1407,6 +1541,25 @@ public class UnityEngine_AudioSourceWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o, "attempt to index outputAudioMixerGroup on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_gamepadSpeakerOutputType(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.AudioSource obj = (UnityEngine.AudioSource)o;
+			UnityEngine.GamepadSpeakerOutputType arg0 = (UnityEngine.GamepadSpeakerOutputType)ToLua.CheckObject(L, 2, TypeTraits<UnityEngine.GamepadSpeakerOutputType>.type);
+			obj.gamepadSpeakerOutputType = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index gamepadSpeakerOutputType on a nil value");
 		}
 	}
 

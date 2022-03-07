@@ -19,6 +19,7 @@ public class UnityEngine_ColliderWrap
 		L.RegVar("isTrigger", new LuaCSFunction(get_isTrigger), new LuaCSFunction(set_isTrigger));
 		L.RegVar("contactOffset", new LuaCSFunction(get_contactOffset), new LuaCSFunction(set_contactOffset));
 		L.RegVar("bounds", new LuaCSFunction(get_bounds), null);
+		L.RegVar("hasModifiableContacts", new LuaCSFunction(get_hasModifiableContacts), new LuaCSFunction(set_hasModifiableContacts));
 		L.RegVar("sharedMaterial", new LuaCSFunction(get_sharedMaterial), new LuaCSFunction(set_sharedMaterial));
 		L.RegVar("material", new LuaCSFunction(get_material), new LuaCSFunction(set_material));
 		L.EndClass();
@@ -238,6 +239,25 @@ public class UnityEngine_ColliderWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_hasModifiableContacts(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.Collider obj = (UnityEngine.Collider)o;
+			bool ret = obj.hasModifiableContacts;
+			LuaDLL.lua_pushboolean(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index hasModifiableContacts on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int get_sharedMaterial(IntPtr L)
 	{
 		object o = null;
@@ -329,6 +349,25 @@ public class UnityEngine_ColliderWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o, "attempt to index contactOffset on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_hasModifiableContacts(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.Collider obj = (UnityEngine.Collider)o;
+			bool arg0 = LuaDLL.luaL_checkboolean(L, 2);
+			obj.hasModifiableContacts = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index hasModifiableContacts on a nil value");
 		}
 	}
 

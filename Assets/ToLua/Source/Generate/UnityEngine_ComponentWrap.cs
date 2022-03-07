@@ -193,12 +193,29 @@ public class UnityEngine_ComponentWrap
 	{
 		try
 		{
-			ToLua.CheckArgsCount(L, 2);
-			UnityEngine.Component obj = (UnityEngine.Component)ToLua.CheckObject<UnityEngine.Component>(L, 1);
-			System.Type arg0 = ToLua.CheckMonoType(L, 2);
-			UnityEngine.Component o = obj.GetComponentInParent(arg0);
-			ToLua.Push(L, o);
-			return 1;
+			int count = LuaDLL.lua_gettop(L);
+
+			if (count == 2)
+			{
+				UnityEngine.Component obj = (UnityEngine.Component)ToLua.CheckObject<UnityEngine.Component>(L, 1);
+				System.Type arg0 = ToLua.CheckMonoType(L, 2);
+				UnityEngine.Component o = obj.GetComponentInParent(arg0);
+				ToLua.Push(L, o);
+				return 1;
+			}
+			else if (count == 3)
+			{
+				UnityEngine.Component obj = (UnityEngine.Component)ToLua.CheckObject<UnityEngine.Component>(L, 1);
+				System.Type arg0 = ToLua.CheckMonoType(L, 2);
+				bool arg1 = LuaDLL.luaL_checkboolean(L, 3);
+				UnityEngine.Component o = obj.GetComponentInParent(arg0, arg1);
+				ToLua.Push(L, o);
+				return 1;
+			}
+			else
+			{
+				return LuaDLL.luaL_throw(L, "invalid arguments to method: UnityEngine.Component.GetComponentInParent");
+			}
 		}
 		catch (Exception e)
 		{

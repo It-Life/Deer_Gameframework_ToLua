@@ -9,7 +9,6 @@ public class UnityEngine_RenderTextureWrap
 		L.BeginClass(typeof(UnityEngine.RenderTexture), typeof(UnityEngine.Texture));
 		L.RegFunction("GetNativeDepthBufferPtr", new LuaCSFunction(GetNativeDepthBufferPtr));
 		L.RegFunction("DiscardContents", new LuaCSFunction(DiscardContents));
-		L.RegFunction("MarkRestoreExpected", new LuaCSFunction(MarkRestoreExpected));
 		L.RegFunction("ResolveAntiAliasedSurface", new LuaCSFunction(ResolveAntiAliasedSurface));
 		L.RegFunction("SetGlobalShaderProperty", new LuaCSFunction(SetGlobalShaderProperty));
 		L.RegFunction("Create", new LuaCSFunction(Create));
@@ -33,6 +32,7 @@ public class UnityEngine_RenderTextureWrap
 		L.RegVar("memorylessMode", new LuaCSFunction(get_memorylessMode), new LuaCSFunction(set_memorylessMode));
 		L.RegVar("format", new LuaCSFunction(get_format), new LuaCSFunction(set_format));
 		L.RegVar("stencilFormat", new LuaCSFunction(get_stencilFormat), new LuaCSFunction(set_stencilFormat));
+		L.RegVar("depthStencilFormat", new LuaCSFunction(get_depthStencilFormat), new LuaCSFunction(set_depthStencilFormat));
 		L.RegVar("autoGenerateMips", new LuaCSFunction(get_autoGenerateMips), new LuaCSFunction(set_autoGenerateMips));
 		L.RegVar("volumeDepth", new LuaCSFunction(get_volumeDepth), new LuaCSFunction(set_volumeDepth));
 		L.RegVar("antiAliasing", new LuaCSFunction(get_antiAliasing), new LuaCSFunction(set_antiAliasing));
@@ -78,65 +78,86 @@ public class UnityEngine_RenderTextureWrap
 				ToLua.Push(L, obj);
 				return 1;
 			}
-			else if (count == 4 && TypeChecker.CheckTypes<UnityEngine.Experimental.Rendering.DefaultFormat>(L, 4))
+			else if (count == 4 && TypeChecker.CheckTypes<int, UnityEngine.Experimental.Rendering.DefaultFormat>(L, 3))
 			{
 				int arg0 = (int)LuaDLL.luaL_checkinteger(L, 1);
 				int arg1 = (int)LuaDLL.luaL_checkinteger(L, 2);
-				int arg2 = (int)LuaDLL.luaL_checkinteger(L, 3);
+				int arg2 = (int)LuaDLL.lua_tointeger(L, 3);
 				UnityEngine.Experimental.Rendering.DefaultFormat arg3 = (UnityEngine.Experimental.Rendering.DefaultFormat)ToLua.ToObject(L, 4);
 				UnityEngine.RenderTexture obj = new UnityEngine.RenderTexture(arg0, arg1, arg2, arg3);
 				ToLua.Push(L, obj);
 				return 1;
 			}
-			else if (count == 4 && TypeChecker.CheckTypes<UnityEngine.Experimental.Rendering.GraphicsFormat>(L, 4))
+			else if (count == 4 && TypeChecker.CheckTypes<int, UnityEngine.Experimental.Rendering.GraphicsFormat>(L, 3))
 			{
 				int arg0 = (int)LuaDLL.luaL_checkinteger(L, 1);
 				int arg1 = (int)LuaDLL.luaL_checkinteger(L, 2);
-				int arg2 = (int)LuaDLL.luaL_checkinteger(L, 3);
+				int arg2 = (int)LuaDLL.lua_tointeger(L, 3);
 				UnityEngine.Experimental.Rendering.GraphicsFormat arg3 = (UnityEngine.Experimental.Rendering.GraphicsFormat)ToLua.ToObject(L, 4);
 				UnityEngine.RenderTexture obj = new UnityEngine.RenderTexture(arg0, arg1, arg2, arg3);
 				ToLua.Push(L, obj);
 				return 1;
 			}
-			else if (count == 4 && TypeChecker.CheckTypes<UnityEngine.RenderTextureFormat>(L, 4))
+			else if (count == 4 && TypeChecker.CheckTypes<int, UnityEngine.RenderTextureFormat>(L, 3))
 			{
 				int arg0 = (int)LuaDLL.luaL_checkinteger(L, 1);
 				int arg1 = (int)LuaDLL.luaL_checkinteger(L, 2);
-				int arg2 = (int)LuaDLL.luaL_checkinteger(L, 3);
+				int arg2 = (int)LuaDLL.lua_tointeger(L, 3);
 				UnityEngine.RenderTextureFormat arg3 = (UnityEngine.RenderTextureFormat)ToLua.ToObject(L, 4);
 				UnityEngine.RenderTexture obj = new UnityEngine.RenderTexture(arg0, arg1, arg2, arg3);
 				ToLua.Push(L, obj);
 				return 1;
 			}
-			else if (count == 5 && TypeChecker.CheckTypes<UnityEngine.Experimental.Rendering.GraphicsFormat, int>(L, 4))
+			else if (count == 4 && TypeChecker.CheckTypes<UnityEngine.Experimental.Rendering.GraphicsFormat, UnityEngine.Experimental.Rendering.GraphicsFormat>(L, 3))
 			{
 				int arg0 = (int)LuaDLL.luaL_checkinteger(L, 1);
 				int arg1 = (int)LuaDLL.luaL_checkinteger(L, 2);
-				int arg2 = (int)LuaDLL.luaL_checkinteger(L, 3);
+				UnityEngine.Experimental.Rendering.GraphicsFormat arg2 = (UnityEngine.Experimental.Rendering.GraphicsFormat)ToLua.ToObject(L, 3);
+				UnityEngine.Experimental.Rendering.GraphicsFormat arg3 = (UnityEngine.Experimental.Rendering.GraphicsFormat)ToLua.ToObject(L, 4);
+				UnityEngine.RenderTexture obj = new UnityEngine.RenderTexture(arg0, arg1, arg2, arg3);
+				ToLua.Push(L, obj);
+				return 1;
+			}
+			else if (count == 5 && TypeChecker.CheckTypes<int, UnityEngine.Experimental.Rendering.GraphicsFormat, int>(L, 3))
+			{
+				int arg0 = (int)LuaDLL.luaL_checkinteger(L, 1);
+				int arg1 = (int)LuaDLL.luaL_checkinteger(L, 2);
+				int arg2 = (int)LuaDLL.lua_tointeger(L, 3);
 				UnityEngine.Experimental.Rendering.GraphicsFormat arg3 = (UnityEngine.Experimental.Rendering.GraphicsFormat)ToLua.ToObject(L, 4);
 				int arg4 = (int)LuaDLL.lua_tointeger(L, 5);
 				UnityEngine.RenderTexture obj = new UnityEngine.RenderTexture(arg0, arg1, arg2, arg3, arg4);
 				ToLua.Push(L, obj);
 				return 1;
 			}
-			else if (count == 5 && TypeChecker.CheckTypes<UnityEngine.RenderTextureFormat, int>(L, 4))
+			else if (count == 5 && TypeChecker.CheckTypes<int, UnityEngine.RenderTextureFormat, int>(L, 3))
 			{
 				int arg0 = (int)LuaDLL.luaL_checkinteger(L, 1);
 				int arg1 = (int)LuaDLL.luaL_checkinteger(L, 2);
-				int arg2 = (int)LuaDLL.luaL_checkinteger(L, 3);
+				int arg2 = (int)LuaDLL.lua_tointeger(L, 3);
 				UnityEngine.RenderTextureFormat arg3 = (UnityEngine.RenderTextureFormat)ToLua.ToObject(L, 4);
 				int arg4 = (int)LuaDLL.lua_tointeger(L, 5);
 				UnityEngine.RenderTexture obj = new UnityEngine.RenderTexture(arg0, arg1, arg2, arg3, arg4);
 				ToLua.Push(L, obj);
 				return 1;
 			}
-			else if (count == 5 && TypeChecker.CheckTypes<UnityEngine.RenderTextureFormat, UnityEngine.RenderTextureReadWrite>(L, 4))
+			else if (count == 5 && TypeChecker.CheckTypes<int, UnityEngine.RenderTextureFormat, UnityEngine.RenderTextureReadWrite>(L, 3))
 			{
 				int arg0 = (int)LuaDLL.luaL_checkinteger(L, 1);
 				int arg1 = (int)LuaDLL.luaL_checkinteger(L, 2);
-				int arg2 = (int)LuaDLL.luaL_checkinteger(L, 3);
+				int arg2 = (int)LuaDLL.lua_tointeger(L, 3);
 				UnityEngine.RenderTextureFormat arg3 = (UnityEngine.RenderTextureFormat)ToLua.ToObject(L, 4);
 				UnityEngine.RenderTextureReadWrite arg4 = (UnityEngine.RenderTextureReadWrite)ToLua.ToObject(L, 5);
+				UnityEngine.RenderTexture obj = new UnityEngine.RenderTexture(arg0, arg1, arg2, arg3, arg4);
+				ToLua.Push(L, obj);
+				return 1;
+			}
+			else if (count == 5 && TypeChecker.CheckTypes<UnityEngine.Experimental.Rendering.GraphicsFormat, UnityEngine.Experimental.Rendering.GraphicsFormat, int>(L, 3))
+			{
+				int arg0 = (int)LuaDLL.luaL_checkinteger(L, 1);
+				int arg1 = (int)LuaDLL.luaL_checkinteger(L, 2);
+				UnityEngine.Experimental.Rendering.GraphicsFormat arg2 = (UnityEngine.Experimental.Rendering.GraphicsFormat)ToLua.ToObject(L, 3);
+				UnityEngine.Experimental.Rendering.GraphicsFormat arg3 = (UnityEngine.Experimental.Rendering.GraphicsFormat)ToLua.ToObject(L, 4);
+				int arg4 = (int)LuaDLL.lua_tointeger(L, 5);
 				UnityEngine.RenderTexture obj = new UnityEngine.RenderTexture(arg0, arg1, arg2, arg3, arg4);
 				ToLua.Push(L, obj);
 				return 1;
@@ -194,22 +215,6 @@ public class UnityEngine_RenderTextureWrap
 			{
 				return LuaDLL.luaL_throw(L, "invalid arguments to method: UnityEngine.RenderTexture.DiscardContents");
 			}
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int MarkRestoreExpected(IntPtr L)
-	{
-		try
-		{
-			ToLua.CheckArgsCount(L, 1);
-			UnityEngine.RenderTexture obj = (UnityEngine.RenderTexture)ToLua.CheckObject<UnityEngine.RenderTexture>(L, 1);
-			obj.MarkRestoreExpected();
-			return 0;
 		}
 		catch (Exception e)
 		{
@@ -783,6 +788,25 @@ public class UnityEngine_RenderTextureWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_depthStencilFormat(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.RenderTexture obj = (UnityEngine.RenderTexture)o;
+			UnityEngine.Experimental.Rendering.GraphicsFormat ret = obj.depthStencilFormat;
+			ToLua.Push(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index depthStencilFormat on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int get_autoGenerateMips(IntPtr L)
 	{
 		object o = null;
@@ -1173,6 +1197,25 @@ public class UnityEngine_RenderTextureWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o, "attempt to index stencilFormat on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_depthStencilFormat(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.RenderTexture obj = (UnityEngine.RenderTexture)o;
+			UnityEngine.Experimental.Rendering.GraphicsFormat arg0 = (UnityEngine.Experimental.Rendering.GraphicsFormat)ToLua.CheckObject(L, 2, TypeTraits<UnityEngine.Experimental.Rendering.GraphicsFormat>.type);
+			obj.depthStencilFormat = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index depthStencilFormat on a nil value");
 		}
 	}
 

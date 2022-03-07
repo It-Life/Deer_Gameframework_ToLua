@@ -7,12 +7,14 @@ public class Cinemachine_CinemachineVirtualCameraWrap
 	public static void Register(LuaState L)
 	{
 		L.BeginClass(typeof(Cinemachine.CinemachineVirtualCamera), typeof(Cinemachine.CinemachineVirtualCameraBase));
+		L.RegFunction("GetMaxDampTime", new LuaCSFunction(GetMaxDampTime));
 		L.RegFunction("InternalUpdateCameraState", new LuaCSFunction(InternalUpdateCameraState));
 		L.RegFunction("InvalidateComponentPipeline", new LuaCSFunction(InvalidateComponentPipeline));
 		L.RegFunction("GetComponentOwner", new LuaCSFunction(GetComponentOwner));
 		L.RegFunction("GetComponentPipeline", new LuaCSFunction(GetComponentPipeline));
 		L.RegFunction("GetCinemachineComponent", new LuaCSFunction(GetCinemachineComponent));
 		L.RegFunction("OnTargetObjectWarped", new LuaCSFunction(OnTargetObjectWarped));
+		L.RegFunction("ForceCameraPosition", new LuaCSFunction(ForceCameraPosition));
 		L.RegFunction("OnTransitionFromCamera", new LuaCSFunction(OnTransitionFromCamera));
 		L.RegFunction("__eq", new LuaCSFunction(op_Equality));
 		L.RegFunction("__tostring", new LuaCSFunction(ToLua.op_ToString));
@@ -26,10 +28,26 @@ public class Cinemachine_CinemachineVirtualCameraWrap
 		L.RegVar("State", new LuaCSFunction(get_State), null);
 		L.RegVar("LookAt", new LuaCSFunction(get_LookAt), new LuaCSFunction(set_LookAt));
 		L.RegVar("Follow", new LuaCSFunction(get_Follow), new LuaCSFunction(set_Follow));
-		L.RegVar("UserIsDragging", new LuaCSFunction(get_UserIsDragging), new LuaCSFunction(set_UserIsDragging));
 		L.RegFunction("DestroyPipelineDelegate", new LuaCSFunction(Cinemachine_CinemachineVirtualCamera_DestroyPipelineDelegate));
 		L.RegFunction("CreatePipelineDelegate", new LuaCSFunction(Cinemachine_CinemachineVirtualCamera_CreatePipelineDelegate));
 		L.EndClass();
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetMaxDampTime(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 1);
+			Cinemachine.CinemachineVirtualCamera obj = (Cinemachine.CinemachineVirtualCamera)ToLua.CheckObject<Cinemachine.CinemachineVirtualCamera>(L, 1);
+			float o = obj.GetMaxDampTime();
+			LuaDLL.lua_pushnumber(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
@@ -128,6 +146,24 @@ public class Cinemachine_CinemachineVirtualCameraWrap
 			UnityEngine.Transform arg0 = (UnityEngine.Transform)ToLua.CheckObject<UnityEngine.Transform>(L, 2);
 			UnityEngine.Vector3 arg1 = ToLua.ToVector3(L, 3);
 			obj.OnTargetObjectWarped(arg0, arg1);
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int ForceCameraPosition(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 3);
+			Cinemachine.CinemachineVirtualCamera obj = (Cinemachine.CinemachineVirtualCamera)ToLua.CheckObject<Cinemachine.CinemachineVirtualCamera>(L, 1);
+			UnityEngine.Vector3 arg0 = ToLua.ToVector3(L, 2);
+			UnityEngine.Quaternion arg1 = ToLua.ToQuaternion(L, 3);
+			obj.ForceCameraPosition(arg0, arg1);
 			return 0;
 		}
 		catch (Exception e)
@@ -349,25 +385,6 @@ public class Cinemachine_CinemachineVirtualCameraWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int get_UserIsDragging(IntPtr L)
-	{
-		object o = null;
-
-		try
-		{
-			o = ToLua.ToObject(L, 1);
-			Cinemachine.CinemachineVirtualCamera obj = (Cinemachine.CinemachineVirtualCamera)o;
-			bool ret = obj.UserIsDragging;
-			LuaDLL.lua_pushboolean(L, ret);
-			return 1;
-		}
-		catch(Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e, o, "attempt to index UserIsDragging on a nil value");
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int set_m_LookAt(IntPtr L)
 	{
 		object o = null;
@@ -522,25 +539,6 @@ public class Cinemachine_CinemachineVirtualCameraWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o, "attempt to index Follow on a nil value");
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int set_UserIsDragging(IntPtr L)
-	{
-		object o = null;
-
-		try
-		{
-			o = ToLua.ToObject(L, 1);
-			Cinemachine.CinemachineVirtualCamera obj = (Cinemachine.CinemachineVirtualCamera)o;
-			bool arg0 = LuaDLL.luaL_checkboolean(L, 2);
-			obj.UserIsDragging = arg0;
-			return 0;
-		}
-		catch(Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e, o, "attempt to index UserIsDragging on a nil value");
 		}
 	}
 

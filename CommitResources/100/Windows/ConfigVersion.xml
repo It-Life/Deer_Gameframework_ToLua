@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Root ClientVersion="1.0.0.1">
+<Root ClientVersion="1.0.0.2">
   <FileVersion name="ActiveSpell_Config.bin" file="/Config/ActiveSpell_Config.bin" md5="aa9b1410c2ed7dc4627b62c198d671b0" size="10" />
   <FileVersion name="CreateBullet_Config.bin" file="/Config/CreateBullet_Config.bin" md5="fc461c9d50903b4d7026ce8bf13c4382" size="4" />
   <FileVersion name="DataChangeFunc_Config.bin" file="/Config/DataChangeFunc_Config.bin" md5="2ba3085e789d6250fb5567446df99d83" size="7" />

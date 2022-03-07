@@ -17,7 +17,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using UnityEditor;
-using UnityEditor.Experimental.SceneManagement;
+
 using UnityEngine;
 
 namespace Deer
@@ -104,7 +104,7 @@ namespace Deer
         [HorizontalGroup("func"), Button(ButtonSizes.Small)]
         public void GenCode()
         {
-            PrefabStage prefabStage = PrefabStageUtility.GetPrefabStage(gameObject);
+            UnityEditor.SceneManagement.PrefabStage prefabStage = UnityEditor.SceneManagement.PrefabStageUtility.GetPrefabStage(gameObject);
             if (prefabStage == null)
             {
                 EditorUtility.DisplayDialog("", "必须在prefab编辑模式下点击", "CANCEL");

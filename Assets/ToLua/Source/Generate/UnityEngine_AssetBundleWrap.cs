@@ -15,6 +15,7 @@ public class UnityEngine_AssetBundleWrap
 		L.RegFunction("LoadFromMemory", new LuaCSFunction(LoadFromMemory));
 		L.RegFunction("LoadFromStreamAsync", new LuaCSFunction(LoadFromStreamAsync));
 		L.RegFunction("LoadFromStream", new LuaCSFunction(LoadFromStream));
+		L.RegFunction("SetAssetBundleDecryptKey", new LuaCSFunction(SetAssetBundleDecryptKey));
 		L.RegFunction("Contains", new LuaCSFunction(Contains));
 		L.RegFunction("LoadAsset", new LuaCSFunction(LoadAsset));
 		L.RegFunction("LoadAssetAsync", new LuaCSFunction(LoadAssetAsync));
@@ -23,12 +24,14 @@ public class UnityEngine_AssetBundleWrap
 		L.RegFunction("LoadAllAssets", new LuaCSFunction(LoadAllAssets));
 		L.RegFunction("LoadAllAssetsAsync", new LuaCSFunction(LoadAllAssetsAsync));
 		L.RegFunction("Unload", new LuaCSFunction(Unload));
+		L.RegFunction("UnloadAsync", new LuaCSFunction(UnloadAsync));
 		L.RegFunction("GetAllAssetNames", new LuaCSFunction(GetAllAssetNames));
 		L.RegFunction("GetAllScenePaths", new LuaCSFunction(GetAllScenePaths));
 		L.RegFunction("RecompressAssetBundleAsync", new LuaCSFunction(RecompressAssetBundleAsync));
 		L.RegFunction("__eq", new LuaCSFunction(op_Equality));
 		L.RegFunction("__tostring", new LuaCSFunction(ToLua.op_ToString));
 		L.RegVar("isStreamedSceneAssetBundle", new LuaCSFunction(get_isStreamedSceneAssetBundle), null);
+		L.RegVar("memoryBudgetKB", new LuaCSFunction(get_memoryBudgetKB), new LuaCSFunction(set_memoryBudgetKB));
 		L.EndClass();
 	}
 
@@ -299,6 +302,22 @@ public class UnityEngine_AssetBundleWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int SetAssetBundleDecryptKey(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 1);
+			string arg0 = ToLua.CheckString(L, 1);
+			UnityEngine.AssetBundle.SetAssetBundleDecryptKey(arg0);
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int Contains(IntPtr L)
 	{
 		try
@@ -540,6 +559,24 @@ public class UnityEngine_AssetBundleWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int UnloadAsync(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			UnityEngine.AssetBundle obj = (UnityEngine.AssetBundle)ToLua.CheckObject<UnityEngine.AssetBundle>(L, 1);
+			bool arg0 = LuaDLL.luaL_checkboolean(L, 2);
+			UnityEngine.AsyncOperation o = obj.UnloadAsync(arg0);
+			ToLua.PushObject(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int GetAllAssetNames(IntPtr L)
 	{
 		try
@@ -655,6 +692,36 @@ public class UnityEngine_AssetBundleWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o, "attempt to index isStreamedSceneAssetBundle on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_memoryBudgetKB(IntPtr L)
+	{
+		try
+		{
+			LuaDLL.lua_pushinteger(L, UnityEngine.AssetBundle.memoryBudgetKB);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_memoryBudgetKB(IntPtr L)
+	{
+		try
+		{
+			uint arg0 = (uint)LuaDLL.luaL_checkinteger(L, 2);
+			UnityEngine.AssetBundle.memoryBudgetKB = arg0;
+			UnityEngine.AssetBundle.memoryBudgetKB = arg0;
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
 		}
 	}
 }

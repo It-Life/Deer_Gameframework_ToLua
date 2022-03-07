@@ -69,6 +69,7 @@ public class DelegateFactory
 		dict.Add(typeof(System.Action<bool>), factory.System_Action_bool);
 		dict.Add(typeof(System.Action<string>), factory.System_Action_string);
 		dict.Add(typeof(System.Func<bool>), factory.System_Func_bool);
+		dict.Add(typeof(System.Action<UnityEngine.PhysicsScene,Unity.Collections.NativeArray<UnityEngine.ModifiableContactPair>>), factory.System_Action_UnityEngine_PhysicsScene_Unity_Collections_NativeArray_UnityEngine_ModifiableContactPair);
 		dict.Add(typeof(UnityEngine.AudioClip.PCMReaderCallback), factory.UnityEngine_AudioClip_PCMReaderCallback);
 		dict.Add(typeof(UnityEngine.AudioClip.PCMSetPositionCallback), factory.UnityEngine_AudioClip_PCMSetPositionCallback);
 		dict.Add(typeof(System.Action<UnityEngine.AsyncOperation>), factory.System_Action_UnityEngine_AsyncOperation);
@@ -146,6 +147,7 @@ public class DelegateFactory
 		DelegateTraits<System.Action<bool>>.Init(factory.System_Action_bool);
 		DelegateTraits<System.Action<string>>.Init(factory.System_Action_string);
 		DelegateTraits<System.Func<bool>>.Init(factory.System_Func_bool);
+		DelegateTraits<System.Action<UnityEngine.PhysicsScene,Unity.Collections.NativeArray<UnityEngine.ModifiableContactPair>>>.Init(factory.System_Action_UnityEngine_PhysicsScene_Unity_Collections_NativeArray_UnityEngine_ModifiableContactPair);
 		DelegateTraits<UnityEngine.AudioClip.PCMReaderCallback>.Init(factory.UnityEngine_AudioClip_PCMReaderCallback);
 		DelegateTraits<UnityEngine.AudioClip.PCMSetPositionCallback>.Init(factory.UnityEngine_AudioClip_PCMSetPositionCallback);
 		DelegateTraits<System.Action<UnityEngine.AsyncOperation>>.Init(factory.System_Action_UnityEngine_AsyncOperation);
@@ -223,6 +225,7 @@ public class DelegateFactory
 		TypeTraits<System.Action<bool>>.Init(factory.Check_System_Action_bool);
 		TypeTraits<System.Action<string>>.Init(factory.Check_System_Action_string);
 		TypeTraits<System.Func<bool>>.Init(factory.Check_System_Func_bool);
+		TypeTraits<System.Action<UnityEngine.PhysicsScene,Unity.Collections.NativeArray<UnityEngine.ModifiableContactPair>>>.Init(factory.Check_System_Action_UnityEngine_PhysicsScene_Unity_Collections_NativeArray_UnityEngine_ModifiableContactPair);
 		TypeTraits<UnityEngine.AudioClip.PCMReaderCallback>.Init(factory.Check_UnityEngine_AudioClip_PCMReaderCallback);
 		TypeTraits<UnityEngine.AudioClip.PCMSetPositionCallback>.Init(factory.Check_UnityEngine_AudioClip_PCMSetPositionCallback);
 		TypeTraits<System.Action<UnityEngine.AsyncOperation>>.Init(factory.Check_System_Action_UnityEngine_AsyncOperation);
@@ -300,6 +303,7 @@ public class DelegateFactory
 		StackTraits<System.Action<bool>>.Push = factory.Push_System_Action_bool;
 		StackTraits<System.Action<string>>.Push = factory.Push_System_Action_string;
 		StackTraits<System.Func<bool>>.Push = factory.Push_System_Func_bool;
+		StackTraits<System.Action<UnityEngine.PhysicsScene,Unity.Collections.NativeArray<UnityEngine.ModifiableContactPair>>>.Push = factory.Push_System_Action_UnityEngine_PhysicsScene_Unity_Collections_NativeArray_UnityEngine_ModifiableContactPair;
 		StackTraits<UnityEngine.AudioClip.PCMReaderCallback>.Push = factory.Push_UnityEngine_AudioClip_PCMReaderCallback;
 		StackTraits<UnityEngine.AudioClip.PCMSetPositionCallback>.Push = factory.Push_UnityEngine_AudioClip_PCMSetPositionCallback;
 		StackTraits<System.Action<UnityEngine.AsyncOperation>>.Push = factory.Push_System_Action_UnityEngine_AsyncOperation;
@@ -3462,6 +3466,65 @@ public class DelegateFactory
 	}
 
 	void Push_System_Func_bool(IntPtr L, System.Func<bool> o)
+	{
+		ToLua.Push(L, o);
+	}
+
+	class System_Action_UnityEngine_PhysicsScene_Unity_Collections_NativeArray_UnityEngine_ModifiableContactPair_Event : LuaDelegate
+	{
+		public System_Action_UnityEngine_PhysicsScene_Unity_Collections_NativeArray_UnityEngine_ModifiableContactPair_Event(LuaFunction func) : base(func) { }
+		public System_Action_UnityEngine_PhysicsScene_Unity_Collections_NativeArray_UnityEngine_ModifiableContactPair_Event(LuaFunction func, LuaTable self) : base(func, self) { }
+
+		public void Call(UnityEngine.PhysicsScene param0, Unity.Collections.NativeArray<UnityEngine.ModifiableContactPair> param1)
+		{
+			func.BeginPCall();
+			func.PushValue(param0);
+			func.PushValue(param1);
+			func.PCall();
+			func.EndPCall();
+		}
+
+		public void CallWithSelf(UnityEngine.PhysicsScene param0, Unity.Collections.NativeArray<UnityEngine.ModifiableContactPair> param1)
+		{
+			func.BeginPCall();
+			func.Push(self);
+			func.PushValue(param0);
+			func.PushValue(param1);
+			func.PCall();
+			func.EndPCall();
+		}
+	}
+
+	public System.Action<UnityEngine.PhysicsScene,Unity.Collections.NativeArray<UnityEngine.ModifiableContactPair>> System_Action_UnityEngine_PhysicsScene_Unity_Collections_NativeArray_UnityEngine_ModifiableContactPair(LuaFunction func, LuaTable self, bool flag)
+	{
+		if (func == null)
+		{
+			System.Action<UnityEngine.PhysicsScene,Unity.Collections.NativeArray<UnityEngine.ModifiableContactPair>> fn = delegate(UnityEngine.PhysicsScene param0, Unity.Collections.NativeArray<UnityEngine.ModifiableContactPair> param1) { };
+			return fn;
+		}
+
+		if(!flag)
+		{
+			System_Action_UnityEngine_PhysicsScene_Unity_Collections_NativeArray_UnityEngine_ModifiableContactPair_Event target = new System_Action_UnityEngine_PhysicsScene_Unity_Collections_NativeArray_UnityEngine_ModifiableContactPair_Event(func);
+			System.Action<UnityEngine.PhysicsScene,Unity.Collections.NativeArray<UnityEngine.ModifiableContactPair>> d = target.Call;
+			target.method = d.Method;
+			return d;
+		}
+		else
+		{
+			System_Action_UnityEngine_PhysicsScene_Unity_Collections_NativeArray_UnityEngine_ModifiableContactPair_Event target = new System_Action_UnityEngine_PhysicsScene_Unity_Collections_NativeArray_UnityEngine_ModifiableContactPair_Event(func, self);
+			System.Action<UnityEngine.PhysicsScene,Unity.Collections.NativeArray<UnityEngine.ModifiableContactPair>> d = target.CallWithSelf;
+			target.method = d.Method;
+			return d;
+		}
+	}
+
+	bool Check_System_Action_UnityEngine_PhysicsScene_Unity_Collections_NativeArray_UnityEngine_ModifiableContactPair(IntPtr L, int pos)
+	{
+		return TypeChecker.CheckDelegateType<System.Action<UnityEngine.PhysicsScene,Unity.Collections.NativeArray<UnityEngine.ModifiableContactPair>>>(L, pos);
+	}
+
+	void Push_System_Action_UnityEngine_PhysicsScene_Unity_Collections_NativeArray_UnityEngine_ModifiableContactPair(IntPtr L, System.Action<UnityEngine.PhysicsScene,Unity.Collections.NativeArray<UnityEngine.ModifiableContactPair>> o)
 	{
 		ToLua.Push(L, o);
 	}
