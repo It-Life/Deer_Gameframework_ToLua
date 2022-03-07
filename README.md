@@ -9,6 +9,8 @@ Gameframework 框架接入原生Tolua
 
 ### 4.protobuf3.0 读表
 
+https://github.com/It-Life/Deer_Gameframework_ToLua/blob/main/GameFramework.png
+
 ![GameFramework](D:\Working\DeerGameFramework\GameFramework.png)
 
 。socket 心跳包，消息分发集成。
