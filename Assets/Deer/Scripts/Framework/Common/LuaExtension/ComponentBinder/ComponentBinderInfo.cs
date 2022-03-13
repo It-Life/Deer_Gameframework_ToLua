@@ -10,6 +10,7 @@ using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,7 +19,7 @@ namespace Deer
 {
 #if UNITY_EDITOR
     [Serializable]
-    public class UIComponentBinderInfo
+    public class ComponentBinderInfo
     {
         [HorizontalGroup, HideLabel, ChildGameObjectsOnly]
         [OnValueChanged("UpdateGameObject")]
@@ -136,7 +137,7 @@ namespace Deer
     }
 #else
     [Serializable]
-    public class UIComponentBinderInfo 
+    public class ComponentBinderInfo 
     {
         public GameObject Object;
         public string Name;

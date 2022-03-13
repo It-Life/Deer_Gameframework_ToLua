@@ -27,10 +27,14 @@ namespace Deer.Editor
             return text;
         }
 
-        [MenuItem("GameObject/UI/Image",false,30 )]
-        static Image CreateImage()
+        [MenuItem("GameObject/UI/Image",false,31 )]
+        static Image CreateImage(string defaultName = "")
         {
-            var image = CreateComponent<Image>("Image");
+            if (string.IsNullOrEmpty(defaultName))
+            {
+                defaultName = "Image";
+            }
+            var image = CreateComponent<Image>(defaultName);
             image.sprite = AssetDatabase.LoadAssetAtPath<Sprite>(DefaultTextureName<Image>());
             image.raycastTarget = false;
             image.maskable = false;
@@ -46,45 +50,7 @@ namespace Deer.Editor
             image.maskable = false;
             return image;
         }
-
-        [MenuItem("GameObject/UI/Button",false,60)]
-        [MenuItem("GameObject/UI/Button - TextMeshPro",false,61)]
-        static UIButtonSuper CreateButton()
-        {
-            //设置一个文本
-            Transform textRrans;
-            var image = CreateComponent<Image>("Button");
-            image.sprite = AssetDatabase.LoadAssetAtPath<Sprite>(DefaultTextureName<UIButtonSuper>());
-            image.raycastTarget = true;
-            image.maskable = false;
-            image.GetComponent<RectTransform>().sizeDelta = new Vector2(180, 60);
-            var text = CreateText();
-            text.text = "Button";
-            text.horizontalAlignment = HorizontalAlignmentOptions.Center;
-            text.verticalAlignment = VerticalAlignmentOptions.Middle;
-            (textRrans = text.transform).SetParent(image.transform);
-            textRrans.localPosition = Vector3.zero;
-            textRrans.localScale = Vector3.one;
-            var textRectTrans = text.GetComponent<RectTransform>();
-            textRectTrans.anchorMin = new Vector2(0, 0);
-            textRectTrans.anchorMax = new Vector2(1, 1);
-            textRectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 160);
-            textRectTrans.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 40);
-            var uiButton = image.gameObject.GetOrAddComponent<UIButtonSuper>();
-            Selection.activeGameObject = uiButton.gameObject;
-            return uiButton;
-        }
-        [MenuItem("GameObject/UI/U_SpriteAnimation",false,2 )]
-        static Image CreateUGUISpriteAnimation()
-        {
-            var image = CreateComponent<Image>("Image");
-            image.sprite = AssetDatabase.LoadAssetAtPath<Sprite>(DefaultTextureName<Image>());
-            image.raycastTarget = false;
-            image.maskable = false;
-            image.gameObject.AddComponent<UGUISpriteAnimation>();
-            return image;
-        }
-
+        
         /// <summary>
         /// 创建ui组件
         /// </summary>

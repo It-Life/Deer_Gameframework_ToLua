@@ -23,8 +23,13 @@ using UnityEngine;
 namespace Deer
 {
     [ExecuteAlways]
-    public partial class UIComponentBinder : MonoBehaviour
+    public partial class ComponentBinder : MonoBehaviour
     {
+        [NoToLua] [LabelWidth(55)] [ShowInInspector,ReadOnly]
+        public DefaultAsset luaFile;
+
+        private string _oldFilePath;
+        
 
         [NoToLua]
         public enum PClass
@@ -49,6 +54,11 @@ namespace Deer
 
         private void OnGUI()
         {
+            if (_oldFilePath != filePath)
+            {
+                luaFile = AssetDatabase.LoadAssetAtPath<DefaultAsset>($"Assets/Deer/LuaScripts/{FilePath}.lua");
+                _oldFilePath = filePath;
+            }
         }
 
         private void OnDestroy()
@@ -68,14 +78,14 @@ namespace Deer
                     hover = { textColor = Color.cyan },
                     alignment = TextAnchor.MiddleRight,
                 };
-                for (var i = 0; i < _uIComponentBinderInfos.Count; i++)
+                for (var i = 0; i < _componentBinderInfos.Count; i++)
                 {
-                    UIComponentBinderInfo _uIComponentBinderInfo = _uIComponentBinderInfos[i];
-                    if (_uIComponentBinderInfo.Object == obj)
+                    ComponentBinderInfo _componentBinderInfo = _componentBinderInfos[i];
+                    if (_componentBinderInfo.Object == obj)
                     {
                         var r = new Rect(selectionrect);
 
-                        GUI.Label(r, $"=>'{_uIComponentBinderInfo.Name}'        ", style);
+                        GUI.Label(r, $"=>'{_componentBinderInfo.Name}'        ", style);
                     }
                 }
             }
@@ -86,12 +96,12 @@ namespace Deer
         private void Open()
         {
 
-            var obj = _uIComponentBinderInfos.Where(info => info.Name == Search);
-            foreach (var uiComponentBinderInfo in obj)
+            var obj = _componentBinderInfos.Where(info => info.Name == Search);
+            foreach (var componentBinderInfo in obj)
             {
-                _uIComponentBinderInfos.Remove(uiComponentBinderInfo);
-                _uIComponentBinderInfos.Insert(0, uiComponentBinderInfo);
-                GUIHelper.OpenInspectorWindow(uiComponentBinderInfo.Object);
+                _componentBinderInfos.Remove(componentBinderInfo);
+                _componentBinderInfos.Insert(0, componentBinderInfo);
+                GUIHelper.OpenInspectorWindow(componentBinderInfo.Object);
                 break;
             }
         }
@@ -113,18 +123,18 @@ namespace Deer
 
             EditorUtility.SetDirty(gameObject);
             List<string> names = new List<string>();
-            foreach (var uiComponentBinderInfo in _uIComponentBinderInfos)
+            foreach (var componentBinderInfo in _componentBinderInfos)
             {
-                if (names.Contains(uiComponentBinderInfo.Name))
+                if (names.Contains(componentBinderInfo.Name))
                 {
-                    if (EditorUtility.DisplayDialog("注意", $"存在重复key：{uiComponentBinderInfo.Name}", "确定", "取消"))
+                    if (EditorUtility.DisplayDialog("注意", $"存在重复key：{componentBinderInfo.Name}", "确定", "取消"))
                     {
                         return;
                     }
                 }
                 else
                 {
-                    names.Add(uiComponentBinderInfo.Name);
+                    names.Add(componentBinderInfo.Name);
                 }
             }
 
@@ -145,9 +155,9 @@ namespace Deer
             s += FieldStart;
             s += "\n";
             fieldStrList.Add(FieldStart);
-            for (int i = _uIComponentBinderInfos.Count - 1; i >= 0; i--)
+            for (int i = _componentBinderInfos.Count - 1; i >= 0; i--)
             {
-                var inf = _uIComponentBinderInfos[i];
+                var inf = _componentBinderInfos[i];
                 string fieldStr = $"---@field {inf.Name} {inf.componet.GetType().FullName}\n";
                 s += fieldStr;
                 fieldStrList.Add(fieldStr.Remove(fieldStr.Length - 1));
@@ -345,8 +355,8 @@ end
 
         private static void GenRequireLuaRequireFile()
         {
-            Dictionary<UIComponentBinder, string> pathDict = new Dictionary<UIComponentBinder, string>();
-            var uiComponentBinders = AssetDatabase
+            Dictionary<ComponentBinder, string> pathDict = new Dictionary<ComponentBinder, string>();
+            var componentBinders = AssetDatabase
                 .FindAssets("t:prefab")
                 .Select(AssetDatabase.GUIDToAssetPath)
                 .Select(x =>
@@ -354,7 +364,7 @@ end
                     if (x.Contains($"{AssetBundlePathResolver.BundlePathPrefix}Prefabs/UI")
                         || x.Contains($"{AssetBundlePathResolver.BundlePathPrefix}Prefabs/UITest") || x.Contains($"{AssetBundlePathResolver.BundlePathPrefix}Prefabs/Battle"))
                     {
-                        var ret = AssetDatabase.LoadAssetAtPath<UIComponentBinder>(x);
+                        var ret = AssetDatabase.LoadAssetAtPath<ComponentBinder>(x);
                         if (ret != null)
                         {
                             pathDict[ret] = x.Replace(AssetBundlePathResolver.BundlePathPrefix, "").Replace(".prefab", "").ToLower();
@@ -370,9 +380,9 @@ end
 
 
             StringBuilder stringBuilder = new StringBuilder();
-            foreach (var uiComponentBinder in uiComponentBinders)
+            foreach (var componentBinder in componentBinders)
             {
-                var lets = uiComponentBinder.GetComponentsInChildren<UIComponentBinder>(true);
+                var lets = componentBinder.GetComponentsInChildren<ComponentBinder>(true);
                 lets = lets.Where(x => x != null && !string.IsNullOrEmpty(x.filePath)).ToArray();
 
                 foreach (var let in lets)
@@ -385,10 +395,10 @@ end
 
             stringBuilder.Append("_G.__UIPrefabPath = {\n");
 
-            foreach (var uiComponentBinder in uiComponentBinders)
+            foreach (var componentBinder in componentBinders)
             {
-                var luaGlobalStringName = uiComponentBinder.filePath.Substring(uiComponentBinder.filePath.LastIndexOf("/") + 1);
-                stringBuilder.Append($"    {luaGlobalStringName} = \"{pathDict[uiComponentBinder]}\",\n");
+                var luaGlobalStringName = componentBinder.filePath.Substring(componentBinder.filePath.LastIndexOf("/") + 1);
+                stringBuilder.Append($"    {luaGlobalStringName} = \"{pathDict[componentBinder]}\",\n");
             }
 
             stringBuilder.Append("}\n");
@@ -538,7 +548,7 @@ end
         [HorizontalGroup("func"), Button(ButtonSizes.Small)]
         void Sort()
         {
-            _uIComponentBinderInfos.Sort(((info, outletInfo) => info.ComponentType.CompareTo(outletInfo.ComponentType)));
+            _componentBinderInfos.Sort(((info, outletInfo) => info.ComponentType.CompareTo(outletInfo.ComponentType)));
         }
 
         class AssetBundlePathResolver

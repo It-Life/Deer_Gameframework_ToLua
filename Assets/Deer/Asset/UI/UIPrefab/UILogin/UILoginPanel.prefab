@@ -1184,7 +1184,7 @@ RectTransform:
   m_GameObject: {fileID: 8666443856976402303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4385144165310083460}
@@ -1258,7 +1258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89963884377a37d4da7543e849593102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uIComponentBinderInfos:
+  _componentBinderInfos:
   - Object: {fileID: 4017534637785648742}
     Name: userNameInputField
     ComponentType: InputField
@@ -1286,23 +1286,6 @@ MonoBehaviour:
     canPress: 0
     soundId: 1002
     m_soundId: BtnDefaultClick
-  - Object: {fileID: 3157247055245991294}
-    Name: image
-    ComponentType: Image
-    componet: {fileID: 5969360720406243739}
-    componetPreview: {fileID: 5969360720406243739}
-    canDoubleClick: 0
-    canPress: 0
-    soundId: 1002
-    m_soundId: BtnDefaultClick
-  - Object: {fileID: 1192131829127204058}
-    Name: image1
-    ComponentType: Image
-    componet: {fileID: 7634446309099441779}
-    componetPreview: {fileID: 7634446309099441779}
-    canDoubleClick: 0
-    canPress: 0
-    soundId: 1002
-    m_soundId: BtnDefaultClick
   FilePath: UI/UILogin/UILoginPanel
+  luaFile: {fileID: 102900000, guid: b898913295096924c99207c10958ec61, type: 3}
   LuaClass: 0

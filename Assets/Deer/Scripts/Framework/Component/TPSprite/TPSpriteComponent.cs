@@ -80,6 +80,10 @@ public class TPSpriteComponent : GameFrameworkComponent
 
     private void InternalSetImage(Image targetImage, AssetInstanceObject assetObject, bool setNativeSize)
     {
+        if (targetImage==null)
+        {
+            return;
+        }
         Texture2D texture2D = assetObject.Target as Texture2D;
         Sprite sprite = Sprite.Create(texture2D, new Rect(0, 0, texture2D.width, texture2D.height), Vector2.zero);
         targetImage.sprite = sprite;

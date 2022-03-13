@@ -241,7 +241,7 @@ public static class CustomSettings
         _GT(typeof(ProcedureChangeLua)).SetNameSpace(null),
         _GT(typeof(Log)),
         _GT(typeof(ColorType)),
-        _GT(typeof(UIComponentBinder)).SetNameSpace(null),
+        _GT(typeof(ComponentBinder)).SetNameSpace(null),
         _GT(typeof(FileUtils)).SetNameSpace(null),
         
         //SuperView

@@ -28,6 +28,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 261388954782374482}
   m_RootOrder: 0
@@ -215,12 +216,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 975d78522d5bdca42a5af541a724aef2, type: 3}
---- !u!1 &8781253086210211244 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4175791136072914095, guid: 975d78522d5bdca42a5af541a724aef2,
-    type: 3}
-  m_PrefabInstance: {fileID: 4624674282453428483}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1236940847799771026 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5837892052305835665, guid: 975d78522d5bdca42a5af541a724aef2,
@@ -251,6 +246,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8781253086210211244 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4175791136072914095, guid: 975d78522d5bdca42a5af541a724aef2,
+    type: 3}
+  m_PrefabInstance: {fileID: 4624674282453428483}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5310153086213857770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -365,6 +366,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
         type: 3}
+      propertyPath: luaFile
+      value: 
+      objectReference: {fileID: 102900000, guid: aee0f45c8179ee746bf007911584c0ba,
+        type: 3}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
       propertyPath: FilePath
       value: UI/UILoading/UILoadingPanel
       objectReference: {fileID: 0}
@@ -372,6 +379,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _uIOutletInfos.Array.size
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
+      propertyPath: _componentBinderInfos.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
         type: 3}
@@ -505,6 +517,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
         type: 3}
+      propertyPath: _componentBinderInfos.Array.data[0].Name
+      value: progress
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
+      propertyPath: _componentBinderInfos.Array.data[1].Name
+      value: progressValue
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
+      propertyPath: _componentBinderInfos.Array.data[0].Object
+      value: 
+      objectReference: {fileID: 8781253086210211244}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
+      propertyPath: _componentBinderInfos.Array.data[1].Object
+      value: 
+      objectReference: {fileID: 5043556287224639454}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
       propertyPath: _uIComponentBinderInfos.Array.data[0].Name
       value: progress
       objectReference: {fileID: 0}
@@ -538,6 +570,26 @@ PrefabInstance:
       propertyPath: _uIOutletInfos.Array.data[4].ComponentType
       value: TextMeshProUGUI
       objectReference: {fileID: 0}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
+      propertyPath: _componentBinderInfos.Array.data[0].soundId
+      value: 1002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
+      propertyPath: _componentBinderInfos.Array.data[1].soundId
+      value: 1002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
+      propertyPath: _componentBinderInfos.Array.data[0].componet
+      value: 
+      objectReference: {fileID: 1236940847799771026}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
+      propertyPath: _componentBinderInfos.Array.data[1].componet
+      value: 
+      objectReference: {fileID: 8440745827819050182}
     - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
         type: 3}
       propertyPath: _uIComponentBinderInfos.Array.data[0].Object
@@ -575,6 +627,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
         type: 3}
+      propertyPath: _componentBinderInfos.Array.data[0].m_soundId
+      value: BtnDefaultClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
+      propertyPath: _componentBinderInfos.Array.data[1].m_soundId
+      value: BtnDefaultClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
       propertyPath: _uIComponentBinderInfos.Array.data[0].soundId
       value: 1002
       objectReference: {fileID: 0}
@@ -603,6 +665,26 @@ PrefabInstance:
       propertyPath: _uIComponentBinderInfos.Array.data[1].m_soundId
       value: BtnDefaultClick
       objectReference: {fileID: 0}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
+      propertyPath: _componentBinderInfos.Array.data[0].ComponentType
+      value: Image
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
+      propertyPath: _componentBinderInfos.Array.data[1].ComponentType
+      value: Image
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
+      propertyPath: _componentBinderInfos.Array.data[0].componetPreview
+      value: 
+      objectReference: {fileID: 1236940847799771026}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
+      propertyPath: _componentBinderInfos.Array.data[1].componetPreview
+      value: 
+      objectReference: {fileID: 8440745827819050182}
     - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
         type: 3}
       propertyPath: _uIComponentBinderInfos.Array.data[0].ComponentType

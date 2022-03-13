@@ -118,8 +118,8 @@ function UIManager:LoadUIFormSuccessCallback(goPrefab,serialId)
     local graphicRaycaster = GObjUtils.GetOrAddComponent(gameObject,typeof(GraphicRaycaster))
     ui.canvas = canvas
     ui.graphicRaycaster = graphicRaycaster
-    if ui.uIComponentBinder then
-        ui.uIComponentBinder:BindLua(ui)
+    if ui.componentBinder then
+        ui.componentBinder:BindLua(ui)
     end
     ui:OnAwake()
     ui:OnEnable()
@@ -135,13 +135,13 @@ function UIManager:BindLuaScript(gameObject,uiScript)
     if GObjUtils.IsNull(gameObject) then
         return
     end
-    local uIComponentBinder = gameObject.transform:GetComponent(typeof(UIComponentBinder))
-    if not uIComponentBinder then
+    local componentBinder = gameObject.transform:GetComponent(typeof(ComponentBinder))
+    if not componentBinder then
         return
     end
     local ui = uiScript
     if not ui then
-        local filePath = uIComponentBinder.filePath
+        local filePath = componentBinder.filePath
         local scriptPath = LuaGameUtils.GetLuaUIScriptPath(filePath)
         ui = require(scriptPath)
         ui = ui.New()
@@ -149,14 +149,14 @@ function UIManager:BindLuaScript(gameObject,uiScript)
     ui.go = gameObject
     ui.gameObject = gameObject
     ui.transform = gameObject.transform
-    ui.uIComponentBinder = uIComponentBinder
+    ui.componentBinder = componentBinder
     return ui
 end
 
 function UIManager:BindUIUnit(gameObject,unitScript)
     local ui = self:BindLuaScript(gameObject,unitScript)
-    if ui.uIComponentBinder then
-        ui.uIComponentBinder:BindLua(ui)
+    if ui.componentBinder then
+        ui.componentBinder:BindLua(ui)
     end
     ui:OnAwake()
     ui:OnEnable()

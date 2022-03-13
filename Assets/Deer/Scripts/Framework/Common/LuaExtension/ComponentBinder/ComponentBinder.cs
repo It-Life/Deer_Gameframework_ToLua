@@ -16,9 +16,9 @@ using UnityEngine.UI;
 namespace Deer
 {
     [RequireComponent(typeof(UIEventBinder))]
-    public partial class UIComponentBinder : MonoBehaviour
+    public partial class ComponentBinder : MonoBehaviour
     {
-        public List<UIComponentBinderInfo> _uIComponentBinderInfos = new List<UIComponentBinderInfo>();
+        public List<ComponentBinderInfo> _componentBinderInfos = new List<ComponentBinderInfo>();
 
         private UIEventBinder _uiEventBinder;
 
@@ -37,10 +37,10 @@ namespace Deer
         }
         public void BindLua(LuaTable luaTable)
         {
-            UIComponentBinderInfo componentBinderInfo = null;
-            for (var i = 0; i < _uIComponentBinderInfos.Count; i++)
+            ComponentBinderInfo componentBinderInfo = null;
+            for (var i = 0; i < _componentBinderInfos.Count; i++)
             {
-                componentBinderInfo = _uIComponentBinderInfos[i];
+                componentBinderInfo = _componentBinderInfos[i];
                 if (componentBinderInfo.Object != null)
                 {
                     luaTable[componentBinderInfo.Name] = componentBinderInfo.componet;

@@ -71,7 +71,7 @@ public static class LuaBinder
 		Deer_ProcedureChangeLuaWrap.Register(L);
 		LogWrap.Register(L);
 		ColorTypeWrap.Register(L);
-		Deer_UIComponentBinderWrap.Register(L);
+		Deer_ComponentBinderWrap.Register(L);
 		FileUtilsWrap.Register(L);
 		SuperScrollView_LoopListView2Wrap.Register(L);
 		SuperScrollView_LoopListViewItem2Wrap.Register(L);
