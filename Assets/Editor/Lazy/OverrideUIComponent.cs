@@ -24,6 +24,7 @@ namespace Deer.Editor
             text.raycastTarget = false;
             text.font = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>("Assets/Deer/Asset/Font/wryh SDF.asset"); // 默认字体  
             text.color = Color.black;
+            text.text = "New Text";
             return text;
         }
 

@@ -6,17 +6,13 @@
 //修改时间 : 2021-09-24 07-52-22  
 //版 本 : 0.1 
 // ===============================================
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
- 
+
 public class FileCapacity
 {
     private const string REMOVE_STR = "Assets";

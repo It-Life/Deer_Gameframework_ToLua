@@ -14,18 +14,18 @@ public class CreateTemplateScript
     private const string TemplateLuaScriptPath = "Assets/Editor/Lazy/GenScriptTool/Template/MyTemplateLua.lua.txt";
 
     //菜单项
-    [MenuItem("Assets/Create/C# FrameScript", false, 1)]
+     [MenuItem("Assets/Create/CSharpScript/C# FrameScript", false, 1)]
     static void CreateScript()
     {
         ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0, ScriptableObject.CreateInstance<CreateScriptAsset>(),
-        GetSelectedPathOrFallback() + "/New BehaviourScript.cs",
+        GetSelectedPathOrFallback() + "/NewBehaviourScript.cs",
         null, TemplateScriptPath);
     }
-    [MenuItem("Assets/Create/C# FrameProcedureScript", false, 2)]
+    [MenuItem("Assets/Create/CSharpScript/C# FrameProcedureScript", false, 2)]
     static void CreateProcedureScript()
     {
         ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0, ScriptableObject.CreateInstance<CreateScriptAsset>(),
-        GetSelectedPathOrFallback() + "/New ProcedureScript.cs",
+        GetSelectedPathOrFallback() + "/NewProcedureScript.cs",
         null, TemplateProcedureScriptPath);
     }
 
@@ -33,7 +33,7 @@ public class CreateTemplateScript
     public static void CreatNewLua()
     {
         ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0, ScriptableObject.CreateInstance<CreateScriptAsset>(),
-            GetSelectedPathOrFallback() + "/New Lua.lua", null, TemplateLuaScriptPath);
+            GetSelectedPathOrFallback() + "/NewLua.lua", null, TemplateLuaScriptPath);
     }
     public static string GetSelectedPathOrFallback()
     {
@@ -54,23 +54,24 @@ class CreateScriptAsset : EndNameEditAction
 {
     private static string annotationCSStr =
 "// ================================================\r\n"
-+ "//描 述 :  \r\n"
-+ "//作 者 : #Author# \r\n"
-+ "//创建时间 : #CreatTime#  \r\n"
-+ "//修改作者 : #ChangeAuthor# \r\n"
-+ "//修改时间 : #ChangeTime#  \r\n"
-+ "//版 本 : #Version# \r\n"
++ "//描 述:\r\n"
++ "//作 者:#Author#\r\n"
++ "//创建时间:#CreatTime#\r\n"
++ "//修改作者:#ChangeAuthor#\r\n"
++ "//修改时间:#ChangeTime#\r\n"
++ "//版 本:#Version# \r\n"
 + "// ===============================================\r\n";
     private static string annotationLuaStr =
 "\r\n"
 + "---================================================\r\n"
-+ "---描 述 :  \r\n"
-+ "---作 者 : #Author# \r\n"
-+ "---创建时间 : #CreatTime#  \r\n"
-+ "---修改作者 : #ChangeAuthor# \r\n"
-+ "---修改时间 : #ChangeTime#  \r\n"
-+ "---版 本 : #Version# \r\n"
-+ "---===============================================\r\n";
++ "---描 述:\r\n"
++ "---作 者:#Author#\r\n"
++ "---创建时间:#CreatTime#\r\n"
++ "---修改作者:#ChangeAuthor#\r\n"
++ "---修改时间:#ChangeTime#\r\n"
++ "---版 本:#Version#\r\n"
++ "---===============================================\r\n" 
++ "---@class #Class#\r\n";
     public override void Action(int instanceId, string newScriptPath, string templatePath)
     {
         UnityEngine.Object obj = CreateTemplateScriptAsset(newScriptPath, templatePath);
@@ -94,6 +95,8 @@ class CreateScriptAsset : EndNameEditAction
             annotationStr = annotationLuaStr;
         }
         annotationStr += text;
+        annotationStr = annotationStr.Replace("#Class#",
+            fileNameWithoutExtension);
         //把#CreateTime#替换成具体创建的时间
         annotationStr = annotationStr.Replace("#CreatTime#",
             System.DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss"));

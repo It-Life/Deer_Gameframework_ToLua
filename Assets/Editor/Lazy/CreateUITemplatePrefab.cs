@@ -23,25 +23,11 @@ namespace Deer.Editor
         {
             SaveObject(menuCommand, "Progress");
         }
-        [MenuItem("GameObject/UI/Button",false,60)]
-        [MenuItem("GameObject/UI/Button - TextMeshPro",false,61)]
-        static void CreateUIButton(MenuCommand menuCommand)
-        {
-            SaveObject(menuCommand, "UIButton");
-        }
-        
         [MenuItem("GameObject/UI/U_UIPanel",false,0)]
         static void CreateUIPanelObj(MenuCommand menuCommand)
         {
             SaveObject(menuCommand, "UIPanel");
         }
-        
-        [MenuItem("GameObject/UI/U_SpriteAnimation",false,2 )]
-        static void CreateUGUISpriteAnimation(MenuCommand menuCommand)
-        {
-            SaveObject(menuCommand, "UISpriteAnimation");
-        }
-        
         static void SaveObject(MenuCommand menuCommand, string prefabName,string objName = "") 
         {
             var path = FileUtils.GetPath($@"Assets\Deer\Asset\UI\UIPrefab\UITemplate\{ prefabName }.prefab");

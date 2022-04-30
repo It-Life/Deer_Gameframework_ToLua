@@ -26,10 +26,6 @@ namespace Deer.Editor
             if (assetPath.Contains("Assets/Deer/Asset/UI/UIArt/Atlas"))
             {
                 EditorCoroutineRunner.StartEditorCoroutine(WaitForSeconds(atlasName, assetPath, dirName));
-            }else if (assetPath.Contains("Assets/Deer/Asset/UI/UIArt/Sprite"))
-            {
-                textureImporter.textureType = TextureImporterType.Sprite;
-                //EditorCoroutineRunner.StartEditorCoroutine(WaitForSeconds(atlasName, assetPath, dirName));
             }
         }
 
