@@ -128,7 +128,7 @@ namespace Deer.Editor
         OpenFileInIdea(path , 0);
     }
 
-    [MenuItem("Tools/Set Your Luaproject Root")]
+    //[MenuItem("Tools/Set Your Luaproject Root")]
     static string SetLuaProjectRoot()
     {
         string path = EditorUserSettings.GetConfigValue(LUA_PROJECT_ROOT_FOLDER_PATH_KEY);
