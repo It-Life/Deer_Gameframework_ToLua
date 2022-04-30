@@ -47,9 +47,7 @@ namespace UnityToolbarExtender.Examples
 		static void OnToolbarGUI()
 		{
 			var tex = EditorGUIUtility.IconContent(@"UnityEditor.SceneView").image;
-
 			GUI.changed = false;
-
 			GUILayout.Toggle(m_enabled, new GUIContent(null, tex, "Focus SceneView when entering play mode"), "Command");
 			if (GUI.changed)
 			{

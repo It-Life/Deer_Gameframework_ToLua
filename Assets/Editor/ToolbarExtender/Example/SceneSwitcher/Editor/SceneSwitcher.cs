@@ -5,55 +5,36 @@ using UnityEngine;
 
 namespace UnityToolbarExtender.Examples
 {
-	static class ToolbarStyles
-	{
-		public static readonly GUIStyle commandButtonStyle;
-
-		static ToolbarStyles()
-		{
-			commandButtonStyle = new GUIStyle("Command")
-			{
-				fontSize = 16,
-				alignment = TextAnchor.MiddleCenter,
-				imagePosition = ImagePosition.ImageAbove,
-				fontStyle = FontStyle.Bold
-			};
-		}
-	}
-
 	[InitializeOnLoad]
 	public class SceneSwitchLeftButton
 	{
+		private static string SceneName1 = "DeerLauncher", SceneName2 = "TestCity";
+		private static float startPos = (SceneName1.Length + SceneName2.Length) * 6f;
 		static SceneSwitchLeftButton()
 		{
 			ToolbarExtender.LeftToolbarGUI.Add(OnToolbarGUI);
 		}
-
+		static string ButtonStyleName = "Tab middle";
+		static GUIStyle ButtonGuiStyle;
 		static void OnToolbarGUI()
 		{
-			GUILayout.FlexibleSpace();
-
-			if(GUILayout.Button(new GUIContent("1", "Start Scene 1"), ToolbarStyles.commandButtonStyle))
+			if (null == ButtonGuiStyle)
 			{
-				//SceneHelper.StartScene("ToolbarExtenderExampleScene1");
-				VersionInfo m_VersionInfo = new VersionInfo();
-				string versionInfoJson = JsonUtility.ToJson(m_VersionInfo);
-				Debug.Log(versionInfoJson);
+				ButtonGuiStyle = new GUIStyle(ButtonStyleName)
+				{
+					padding = new RectOffset(2, 8, 2, 2),
+					alignment = TextAnchor.MiddleCenter,
+					//imagePosition = ImagePosition.ImageAbove,
+					fontStyle = FontStyle.Bold
+				};
 			}
-
-			if(GUILayout.Button(new GUIContent("2", "Start Scene 2"), ToolbarStyles.commandButtonStyle))
+			GUILayout.FlexibleSpace();
+			if(GUILayout.Button(new GUIContent("Launcher",EditorGUIUtility.FindTexture("PlayButton"), $"Start Scene Launcher"), ButtonGuiStyle))
 			{
-				SceneHelper.StartScene("ToolbarExtenderExampleScene2");
+				SceneHelper.StartScene(SceneName1);
 			}
 		}
 	}
-
-	class VersionInfo
-	{
-		public int aa;
-		public string bb;
-	}
-
 	static class SceneHelper
 	{
 		static string sceneToOpen;
