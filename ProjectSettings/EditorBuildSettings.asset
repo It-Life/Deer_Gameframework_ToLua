@@ -9,6 +9,19 @@ EditorBuildSettings:
     path: Assets/Deer/Scenes/DeerLauncher.unity
     guid: da107ae9236cc3142b53df7a86b196f5
   - enabled: 1
+    path: Assets/Deer/Asset/Scenes/TestCity.unity
+    guid: c98560d95a658444090c1a46235af910
+  - enabled: 1
+    path: Assets/Deer/Scenes/ActScene.unity
+    guid: 0a7d5c989b538e143818a3b61374f26d
+  - enabled: 1
     path: Assets/Deer/Scenes/Test.unity
     guid: a297a98bccdaac14c971fb11e239d7e5
+  - enabled: 1
+    path: Assets/Deer/Scripts/Framework/Common/UI/Hypertext/Examples/RegexExample.unity
+    guid: ce1400fed52822641a6e43c55893f101
+  - enabled: 1
+    path: Assets/Deer/Scripts/Framework/Component/Common/SerializableDictionary/Example/SerializableDicitonary
+      Example.unity
+    guid: 6c0758ade4ba74b7493ce3806fa2f38b
   m_configObjects: {}
