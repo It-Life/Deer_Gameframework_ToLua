@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9077925132860969200}
   - component: {fileID: 99062917709137379}
-  - component: {fileID: 4867679393806381903}
+  - component: {fileID: 1166722208759497093}
   m_Layer: 5
   m_Name: bg
   m_TagString: Untagged
@@ -46,7 +46,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9207870501182222803}
   m_CullTransparentMesh: 0
---- !u!114 &4867679393806381903
+--- !u!114 &1166722208759497093
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,7 +55,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9207870501182222803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -66,16 +66,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b05a2f3bb3da490419fe5c724bd64407, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_Texture: {fileID: 2800000, guid: b05a2f3bb3da490419fe5c724bd64407, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1001 &4624674282453428483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92,7 +89,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -6586794739977687383, guid: 5d22e4e6594144b4abd58eccde422448,
+      objectReference: {fileID: 21300000, guid: 6d4a5e220b4c69847a4d77a1ace279c5,
         type: 3}
     - target: {fileID: 3822897879312678341, guid: 975d78522d5bdca42a5af541a724aef2,
         type: 3}
@@ -109,6 +106,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Progress
       objectReference: {fileID: 0}
+    - target: {fileID: 5837892052305835665, guid: 975d78522d5bdca42a5af541a724aef2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3f49976af60ae4d4696ff8ec28bfedc2,
+        type: 3}
     - target: {fileID: 6002420624309874666, guid: 975d78522d5bdca42a5af541a724aef2,
         type: 3}
       propertyPath: m_Pivot.x
@@ -382,11 +385,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
         type: 3}
-      propertyPath: _componentBinderInfos.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
-        type: 3}
       propertyPath: _uIOutletInfos.Array.data[0].Name
       value: button
       objectReference: {fileID: 0}
@@ -484,7 +482,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _uIOutletInfos.Array.data[3].componet
       value: 
-      objectReference: {fileID: 4867679393806381903}
+      objectReference: {fileID: 0}
     - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
         type: 3}
       propertyPath: _uIOutletInfos.Array.data[4].componet
@@ -515,26 +513,6 @@ PrefabInstance:
       propertyPath: _uIOutletInfos.Array.data[4].m_soundId
       value: BtnDefaultClick
       objectReference: {fileID: 0}
-    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
-        type: 3}
-      propertyPath: _componentBinderInfos.Array.data[0].Name
-      value: progress
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
-        type: 3}
-      propertyPath: _componentBinderInfos.Array.data[1].Name
-      value: progressValue
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
-        type: 3}
-      propertyPath: _componentBinderInfos.Array.data[0].Object
-      value: 
-      objectReference: {fileID: 8781253086210211244}
-    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
-        type: 3}
-      propertyPath: _componentBinderInfos.Array.data[1].Object
-      value: 
-      objectReference: {fileID: 5043556287224639454}
     - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
         type: 3}
       propertyPath: _uIComponentBinderInfos.Array.data[0].Name
@@ -572,26 +550,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
         type: 3}
-      propertyPath: _componentBinderInfos.Array.data[0].soundId
-      value: 1002
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
-        type: 3}
-      propertyPath: _componentBinderInfos.Array.data[1].soundId
-      value: 1002
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
-        type: 3}
-      propertyPath: _componentBinderInfos.Array.data[0].componet
-      value: 
-      objectReference: {fileID: 1236940847799771026}
-    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
-        type: 3}
-      propertyPath: _componentBinderInfos.Array.data[1].componet
-      value: 
-      objectReference: {fileID: 8440745827819050182}
-    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
-        type: 3}
       propertyPath: _uIComponentBinderInfos.Array.data[0].Object
       value: 
       objectReference: {fileID: 8781253086210211244}
@@ -619,21 +577,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _uIOutletInfos.Array.data[3].componetPreview
       value: 
-      objectReference: {fileID: 4867679393806381903}
+      objectReference: {fileID: 0}
     - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
         type: 3}
       propertyPath: _uIOutletInfos.Array.data[4].componetPreview
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
-        type: 3}
-      propertyPath: _componentBinderInfos.Array.data[0].m_soundId
-      value: BtnDefaultClick
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
-        type: 3}
-      propertyPath: _componentBinderInfos.Array.data[1].m_soundId
-      value: BtnDefaultClick
       objectReference: {fileID: 0}
     - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
         type: 3}
@@ -665,26 +613,6 @@ PrefabInstance:
       propertyPath: _uIComponentBinderInfos.Array.data[1].m_soundId
       value: BtnDefaultClick
       objectReference: {fileID: 0}
-    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
-        type: 3}
-      propertyPath: _componentBinderInfos.Array.data[0].ComponentType
-      value: Image
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
-        type: 3}
-      propertyPath: _componentBinderInfos.Array.data[1].ComponentType
-      value: Image
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
-        type: 3}
-      propertyPath: _componentBinderInfos.Array.data[0].componetPreview
-      value: 
-      objectReference: {fileID: 1236940847799771026}
-    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
-        type: 3}
-      propertyPath: _componentBinderInfos.Array.data[1].componetPreview
-      value: 
-      objectReference: {fileID: 8440745827819050182}
     - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
         type: 3}
       propertyPath: _uIComponentBinderInfos.Array.data[0].ComponentType

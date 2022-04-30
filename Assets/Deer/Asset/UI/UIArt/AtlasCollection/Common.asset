@@ -1,0 +1,529 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d326122dba59474fa04d550e63ada33b, type: 3}
+  m_Name: Common
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 21300000, guid: e71918de079232049a024ab439c2a46c, type: 3}
+    - {fileID: 21300000, guid: d767f68d39f253347bb97c842f2a12dc, type: 3}
+    - {fileID: 21300000, guid: dd7340b023b034548beab84417868bde, type: 3}
+    - {fileID: 21300000, guid: ab8b9146b5cab164099cc9a3d9d4a788, type: 3}
+    - {fileID: 21300000, guid: ce0193f14f4d3e34e9202f9fbaceb692, type: 3}
+    - {fileID: 21300000, guid: b3ad2b6c53cafed4694b42384ea003bd, type: 3}
+    - {fileID: 21300000, guid: ed21abd823165ab42b9580f91b40304a, type: 3}
+    - {fileID: 21300000, guid: a3c5026a905f4a54498bd1d78981ec29, type: 3}
+    - {fileID: 21300000, guid: c677b4b39dea5724b91f527aa03d0481, type: 3}
+    - {fileID: 21300000, guid: 6bf350a2910c3d242ba1a9afb2685263, type: 3}
+    - {fileID: 21300000, guid: 6036c7998b969d44a8dc98b7e8d22b05, type: 3}
+    - {fileID: 21300000, guid: c772cdcab658744428a8de1a13ff3eda, type: 3}
+    - {fileID: 21300000, guid: cdc40cb2f248d1341b2babe8aa2d5f2c, type: 3}
+    - {fileID: 21300000, guid: b6ac8ce59344a634497d30dc2bd5d7dc, type: 3}
+    - {fileID: 21300000, guid: 7984e18db83cee543be6c8d72bfbab53, type: 3}
+    - {fileID: 21300000, guid: 1b5c16c971175bb40bffebfd291e9da8, type: 3}
+    - {fileID: 21300000, guid: 101e73426a5ce9f4fa8e148c58153772, type: 3}
+    - {fileID: 21300000, guid: 976827516c273754abfec9b88955c38c, type: 3}
+    - {fileID: 21300000, guid: 539aca689b473374abe3ea6204fb73ad, type: 3}
+    - {fileID: 21300000, guid: 707246089cd4be746bccc4dfa2a91104, type: 3}
+    - {fileID: 21300000, guid: bd837fcff2b7dff4783f25a6819cc4f7, type: 3}
+    - {fileID: 21300000, guid: d05a0b9901742e145884744c0e403ad0, type: 3}
+    - {fileID: 21300000, guid: 880f448b3f655844da18e99adb777c9e, type: 3}
+    - {fileID: 21300000, guid: f1559cc475b0f09429892fc233c5d0ed, type: 3}
+    - {fileID: 21300000, guid: 6d4a5e220b4c69847a4d77a1ace279c5, type: 3}
+    - {fileID: 21300000, guid: 3f49976af60ae4d4696ff8ec28bfedc2, type: 3}
+    - {fileID: 21300000, guid: 16497263e87ee32428f5f8214b1939af, type: 3}
+    - {fileID: 21300000, guid: a8a76b00063271f4f9ff43decae75ca8, type: 3}
+    - {fileID: 21300000, guid: 9149753af6582a74fab6ec9ae5b23365, type: 3}
+    - {fileID: 21300000, guid: 807a0504e6a6ff241aa6a5668dfdda1c, type: 3}
+    - {fileID: 21300000, guid: 94b312069a678cc4c83766d7cefd6672, type: 3}
+    - {fileID: 21300000, guid: f4794c711a032c742a29744ff376c3b9, type: 3}
+    - {fileID: 21300000, guid: 5982c5c4e6a372741be027375b8f527b, type: 3}
+    - {fileID: 21300000, guid: ee9076daf1b7d7d4fa1c82069ca8bdda, type: 3}
+    - {fileID: 21300000, guid: 85c2ceffadeb7274c95a655c80c5f7d6, type: 3}
+    - {fileID: 21300000, guid: e9328cc68c217cb48b147b0243d56a15, type: 3}
+    - {fileID: 102900000, guid: 001c2f724c526714c8c8368f3c8a97c5, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: m_Sprites
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.Sprite,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 36
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/21_button_ty1_03.png
+    - Name: $v
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/21_card_1.png
+    - Name: $v
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/21_frame_00z.png
+    - Name: $v
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/21_frame_djbi_S01_k.png
+    - Name: $v
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/21_frame_dj_A.png
+    - Name: $v
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/21_frame_dj_A01_k.png
+    - Name: $v
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/21_frame_dj_B.png
+    - Name: $v
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/21_frame_dj_B01_k.png
+    - Name: $v
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/21_frame_dj_S.png
+    - Name: $v
+      Entry: 10
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/21_frame_ty01_01.png
+    - Name: $v
+      Entry: 10
+      Data: 9
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/21_frame_ty01_02.png
+    - Name: $v
+      Entry: 10
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/21_frame_ty01_03.png
+    - Name: $v
+      Entry: 10
+      Data: 11
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/21_frame_ty01_04.png
+    - Name: $v
+      Entry: 10
+      Data: 12
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/21_frame_ty01_05.png
+    - Name: $v
+      Entry: 10
+      Data: 13
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/21_frame_ty01_06.png
+    - Name: $v
+      Entry: 10
+      Data: 14
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/21_frame_ty01_07.png
+    - Name: $v
+      Entry: 10
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/btn_kaiguandi.png
+    - Name: $v
+      Entry: 10
+      Data: 16
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/btn_kaiguanshang.png
+    - Name: $v
+      Entry: 10
+      Data: 17
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/button_ty1_01.png
+    - Name: $v
+      Entry: 10
+      Data: 18
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/button_ty2_01.png
+    - Name: $v
+      Entry: 10
+      Data: 19
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/button_ty2_02.png
+    - Name: $v
+      Entry: 10
+      Data: 20
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/cion_A.png
+    - Name: $v
+      Entry: 10
+      Data: 21
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/cion_B.png
+    - Name: $v
+      Entry: 10
+      Data: 22
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/cion_S.png
+    - Name: $v
+      Entry: 10
+      Data: 23
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/jindut.png
+    - Name: $v
+      Entry: 10
+      Data: 24
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/jindut_di.png
+    - Name: $v
+      Entry: 10
+      Data: 25
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/minus1.png
+    - Name: $v
+      Entry: 10
+      Data: 26
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/minus2.png
+    - Name: $v
+      Entry: 10
+      Data: 27
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/pic_num_1.png
+    - Name: $v
+      Entry: 10
+      Data: 28
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/pic_num_1_move.png
+    - Name: $v
+      Entry: 10
+      Data: 29
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/pic_num_2.png
+    - Name: $v
+      Entry: 10
+      Data: 30
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/pic_num_2_move.png
+    - Name: $v
+      Entry: 10
+      Data: 31
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/pic_num_3.png
+    - Name: $v
+      Entry: 10
+      Data: 32
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/pic_num_3_move.png
+    - Name: $v
+      Entry: 10
+      Data: 33
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/plus1.png
+    - Name: $v
+      Entry: 10
+      Data: 34
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Assets/UITemp/Common/plus2.png
+    - Name: $v
+      Entry: 10
+      Data: 35
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_Objects
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[UnityEngine.Object, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 36
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  m_AtlasFolder: Assets/Deer/Asset/UI/UIArt/Atlas

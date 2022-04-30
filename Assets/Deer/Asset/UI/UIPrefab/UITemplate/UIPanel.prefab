@@ -150,4 +150,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _componentBinderInfos: []
   FilePath: 
+  luaFile: {fileID: 0}
   LuaClass: 0
