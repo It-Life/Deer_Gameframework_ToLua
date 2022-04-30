@@ -30,3 +30,6 @@ require "Component.Update.LuaUpdateComponent"
 
 require "Component.Sound.LuaSoundComponent"
 require "Component.Scene.LuaSceneComponent"
+require "Component.AR.LuaARComponent"
+
+

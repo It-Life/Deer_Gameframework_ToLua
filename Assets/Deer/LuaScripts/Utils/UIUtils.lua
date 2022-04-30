@@ -12,6 +12,7 @@ UIUtils = {}
 UIUtils.tbScrollViewList = {}
 
 ---初始化 List 列表
+---@param vListScrollView SuperScrollView.LoopListView2
 function UIUtils.InitListView(vListScrollView,tbList,parentClass,callBack)
     if not vListScrollView then
         Logger.Error("ListScrollView is nil")

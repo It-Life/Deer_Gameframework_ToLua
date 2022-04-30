@@ -38,7 +38,7 @@ end
 
 function LuaProcedureComponent:GetIsChangeSceneProcedure(nextProcedureId)
     if nextProcedureId == ProcedureConfig.ProcedureMainHall then
-        return false
+        return true
     end
     return false
 end

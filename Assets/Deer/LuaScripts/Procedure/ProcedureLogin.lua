@@ -15,8 +15,8 @@ function ProcedureLogin:OnEnter(csProcedure)
     self.csProcedure = csProcedure
     LuaGameEntry.LuaSound:PlayMusic(SoundId.LOGIN_BGM)
     --弹出登录界面
-    LuaGameEntry.UI:CreateUI(UINameConfig.UILoginPanel)
-    --LuaGameEntry.UI:CreateUI(UINameConfig.UIBagPanel)
+    LuaGameEntry.UI:OpenUI(UINameConfig.UILoginPanel)
+    --LuaGameEntry.UI:OpenUI(UINameConfig.UIBagPanel)
 end
 
 function ProcedureLogin:OnLeave()

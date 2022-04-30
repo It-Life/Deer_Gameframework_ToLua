@@ -10,10 +10,10 @@
 ---@class UIPrefabPathConfig
 UIPrefabPathConfig = 
 {
-    [UINameConfig.UILoginPanel] = "UILogin/UILoginPanel",
-    [UINameConfig.UIMainHallPanel] = "UIMainHall/UIMainHallPanel",
-    [UINameConfig.UILoadingPanel] = "UICommon/UILoadingPanel",
-    [UINameConfig.UIBagPanel] = "UIBag/UIBagPanel",
+    [UINameConfig.UILoginPanel.name] = "UILogin/UILoginPanel",
+    [UINameConfig.UIMainHallPanel.name] = "UIMainHall/UIMainHallPanel",
+    [UINameConfig.UILoadingPanel.name] = "UILoading/UILoadingPanel",
+    [UINameConfig.UIBagPanel.name] = "UIBag/UIBagPanel",
 }
 
 return UIPrefabPathConfig

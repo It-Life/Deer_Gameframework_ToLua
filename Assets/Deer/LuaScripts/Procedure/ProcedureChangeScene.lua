@@ -19,7 +19,7 @@ function ProcedureChangeScene:OnEnter(csProcedure)
     end
     --维护一个计时器
     self:RegisterEvent()
-    LuaGameEntry.UI:CreateUI(UINameConfig.UILoadingPanel)
+    LuaGameEntry.UI:OpenUI(UINameConfig.UILoadingPanel)
     self:OnStartLoadScene()
 end
 
@@ -57,7 +57,7 @@ function ProcedureChangeScene:OnStartLoadScene()
     LuaGameEntry.Procedure:UnloadAllScene()
     GameEntry.ObjectPool:ReleaseAllUnused()
     GameEntry.Resource:ForceUnloadUnusedAssets(true)
-    local _assetPath = LuaGameUtils.GetScenePath("Scene-Forest")
+    local _assetPath = LuaGameUtils.GetScenePath("TestCity")
     LuaGameEntry.LuaScene:LoadScene(_assetPath)
 end
 

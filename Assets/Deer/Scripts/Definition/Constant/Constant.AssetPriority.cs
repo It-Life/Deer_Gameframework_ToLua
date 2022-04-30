@@ -76,6 +76,6 @@ public static partial class Constant
         //public const int MagicAsset = 50;
         //public const int WeaponAsset = 50;
         //public const int RideAsset = 50;
-        //public const int EffectAsset = 50;
+        public const int EffectAsset = 50;
     }
 }

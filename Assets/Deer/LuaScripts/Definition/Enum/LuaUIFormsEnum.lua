@@ -8,15 +8,30 @@
 ---版 本 : 0.1 
 ---===============================================
 ---@class UIFormGroupType
----@field Group1 基础窗体
-UIFormGroupType = 
+---@field AlwaysBottom 如果不想区分太复杂那最底层的UI请使用这个
+---@field Background 背景层 UI
+---@field AnimationUnder 动画层
+---@field Common 普通层 UI
+---@field AnimationOn 动画层
+---@field PopUI 弹出层UI
+---@field Guide 引导层UI
+---@field Const 持续存在层 UI
+---@field Toast 对话框层 UI
+---@field Forward 最高UI层用来放置UI特效和模型
+---@field AlwaysTop 如果不想区分太复杂那最上层的UI请使用这个
+UIFormGroupType =
 {
-    Group1 = 1,
-    Group2 = 2,
-    Group3 = 3,
-    Group4 = 4,
-    Group5 = 5,
-    Group6 = 6,
+    AlwaysBottom = 1,
+    Background = 2,
+    AnimationUnder = 3,
+    Common = 4,
+    AnimationOn = 5,
+    PopUI = 6,
+    Guide = 7,
+    Const = 8,
+    Toast = 9,
+    Forward = 10,
+    AlwaysTop = 11,
 }
 ---@class UIFormType
 ---@field Normal 基础窗体

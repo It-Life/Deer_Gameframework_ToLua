@@ -8,10 +8,8 @@
 ---版 本 : 0.1 
 ---===============================================
 ---@class UINameConfig
-UINameConfig = 
-{
-    UILoginPanel = "UILoginPanel",
-    UIMainHallPanel = "UIMainHallPanel",
-    UILoadingPanel = "UILoadingPanel",
-    UIBagPanel="UIBagPanel",
-}
+UINameConfig = {}
+UINameConfig.UILoginPanel = {name = "UILoginPanel",group = UIFormGroupType.Common}
+UINameConfig.UIMainHallPanel = {name = "UIMainHallPanel",group = UIFormGroupType.Common}
+UINameConfig.UILoadingPanel = {name = "UILoadingPanel",group = UIFormGroupType.Common}
+UINameConfig.UIBagPanel = {name = "UIBagPanel",group = UIFormGroupType.Common}

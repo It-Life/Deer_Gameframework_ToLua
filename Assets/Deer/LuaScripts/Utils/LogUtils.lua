@@ -58,17 +58,17 @@ function Logger.__InputLog(type,message,arg1,arg2,arg3,arg4)
     end
     if GameEntry.GameSettings.g_logEnum == LogEnum.EnableDebugAndAboveLogs or GameEntry.GameSettings.g_logEnum == LogEnum.EnableAllLogs then
         if type == logType.Debug then
-            print(debug.traceback(_strMessage,3))
+            Log.Info(debug.traceback(_strMessage,3))
         elseif type == logType.Info then
-            print(debug.traceback(_strMessage,3))
+            Log.Info(debug.traceback(_strMessage,3))
         elseif type == logType.Warning then
             Log.Warning(debug.traceback(_strMessage,3))
         elseif type == logType.Error then
-            error(debug.traceback(_strMessage,3))
+            Log.Error(debug.traceback(_strMessage,3))
         elseif type == logType.Fatal then
-            error(debug.traceback(_strMessage,3))
+            Log.Error(debug.traceback(_strMessage,3))
         else
-            error(debug.traceback(_strMessage,3))
+            Log.Error(debug.traceback(_strMessage,3))
         end
     elseif GameEntry.GameSettings.g_logEnum == LogEnum.EnableInfoAndAboveLogs then
         if type == logType.Info then
@@ -76,7 +76,7 @@ function Logger.__InputLog(type,message,arg1,arg2,arg3,arg4)
         elseif type == logType.Warning then
             Log.Warning(debug.traceback(_strMessage,3))
         elseif type == logType.Error then
-            error(debug.traceback(_strMessage,3))
+            Log.Error(debug.traceback(_strMessage,3))
         elseif type == logType.Fatal then
             error(debug.traceback(_strMessage,3))
         end

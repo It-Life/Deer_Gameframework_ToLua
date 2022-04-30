@@ -39,10 +39,15 @@ function LuaCharacterManager:__init(owner,characterController)
     self.m_isCanMove = true
     self.m_characterGravitySpeed = 0
     self.m_isGround = false
+    self:SetEnabled(true)
 end
 
 function LuaCharacterManager:__delete()
     
+end
+
+function LuaCharacterManager:SetEnabled(value)
+    self.m_characterController.enabled = value
 end
 
 function LuaCharacterManager:OnUpdate()

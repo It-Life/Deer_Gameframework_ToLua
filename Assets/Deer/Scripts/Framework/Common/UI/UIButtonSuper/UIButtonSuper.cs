@@ -73,7 +73,7 @@ public class UIButtonSuper : Button
     [Tooltip("是否可以双击")]
     public bool m_CanDoubleClick = false;
     [Tooltip("双击间隔时长")]
-    public float m_DoubleClickIntervalTime = 0.5f;
+    public float m_DoubleClickIntervalTime = 0.1f;
     [Tooltip("双击事件")]
     public ButtonClickedEvent onDoubleClick;
     [Tooltip("是否可以长按")]

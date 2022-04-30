@@ -8,13 +8,23 @@
 ---版 本 : 0.1 
 ---===============================================
 ---@class LuaCharacterNpc:LuaEntityBase
-LuaCharacterNpc = Class("LuaCharacterNpc",LuaEntityBase)
+LuaCharacterNpc = Class("LuaCharacterNpc",LuaCharacterBase)
 
 function LuaCharacterNpc:__init(...)
 
 end
 
 function LuaCharacterNpc:__delete(...)
+
+end
+
+function LuaCharacterNpc:OnShow(entityId,csEntity,luaEntityData)
+    self.super.OnShow(self,entityId,csEntity,luaEntityData)
+
+end
+
+function LuaCharacterNpc:OnHide()
+    self.super.OnHide(self)
 
 end
 

@@ -12,19 +12,19 @@ ProcedureMainHall = Class("ProcedureMainHall",ProcedureBase)
 function ProcedureMainHall:OnEnter(csProcedure)
     self.super.OnEnter(self,csProcedure)
     LuaGameEntry.LuaSound:PlayMusic(SoundId.MAIN_BGM)
-    LuaGameEntry.UI:CreateUI(UINameConfig.UIMainHallPanel)
-    local entityId = LuaGameEntry.LuaEntity:GenerateSerialId()
-    local _data = EntityData.New(entityId,1,"Character/Blade_girl/Blade_Girl_Prefab")
-    _data.Position = Vector3(75,11,120)
-    _data.IsOwner = false
-    LuaGameEntry.LuaEntity:ShowCharacter(_data)
-    
-    local entityId = LuaGameEntry.LuaEntity:GenerateSerialId()
-    local _data1 = EntityData.New(entityId,1,"Character/Blade_Warrior/Blade_Warrior_Prefab")
-    _data1.Position = Vector3(76,11,125)
-    _data1.IsOwner = true
-    LuaGameEntry.LuaEntity:ShowCharacter(_data1)
+    LuaGameEntry.UI:OpenUI(UINameConfig.UIMainHallPanel,nil,function(result,serialId)
+        if result then
+            LuaGameEntry.UI:CloseUI(UINameConfig.UILoginPanel)
+        end
+    end)
 
+    local entityId = LuaGameEntry.LuaEntity:GenerateSerialId()
+    local data = CharacterPlayerData.New()
+    data:SetId(entityId)
+    data:SetAssetName("Character/Blade_girl/Blade_Girl_Prefab")
+    data:SetIsOwner(true)
+    data:SetPosition(75,0,120)
+    LuaGameEntry.LuaEntity:ShowCharacter(data)
 end
 
 function ProcedureMainHall:OnLeave()

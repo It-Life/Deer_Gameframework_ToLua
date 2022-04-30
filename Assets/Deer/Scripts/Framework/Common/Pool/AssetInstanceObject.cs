@@ -15,15 +15,15 @@ namespace Deer
 {
     public class AssetInstanceObject : ObjectBase
     {
-        private object m_AssetInstanceObject;
+        private object m_AssetObject;
 
         public AssetInstanceObject()
         {
-            m_AssetInstanceObject = null;
+            m_AssetObject = null;
         }
 
 
-        public static AssetInstanceObject Create(string name, object unityObjectAsset)
+        public static AssetInstanceObject Create(string name, object unityObjectAsset, object uiFormInstance)
         {
             if (unityObjectAsset == null)
             {
@@ -31,21 +31,22 @@ namespace Deer
             }
 
             AssetInstanceObject unityAssetObject = ReferencePool.Acquire<AssetInstanceObject>();
-            unityAssetObject.Initialize(name, unityObjectAsset);
-            unityAssetObject.m_AssetInstanceObject = unityObjectAsset;
+            unityAssetObject.Initialize(name, uiFormInstance);
+            unityAssetObject.m_AssetObject = unityObjectAsset;
             return unityAssetObject;
         }
 
         public override void Clear()
         {
             base.Clear();
-            m_AssetInstanceObject = null;
+            m_AssetObject = null;
 
         }
 
         protected override void Release(bool isShutdown)
         {
-            GameEntry.Resource.UnloadAsset(m_AssetInstanceObject);
+            GameEntry.Resource.UnloadAsset(m_AssetObject);
+            UnityEngine.GameObject.Destroy((Object)Target);
         }
     }
 }

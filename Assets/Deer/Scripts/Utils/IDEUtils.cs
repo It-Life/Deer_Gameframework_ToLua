@@ -18,9 +18,8 @@ public class IDEUtils
     public static void OpenFileWith(string fileName, int line = 1)
     {
         string luaDirPath = LuaConst.luaDir;
-#if UNITY_EDITOR_WIN
         string editorPath = EditorPrefs.GetString(PrefsKey.EDITOR_LUA_IDE_PATH);
-        string projectRootPath = EditorUserSettings.GetConfigValue(LUA_PROJECT_ROOT_FOLDER_PATH_KEY);
+#if UNITY_EDITOR_WIN
         System.Diagnostics.Process proc = new System.Diagnostics.Process();
         proc.StartInfo.FileName = editorPath;
         string procArgument = "";
@@ -52,11 +51,9 @@ public class IDEUtils
 #endif
 
 #if UNITY_EDITOR_OSX
-        
-            string projectRootPath = EditorUserSettings.GetConfigValue(LUA_PROJECT_ROOT_FOLDER_PATH_KEY);
             System.Diagnostics.Process proc = new System.Diagnostics.Process();
-            proc.StartInfo.FileName = "/usr/local/bin/idea";
-            string procArgument = string.Format("{0} --line {1} {2}", projectRootPath, line, fileName);
+            proc.StartInfo.FileName = editorPath;
+            string procArgument = string.Format("{0} --line {1} {2}", luaDirPath, line, fileName);
             LuaInterface.Debugger.Log(string.Format("{1}:[{0}]",procArgument,"procArgument"));
         
             proc.StartInfo.Arguments = procArgument;

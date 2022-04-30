@@ -29,23 +29,6 @@ function LuaCharacterBase:GetMoveMode()
     return self.m_moveMode
 end
 
-function LuaCharacterBase:SetEntityId(entityId)
-    self.m_entityId = entityId
-end
-function LuaCharacterBase:GetEntityId()
-    return self.m_entityId
-end
-function LuaCharacterBase:SetCsEntity(csEntity)
-    self.m_csEntity = csEntity
-end
----@param csEntity Character
-function LuaCharacterBase:GetCsEntity()
-    return self.m_csEntity
-end
----@return EntityEnum
-function LuaCharacterBase:GetEntityType()
-    return csEntity.EntityType
-end
 ---@return UnityEngine.Animator
 function LuaCharacterBase:GetAnimator()
     return self.m_animator
@@ -53,7 +36,7 @@ end
 
 ---@return CharacterDataBase
 function LuaCharacterBase:GetData()
-    return self.m_characterData
+    return self.m_luaEntityData
 end
 
 ---@return UnityEngine.Vector3
@@ -78,17 +61,29 @@ end
 function LuaCharacterBase:__init()
     self.m_owner = nil
     self.m_isPlayerSelf = true
-    self.m_EntityId = 0
     self.m_csEntity = nil
     self.m_animator = nil
     self.m_stateController = nil
-    self.m_characterData = nil
     self.m_luaCharacterManager = nil
     self.m_moveMode = MoveMode.Forward
     self.m_JoyStickDirection = Vector3.zero
 end
 
 function LuaCharacterBase:__delete()
+
+end
+
+---@param entityId number
+---@param csEntity Character
+---@param luaEntityData CharacterDataBase
+function LuaCharacterBase:OnShow(entityId,csEntity,luaEntityData)
+    self.super.super.OnShow(self,entityId,csEntity,luaEntityData)
+    local characterController = csEntity.CachedTransform:GetComponent(typeof(UnityEngine.CharacterController))
+    self.m_luaCharacterManager = LuaCharacterManager.New(self,characterController)
+end
+
+function LuaCharacterBase:OnHide()
+    self.super.super.OnHide(self)
 
 end
 

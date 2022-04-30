@@ -30,7 +30,7 @@ function LuaGameUtils.GetUITexture2DPath(strPath)
 end
 
 function LuaGameUtils.GetScenePath(strPath)
-    local str = string.format("Assets/Deer/Fantasy-Environment/Scenes/%s.unity",strPath)
+    local str = string.format("Assets/Deer/Asset/Scenes/%s.unity",strPath)
     return str
 end
 

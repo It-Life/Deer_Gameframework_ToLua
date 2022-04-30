@@ -11,6 +11,7 @@
 require "Definition.Enum.LuaUIFormsEnum"
 require "Definition.Enum.CharacterStateEnum"
 require "Definition.Enum.LanguageTypeEnum"
+require "Definition.Enum.EntityEnum"
 
 require "Definition.Constant.EventConstantId"
 require "Definition.Constant.PrefsConstantId"

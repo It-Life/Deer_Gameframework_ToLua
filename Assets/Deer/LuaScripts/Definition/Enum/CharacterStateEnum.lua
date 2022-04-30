@@ -13,6 +13,8 @@ CharacterStateEnum =
     IdleState = "IdleState",
     MoveState = "MoveState",
     JumpState = "JumpState",
+    DeathState = "DeathState",
+    AttackState = "AttackState"
 }
 ---@class CharacterAppearEnum
 CharacterAppearEnum = 

@@ -13,7 +13,7 @@ public static class GameObjectUtils
 {
     public static Vector3 GetFrezzeModeDirection(float dirX, float dirZ)
     {
-        Vector3 forward = GameEntry.Camera.m_MainCamera.transform.TransformDirection(Vector3.forward);
+        Vector3 forward = GameEntry.Camera.MainCamera.transform.TransformDirection(Vector3.forward);
         forward.y = 0;
         forward = forward.normalized;
 

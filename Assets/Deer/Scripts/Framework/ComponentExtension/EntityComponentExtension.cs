@@ -7,6 +7,7 @@
 //版 本 : 0.1 
 // ===============================================
 using GameFramework.DataTable;
+using LuaInterface;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -46,5 +47,16 @@ public static class EntityComponentExtension
         }
 
         entityComponent.ShowEntity(data.Id, logicType, AssetUtility.Entity.GetEntityAsset(data.AssetName), entityGroup, priority, data);
+    }
+    public static void ShowEntity(this EntityComponent entityComponent, Type logicType, string entityGroup, int priority, LuaTable data)
+    {
+        if (data == null)
+        {
+            Log.Warning("Data is invalid.");
+            return;
+        }
+        int id = data["m_id"].ToString().ToInt();
+        string assetName = data["m_assetName"].ToString();
+        entityComponent.ShowEntity(id, logicType, AssetUtility.Entity.GetEntityAsset(assetName), entityGroup, priority, data);
     }
 }

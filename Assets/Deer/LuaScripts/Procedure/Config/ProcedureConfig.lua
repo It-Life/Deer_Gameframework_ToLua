@@ -13,5 +13,6 @@ ProcedureConfig =
     ProcedureLogin = "ProcedureLogin",
     ProcedureChangeScene = "ProcedureChangeScene",
     ProcedureMainHall = "ProcedureMainHall",
+    ProcedureAR = "ProcedureAR",
 }
 return ProcedureConfig

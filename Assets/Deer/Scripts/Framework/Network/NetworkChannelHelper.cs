@@ -255,8 +255,8 @@ namespace Deer.Scripts.Framework.Network
             }
             MessengerInfo messengerInfo = ReferencePool.Acquire<MessengerInfo>();
             messengerInfo.param1 = ne.NetworkChannel.Name;
-            messengerInfo.param2 = ne.NetworkChannel.Socket.LocalEndPoint.ToString();
-            messengerInfo.param3 = ne.NetworkChannel.Socket.RemoteEndPoint.ToString();
+/*            messengerInfo.param2 = ne.NetworkChannel.Socket.LocalEndPoint.ToString();
+            messengerInfo.param3 = ne.NetworkChannel.Socket.RemoteEndPoint.ToString();*/
             GameEntry.Messenger.SendEvent(EventName.EVENT_CS_NET_CLOSE, messengerInfo);
         }
 

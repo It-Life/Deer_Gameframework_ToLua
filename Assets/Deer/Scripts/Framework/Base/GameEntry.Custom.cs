@@ -1,4 +1,6 @@
 ﻿using Deer;
+using UGFExtensions.SpriteCollection;
+using UGFExtensions.Texture;
 using UnityEngine;
 
 /// <summary>
@@ -20,11 +22,6 @@ public partial class GameEntry
         private set;
     }
     public static DeerUIComponent UI
-    {
-        get;
-        private set;
-    }
-    public static TPSpriteComponent TPSprite
     {
         get;
         private set;
@@ -54,6 +51,21 @@ public partial class GameEntry
         get;
         private set;
     }
+    public static TextureSetComponent TextureSet
+    {
+        get;
+        private set;
+    }
+    public static SpriteCollectionComponent SpriteCollection
+    {
+        get;
+        private set;
+    }
+    public static TimerComponent Timer
+    {
+        get;
+        private set;
+    }
     private static void InitCustomComponents()
     {
         // 注册自定义的组件
@@ -62,10 +74,12 @@ public partial class GameEntry
         GameSettings = UnityGameFramework.Runtime.GameEntry.GetComponent<GameSettingsComponent>();
         Lua = UnityGameFramework.Runtime.GameEntry.GetComponent<LuaComponent>();
         UI = UnityGameFramework.Runtime.GameEntry.GetComponent<DeerUIComponent>();
-        TPSprite = UnityGameFramework.Runtime.GameEntry.GetComponent<TPSpriteComponent>();
         Camera = UnityGameFramework.Runtime.GameEntry.GetComponent<CameraComponent>();
         NetConnector = UnityGameFramework.Runtime.GameEntry.GetComponent<NetConnectorComponent>();
         Config = UnityGameFramework.Runtime.GameEntry.GetComponent<ConfigComponent>();
+        Timer = UnityGameFramework.Runtime.GameEntry.GetComponent<TimerComponent>();
+        TextureSet = UnityGameFramework.Runtime.GameEntry.GetComponent<TextureSetComponent>();
+        SpriteCollection = UnityGameFramework.Runtime.GameEntry.GetComponent<SpriteCollectionComponent>();
         InitComponentsSet();
     }
 

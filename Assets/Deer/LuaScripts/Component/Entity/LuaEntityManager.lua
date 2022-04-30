@@ -34,6 +34,9 @@ function LuaEntityManager:UnRegisterEvent()
     LuaGameEntry.LuaEvent:UnRegisterCSEvent(EventName.EVENT_CS_GAME_ENTITY_HIDE,self.m_onhandlegameentityhide)
 end
 
+function LuaEntityManager:GetEntity(entityId)
+    return self.m_listEntity[entityId] or nil
+end
 
 function LuaEntityManager:OnHandleGameEntityShow(csMessengerInfo)
     if not csMessengerInfo then
@@ -41,21 +44,29 @@ function LuaEntityManager:OnHandleGameEntityShow(csMessengerInfo)
     end
     local entityId = csMessengerInfo.param1
     ---@field EntityData
-    local csEntityData = csMessengerInfo.param2
+    local luaEntityData = csMessengerInfo.param2
     if not entityId then
         return 0
     end
-    local csEntity = LuaGameEntry.LuaEntity:GetGameEntity(entityId)
+    local csEntity = LuaGameEntry.LuaEntity:GetCSEntity(entityId)
     if not csEntity then
         return 0
     end
-    if csEntity.EntityType == EntityEnum.CharacterPlayer then
+    if luaEntityData:GetEntityType() == EntityEnum.CharacterPlayer then
         if self.m_listEntity[entityId] then
-            self.m_listEntity[entityId]:OnShow(entityId,csEntity,csEntityData)
+            self.m_listEntity[entityId]:OnShow(entityId,csEntity,luaEntityData)
         else
             self.m_listEntity[entityId] = LuaCharacterPlayer.New()
-            self.m_listEntity[entityId]:OnShow(entityId,csEntity,csEntityData)
+            self.m_listEntity[entityId]:OnShow(entityId,csEntity,luaEntityData)
         end
+    elseif luaEntityData:GetEntityType() == EntityEnum.CharacterPlayerNet then
+        if self.m_listEntity[entityId] then
+            self.m_listEntity[entityId]:OnShow(entityId,csEntity,luaEntityData)
+        else
+            self.m_listEntity[entityId] = LuaCharacterPlayerNet.New()
+            self.m_listEntity[entityId]:OnShow(entityId,csEntity,luaEntityData)
+        end
+
     end
 end
 

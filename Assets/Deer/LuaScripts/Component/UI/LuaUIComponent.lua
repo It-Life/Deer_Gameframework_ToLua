@@ -13,24 +13,43 @@ LuaUIComponent = Class("LuaUIComponent",LuaComponentBase)
 
 function LuaUIComponent:__init()
     self.m_uiManager = UIManager:GetInstance()
+    self:RegisterEvent()
 end
 
 function LuaUIComponent:__delete()
     self.m_uiManager:Delete()
+    self:UnRegisterEvent()
+end
+
+function LuaUIComponent:RegisterEvent()
+    self._onhandleopenuiform = LuaGameEntry.LuaEvent:RegisterLuaEvent(EventId.EVENT_LUA_OPEN_UI_FORM,self.OnHandleOpenUIForm,self)
+    self._onhandlecloseuiform = LuaGameEntry.LuaEvent:RegisterLuaEvent(EventId.EVENT_LUA_CLOSE_UI_FORM,self.OnHandleCloseUIForm,self)
+end
+
+function LuaUIComponent:UnRegisterEvent()
+    LuaGameEntry.LuaEvent:UnRegisterLuaEvent(EventId.EVENT_LUA_OPEN_UI_FORM,self._onhandleopenuiform)
+    LuaGameEntry.LuaEvent:UnRegisterLuaEvent(EventId.EVENT_LUA_CLOSE_UI_FORM,self._onhandlecloseuiform)
 end
 
 ---@param uiName UINameConfig
----@param tbShowUIInfo table enumGroup[option] UIFormGroupType,
-function LuaUIComponent:CreateUI(uiName,tbShowUIInfo)
-    self.m_uiManager:CreateForm(uiName,tbShowUIInfo)
+---@param userData table enumGroup[option] UIFormGroupType,
+function LuaUIComponent:OpenUI(strUIConfig,userData,results)
+    self.m_uiManager:CreateForm(strUIConfig,userData,results)
 end
 
-function LuaUIComponent:CloseUI(uiName)
-    self.m_uiManager:CloseForm(uiName)
+function LuaUIComponent:CloseUI(strUIConfig,userData,results)
+    self.m_uiManager:CloseForm(strUIConfig,userData,results)
 end
 
 function LuaUIComponent:BindUIUnit(gameObject,unitScript)
-    return self.m_uiManager:BindUIUnit(gameObject,unitScript)
+    return self.m_uiManager:CreateUIUnit(gameObject,unitScript)
 end
 
+function LuaUIComponent:OnHandleOpenUIForm(strUIConfig,userData,results)
+    self:OpenUI(strUIConfig,userData,results)
+end
+
+function LuaUIComponent:OnHandleCloseUIForm(strUIConfig,userData,results)
+    self:CloseUI(strUIConfig,userData,results)
+end
 return LuaUIComponent

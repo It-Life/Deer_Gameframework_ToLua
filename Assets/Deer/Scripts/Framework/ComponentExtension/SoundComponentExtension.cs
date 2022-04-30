@@ -23,7 +23,7 @@ namespace Deer
         public static int? PlayMusic(this SoundComponent soundComponent, int musicId, object userData = null)
         {
             //在表里获取音乐名字
-            Sounds_Config config = SoundsConfigDataInfo.Instance().GetConfigById((uint)musicId);
+            Sounds_Config config = SoundsConfigDataInfo.Instance.GetConfigById((uint)musicId);
             if (config == null)
             {
                 Log.Warning("Can not load sound '{0}' from data table.", musicId.ToString());
@@ -53,7 +53,7 @@ namespace Deer
         public static int? PlaySound(this SoundComponent soundComponent, int soundId,EntityLogic bindingEntity = null, object userData = null)
         {
             //在表里获取音乐名字
-            Sounds_Config config = SoundsConfigDataInfo.Instance().GetConfigById((uint)soundId);
+            Sounds_Config config = SoundsConfigDataInfo.Instance.GetConfigById((uint)soundId);
             if (config == null)
             {
                 Log.Warning("Can not load sound '{0}' from data table.", soundId.ToString());
@@ -71,7 +71,7 @@ namespace Deer
         public static int? PlayUISound(this SoundComponent soundComponent, int uiSoundId, object userData = null)
         {
             //获取表数据
-            Sounds_Config config = SoundsConfigDataInfo.Instance().GetConfigById((uint)uiSoundId);
+            Sounds_Config config = SoundsConfigDataInfo.Instance.GetConfigById((uint)uiSoundId);
             if (config == null)
             {
                 Log.Warning("Can not load UI sound '{0}' from data table.", uiSoundId.ToString());

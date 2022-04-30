@@ -9,18 +9,25 @@
 ---===============================================
 
 require "Entity.Base.LuaEntityBase"
+require "Entity.Common.LuaCharacterManager"
+
+require "Entity.Fsm.Base.StateBase"
+require "Entity.Fsm.Controller.StateController"
+require "Entity.Fsm.Controller.AIStateController"
+require "Entity.Fsm.State.IdleState"
+require "Entity.Fsm.State.MoveState"
+require "Entity.Fsm.State.JumpState"
+require "Entity.Fsm.State.DeathState"
+require "Entity.Fsm.State.AttackState"
+
 require "Entity.Character.Base.LuaCharacterBase"
 require "Entity.Character.LuaCharacterPlayer"
+require "Entity.Character.LuaCharacterPlayerNet"
 require "Entity.Character.LuaCharacterNpc"
 require "Entity.Character.LuaCharacterMonster"
 
-require "Entity.Common.LuaCharacterManager"
 
-require "Entity.State.Base.StateBase"
-require "Entity.State.StateController"
-require "Entity.State.IdleState"
-require "Entity.State.MoveState"
-require "Entity.State.JumpState"
+require "Entity.EntityData.Base.EntityDataBase"
+require "Entity.EntityData.CharacterData.Base.CharacterDataBase"
+require "Entity.EntityData.CharacterData.CharacterPlayerData"
 
-require "Entity.CharacterData.Base.CharacterDataBase"
-require "Entity.CharacterData.CharacterPlayerData"

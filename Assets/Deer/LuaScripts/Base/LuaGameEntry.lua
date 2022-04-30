@@ -65,18 +65,23 @@ function LuaGameEntry:GetLuaSceneComponent()
     return LuaSceneComponent:GetInstance()
 end
 
+--[[---@return LuaARComponent
+function LuaGameEntry:GetLuaARComponent()
+    return LuaARComponent:GetInstance()
+end]]
 
-LuaGameEntry.UI = LuaGameEntry:GetUIComponent()
+LuaGameEntry.LuaEvent = LuaGameEntry:GetLuaEventComponent()
 LuaGameEntry.DataConfig = LuaGameEntry:GetLuaConfigComponent()
 LuaGameEntry.TPSprite = LuaGameEntry:GetTPSpriteComponent()
 LuaGameEntry.Procedure = LuaGameEntry:GetProcedureComponent()
 LuaGameEntry.LocalPref = LuaGameEntry:GetLocalPrefComponent()
-LuaGameEntry.LuaEvent = LuaGameEntry:GetLuaEventComponent()
 LuaGameEntry.LuaEntity = LuaGameEntry:GetLuaEntityComponent()
 LuaGameEntry.NetWork = LuaGameEntry:GetNetWorkComponent()
 LuaGameEntry.LuaUpdate = LuaGameEntry:GetLuaUpdateComponent()
 LuaGameEntry.LuaSound = LuaGameEntry:GetLuaSoundComponent()
 LuaGameEntry.LuaScene = LuaGameEntry:GetLuaSceneComponent()
+LuaGameEntry.UI = LuaGameEntry:GetUIComponent()
+--LuaGameEntry.LuaAR = LuaGameEntry:GetLuaARComponent()
 
 function LuaGameEntry:Cleanup()
     LuaGameEntry.UI:Delete()
@@ -89,6 +94,7 @@ function LuaGameEntry:Cleanup()
     LuaGameEntry.LuaUpdate:Delete()
     LuaGameEntry.LuaSound:Delete()
     LuaGameEntry.LuaScene:Delete()
+    --LuaGameEntry.LuaAR:Delete()
     ---事件最后清理
     LuaGameEntry.LuaEvent:Delete()
 end

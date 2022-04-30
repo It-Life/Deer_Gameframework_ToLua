@@ -113,4 +113,48 @@ public class EntityLogicBase : EntityLogic
     {
         base.OnUpdate(elapseSeconds, realElapseSeconds);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        MessengerInfo messengerInfo = new MessengerInfo();
+        messengerInfo.param1 = 1;
+        messengerInfo.param2 = collision.gameObject;
+        GameEntry.Messenger.SendEvent(EventName.EVENT_CS_GAME_ENTITY_COLLISION, messengerInfo);
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        MessengerInfo messengerInfo = new MessengerInfo();
+        messengerInfo.param1 = 3;
+        messengerInfo.param2 = collision.gameObject;
+        GameEntry.Messenger.SendEvent(EventName.EVENT_CS_GAME_ENTITY_COLLISION, messengerInfo);
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        MessengerInfo messengerInfo = new MessengerInfo();
+        messengerInfo.param1 = 2;
+        messengerInfo.param2 = collision.gameObject;
+        GameEntry.Messenger.SendEvent(EventName.EVENT_CS_GAME_ENTITY_COLLISION, messengerInfo);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        MessengerInfo messengerInfo = new MessengerInfo();
+        messengerInfo.param1 = 1;
+        messengerInfo.param2 = other.gameObject;
+        GameEntry.Messenger.SendEvent(EventName.EVENT_CS_GAME_ENTITY_TRIGGER, messengerInfo);
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        MessengerInfo messengerInfo = new MessengerInfo();
+        messengerInfo.param1 = 3;
+        messengerInfo.param2 = other.gameObject;
+        GameEntry.Messenger.SendEvent(EventName.EVENT_CS_GAME_ENTITY_TRIGGER, messengerInfo);
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        MessengerInfo messengerInfo = new MessengerInfo();
+        messengerInfo.param1 = 2;
+        messengerInfo.param2 = other.gameObject;
+        GameEntry.Messenger.SendEvent(EventName.EVENT_CS_GAME_ENTITY_TRIGGER, messengerInfo);
+    }
 }

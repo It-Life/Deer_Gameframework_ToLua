@@ -69,6 +69,21 @@ public static class EventName
     /// 实体隐藏
     /// </summary>
     public const uint EVENT_CS_GAME_ENTITY_HIDE = 0x020004;
+    /// <summary>
+    /// 实体碰撞
+    /// </summary>
+    public const uint EVENT_CS_GAME_ENTITY_COLLISION = 0x020005;
+    /// <summary>
+    /// 实体触发
+    /// </summary>
+    public const uint EVENT_CS_GAME_ENTITY_TRIGGER = 0x020006;
     #endregion
+    #region AR 30000-39999
+    public const uint EVENT_CS_AR_START = 0x030000;
+    /// <summary>
+    /// Ar放置成功
+    /// </summary>
+    public const uint EVENT_CS_AR_PUT_SUCCESS = 0x030001;
 
+    #endregion
 }

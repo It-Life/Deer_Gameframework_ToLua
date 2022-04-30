@@ -27,14 +27,16 @@ namespace Deer
         /// 单例
         /// </summary>
         /// <returns></returns>
-        public static T Instance()
+        public static T Instance
         {
-
-            if (m_Instance == null)
+            get 
             {
-                m_Instance = new T();
+                if (m_Instance == null)
+                {
+                    m_Instance = new T();
+                }
+                return m_Instance;
             }
-            return m_Instance;
         }
 
         public abstract string Name

@@ -13,7 +13,7 @@
 LuaCharacterPlayer = Class("LuaCharacterPlayer",LuaCharacterBase)
 --{{{ property 
 ---@return CharacterPlayerData
-function LuaCharacterPlayer:OnHandleJumpCallbackGetData()
+function LuaCharacterPlayer:GetData()
     return self.m_characterData
 end
 
@@ -40,33 +40,31 @@ function LuaCharacterPlayer:UnRegisterLuaEvent()
     LuaGameEntry.LuaEvent:UnRegisterLuaEvent(EventId.EVENT_LUA_GAME_START_JUMP,self._onhandlejumpcallback)
 end
 ---@param csEntity CharacterPlayer
----@param csEntityData EntityData
-function LuaCharacterPlayer:OnShow(entityId,csEntity,csEntityData)
+---@param luaEntityData CharacterPlayerData
+function LuaCharacterPlayer:OnShow(entityId,csEntity,luaEntityData)
+    self.super.OnShow(self,entityId,csEntity,luaEntityData)
     self.m_csEntity = csEntity
-    self.m_EntityId = entityId
+    self.m_entityId = entityId
     self.m_isMoveing = false
-    if csEntityData then
-        self.m_isPlayerSelf = csEntityData.IsOwner
+    if luaEntityData then
+        self.m_isPlayerSelf = luaEntityData:GetIsOwner()
         if self.m_isPlayerSelf then
             local transCamTarget = csEntity.CachedTransform:Find("CamTaget")
-            GameEntry.Camera:FollowAndLookAtTarget(csEntity.CachedTransform,transCamTarget)
+            GameEntry.Camera:FollowAndFreeViewTarget(csEntity.CachedTransform,transCamTarget)
         end
-        csEntity.CachedTransform.localPosition = csEntityData.Position;
+        csEntity.CachedTransform.localPosition = luaEntityData:GetPosition();
     end
-    local characterController = csEntity.CachedTransform:GetComponent(typeof(UnityEngine.CharacterController))
-    self.m_luaCharacterManager = LuaCharacterManager.New(self,characterController)
     self.m_animator = csEntity.CachedTransform:Find("Model"):GetComponent(typeof(UnityEngine.Animator))
-    self.m_characterData = CharacterPlayerData.New()
+    self.m_characterData = luaEntityData
     self.m_stateController = StateController.New(self)
-
-    csEntity.CachedTransform.name = string.format("Entity %s",self.m_EntityId)
-    
     self.m_updateEvent = LuaGameEntry.LuaUpdate:AddUpdate(self.Update,self)
 end
 
 function LuaCharacterPlayer:OnHide()
+    self.super.OnHide(self)
     self:UnRegisterLuaEvent()
-    GameEntry.Camera:FollowAndLookAtTarget(nil,nil)
+    GameEntry.Camera:FollowAndFreeViewTarget(nil,nil)
+
     LuaGameEntry.LuaUpdate:RemoveUpdate(self.m_updateEvent)
     self.m_luaCharacterManager:Delete()
     self.m_luaCharacterManager = nil
@@ -97,6 +95,9 @@ function LuaCharacterPlayer:Update()
     end
     if Input.GetKeyDown(KeyCode.Space) then
         self:OnHandleJumpCallback()
+    end
+    if Input.GetKeyDown(KeyCode.H) then
+        self:OnHandleDeathCallBack()
     end
 end
 
@@ -138,7 +139,14 @@ function LuaCharacterPlayer:OnHandleJumpCallback()
     self:SetMoveMode(self:GetMoveMode() == MoveMode.ForwardRun and MoveMode.JumpRun or MoveMode.Jump)
     self:GetLuaCharacterManager():SetCharacterGravitySpeed(self:GetData():GetJumpPower())
     self:GetStateController():OnChangeState(CharacterStateEnum.JumpState)
+
+    LuaGameEntry.LuaEvent:SendLuaEvent(EventId.EVENT_LUA_GAME_START_JUMP)
 end
 
+---死亡
+function LuaCharacterPlayer : OnHandleDeathCallBack()
+    self:GetStateController():OnChangeState(CharacterStateEnum.DeathState)
+    LuaGameEntry.LuaEvent:SendLuaEvent(EventId.EVENT_LUA_GAME_DEATH)
+end
 
 return LuaCharacterPlayer
