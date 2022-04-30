@@ -112,7 +112,7 @@ public static class CustomSettings
         _GT(typeof(GraphicRaycaster)).SetNameSpace(null),
         _GT(typeof(RectTransform)).SetNameSpace(null),
         //UnityEngine.UI
-        _GT(typeof(Image)).SetNameSpace(null),
+        _GT(typeof(Image)).AddExtendType(typeof(SetSpriteExtensions)).SetNameSpace(null),
         _GT(typeof(RawImage)).SetNameSpace(null),
         _GT(typeof(TextMeshProUGUI)).SetNameSpace(null),
         _GT(typeof(Text)).SetNameSpace(null),
@@ -134,7 +134,7 @@ public static class CustomSettings
         _GT(typeof(Physics)),
         _GT(typeof(Collider)),
         _GT(typeof(Time)),        
-        _GT(typeof(Texture)),
+        _GT(typeof(Texture)).AddExtendType(typeof(SetTextureExtensions)).SetNameSpace(null),
         _GT(typeof(Texture2D)),
         _GT(typeof(Shader)),        
         _GT(typeof(Renderer)),
@@ -217,14 +217,10 @@ public static class CustomSettings
         _GT(typeof(ObjectPoolComponent)).SetNameSpace(null),
         
         _GT(typeof(EntityComponent)).AddExtendType(typeof(EntityComponentExtension)).SetNameSpace(null),
-        _GT(typeof(EntityData)).SetNameSpace(null),
         _GT(typeof(EntityLogicBase)).SetNameSpace(null),
-        _GT(typeof(CharacterPlayer)).SetNameSpace(null),
-        _GT(typeof(EntityEnum)).SetNameSpace(null),
 
         _GT(typeof(LuaComponent)).SetNameSpace(null),
         _GT(typeof(DeerUIComponent)).SetNameSpace(null),
-        _GT(typeof(TPSpriteComponent)).SetNameSpace(null),
         _GT(typeof(MessengerComponent)).SetNameSpace(null),
         _GT(typeof(MessengerInfo)).SetNameSpace(null),
         _GT(typeof(EventName)).SetNameSpace(null),
@@ -236,6 +232,7 @@ public static class CustomSettings
         
         _GT(typeof(GameSettingsComponent)).SetNameSpace(null),
         _GT(typeof(LogEnum)).SetNameSpace(null),
+        _GT(typeof(Character)).SetNameSpace(null),
         
         //Deer
         _GT(typeof(ProcedureChangeLua)).SetNameSpace(null),
