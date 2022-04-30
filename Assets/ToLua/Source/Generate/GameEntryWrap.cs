@@ -29,12 +29,14 @@ public class GameEntryWrap
 		L.RegVar("GameSettings", new LuaCSFunction(get_GameSettings), null);
 		L.RegVar("Lua", new LuaCSFunction(get_Lua), null);
 		L.RegVar("UI", new LuaCSFunction(get_UI), null);
-		L.RegVar("TPSprite", new LuaCSFunction(get_TPSprite), null);
 		L.RegVar("Messenger", new LuaCSFunction(get_Messenger), null);
 		L.RegVar("Camera", new LuaCSFunction(get_Camera), null);
 		L.RegVar("NetConnector", new LuaCSFunction(get_NetConnector), null);
 		L.RegVar("Config", new LuaCSFunction(get_Config), null);
 		L.RegVar("MainThreadDispatcher", new LuaCSFunction(get_MainThreadDispatcher), null);
+		L.RegVar("TextureSet", new LuaCSFunction(get_TextureSet), null);
+		L.RegVar("SpriteCollection", new LuaCSFunction(get_SpriteCollection), null);
+		L.RegVar("Timer", new LuaCSFunction(get_Timer), null);
 		L.EndClass();
 	}
 
@@ -337,20 +339,6 @@ public class GameEntryWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int get_TPSprite(IntPtr L)
-	{
-		try
-		{
-			ToLua.Push(L, GameEntry.TPSprite);
-			return 1;
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int get_Messenger(IntPtr L)
 	{
 		try
@@ -412,6 +400,48 @@ public class GameEntryWrap
 		try
 		{
 			ToLua.Push(L, GameEntry.MainThreadDispatcher);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_TextureSet(IntPtr L)
+	{
+		try
+		{
+			ToLua.Push(L, GameEntry.TextureSet);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_SpriteCollection(IntPtr L)
+	{
+		try
+		{
+			ToLua.Push(L, GameEntry.SpriteCollection);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_Timer(IntPtr L)
+	{
+		try
+		{
+			ToLua.Push(L, GameEntry.Timer);
 			return 1;
 		}
 		catch (Exception e)

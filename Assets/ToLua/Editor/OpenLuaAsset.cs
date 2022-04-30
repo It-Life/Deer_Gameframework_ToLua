@@ -57,7 +57,7 @@ public class OpenLuaAsset : Editor
             LogEntriesGetEntry = logEntriesType.GetMethod("GetEntryInternal", BindingFlags.Static | BindingFlags.Public);
             Type logEntryType = unityEditorAssembly.GetType("UnityEditorInternal.LogEntry");
 #endif
-            logEntryCondition = logEntryType.GetField("condition", BindingFlags.Instance | BindingFlags.Public);
+            logEntryCondition = logEntryType.GetField("message", BindingFlags.Instance | BindingFlags.Public);
             logEntry = Activator.CreateInstance(logEntryType);
         }
 

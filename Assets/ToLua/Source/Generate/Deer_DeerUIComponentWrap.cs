@@ -8,10 +8,14 @@ public class Deer_DeerUIComponentWrap
 	{
 		L.BeginClass(typeof(Deer.DeerUIComponent), typeof(UnityGameFramework.Runtime.GameFrameworkComponent));
 		L.RegFunction("LoadAssetAsync", new LuaCSFunction(LoadAssetAsync));
-		L.RegFunction("Unspwn", new LuaCSFunction(Unspwn));
+		L.RegFunction("Unspawn", new LuaCSFunction(Unspawn));
 		L.RegFunction("IsLoadingUIForm", new LuaCSFunction(IsLoadingUIForm));
 		L.RegFunction("__eq", new LuaCSFunction(op_Equality));
 		L.RegFunction("__tostring", new LuaCSFunction(ToLua.op_ToString));
+		L.RegVar("InstanceAutoReleaseInterval", new LuaCSFunction(get_InstanceAutoReleaseInterval), new LuaCSFunction(set_InstanceAutoReleaseInterval));
+		L.RegVar("InstanceCapacity", new LuaCSFunction(get_InstanceCapacity), new LuaCSFunction(set_InstanceCapacity));
+		L.RegVar("InstanceExpireTime", new LuaCSFunction(get_InstanceExpireTime), new LuaCSFunction(set_InstanceExpireTime));
+		L.RegVar("InstancePriority", new LuaCSFunction(get_InstancePriority), new LuaCSFunction(set_InstancePriority));
 		L.EndClass();
 	}
 
@@ -35,14 +39,14 @@ public class Deer_DeerUIComponentWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int Unspwn(IntPtr L)
+	static int Unspawn(IntPtr L)
 	{
 		try
 		{
 			ToLua.CheckArgsCount(L, 2);
 			Deer.DeerUIComponent obj = (Deer.DeerUIComponent)ToLua.CheckObject<Deer.DeerUIComponent>(L, 1);
 			object arg0 = ToLua.ToVarObject(L, 2);
-			obj.Unspwn(arg0);
+			obj.Unspawn(arg0);
 			return 0;
 		}
 		catch (Exception e)
@@ -56,12 +60,28 @@ public class Deer_DeerUIComponentWrap
 	{
 		try
 		{
-			ToLua.CheckArgsCount(L, 2);
-			Deer.DeerUIComponent obj = (Deer.DeerUIComponent)ToLua.CheckObject<Deer.DeerUIComponent>(L, 1);
-			string arg0 = ToLua.CheckString(L, 2);
-			bool o = obj.IsLoadingUIForm(arg0);
-			LuaDLL.lua_pushboolean(L, o);
-			return 1;
+			int count = LuaDLL.lua_gettop(L);
+
+			if (count == 2 && TypeChecker.CheckTypes<int>(L, 2))
+			{
+				Deer.DeerUIComponent obj = (Deer.DeerUIComponent)ToLua.CheckObject<Deer.DeerUIComponent>(L, 1);
+				int arg0 = (int)LuaDLL.lua_tointeger(L, 2);
+				bool o = obj.IsLoadingUIForm(arg0);
+				LuaDLL.lua_pushboolean(L, o);
+				return 1;
+			}
+			else if (count == 2 && TypeChecker.CheckTypes<string>(L, 2))
+			{
+				Deer.DeerUIComponent obj = (Deer.DeerUIComponent)ToLua.CheckObject<Deer.DeerUIComponent>(L, 1);
+				string arg0 = ToLua.ToString(L, 2);
+				bool o = obj.IsLoadingUIForm(arg0);
+				LuaDLL.lua_pushboolean(L, o);
+				return 1;
+			}
+			else
+			{
+				return LuaDLL.luaL_throw(L, "invalid arguments to method: Deer.DeerUIComponent.IsLoadingUIForm");
+			}
 		}
 		catch (Exception e)
 		{
@@ -84,6 +104,158 @@ public class Deer_DeerUIComponentWrap
 		catch (Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_InstanceAutoReleaseInterval(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Deer.DeerUIComponent obj = (Deer.DeerUIComponent)o;
+			float ret = obj.InstanceAutoReleaseInterval;
+			LuaDLL.lua_pushnumber(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index InstanceAutoReleaseInterval on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_InstanceCapacity(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Deer.DeerUIComponent obj = (Deer.DeerUIComponent)o;
+			int ret = obj.InstanceCapacity;
+			LuaDLL.lua_pushinteger(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index InstanceCapacity on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_InstanceExpireTime(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Deer.DeerUIComponent obj = (Deer.DeerUIComponent)o;
+			float ret = obj.InstanceExpireTime;
+			LuaDLL.lua_pushnumber(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index InstanceExpireTime on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_InstancePriority(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Deer.DeerUIComponent obj = (Deer.DeerUIComponent)o;
+			int ret = obj.InstancePriority;
+			LuaDLL.lua_pushinteger(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index InstancePriority on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_InstanceAutoReleaseInterval(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Deer.DeerUIComponent obj = (Deer.DeerUIComponent)o;
+			float arg0 = (float)LuaDLL.luaL_checknumber(L, 2);
+			obj.InstanceAutoReleaseInterval = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index InstanceAutoReleaseInterval on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_InstanceCapacity(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Deer.DeerUIComponent obj = (Deer.DeerUIComponent)o;
+			int arg0 = (int)LuaDLL.luaL_checkinteger(L, 2);
+			obj.InstanceCapacity = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index InstanceCapacity on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_InstanceExpireTime(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Deer.DeerUIComponent obj = (Deer.DeerUIComponent)o;
+			float arg0 = (float)LuaDLL.luaL_checknumber(L, 2);
+			obj.InstanceExpireTime = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index InstanceExpireTime on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_InstancePriority(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Deer.DeerUIComponent obj = (Deer.DeerUIComponent)o;
+			int arg0 = (int)LuaDLL.luaL_checkinteger(L, 2);
+			obj.InstancePriority = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index InstancePriority on a nil value");
 		}
 	}
 }

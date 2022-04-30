@@ -346,6 +346,16 @@ public class UnityGameFramework_Runtime_EntityComponentWrap
 				obj.ShowEntity(arg0, arg1, arg2, arg3);
 				return 0;
 			}
+			else if (count == 5 && TypeChecker.CheckTypes<System.Type, string, int, LuaInterface.LuaTable>(L, 2))
+			{
+				UnityGameFramework.Runtime.EntityComponent obj = (UnityGameFramework.Runtime.EntityComponent)ToLua.CheckObject<UnityGameFramework.Runtime.EntityComponent>(L, 1);
+				System.Type arg0 = (System.Type)ToLua.ToObject(L, 2);
+				string arg1 = ToLua.ToString(L, 3);
+				int arg2 = (int)LuaDLL.lua_tointeger(L, 4);
+				LuaTable arg3 = ToLua.ToLuaTable(L, 5);
+				obj.ShowEntity(arg0, arg1, arg2, arg3);
+				return 0;
+			}
 			else if (count == 5 && TypeChecker.CheckTypes<System.Type, string, int, EntityData>(L, 2))
 			{
 				UnityGameFramework.Runtime.EntityComponent obj = (UnityGameFramework.Runtime.EntityComponent)ToLua.CheckObject<UnityGameFramework.Runtime.EntityComponent>(L, 1);

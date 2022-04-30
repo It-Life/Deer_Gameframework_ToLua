@@ -14,6 +14,7 @@ public class UnityEngine_UI_ImageWrap
 		L.RegFunction("CalculateLayoutInputHorizontal", new LuaCSFunction(CalculateLayoutInputHorizontal));
 		L.RegFunction("CalculateLayoutInputVertical", new LuaCSFunction(CalculateLayoutInputVertical));
 		L.RegFunction("IsRaycastLocationValid", new LuaCSFunction(IsRaycastLocationValid));
+		L.RegFunction("SetSprite", new LuaCSFunction(SetSprite));
 		L.RegFunction("__eq", new LuaCSFunction(op_Equality));
 		L.RegFunction("__tostring", new LuaCSFunction(ToLua.op_ToString));
 		L.RegVar("sprite", new LuaCSFunction(get_sprite), new LuaCSFunction(set_sprite));
@@ -151,6 +152,24 @@ public class UnityEngine_UI_ImageWrap
 			bool o = obj.IsRaycastLocationValid(arg0, arg1);
 			LuaDLL.lua_pushboolean(L, o);
 			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int SetSprite(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 3);
+			UnityEngine.UI.Image obj = (UnityEngine.UI.Image)ToLua.CheckObject<UnityEngine.UI.Image>(L, 1);
+			string arg0 = ToLua.CheckString(L, 2);
+			string arg1 = ToLua.CheckString(L, 3);
+			obj.SetSprite(arg0, arg1);
+			return 0;
 		}
 		catch (Exception e)
 		{

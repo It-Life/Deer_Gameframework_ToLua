@@ -10,11 +10,16 @@ public class CameraComponentWrap
 		L.RegFunction("OpenCameraType", new LuaCSFunction(OpenCameraType));
 		L.RegFunction("LookAtTarget", new LuaCSFunction(LookAtTarget));
 		L.RegFunction("FollowTarget", new LuaCSFunction(FollowTarget));
-		L.RegFunction("FollowAndLookAtTarget", new LuaCSFunction(FollowAndLookAtTarget));
+		L.RegFunction("FollowAndLockViewTarget", new LuaCSFunction(FollowAndLockViewTarget));
+		L.RegFunction("FollowAndFreeViewTarget", new LuaCSFunction(FollowAndFreeViewTarget));
 		L.RegFunction("CameraActive", new LuaCSFunction(CameraActive));
+		L.RegFunction("GetAxisCustom", new LuaCSFunction(GetAxisCustom));
+		L.RegFunction("SetMiniMapFollowTarget", new LuaCSFunction(SetMiniMapFollowTarget));
+		L.RegFunction("MiniMapZoomIn", new LuaCSFunction(MiniMapZoomIn));
+		L.RegFunction("MiniMapZoomOut", new LuaCSFunction(MiniMapZoomOut));
 		L.RegFunction("__eq", new LuaCSFunction(op_Equality));
 		L.RegFunction("__tostring", new LuaCSFunction(ToLua.op_ToString));
-		L.RegVar("m_MainCamera", new LuaCSFunction(get_m_MainCamera), new LuaCSFunction(set_m_MainCamera));
+		L.RegVar("MainCamera", new LuaCSFunction(get_MainCamera), new LuaCSFunction(set_MainCamera));
 		L.EndClass();
 	}
 
@@ -94,7 +99,7 @@ public class CameraComponentWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int FollowAndLookAtTarget(IntPtr L)
+	static int FollowAndLockViewTarget(IntPtr L)
 	{
 		try
 		{
@@ -102,7 +107,25 @@ public class CameraComponentWrap
 			CameraComponent obj = (CameraComponent)ToLua.CheckObject<CameraComponent>(L, 1);
 			UnityEngine.Transform arg0 = (UnityEngine.Transform)ToLua.CheckObject<UnityEngine.Transform>(L, 2);
 			UnityEngine.Transform arg1 = (UnityEngine.Transform)ToLua.CheckObject<UnityEngine.Transform>(L, 3);
-			obj.FollowAndLookAtTarget(arg0, arg1);
+			obj.FollowAndLockViewTarget(arg0, arg1);
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int FollowAndFreeViewTarget(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 3);
+			CameraComponent obj = (CameraComponent)ToLua.CheckObject<CameraComponent>(L, 1);
+			UnityEngine.Transform arg0 = (UnityEngine.Transform)ToLua.CheckObject<UnityEngine.Transform>(L, 2);
+			UnityEngine.Transform arg1 = (UnityEngine.Transform)ToLua.CheckObject<UnityEngine.Transform>(L, 3);
+			obj.FollowAndFreeViewTarget(arg0, arg1);
 			return 0;
 		}
 		catch (Exception e)
@@ -120,6 +143,73 @@ public class CameraComponentWrap
 			CameraComponent obj = (CameraComponent)ToLua.CheckObject<CameraComponent>(L, 1);
 			bool arg0 = LuaDLL.luaL_checkboolean(L, 2);
 			obj.CameraActive(arg0);
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetAxisCustom(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			CameraComponent obj = (CameraComponent)ToLua.CheckObject<CameraComponent>(L, 1);
+			string arg0 = ToLua.CheckString(L, 2);
+			float o = obj.GetAxisCustom(arg0);
+			LuaDLL.lua_pushnumber(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int SetMiniMapFollowTarget(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			CameraComponent obj = (CameraComponent)ToLua.CheckObject<CameraComponent>(L, 1);
+			UnityEngine.Transform arg0 = (UnityEngine.Transform)ToLua.CheckObject<UnityEngine.Transform>(L, 2);
+			obj.SetMiniMapFollowTarget(arg0);
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int MiniMapZoomIn(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 1);
+			CameraComponent obj = (CameraComponent)ToLua.CheckObject<CameraComponent>(L, 1);
+			obj.MiniMapZoomIn();
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int MiniMapZoomOut(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 1);
+			CameraComponent obj = (CameraComponent)ToLua.CheckObject<CameraComponent>(L, 1);
+			obj.MiniMapZoomOut();
 			return 0;
 		}
 		catch (Exception e)
@@ -147,7 +237,7 @@ public class CameraComponentWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int get_m_MainCamera(IntPtr L)
+	static int get_MainCamera(IntPtr L)
 	{
 		object o = null;
 
@@ -155,18 +245,18 @@ public class CameraComponentWrap
 		{
 			o = ToLua.ToObject(L, 1);
 			CameraComponent obj = (CameraComponent)o;
-			UnityEngine.Camera ret = obj.m_MainCamera;
+			UnityEngine.Camera ret = obj.MainCamera;
 			ToLua.PushSealed(L, ret);
 			return 1;
 		}
 		catch(Exception e)
 		{
-			return LuaDLL.toluaL_exception(L, e, o, "attempt to index m_MainCamera on a nil value");
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index MainCamera on a nil value");
 		}
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int set_m_MainCamera(IntPtr L)
+	static int set_MainCamera(IntPtr L)
 	{
 		object o = null;
 
@@ -175,12 +265,12 @@ public class CameraComponentWrap
 			o = ToLua.ToObject(L, 1);
 			CameraComponent obj = (CameraComponent)o;
 			UnityEngine.Camera arg0 = (UnityEngine.Camera)ToLua.CheckObject<UnityEngine.Camera>(L, 2);
-			obj.m_MainCamera = arg0;
+			obj.MainCamera = arg0;
 			return 0;
 		}
 		catch(Exception e)
 		{
-			return LuaDLL.toluaL_exception(L, e, o, "attempt to index m_MainCamera on a nil value");
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index MainCamera on a nil value");
 		}
 	}
 }

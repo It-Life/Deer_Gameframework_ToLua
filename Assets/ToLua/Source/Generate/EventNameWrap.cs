@@ -22,6 +22,10 @@ public class EventNameWrap
 		L.RegConstant("EVENT_CS_GAME_MOVE_END", 131074);
 		L.RegConstant("EVENT_CS_GAME_ENTITY_SHOW", 131075);
 		L.RegConstant("EVENT_CS_GAME_ENTITY_HIDE", 131076);
+		L.RegConstant("EVENT_CS_GAME_ENTITY_COLLISION", 131077);
+		L.RegConstant("EVENT_CS_GAME_ENTITY_TRIGGER", 131078);
+		L.RegConstant("EVENT_CS_AR_START", 196608);
+		L.RegConstant("EVENT_CS_AR_PUT_SUCCESS", 196609);
 		L.EndStaticLibs();
 	}
 }

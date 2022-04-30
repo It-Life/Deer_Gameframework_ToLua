@@ -28,6 +28,7 @@ public static class LuaBinder
 		UnityEngine_UI_ScrollRectWrap.Register(L);
 		UGUISpriteAnimationWrap.Register(L);
 		UIButtonSuperWrap.Register(L);
+		UnityEngine_TextureWrap.Register(L);
 		UnityEngine_InputWrap.Register(L);
 		UnityEngine_KeyCodeWrap.Register(L);
 		UnityEngine_SkinnedMeshRendererWrap.Register(L);
@@ -53,13 +54,9 @@ public static class LuaBinder
 		UnityGameFramework_Runtime_SoundComponentWrap.Register(L);
 		UnityGameFramework_Runtime_ObjectPoolComponentWrap.Register(L);
 		UnityGameFramework_Runtime_EntityComponentWrap.Register(L);
-		EntityDataWrap.Register(L);
 		EntityLogicBaseWrap.Register(L);
-		CharacterPlayerWrap.Register(L);
-		EntityEnumWrap.Register(L);
 		LuaComponentWrap.Register(L);
 		Deer_DeerUIComponentWrap.Register(L);
-		TPSpriteComponentWrap.Register(L);
 		MessengerComponentWrap.Register(L);
 		MessengerInfoWrap.Register(L);
 		EventNameWrap.Register(L);
@@ -68,6 +65,7 @@ public static class LuaBinder
 		Cinemachine_CinemachineVirtualCameraWrap.Register(L);
 		GameSettingsComponentWrap.Register(L);
 		Deer_Enum_LogEnumWrap.Register(L);
+		CharacterWrap.Register(L);
 		Deer_ProcedureChangeLuaWrap.Register(L);
 		LogWrap.Register(L);
 		ColorTypeWrap.Register(L);
@@ -145,7 +143,6 @@ public static class LuaBinder
 		UnityEngine_PhysicsWrap.Register(L);
 		UnityEngine_ColliderWrap.Register(L);
 		UnityEngine_TimeWrap.Register(L);
-		UnityEngine_TextureWrap.Register(L);
 		UnityEngine_Texture2DWrap.Register(L);
 		UnityEngine_ShaderWrap.Register(L);
 		UnityEngine_RendererWrap.Register(L);

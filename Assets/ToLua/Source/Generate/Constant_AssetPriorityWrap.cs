@@ -19,6 +19,7 @@ public class Constant_AssetPriorityWrap
 		L.RegConstant("SceneUnit", 80);
 		L.RegConstant("Weapon", 85);
 		L.RegConstant("Material", 95);
+		L.RegConstant("EffectAsset", 50);
 		L.EndStaticLibs();
 	}
 }
