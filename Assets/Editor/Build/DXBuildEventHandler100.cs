@@ -28,7 +28,7 @@ public class DXBuildEventHandler100 : IBuildEventHandler
         bool outputPackedSelected, string outputPackedPath, string buildReportPath)
     {
         m_VersionInfo.InternalResourceVersion = internalResourceVersion;
-        string streamingAssetsPath = Utility.Path.GetRegularPath(Path.Combine(Application.dataPath, "StreamingAssets"));
+        string streamingAssetsPath = Utility.Path.GetRegularPath(Path.Combine(Application.dataPath, "StreamingAssets", "Asset"));
         string[] fileNames = Directory.GetFiles(streamingAssetsPath, "*", SearchOption.AllDirectories);
         foreach (string fileName in fileNames)
         {
@@ -71,12 +71,20 @@ public class DXBuildEventHandler100 : IBuildEventHandler
         {
             Directory.CreateDirectory(streamingAssetsPath);
         }
-        if (outputPackedSelected)
+        if (outputPackedSelected || outputPackageSelected)
         {
-            string[] fileNames = Directory.GetFiles(outputPackedPath, "*", SearchOption.AllDirectories);
+            string[] fileNames;
+            if (outputPackedSelected)
+            {
+                fileNames = Directory.GetFiles(outputPackedPath, "*", SearchOption.AllDirectories);
+            }
+            else 
+            {
+                fileNames = Directory.GetFiles(outputPackagePath, "*", SearchOption.AllDirectories);
+            }
             foreach (string fileName in fileNames)
             {
-                string destFileName = Path.Combine(streamingAssetsPath, fileName.Substring(outputPackedPath.Length));
+                string destFileName = streamingAssetsPath + fileName.Substring(outputPackedPath.Length);
                 FileInfo destFileInfo = new FileInfo(destFileName);
                 if (destFileInfo.Directory != null && !destFileInfo.Directory.Exists)
                 {
@@ -84,23 +92,14 @@ public class DXBuildEventHandler100 : IBuildEventHandler
                 }
                 File.Copy(fileName, destFileName, true);
             }
-            Debug.Log("拷贝资源文件成功！");
-        }
-        if (outputPackageSelected)
-        {
-            string[] fileNames = Directory.GetFiles(outputPackagePath, "*", SearchOption.AllDirectories);
-            foreach (string fileName in fileNames)
+            if (outputPackedSelected)
             {
-                string destFileName = Path.Combine(streamingAssetsPath, fileName.Substring(outputPackagePath.Length));
-                FileInfo destFileInfo = new FileInfo(destFileName);
-                if (destFileInfo.Directory != null && !destFileInfo.Directory.Exists)
-                {
-                    destFileInfo.Directory.Create();
-                }
-
-                File.Copy(fileName, destFileName, true);
+                Debug.Log("拷贝资源文件成功！");
             }
-            Debug.Log("拷贝单机资源文件成功！");
+            else 
+            {
+                Debug.Log("拷贝单机资源文件成功！");
+            }
         }
         //更新包文件
         if (outputFullSelected)
