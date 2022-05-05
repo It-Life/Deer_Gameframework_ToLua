@@ -44,7 +44,7 @@ public class LuaClient : MonoBehaviour
 
     protected bool openLuaSocket = false;
     protected bool beZbStart = false;
-
+    public bool initLuaComplete = false;
     protected virtual LuaFileUtils InitLoader()
     {
         return LuaFileUtils.Instance;                       
@@ -141,6 +141,12 @@ public class LuaClient : MonoBehaviour
         luaState.Require("Main");
         levelLoaded = luaState.GetFunction("OnLevelWasLoaded");
         CallMain();
+        initLuaComplete = true;
+    }
+
+    public bool IsInitLuaComplete() 
+    {
+        return initLuaComplete;
     }
 
     protected void StartLooper()
