@@ -18,6 +18,7 @@ function UIBaseClass:__init()
     self.m_Available = false
     self.m_Visible = false
     self.m_tbUnit = {}
+    self.serialId = 0
 end
 ---@function __delete 析构函数
 ---调用父类 self.super.__delete(self)
@@ -27,6 +28,7 @@ function UIBaseClass:__delete()
     self.m_Available = false
     self.m_Visible = false
     self.m_tbUnit = {}
+    self.serialId = nil
 end
 
 --- 重写函数
@@ -59,7 +61,7 @@ end
 
 --不可重写函数
 function UIBaseClass:Close()
-    LuaGameEntry.UI:CloseUI()
+    LuaGameEntry.UI:CloseUIById(self.serialId)
 end
 
 function UIBaseClass:GetName()

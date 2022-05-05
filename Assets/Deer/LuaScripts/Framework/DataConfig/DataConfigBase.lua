@@ -31,63 +31,61 @@ function DataConfigBase:Create(strName, strProtoParseName, strCsvName, tbConfigP
     self:OnCreate();
 end
 
-function DataConfigBase:LoadConfigData(strConfigModule, strProtoParseName, strCsvName, tbConfigPbModule, strProtoDataListName)    
+function DataConfigBase:LoadConfigData(strConfigModule, strProtoParseName, strCsvName, tbConfigPbModule, strProtoDataListName,callBack)
     if (not strConfigModule) then
         Logger.Debug("[DataUserConfigBase][LoadConfigData] Error Nil strConfigModule");
         return;
     end
     
     if (not strProtoParseName) then
-        Logger.Debug("[DataUserConfigBase][LoadConfigData] Error Nil strProtoParseName ", strConfigModule);
+        Logger.Debug("[DataUserConfigBase][LoadConfigData] Error Nil strProtoParseName %s", strConfigModule);
         return;
     end
 
     if (not strCsvName) then
-        Logger.Debug("[DataUserConfigBase][LoadConfigData] Error Nil strCsvName ", strConfigModule);
+        Logger.Debug("[DataUserConfigBase][LoadConfigData] Error Nil strCsvName %s", strConfigModule);
         return;
     end
 
     if (not tbConfigPbModule) then
-        Logger.Debug("[DataUserConfigBase][LoadConfigData] Error Nil tbConfigPbModule", strConfigModule);
+        Logger.Debug("[DataUserConfigBase][LoadConfigData] Error Nil tbConfigPbModule %s", strConfigModule);
         return;
     end
 
     if (not strProtoDataListName) then
-        Logger.Debug("[DataUserConfigBase][LoadConfigData] Error Nil strProtoDataListName", strConfigModule);
+        Logger.Debug("[DataUserConfigBase][LoadConfigData] Error Nil strProtoDataListName %s", strConfigModule);
         return;
     end
 
-    Logger.Debug("[DataUserConfigBase][LoadConfigData] Load File Data start ", strConfigModule, strProtoParseName, strProtoDataListName, strCsvName);    
+    Logger.Debug("[DataUserConfigBase][LoadConfigData] Load File Data start %s %s %s %s", strConfigModule, strProtoParseName, strProtoDataListName, strCsvName);
 
     local szPath = self:GetConfigFileDir(strCsvName);
-    local tbByteData = FileUtils.FileReadAllBytes(szPath);
-
-    if (not tbByteData) then
-        Logger.Debug("[DataUserConfigBase][LoadConfigData] Error Not LoadFileData ", strConfigModule, strCsvName);
-        return;
-    end
-    --optional运行代码
-    -- 发送 --
---[[    local sendMail = Heroes_Config_pb.Appearance_Config()
-    sendMail.id = 12
-
-    -- 模拟接收 --
-    local recvMail = Heroes_Config_pb.Appearance_Config()
-    recvMail:ParseFromString(sendMail:SerializeToString())]]
-
-
-
-    local protoConfig = tbConfigPbModule[strProtoParseName]();
-    if (not protoConfig) then
-        Logger.Debug("[DataUserConfigBase][LoadConfigData] Error Not Have protoConfig ", strConfigModule, strCsvName);
-        return;
-    end
-    protoConfig:ParseFromString(tbByteData);
-    return protoConfig[strProtoDataListName];
+    FileUtils.FileReadAllBytes(szPath,FileUtils.CanConfigReadWritePath(),function(isRead,result)
+        if isRead then
+            local tbByteData = result
+            if (not tbByteData) then
+                Logger.Debug("[DataUserConfigBase][LoadConfigData] Error Not LoadFileData %s %s", strConfigModule, strCsvName);
+                return;
+            end
+            local protoConfig = tbConfigPbModule[strProtoParseName]();
+            if (not protoConfig) then
+                Logger.Debug("[DataUserConfigBase][LoadConfigData] Error Not Have protoConfig %s %s", strConfigModule, strCsvName);
+                return;
+            end
+            --反序列
+            protoConfig:ParseFromString(tbByteData);
+            if callBack then
+                callBack(protoConfig[strProtoDataListName])
+            end
+        else
+            Logger.Debug("[DataUserConfigBase][LoadConfigData] Error Not LoadFileData %s %s", strConfigModule, strCsvName);
+            return;
+        end
+    end);
 end
 
 function DataConfigBase:GetConfigFileDir(strCsvName)    
-    return GameEntry.Resource.ReadWritePath  .. "/Config/" .. strCsvName .. ".bin";
+    return "Config/" .. strCsvName .. ".bin";
 end
 
 return DataConfigBase

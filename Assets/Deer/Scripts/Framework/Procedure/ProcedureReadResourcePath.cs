@@ -28,8 +28,9 @@ namespace Deer
         {
             base.OnEnter(procedureOwner);
             m_Complete = false;
-
-            GameEntry.Resource.LoadAsset("Assets/"+ResourcesPathData.AppResourcePathConfig, new LoadAssetCallbacks(
+            string path = "Assets/" + ResourcesPathData.AppResourcePathConfig;
+            //string path = "Asset/EditorConfigs/ResourcePathCollection.txt";
+            GameEntry.Resource.LoadAsset(path, new LoadAssetCallbacks(
                 (assetName, asset, duration, userData) => { LoadCallBack(asset); },
 
                 (assetName, status, errorMessage, userData) =>

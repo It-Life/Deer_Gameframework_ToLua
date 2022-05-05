@@ -127,24 +127,39 @@ public class UIButtonSuper : Button
             }
         }
     }
- 
+    /// <summary>
+    /// 是否按钮按下
+    /// </summary>
+    public bool IsDown 
+    {
+        get { return isDown; }
+    }
+    /// <summary>
+    /// 是否按钮长按
+    /// </summary>
+    public bool IsPress 
+    { 
+        get { return isPress; }
+    }
+
+    [NoToLua]
     public override void OnPointerDown(PointerEventData eventData) {
         base.OnPointerDown(eventData);
         isDown = true;
         downTime = 0;
     }
- 
+    [NoToLua]
     public override void OnPointerUp(PointerEventData eventData) {
         base.OnPointerUp(eventData);
         isDown = false;
     }
- 
+    [NoToLua]
     public override void OnPointerExit(PointerEventData eventData) {
         base.OnPointerExit(eventData);
         isDown = false;
         isPress = false;
     }
- 
+    [NoToLua]
     public override void OnPointerClick(PointerEventData eventData) {
         if (!isPress ) {
             clickTimes += 1;

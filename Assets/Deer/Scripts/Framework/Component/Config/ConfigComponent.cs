@@ -9,6 +9,7 @@
 
 using ConfigData;
 using Deer;
+using System;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 
@@ -39,5 +40,10 @@ public class ConfigComponent : GameFrameworkComponent
     public void UpdateConfigs(UpdateConfigCompleteCallback updateConfigCompleteCallback)
     {
         m_ConfigManager.UpdateConfigs(updateConfigCompleteCallback);
+    }
+
+    public void ReadConfigWithStreamingAssets(string filePath, Action<bool, byte[]> results) 
+    {
+        m_ConfigManager.ReadConfigWithStreamingAssets(filePath, results);
     }
 }

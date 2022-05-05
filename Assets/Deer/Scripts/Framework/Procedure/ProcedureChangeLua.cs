@@ -42,13 +42,19 @@ namespace Deer
                 Log.Error("Lua 流程 '{0}' 不存在", _NextProcedurName);
                 return;
             }
-            CallLuaFunc("OnEnter");
+            if (GameEntry.Lua.IsInitLuaComplete())
+            {
+                CallLuaFunc("OnEnter");
+            }
         }
 
         protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
-            CallLuaFunc("OnEnter");
+            if (GameEntry.Lua.IsInitLuaComplete())
+            {
+                CallLuaFunc("OnEnter");
+            }
         }
 
         private void CallLuaFunc(string strFunName)

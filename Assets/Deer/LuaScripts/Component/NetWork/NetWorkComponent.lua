@@ -11,6 +11,8 @@
 NetWorkComponent = Class("NetWorkComponent",LuaComponentBase)
 
 local text_format = require "protobuf.text_format";
+local myhttp = require("socket.http")
+
 ---忽略显示协议消息列表
 ---@class tbIgnoreShowProtocolMsgList
 local tbIgnoreShowProtocolMsgList = {
@@ -119,6 +121,40 @@ function NetWorkComponent:ParseFromBodyBuffer(nProtocolId, byteBody)
     end
     proto_info_tb:ParseFromString(byteBody)
     return proto_info_tb
+end
+---@param url string "url/test_attributes"
+---@param url string "url/test_attributes?yes=no"
+---@field response
+function NetWorkComponent:HttpGet(url)
+    local response, httpCode, header = myhttp.request(url)
+    return response, httpCode, header
+end
+---@param body string hello=7&hello=1
+---@param body table {hello=7,hello=1}
+function NetWorkComponent:HttpPost(url, body)
+    local function do_it(body)
+        local flat
+        if (type(body) == "table") then
+            local i = 1
+            for k, v in pairs(body) do
+                if i == 1 then
+                    flat = k .. "=" ..v
+                else
+                    flat = flat .. "&" .. k .. "=" .. v
+                end
+                i = i + 1
+            end
+        else
+            flat = body;
+        end
+        local response, httpCode, header = myhttp.request(url,flat)
+        return response, httpCode, header
+    end
+    if body then
+        return do_it(body)
+    else
+        return do_it
+    end
 end
 
 ---发送消息

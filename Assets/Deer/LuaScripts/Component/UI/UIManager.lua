@@ -112,7 +112,6 @@ function UIManager:CloseFormById(serialId,userData,results)
                 end
                 ui = nil
                 tbGroup[serialId] = nil
-                return
             end
         end
     end
@@ -163,9 +162,9 @@ function UIManager:LoadUIFormSuccessCallback(assetObj,serialId)
         ui.serialId = serialId
         ui.gameObject.name = strUIName
         ui.name = strUIName
-        ui:OnAwake()
-        ui:OnEnable()
-        ui:OnStart()
+        ui:OnAwake(tbLoadAssetInfo.userData)
+        ui:OnEnable(tbLoadAssetInfo.userData)
+        ui:OnStart(tbLoadAssetInfo.userData)
         self._listUIForms[enumGroup][serialId] = ui
         if tbLoadAssetInfo.openUIComplete then
             tbLoadAssetInfo.openUIComplete(true,serialId)

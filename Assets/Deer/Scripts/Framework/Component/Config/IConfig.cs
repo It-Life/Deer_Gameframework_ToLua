@@ -12,7 +12,8 @@ namespace Deer
     public interface IConfig
     {
         string Name { get;}
-        IEnumerator LoadConfig(string path);
+        //IEnumerator LoadConfig(string path);
+        IEnumerator LoadConfig(bool isReadWritePath);
 
         void Clear();
     }

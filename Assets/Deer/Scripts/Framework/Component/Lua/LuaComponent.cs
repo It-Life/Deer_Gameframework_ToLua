@@ -51,6 +51,15 @@ public sealed class LuaComponent : GameFrameworkComponent
         return _luaState;
     }
 
+    public bool IsInitLuaComplete()
+    {
+        if (GetMainState()!= null)
+        {
+            return LuaClient.Instance.IsInitLuaComplete();
+        }
+        return false;
+    }
+
     public object[] CallFunction(string funcName, int num)
     {
         if (_luaState == null)

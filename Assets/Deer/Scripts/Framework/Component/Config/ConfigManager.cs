@@ -32,6 +32,7 @@ namespace Deer
         private int m_UpdateRetryCount;
         private Dictionary<string, IConfig> m_LoadConfigs = new Dictionary<string, IConfig>();
 
+        private Dictionary<string, Action<bool, byte[]>> m_ReadStreamingAssetCompletes = new Dictionary<string, Action<bool, byte[]>>();
         /// <summary>
         /// 获取或者设置配置表重试次数
         /// </summary>
@@ -61,6 +62,39 @@ namespace Deer
             GameEntry.Event.Subscribe(DownloadSuccessEventArgs.EventId, OnDownloadSuccess);
             GameEntry.Event.Subscribe(DownloadFailureEventArgs.EventId, OnDownloadFailure);
         }
+        public void ReadConfigWithStreamingAssets(string filePath,Action<bool,byte[]> results) 
+        {
+            m_ReadStreamingAssetCompletes.Add(filePath, results);
+            StartCoroutine(StartReadConfigWithStreamingAssets(filePath));
+        }
+        private IEnumerator StartReadConfigWithStreamingAssets(string filePath) 
+        {
+            UnityWebRequest webRequest = UnityWebRequest.Get(filePath);
+            yield return webRequest.SendWebRequest();
+            if (webRequest.isDone && webRequest.error == null)
+            {
+                byte[] bytes = webRequest.downloadHandler.data;
+                Action<bool, byte[]> readStreamingAssetComplete;
+                m_ReadStreamingAssetCompletes.TryGetValue(filePath, out readStreamingAssetComplete);
+                readStreamingAssetComplete?.Invoke(true, bytes);
+            }
+            else 
+            {
+                if (webRequest.error != null)
+                {
+                    Log.Error("can not read file :" + filePath + webRequest.error);
+                }
+                else 
+                {
+                    Log.Error("can not read file :" + filePath);
+
+                }
+                Action<bool, byte[]> readStreamingAssetComplete;
+                m_ReadStreamingAssetCompletes.TryGetValue(filePath, out readStreamingAssetComplete);
+                readStreamingAssetComplete?.Invoke(false, null);
+            }
+            webRequest.Dispose();
+        }
 
         #region 读表逻辑
         public void FindAllUserConfig()
@@ -89,7 +123,7 @@ namespace Deer
             FindAllUserConfig();
             foreach (var config in m_LoadConfigs)
             {
-                yield return config.Value.LoadConfig(GameEntry.Resource.ReadWritePath);
+                yield return config.Value.LoadConfig(FileUtils.CanConfigReadWritePath());
             }
             loadConfigCompleteCallback(true);
             yield return null;
@@ -171,8 +205,6 @@ namespace Deer
                 filePath = Path.Combine(GameEntry.Resource.ReadWritePath + config.Key);
                 if (PlayerPrefs.GetInt(PrefsKey.FIRST_MOVE_READWRITE_PATH,0) == 0 && !File.Exists(filePath))
                 {
-                    
-                    
                     UnityWebRequest webRequest = UnityWebRequest.Get(Application.streamingAssetsPath + config.Key);
                     yield return webRequest.SendWebRequest();
                     if (webRequest.isDone)

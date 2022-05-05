@@ -117,7 +117,7 @@ namespace Deer
         {
             string downLoadPath = GameEntry.Resource.ReadWritePath + "/" + m_ResourceVersionFileName;
             string downLoadUrl = GameEntry.Resource.UpdatePrefixUri + "/" + m_ResourceVersionFileName;
-            if (GameEntry.Base.EditorResourceMode)
+            if (Application.isEditor && GameEntry.Base.EditorResourceMode)
             {
                 m_LatestResourceComplete = true;
                 return;

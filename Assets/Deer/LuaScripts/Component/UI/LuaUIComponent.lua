@@ -41,6 +41,11 @@ function LuaUIComponent:CloseUI(strUIConfig,userData,results)
     self.m_uiManager:CloseForm(strUIConfig,userData,results)
 end
 
+function LuaUIComponent:CloseUIById(serialId,userData,results)
+    self.m_uiManager:CloseFormById(serialId,userData,results)
+end
+
+
 function LuaUIComponent:BindUIUnit(gameObject,unitScript)
     return self.m_uiManager:CreateUIUnit(gameObject,unitScript)
 end

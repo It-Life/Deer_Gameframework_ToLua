@@ -19,8 +19,11 @@ function ProcedureChangeScene:OnEnter(csProcedure)
     end
     --维护一个计时器
     self:RegisterEvent()
-    LuaGameEntry.UI:OpenUI(UINameConfig.UILoadingPanel)
-    self:OnStartLoadScene()
+    LuaGameEntry.UI:OpenUI(UINameConfig.UILoadingPanel,nil,function(result)
+        if result then
+            self:OnStartLoadScene()
+        end
+    end)
 end
 
 
@@ -65,9 +68,9 @@ end
 
 function ProcedureChangeScene:OnHandleLoadSceneSuccess(sender,e)
     Logger.Debug("OnHandleLoadSceneSuccess")
-    LuaGameEntry.UI:CloseUI(UINameConfig.UILoadingPanel)
-    LuaGameEntry.Procedure:OnChangeLuaProcedure(self.m_nextProcedureName)
+    --LuaGameEntry.UI:CloseUI(UINameConfig.UILoadingPanel)
     self:SendLuaEvent(EventId.EVENT_LUA_LOAD_SCENE_SUCCESS)
+    LuaGameEntry.Procedure:OnChangeLuaProcedure(self.m_nextProcedureName)
 end
 
 function ProcedureChangeScene:OnHandleLoadSceneFailure(sender,e)

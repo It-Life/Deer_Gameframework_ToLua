@@ -78,7 +78,7 @@ namespace Deer
                 PlayerPrefs.SetInt(PrefsKey.FIRST_MOVE_READWRITE_PATH,1);
             }
             GameEntry.Config.CheckConfigVersion(OnCheckConfigComplete);
-            if (GameEntry.Base.EditorResourceMode)
+            if (Application.isEditor && GameEntry.Base.EditorResourceMode)
             {
                 m_NeedUpdateResources = false;
                 m_UpdateResourcesComplete = true;

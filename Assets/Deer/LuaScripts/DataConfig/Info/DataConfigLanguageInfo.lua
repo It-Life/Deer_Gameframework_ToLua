@@ -11,20 +11,22 @@
 DataConfigLanguageInfo = Class("DataConfigLanguageInfo",DataConfigBase)
 
 function DataConfigLanguageInfo:InitConfigData()
-    self._m_listInfo = {};    
-    local listConfigs = self:LoadConfigData(self._m_strName, self._m_strProtoParseName, self._m_strCsvName, self._m_tbConfigPbModule, self._m_strProtoDataListName);
-    if (not listConfigs) then
-        return 0;
-    end
-    for _, tbInfo in pairs(listConfigs) do
-        local strKey = tbInfo.id;
-        if (strKey and strKey ~= "") then
-            local tbTempInfo = {};
-            tbTempInfo.strEnglish = tbInfo.english
-            tbTempInfo.strSChinese = tbInfo.schinese
-            self._m_listInfo[strKey] = tbTempInfo; 
+    self._m_listInfo = {};
+    self:LoadConfigData(self._m_strName, self._m_strProtoParseName, self._m_strCsvName, self._m_tbConfigPbModule, self._m_strProtoDataListName,function(result)
+        local listConfigs = result
+        if (not listConfigs) then
+            return 0;
         end
-    end
+        for _, tbInfo in pairs(listConfigs) do
+            local strKey = tbInfo.id;
+            if (strKey and strKey ~= "") then
+                local tbTempInfo = {};
+                tbTempInfo.strEnglish = tbInfo.english
+                tbTempInfo.strChinese = tbInfo.schinese
+                self._m_listInfo[strKey] = tbTempInfo;
+            end
+        end
+    end);
     return 1;
 end
 
@@ -43,7 +45,7 @@ function DataConfigLanguageInfo:GetLanguageConfigList()
     return self._m_listInfo;
 end
 
-function DataConfigLanguageInfo:GetText(strKey)    
+function DataConfigLanguageInfo:GetText(strKey)
     if (not self._m_listInfo) then        
         return strKey;
     end

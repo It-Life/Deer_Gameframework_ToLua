@@ -18,16 +18,22 @@ public class SoundsConfigDataInfo : ConfigBase<SoundsConfigDataInfo>
 	public override string Name => "Sounds_Config";
 	private Dictionary<uint, Sounds_Config> m_Infos = new Dictionary<uint, Sounds_Config>();
 
-	public override IEnumerator LoadConfig(string path)
+	public override IEnumerator LoadConfig(bool isReadWritePath)
 	{
-		data = AnalyseConfig<Sounds_Config_Data>(Name,path);
-		if (data != null)
-		{
-			foreach (var t in data.Items)
+		AnalyseConfig<Sounds_Config_Data>(Name, isReadWritePath, delegate (Sounds_Config_Data tempData) {
+			data = tempData;
+			if (data != null)
 			{
-				m_Infos.Add(t.Id, t);
+				foreach (var t in data.Items)
+				{
+					m_Infos.Add(t.Id, t);
+				}
 			}
-		}
+			else
+			{
+				Log.Error("loadconfig data is null");
+			}
+		});
 		yield return null;
 	}
 

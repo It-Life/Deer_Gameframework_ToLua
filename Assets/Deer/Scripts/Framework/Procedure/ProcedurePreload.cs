@@ -100,7 +100,7 @@ namespace Deer
 
         private void OnLoadLuaScriptSuccess(string fileName)
         {
-            Log.Info("Load lua script '{0}' success.", fileName);
+            //Log.Info("Load lua script '{0}' success.", fileName);
             m_LoadLuaFlags.Remove(fileName);
             MessengerInfo messengerInfo = ReferencePool.Acquire<MessengerInfo>();
             messengerInfo.param1 = (m_allLuaCount - m_LoadLuaFlags.Count)/m_allLuaCount;

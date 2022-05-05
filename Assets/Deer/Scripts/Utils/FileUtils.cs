@@ -6,7 +6,7 @@ using System.Text;
 using GameFramework;
 using UnityEditor;
 using UnityEngine;
-using UnityGameFramework.Runtime;
+
 
 public class FileUtils
 {
@@ -71,7 +71,7 @@ public class FileUtils
     /// <param name="path">文件夹路径</param>
     /// <param name="subfolder">是否查找子文件</param>
     /// <returns>文件路径集合</returns>
-    public static List<string> FindFiles(string path,bool subfolder = true)
+    public static List<string> FindFiles(string path, bool subfolder = true)
     {
         List<string> fileList = new List<string>();
 
@@ -85,7 +85,7 @@ public class FileUtils
             {
                 foreach (string directory in Directory.GetDirectories(path))
                 {
-                    fileList.AddRange(FindFiles(directory,subfolder));
+                    fileList.AddRange(FindFiles(directory, subfolder));
                 }
             }
         }
@@ -122,10 +122,80 @@ public class FileUtils
     /// </summary>
     /// <param name="filePath"></param>
     /// <returns></returns>
-    public static LuaInterface.LuaByteBuffer FileReadAllBytes(string filePath)
+    public static void FileReadAllBytes(string filePath, bool isReadWritePath, Action<bool, LuaInterface.LuaByteBuffer> action)
     {
-        byte[] result = File.ReadAllBytes(filePath);
-        return new LuaInterface.LuaByteBuffer(result);
+        FileReadAllBytes(filePath, isReadWritePath, delegate (bool isRead, byte[] result)
+        {
+            if (isRead)
+            {
+                action?.Invoke(isRead, new LuaInterface.LuaByteBuffer(result));
+            }
+            else
+            {
+                action?.Invoke(isRead, new LuaInterface.LuaByteBuffer(new byte[0]));
+            }
+        });
+    }
+    /// <summary>
+    /// C# 侧使用的文件流
+    /// </summary>
+    /// <param name="filePath"></param>
+    /// <param name="isReadWritePath"></param>
+    /// <param name="action"></param>
+    [LuaInterface.NoToLua]
+    public static void FileReadAllBytes(string filePath, bool isReadWritePath, Action<bool, byte[]> action)
+    {
+        if (isReadWritePath)
+        {
+            filePath = Path.Combine(GameEntry.Resource.ReadWritePath, filePath);
+            if (!File.Exists(filePath))
+            {
+                Log.Error("filepath:" + filePath + " not exists");
+                return;
+            }
+            byte[] result = File.ReadAllBytes(filePath);
+            action?.Invoke(true, result);
+        }
+        else
+        {
+            filePath = GetStreamingAssetsPlatformPathUrl(filePath);
+            GameEntry.Config.ReadConfigWithStreamingAssets(filePath, delegate (bool isRead, byte[] result) {
+                action?.Invoke(isRead, result);
+            });
+        }
+    }
+    public static string GetStreamingAssetsPlatformPathUrl(string filePath) 
+    {
+        filePath =
+#if UNITY_ANDROID && !UNITY_EDITOR
+            Application.streamingAssetsPath + "/" + filePath;
+#elif UNITY_IPHONE && !UNITY_EDITOR
+            "file://" + Application.streamingAssetsPath + "/" + filePath;
+#elif UNITY_STANDLONE_WIN || UNITY_EDITOR
+            "file://" + Application.streamingAssetsPath + "/" + filePath;
+#else
+            string.Empty;
+#endif
+        return filePath;
+    }
+    public static string GetStreamingAssetsPlatformPath(string filePath)
+    {
+        filePath =
+#if UNITY_ANDROID && !UNITY_EDITOR
+             Application.dataPath + "!assets" + "/" + filePath;
+#else
+             Application.streamingAssetsPath + "/" + filePath;
+#endif
+        return filePath;
+    }
+
+    public static bool CanConfigReadWritePath() 
+    {
+        if (GameEntry.Resource.ResourceMode == GameFramework.Resource.ResourceMode.Package)
+        {
+            return false;
+        }
+        return false;
     }
 
     public static string GetPath(string path)

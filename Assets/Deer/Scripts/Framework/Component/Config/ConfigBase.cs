@@ -48,7 +48,7 @@ namespace Deer
         /// 加载配置表数据
         /// </summary>
         /// <returns></returns>
-        public abstract IEnumerator LoadConfig(string path);
+        public abstract IEnumerator LoadConfig(bool isReadWritePath);
 
         public abstract void Clear();
 
@@ -74,6 +74,15 @@ namespace Deer
             config = Deserialize<T>(content, excelName);
 
             return config;
+        }
+        protected void AnalyseConfig<T>(string excelName, bool isReadWritePath, Action<T> action)
+        {
+            T config = default(T);
+            FileUtils.FileReadAllBytes(Utility.Text.Format("Config/{0}.bin", excelName), isReadWritePath, delegate (bool isRead,byte[] result) {
+                //反序列化
+                config = Deserialize<T>(result, excelName);
+                action?.Invoke(config);
+            });
         }
 
         public T Deserialize<T>(byte[] content, string excelName)
