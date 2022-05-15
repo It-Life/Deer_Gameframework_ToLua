@@ -45,5 +45,7 @@ Gameframework 框架接入原生Tolua，框架旨在提供完整开发热更新�
 
 ​	5.QHierarchy
 
+![框架图](https://github.com/It-Life/Deer_Gameframework_ToLua/blob/main/Docu/image/GameFramework.png)
+
 
 
