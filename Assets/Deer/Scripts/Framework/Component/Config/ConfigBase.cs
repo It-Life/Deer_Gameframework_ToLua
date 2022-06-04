@@ -58,9 +58,9 @@ namespace Deer
         /// <typeparam name="T"></typeparam>
         /// <param name="csvName"></param>
         /// <returns></returns>
-        protected T AnalyseConfig<T>(string excelName,string rootPath) 
+        protected U AnalyseConfig<U>(string excelName,string rootPath) 
         {
-            T config = default(T);
+            U config = default(U);
             string path = Path.Combine(rootPath, Utility.Text.Format("Config/{0}.bin", excelName));
             if (!File.Exists(path))
             {
@@ -71,33 +71,33 @@ namespace Deer
             byte[] content = File.ReadAllBytes(path);
         
             //反序列化
-            config = Deserialize<T>(content, excelName);
+            config = Deserialize<U>(content, excelName);
 
             return config;
         }
-        protected void AnalyseConfig<T>(string excelName, bool isReadWritePath, Action<T> action)
+        protected void AnalyseConfig<U>(string excelName, bool isReadWritePath, Action<U> action)
         {
-            T config = default(T);
+            U config = default(U);
             FileUtils.FileReadAllBytes(Utility.Text.Format("Config/{0}.bin", excelName), isReadWritePath, delegate (bool isRead,byte[] result) {
                 //反序列化
-                config = Deserialize<T>(result, excelName);
+                config = Deserialize<U>(result, excelName);
                 action?.Invoke(config);
             });
         }
 
-        public T Deserialize<T>(byte[] content, string excelName)
+        public U Deserialize<U>(byte[] content, string excelName)
         {
-            T excelConfig = default(T);
+            U excelConfig = default(U);
             if (content.Length > 0)
             {
                 try
                 {
-                    FieldInfo parserField = typeof(T).GetField("_parser", BindingFlags.Static | BindingFlags.NonPublic);
+                    FieldInfo parserField = typeof(U).GetField("_parser", BindingFlags.Static | BindingFlags.NonPublic);
                     if (parserField != null)
                     {
                         object objParser = parserField.GetValue(null);
                         MethodInfo method = parserField.FieldType.GetMethod("ParseFrom", new Type[] { typeof(byte[])});
-                        if (method != null) excelConfig = (T) method.Invoke(objParser, new object[] {content});
+                        if (method != null) excelConfig = (U) method.Invoke(objParser, new object[] {content});
                     }
                 }
                 catch (Exception ex)

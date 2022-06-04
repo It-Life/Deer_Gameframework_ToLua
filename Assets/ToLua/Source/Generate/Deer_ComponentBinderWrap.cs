@@ -12,6 +12,8 @@ public class Deer_ComponentBinderWrap
 		L.RegFunction("__eq", new LuaCSFunction(op_Equality));
 		L.RegFunction("__tostring", new LuaCSFunction(ToLua.op_ToString));
 		L.RegVar("_componentBinderInfos", new LuaCSFunction(get__componentBinderInfos), new LuaCSFunction(set__componentBinderInfos));
+		L.RegVar("_subPanelInfo", new LuaCSFunction(get__subPanelInfo), new LuaCSFunction(set__subPanelInfo));
+		L.RegVar("_panelItemInfo", new LuaCSFunction(get__panelItemInfo), new LuaCSFunction(set__panelItemInfo));
 		L.RegVar("FilePath", new LuaCSFunction(get_FilePath), new LuaCSFunction(set_FilePath));
 		L.RegVar("filePath", new LuaCSFunction(get_filePath), null);
 		L.EndClass();
@@ -89,6 +91,44 @@ public class Deer_ComponentBinderWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get__subPanelInfo(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Deer.ComponentBinder obj = (Deer.ComponentBinder)o;
+			System.Collections.Generic.List<Deer.SubPanelInfo> ret = obj._subPanelInfo;
+			ToLua.PushSealed(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index _subPanelInfo on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get__panelItemInfo(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Deer.ComponentBinder obj = (Deer.ComponentBinder)o;
+			System.Collections.Generic.List<Deer.PanelItemInfo> ret = obj._panelItemInfo;
+			ToLua.PushSealed(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index _panelItemInfo on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int get_FilePath(IntPtr L)
 	{
 		object o = null;
@@ -142,6 +182,44 @@ public class Deer_ComponentBinderWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o, "attempt to index _componentBinderInfos on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set__subPanelInfo(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Deer.ComponentBinder obj = (Deer.ComponentBinder)o;
+			System.Collections.Generic.List<Deer.SubPanelInfo> arg0 = (System.Collections.Generic.List<Deer.SubPanelInfo>)ToLua.CheckObject(L, 2, TypeTraits<System.Collections.Generic.List<Deer.SubPanelInfo>>.type);
+			obj._subPanelInfo = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index _subPanelInfo on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set__panelItemInfo(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Deer.ComponentBinder obj = (Deer.ComponentBinder)o;
+			System.Collections.Generic.List<Deer.PanelItemInfo> arg0 = (System.Collections.Generic.List<Deer.PanelItemInfo>)ToLua.CheckObject(L, 2, TypeTraits<System.Collections.Generic.List<Deer.PanelItemInfo>>.type);
+			obj._panelItemInfo = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index _panelItemInfo on a nil value");
 		}
 	}
 

@@ -65,6 +65,31 @@ public class FileUtils
         sw.Dispose();//销毁流
         return true;
     }
+    public static bool CreateFileByByte(string filePath, byte[] info, bool isCreateDir = true)
+    {
+        FileInfo t = new FileInfo(filePath);
+        if (!t.Exists)
+        {//判断文件是否存在
+            string dir = Path.GetDirectoryName(filePath);
+            if (!Directory.Exists(dir))
+            {
+                if (isCreateDir)
+                {
+                    Directory.CreateDirectory(dir);
+                }
+                else
+                {
+#if UNITY_EDITOR
+                    EditorUtility.DisplayDialog("Tips", "文件夹不存在", "CANCEL");
+#endif
+                    Log.Error("文件夹不存在 Path=" + dir);
+                    return false;
+                }
+            }
+        }
+        File.WriteAllBytes(t.FullName, info);
+        return true;
+    }
     /// <summary>
     /// 查找文件
     /// </summary>

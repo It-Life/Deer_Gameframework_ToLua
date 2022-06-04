@@ -18,19 +18,9 @@ UIBagPanel = UIBagPanel --Assets/Deer/Asset/UI/UIPrefab/UIBag/UIBagPanel.prefab
 --------------Do not modify!-------------
 local UIBagPanel = Class('UIBagPanel', UIBaseClass)
 
-function UIBagPanel:OnAwake()
-    self.super.OnAwake(self)
+function UIBagPanel:OnShow()
+    self.super.OnShow(self)
     self:RegisterEvent()
-
-end
-
-function UIBagPanel:OnEnable()
-    self.super.OnEnable(self)
-    
-end
-
-function UIBagPanel:OnStart()
-    self.super.OnStart(self)
 --[[    self.vListScrollView:InitListView(10,function(listView,index)
         Logger.Debug("vListScrollView_index:" .. index)
         local item = listView:NewListViewItem("ScrollVItemPrefab");
@@ -55,13 +45,8 @@ function UIBagPanel:OnStart()
     end)]]
 end
 
-function UIBagPanel:OnDisable()
-    self.super.OnDisable(self)
-   
-end
-
-function UIBagPanel:OnDestroy()
-    self.super.OnDestroy(self)
+function UIBagPanel:OnHide()
+    self.super.OnHide(self)
     self:UnRegisterEvent()
 
 end

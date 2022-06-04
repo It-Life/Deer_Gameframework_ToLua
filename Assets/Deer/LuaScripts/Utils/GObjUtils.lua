@@ -84,3 +84,16 @@ function GObjUtils.GetFrezzeModeDirection(dirX,dirZ)
     end
     return targetDirection;
 end
+
+function GObjUtils.GetFrezzeModeDirectionBySelf(dirX,dirZ,tras)
+    local forward = tras:TransformDirection(Vector3.forward);
+    forward.y = 0;
+    local right =tras:TransformDirection(Vector3.right);
+    local v = dirZ;
+    local h = dirX;
+    local targetDirection = right * h + forward * v
+    if (targetDirection ~= Vector3.zero) then
+        targetDirection = targetDirection.normalized
+    end
+    return targetDirection;
+end

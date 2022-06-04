@@ -66,4 +66,36 @@ public class ProtobufUtils
         iSupportInitialize.EndInit();
         return message;
     }
+    /// <summary>
+    /// 序列化protobuf
+    /// </summary>
+    /// <param name="msg"></param>
+    /// <returns></returns>
+    public static byte[] Serialize(IMessage msg)
+    {
+        using (MemoryStream rawOutput = new MemoryStream())
+        {
+            CodedOutputStream output = new CodedOutputStream(rawOutput);
+            //output.WriteRawVarint32((uint)len);
+            output.WriteMessage(msg);
+            output.Flush();
+            byte[] result = rawOutput.ToArray();
+
+            return result;
+        }
+    }
+    /// <summary>
+    /// 反序列化protobuf
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="dataBytes"></param>
+    /// <returns></returns>
+    public static T Deserialize<T>(byte[] dataBytes) where T : IMessage, new()
+    {
+        //CodedInputStream stream = new CodedInputStream(dataBytes);
+        T msg = new T();
+        //stream.ReadMessage(msg);
+        msg = (T)msg.Descriptor.Parser.ParseFrom(dataBytes);
+        return msg;
+    }
 }

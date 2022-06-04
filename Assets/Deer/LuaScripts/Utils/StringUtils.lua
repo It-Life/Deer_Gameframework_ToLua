@@ -32,4 +32,13 @@ function string.isnullorempty(str)
     return false;
 end
 
+---字符串分隔方法
+function StringUtils:Split(str, sep)
+    local sep, fields = sep or ":", {}
+    local pattern = string.format("([^%s]+)", sep)
+    str:gsub(pattern, function (c) fields[#fields + 1] = c end)
+    return fields
+end
+
+
 return StringUtils

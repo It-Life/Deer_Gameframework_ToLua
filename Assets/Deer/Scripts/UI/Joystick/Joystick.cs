@@ -31,6 +31,7 @@ namespace zFrame.UI
         [HideInInspector] public JoystickEvent OnPointerUp = new JoystickEvent(); //事件 ： 摇杆上抬起时
         #region Property
         public bool IsDraging { get { return fingerId != int.MinValue; } } //摇杆拖拽状态
+        public int FingerId { get { return fingerId; } }
         public bool ShowDirectionArrow { get => showDirectionArrow; set => showDirectionArrow = value; }  // 是否展示指向器
         public bool IsDynamic //运行时代码配置摇杆是否为动态摇杆
         {
@@ -47,11 +48,19 @@ namespace zFrame.UI
         #endregion
 
         #region MonoBehaviour functions
-        void Awake() => backGroundOriginLocalPostion = backGround.localPosition;
+        void Awake() 
+        {
+            backGroundOriginLocalPostion = backGround.localPosition;
+            GameEntry.UI?.JoystickList.Add(this);
+        }
         void FixedUpdate() => OnValueChanged.Invoke(handle.localPosition / maxRadius); 
         void OnDisable() => RestJoystick(); //意外被 Disable 各单位需要被重置
         void OnValidate() => ConfigJoystick(); //Inspector 发生改变，各单位需要重新配置，编辑器有效
         void Reset() => InitJoystick();
+        void OnDestroy()
+        {
+            GameEntry.UI?.JoystickList?.Remove(this);
+        }
         #endregion
 
         #region The implement of pointer event Interface

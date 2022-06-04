@@ -37,6 +37,7 @@ public class GameEntryWrap
 		L.RegVar("TextureSet", new LuaCSFunction(get_TextureSet), null);
 		L.RegVar("SpriteCollection", new LuaCSFunction(get_SpriteCollection), null);
 		L.RegVar("Timer", new LuaCSFunction(get_Timer), null);
+		L.RegVar("AssetObject", new LuaCSFunction(get_AssetObject), null);
 		L.EndClass();
 	}
 
@@ -442,6 +443,20 @@ public class GameEntryWrap
 		try
 		{
 			ToLua.Push(L, GameEntry.Timer);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_AssetObject(IntPtr L)
+	{
+		try
+		{
+			ToLua.Push(L, GameEntry.AssetObject);
 			return 1;
 		}
 		catch (Exception e)

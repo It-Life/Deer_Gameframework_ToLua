@@ -12,6 +12,12 @@ public class CreateTemplateScript
     private const string TemplateScriptPath = "Assets/Editor/Lazy/GenScriptTool/Template/MyTemplateScript.cs.txt";
     private const string TemplateProcedureScriptPath = "Assets/Editor/Lazy/GenScriptTool/Template/MyTemplateProcedureScript.cs.txt";
     private const string TemplateLuaScriptPath = "Assets/Editor/Lazy/GenScriptTool/Template/MyTemplateLua.lua.txt";
+    private const string TemplateLuaDataConfigPath = "Assets/Editor/Lazy/GenScriptTool/Template/MyTemplateLuaDataConfig.lua.txt";
+    private const string TemplateLuaDataManagerPath = "Assets/Editor/Lazy/GenScriptTool/Template/MyTemplateLuaDataManager.lua.txt";
+    private const string TemplateLuaProcedurePath = "Assets/Editor/Lazy/GenScriptTool/Template/MyTemplateLuaProcedure.lua.txt";
+    private const string TemplateLuaComponentPath = "Assets/Editor/Lazy/GenScriptTool/Template/MyTemplateLuaComponent.lua.txt";
+    private const string TemplateLuaSingletonManagerPath = "Assets/Editor/Lazy/GenScriptTool/Template/MyTemplateLuaSingletonManager.lua.txt";
+    private const string TemplateLuaSceneScriptPath = "Assets/Editor/Lazy/GenScriptTool/Template/MyTemplateLuaSceneScript.lua.txt";
 
     //菜单项
      [MenuItem("Assets/Create/CSharpScript/C# FrameScript", false, 1)]
@@ -29,11 +35,47 @@ public class CreateTemplateScript
         null, TemplateProcedureScriptPath);
     }
 
-    [MenuItem("Assets/Create/Lua Script", false, 3)]
+    [MenuItem("Assets/Create/Lua Script/Lua Script", false, 3)]
     public static void CreatNewLua()
     {
         ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0, ScriptableObject.CreateInstance<CreateScriptAsset>(),
             GetSelectedPathOrFallback() + "/NewLua.lua", null, TemplateLuaScriptPath);
+    } 
+    [MenuItem("Assets/Create/Lua Script/Lua DataConfig Script", false, 4)]
+    public static void CreatNewDataConfigLua()
+    {
+        ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0, ScriptableObject.CreateInstance<CreateScriptAsset>(),
+            GetSelectedPathOrFallback() + "/NewDataConfigLua.lua", null, TemplateLuaDataConfigPath);
+    } 
+    [MenuItem("Assets/Create/Lua Script/Lua DataManager Script", false, 5)]
+    public static void CreatNewDataManagerLua()
+    {
+        ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0, ScriptableObject.CreateInstance<CreateScriptAsset>(),
+            GetSelectedPathOrFallback() + "/NewDataManagerLua.lua", null, TemplateLuaDataManagerPath);
+    } 
+    [MenuItem("Assets/Create/Lua Script/Lua Procedure Script", false, 6)]
+    public static void CreatNewProcedureLua()
+    {
+        ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0, ScriptableObject.CreateInstance<CreateScriptAsset>(),
+            GetSelectedPathOrFallback() + "/NewProcedureLua.lua", null, TemplateLuaProcedurePath);
+    }
+    [MenuItem("Assets/Create/Lua Script/Lua Component Script", false, 7)]
+    public static void CreatNewComponentLua()
+    {
+        ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0, ScriptableObject.CreateInstance<CreateScriptAsset>(),
+            GetSelectedPathOrFallback() + "/NewComponentLua.lua", null, TemplateLuaComponentPath);
+    } 
+    [MenuItem("Assets/Create/Lua Script/Lua SingletonManager Script", false, 8)]
+    public static void CreatNewSingletonManagerLua()
+    {
+        ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0, ScriptableObject.CreateInstance<CreateScriptAsset>(),
+            GetSelectedPathOrFallback() + "/NewSingletonManagerLua.lua", null, TemplateLuaSingletonManagerPath);
+    } 
+    [MenuItem("Assets/Create/Lua Script/Lua SceneScript Script", false, 9)]
+    public static void CreatNewSceneScriptLua()
+    {
+        ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0, ScriptableObject.CreateInstance<CreateScriptAsset>(),
+            GetSelectedPathOrFallback() + "/NewSceneScriptLua.lua", null, TemplateLuaSceneScriptPath);
     }
     public static string GetSelectedPathOrFallback()
     {
@@ -70,8 +112,8 @@ class CreateScriptAsset : EndNameEditAction
 + "---修改作者:#ChangeAuthor#\r\n"
 + "---修改时间:#ChangeTime#\r\n"
 + "---版 本:#Version#\r\n"
-+ "---===============================================\r\n" 
-+ "---@class #Class#\r\n";
++ "---===============================================\r\n";
+
     public override void Action(int instanceId, string newScriptPath, string templatePath)
     {
         UnityEngine.Object obj = CreateTemplateScriptAsset(newScriptPath, templatePath);
@@ -90,13 +132,13 @@ class CreateScriptAsset : EndNameEditAction
         //替换模板的文件名
         text = Regex.Replace(text, "MyTemplateScript", fileNameWithoutExtension);
         string annotationStr = annotationCSStr;
-        if (fileTemplateName == "MyTemplateLua.lua")
+        if (fileTemplateName.Contains(".lua"))
         {
             annotationStr = annotationLuaStr;
         }
         annotationStr += text;
-        annotationStr = annotationStr.Replace("#Class#",
-            fileNameWithoutExtension);
+        //annotationStr = annotationStr.Replace("#Class#",
+        //    fileNameWithoutExtension);
         //把#CreateTime#替换成具体创建的时间
         annotationStr = annotationStr.Replace("#CreatTime#",
             System.DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss"));

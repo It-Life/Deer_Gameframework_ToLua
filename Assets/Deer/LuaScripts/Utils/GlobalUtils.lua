@@ -8,6 +8,8 @@
 ---版 本 : 0.1 
 ---===============================================
 GlobalUtils = {}
+--引用json解析
+local cjson = require("cjson")
 
 local unpack = unpack or table.unpack
 -- 解决原生pack的nil截断问题，SafePack与SafeUnpack要成对使用
@@ -90,6 +92,28 @@ function DeepCopy(object)
     end
 
     return _copy(object)
+end
+---json反序列化
+---@param strJson string json字符串
+function JsonDecode(strJson)
+    return cjson.decode(strJson)
+end
+---json序列化
+---@param tb table
+--[[    local _jsonArray={}
+    _jsonArray[1]=8
+    _jsonArray[2]=9
+    _jsonArray[3]=11
+    _jsonArray[4]=14
+    _jsonArray[5]=25
+    local _arrayFlagKey={}
+    _arrayFlagKey["array"]=_jsonArray
+    local tab = {}
+    tab["Himi"]= "himigame.com"
+    tab["testArray"]=_arrayFlagKey
+    tab["age"]= "23"]]
+function JsonEncode(tb)
+    return cjson.encode(tb)
 end
 
 return GlobalUtils

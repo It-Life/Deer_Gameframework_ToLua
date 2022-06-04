@@ -84,6 +84,24 @@ namespace UnityGameFramework.Runtime
         private NetworkInformationWindow m_NetworkInformationWindow = new NetworkInformationWindow();
         private SettingsWindow m_SettingsWindow = new SettingsWindow();
         private OperationsWindow m_OperationsWindow = new OperationsWindow();
+        private DeerCustomSettingWindow m_DeerCustomSettingWindow = new DeerCustomSettingWindow();
+        private DeerGMNetWindow m_DeerGMNetWindow = new DeerGMNetWindow();
+
+        public DeerCustomSettingWindow CustomSettingWindow
+        {
+            get
+            {
+                return m_DeerCustomSettingWindow;
+            }
+        }
+
+        public DeerGMNetWindow NetWindow
+        {
+            get
+            {
+                return m_DeerGMNetWindow;
+            }
+        }
 
         private FpsCounter m_FpsCounter = null;
 
@@ -239,6 +257,8 @@ namespace UnityGameFramework.Runtime
             }
             RegisterDebuggerWindow("Other/Settings", m_SettingsWindow);
             RegisterDebuggerWindow("Other/Operations", m_OperationsWindow);
+            RegisterDebuggerWindow("Other/Custom", m_DeerCustomSettingWindow);
+            RegisterDebuggerWindow("Other/GMNet", m_DeerGMNetWindow);
         }
 
         private void Update()

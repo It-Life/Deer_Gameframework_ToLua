@@ -17,35 +17,16 @@ UILoginPanel = UILoginPanel --Assets/Deer/Asset/UI/UIPrefab/UILogin/UILoginPanel
 local UILoginPanel = Class('UILoginPanel', UIBaseClass)
 
 
-function UILoginPanel:OnAwake()
-    self.super.OnAwake(self)
-end
-
-function UILoginPanel:OnEnable()
-    self.super.OnEnable(self)
+function UILoginPanel:OnShow()
+    self.super.OnShow(self)
 
 end
 
-function UILoginPanel:OnStart()
-    self.super.OnStart(self)
-    --LuaGameEntry.TPSprite:SetImageByTexture(self.image,"Common/tips")
-    --LuaGameEntry.TPSprite:SetImageByAtlas(self.image1,"Common/item1","10002")
-    local index = 10001
-    --[[    for i = 1, 10000 do
-            index = index + 1
-            local imageaa = GameObject.Instantiate(self.image2.gameObject)
-            imageaa = imageaa.transform:GetComponent(typeof(Image))
-            LuaGameEntry.TPSprite:SetImage(imageaa,str,tostring(index))
-        end]]
-    --Logger.Warning("123456")
-end
 
-function UILoginPanel:OnDisable()
-    self.super.OnDisable(self)
-end
 
-function UILoginPanel:OnDestroy()
-    self.super.OnDestroy(self)
+
+function UILoginPanel:OnHide()
+    self.super.OnHide(self)
     self:UnRegisterEvent()
 end
 

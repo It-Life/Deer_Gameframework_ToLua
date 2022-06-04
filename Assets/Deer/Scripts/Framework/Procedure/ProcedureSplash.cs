@@ -31,12 +31,12 @@ namespace Deer
 
             if (GameEntry.Base.EditorResourceMode)
             {
-                /*// 编辑器模式
+                // 编辑器模式
                 Log.Info("Editor resource mode detected.");
-                ChangeState<ProcedurePreload>(procedureOwner);*/
+                ChangeState<ProcedurePreload>(procedureOwner);
                 // 可更新模式
-                Log.Info("Updatable resource mode detected.");
-                ChangeState<ProcedureCheckVersion>(procedureOwner);
+                /*                Log.Info("Updatable resource mode detected.");
+                                ChangeState<ProcedureCheckVersion>(procedureOwner);*/
             }
             else if (GameEntry.Resource.ResourceMode == ResourceMode.Package)
             {

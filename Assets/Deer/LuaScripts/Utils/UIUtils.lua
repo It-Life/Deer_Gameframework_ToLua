@@ -10,7 +10,8 @@
 ---@class UIUtils
 UIUtils = {}
 UIUtils.tbScrollViewList = {}
-
+UIUtils.tbScrollDataList = {}
+UIUtils.tbScrollInit = {}
 ---初始化 List 列表
 ---@param vListScrollView SuperScrollView.LoopListView2
 function UIUtils.InitListView(vListScrollView,tbList,parentClass,callBack)
@@ -18,6 +19,7 @@ function UIUtils.InitListView(vListScrollView,tbList,parentClass,callBack)
         Logger.Error("ListScrollView is nil")
         return
     end
+    vListScrollView:RefreshAllShownItemWithFirstIndex(0)
     if not tbList then
         Logger.Error("tbList is nil")
         return
@@ -27,11 +29,17 @@ function UIUtils.InitListView(vListScrollView,tbList,parentClass,callBack)
     if (count < 0 or count > #tbList) then
         return
     end
-    local key = parentClass.name .. "_" .. vListScrollView.name
-    UIUtils.tbScrollViewList[key] = UIUtils.tbScrollViewList[key] or {}
+    local instanceID = vListScrollView:GetInstanceID()
+    if UIUtils.tbScrollInit[instanceID] then
+        UIUtils.SetListItemCount(vListScrollView,tbList,true)
+        return
+    end
+    UIUtils.tbScrollInit[instanceID] = true
+    UIUtils.tbScrollDataList[instanceID] = tbList
+    UIUtils.tbScrollViewList[instanceID] = UIUtils.tbScrollViewList[instanceID] or {}
     vListScrollView:InitListView(count,function(listView,index)
         local item = listView:NewListViewItem("ScrollVItemPrefab");
-        local itemScript = UIUtils.tbScrollViewList[key][index]
+        local itemScript = UIUtils.tbScrollViewList[instanceID][index]
         if itemScript then
             itemScript = LuaGameEntry.UI:BindUIUnit(item.gameObject,itemScript);
         else
@@ -41,9 +49,9 @@ function UIUtils.InitListView(vListScrollView,tbList,parentClass,callBack)
             item.IsInitHandlerCalled = true
             itemScript:Init();
         end
-        itemScript:SetItemData(tbList[index+1], index);
+        itemScript:SetItemData(UIUtils.tbScrollDataList[hashCode][index+1], index);
         if callBack then
-            callBack(itemScript,tbList[index+1], index)
+            callBack(itemScript,UIUtils.tbScrollDataList[instanceID][index+1], index)
         end
         return item
     end)
@@ -63,11 +71,18 @@ function UIUtils.InitGridView(vGridScrollView,tbList,parentClass,callBack)
     if (count < 0 or count > #tbList) then
         return
     end
-    local key = parentClass.name .. "_" .. vGridScrollView.name
-    UIUtils.tbScrollViewList[key] = UIUtils.tbScrollViewList[key] or {}
+
+    local instanceID = vGridScrollView:GetInstanceID()
+    if UIUtils.tbScrollInit[instanceID] then
+        UIUtils.SetListItemCount(vGridScrollView,tbList,true)
+        return
+    end
+    UIUtils.tbScrollInit[instanceID] = true
+    UIUtils.tbScrollDataList[instanceID] = tbList
+    UIUtils.tbScrollViewList[instanceID] = UIUtils.tbScrollViewList[instanceID] or {}
     vGridScrollView:InitGridView(count,function(gridView,index,row,column)
         local item = gridView:NewListViewItem("ScrollVItemPrefab");
-        local itemScript = UIUtils.tbScrollViewList[key][index]
+        local itemScript = UIUtils.tbScrollViewList[instanceID][index]
         if itemScript then
             itemScript = LuaGameEntry.UI:BindUIUnit(item.gameObject,itemScript);
         else
@@ -77,17 +92,17 @@ function UIUtils.InitGridView(vGridScrollView,tbList,parentClass,callBack)
             item.IsInitHandlerCalled = true;
             itemScript:Init();
         end
-        itemScript:SetItemData(tbList[index+1], index, row, column);
+        itemScript:SetItemData(UIUtils.tbScrollDataList[instanceID][index+1], index, row, column);
         if callBack then
-            callBack(itemScript,tbList[index+1], index, row, column)
+            callBack(itemScript,UIUtils.tbScrollDataList[instanceID][index+1], index, row, column)
         end
         return item;
     end)
 end
 
 ---初始化 List or Grid 列表
-function UIUtils.SetListItemCount(vListScrollView,tbList,resetPos)
-    if (vListScrollView.ItemTotalCount < 0) then
+function UIUtils.SetListItemCount(vScrollView,tbList,resetPos)
+    if (vScrollView.ItemTotalCount < 0) then
         return
     end
     if resetPos ~= false then
@@ -98,7 +113,10 @@ function UIUtils.SetListItemCount(vListScrollView,tbList,resetPos)
     if (count < 0 or count > #tbList) then
         return
     end
-    vListScrollView:SetListItemCount(count, resetPos);
+    local instanceID = vScrollView:GetInstanceID()
+    UIUtils.tbScrollDataList[instanceID] = tbList
+    vScrollView:SetListItemCount(count, resetPos);
+    vScrollView:RefreshAllShownItem()
 end
 
 function UIUtils.RegisterClick(btn,callBack)

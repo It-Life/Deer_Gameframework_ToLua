@@ -9,7 +9,7 @@
 ---===============================================
 ---@class UINameConfig
 UINameConfig = {}
-UINameConfig.UILoginPanel = {name = "UILoginPanel",group = UIFormGroupType.Common}
-UINameConfig.UIMainHallPanel = {name = "UIMainHallPanel",group = UIFormGroupType.Common}
-UINameConfig.UILoadingPanel = {name = "UILoadingPanel",group = UIFormGroupType.Common}
+UINameConfig.UILoginPanel = {name = "UILoginPanel",group = UIFormGroupType.Background}
+UINameConfig.UIMainHallPanel = {name = "UIMainHallPanel",group = UIFormGroupType.Background}
+UINameConfig.UILoadingPanel = {name = "UILoadingPanel",group = UIFormGroupType.Background}
 UINameConfig.UIBagPanel = {name = "UIBagPanel",group = UIFormGroupType.Common}

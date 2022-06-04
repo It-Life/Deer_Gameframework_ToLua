@@ -8,10 +8,14 @@ public class FileUtilsWrap
 	{
 		L.BeginClass(typeof(FileUtils), typeof(System.Object));
 		L.RegFunction("CreateFile", new LuaCSFunction(CreateFile));
+		L.RegFunction("CreateFileByByte", new LuaCSFunction(CreateFileByByte));
 		L.RegFunction("FindFiles", new LuaCSFunction(FindFiles));
 		L.RegFunction("ExistsFile", new LuaCSFunction(ExistsFile));
 		L.RegFunction("BinToUtf8", new LuaCSFunction(BinToUtf8));
 		L.RegFunction("FileReadAllBytes", new LuaCSFunction(FileReadAllBytes));
+		L.RegFunction("GetStreamingAssetsPlatformPathUrl", new LuaCSFunction(GetStreamingAssetsPlatformPathUrl));
+		L.RegFunction("GetStreamingAssetsPlatformPath", new LuaCSFunction(GetStreamingAssetsPlatformPath));
+		L.RegFunction("CanConfigReadWritePath", new LuaCSFunction(CanConfigReadWritePath));
 		L.RegFunction("GetPath", new LuaCSFunction(GetPath));
 		L.RegFunction("Md5ByPathName", new LuaCSFunction(Md5ByPathName));
 		L.RegFunction("GetLengthString", new LuaCSFunction(GetLengthString));
@@ -96,6 +100,41 @@ public class FileUtilsWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int CreateFileByByte(IntPtr L)
+	{
+		try
+		{
+			int count = LuaDLL.lua_gettop(L);
+
+			if (count == 2)
+			{
+				string arg0 = ToLua.CheckString(L, 1);
+				byte[] arg1 = ToLua.CheckByteBuffer(L, 2);
+				bool o = FileUtils.CreateFileByByte(arg0, arg1);
+				LuaDLL.lua_pushboolean(L, o);
+				return 1;
+			}
+			else if (count == 3)
+			{
+				string arg0 = ToLua.CheckString(L, 1);
+				byte[] arg1 = ToLua.CheckByteBuffer(L, 2);
+				bool arg2 = LuaDLL.luaL_checkboolean(L, 3);
+				bool o = FileUtils.CreateFileByByte(arg0, arg1, arg2);
+				LuaDLL.lua_pushboolean(L, o);
+				return 1;
+			}
+			else
+			{
+				return LuaDLL.luaL_throw(L, "invalid arguments to method: FileUtils.CreateFileByByte");
+			}
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int FindFiles(IntPtr L)
 	{
 		try
@@ -167,10 +206,61 @@ public class FileUtilsWrap
 	{
 		try
 		{
+			ToLua.CheckArgsCount(L, 3);
+			string arg0 = ToLua.CheckString(L, 1);
+			bool arg1 = LuaDLL.luaL_checkboolean(L, 2);
+			System.Action<bool,LuaInterface.LuaByteBuffer> arg2 = (System.Action<bool,LuaInterface.LuaByteBuffer>)ToLua.CheckDelegate<System.Action<bool,LuaInterface.LuaByteBuffer>>(L, 3);
+			FileUtils.FileReadAllBytes(arg0, arg1, arg2);
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetStreamingAssetsPlatformPathUrl(IntPtr L)
+	{
+		try
+		{
 			ToLua.CheckArgsCount(L, 1);
 			string arg0 = ToLua.CheckString(L, 1);
-			LuaInterface.LuaByteBuffer o = FileUtils.FileReadAllBytes(arg0);
-			ToLua.Push(L, o);
+			string o = FileUtils.GetStreamingAssetsPlatformPathUrl(arg0);
+			LuaDLL.lua_pushstring(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetStreamingAssetsPlatformPath(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 1);
+			string arg0 = ToLua.CheckString(L, 1);
+			string o = FileUtils.GetStreamingAssetsPlatformPath(arg0);
+			LuaDLL.lua_pushstring(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int CanConfigReadWritePath(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 0);
+			bool o = FileUtils.CanConfigReadWritePath();
+			LuaDLL.lua_pushboolean(L, o);
 			return 1;
 		}
 		catch (Exception e)

@@ -45,6 +45,9 @@ function LuaUIComponent:CloseUIById(serialId,userData,results)
     self.m_uiManager:CloseFormById(serialId,userData,results)
 end
 
+function LuaUIComponent:BindUISubPanel(gameObject)
+    return self.m_uiManager:CreateUISubPanel(gameObject)
+end
 
 function LuaUIComponent:BindUIUnit(gameObject,unitScript)
     return self.m_uiManager:CreateUIUnit(gameObject,unitScript)
@@ -57,4 +60,9 @@ end
 function LuaUIComponent:OnHandleCloseUIForm(strUIConfig,userData,results)
     self:CloseUI(strUIConfig,userData,results)
 end
+
+function LuaUIComponent:Unspawn(gameObject)
+    self.m_uiManager:Unspawn(gameObject)
+end
+
 return LuaUIComponent

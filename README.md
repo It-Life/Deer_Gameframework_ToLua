@@ -7,7 +7,7 @@ Gameframework 框架接入原生Tolua，框架旨在提供完整开发热更新�
 
 ### 2.[基于GameFramework](https://github.com/EllanJiang/GameFramework) 
 
-### 3.基于[tolua](https://github.com/topameng/tolua)
+### 3.基于[tolua](https://github.com/topameng/tolua)  lua5.3版本
 
 ### 4.消息协议及表读取[protobuf](https://github.com/protocolbuffers/protobuf)3.0，[提供生成表和协议工具](https://github.com/It-Life/Deer_Excel2Proto)支持多语言
 

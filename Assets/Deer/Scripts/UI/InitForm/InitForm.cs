@@ -71,14 +71,17 @@ public class InitForm : MonoBehaviour
 
 	object OpenUiInitFormPanel(object pSender)
 	{
-		bool bIsOpen = bool.Parse(pSender.ToString());
-		gameObject.SetActive(bIsOpen);
+		if (pSender is MessengerInfo messengerInfo)
+		{
+			bool bIsOpen = bool.Parse(messengerInfo.param1.ToString());
+			gameObject.SetActive(bIsOpen);
+		}
 		return null;
 	}
 
 	void BackTipsBtn()
 	{
-		OpenUiTipsPanel(new MessengerInfo(){param1 = false});
+		//OpenUiTipsPanel(new MessengerInfo(){param1 = false});
 	}
 
 	void CloseBtn()

@@ -85,6 +85,8 @@ public class DelegateFactory
 		dict.Add(typeof(RegistFunction), factory.RegistFunction);
 		dict.Add(typeof(Cinemachine.CinemachineVirtualCamera.CreatePipelineDelegate), factory.Cinemachine_CinemachineVirtualCamera_CreatePipelineDelegate);
 		dict.Add(typeof(Cinemachine.CinemachineVirtualCamera.DestroyPipelineDelegate), factory.Cinemachine_CinemachineVirtualCamera_DestroyPipelineDelegate);
+		dict.Add(typeof(System.Action<bool,LuaInterface.LuaByteBuffer>), factory.System_Action_bool_LuaInterface_LuaByteBuffer);
+		dict.Add(typeof(System.Action<bool,byte[]>), factory.System_Action_bool_bytes);
 		dict.Add(typeof(System.Action<SuperScrollView.LoopListView2,SuperScrollView.LoopListViewItem2>), factory.System_Action_SuperScrollView_LoopListView2_SuperScrollView_LoopListViewItem2);
 		dict.Add(typeof(System.Action<SuperScrollView.LoopListView2>), factory.System_Action_SuperScrollView_LoopListView2);
 		dict.Add(typeof(System.Func<SuperScrollView.LoopListView2,int,SuperScrollView.LoopListViewItem2>), factory.System_Func_SuperScrollView_LoopListView2_int_SuperScrollView_LoopListViewItem2);
@@ -163,6 +165,8 @@ public class DelegateFactory
 		DelegateTraits<RegistFunction>.Init(factory.RegistFunction);
 		DelegateTraits<Cinemachine.CinemachineVirtualCamera.CreatePipelineDelegate>.Init(factory.Cinemachine_CinemachineVirtualCamera_CreatePipelineDelegate);
 		DelegateTraits<Cinemachine.CinemachineVirtualCamera.DestroyPipelineDelegate>.Init(factory.Cinemachine_CinemachineVirtualCamera_DestroyPipelineDelegate);
+		DelegateTraits<System.Action<bool,LuaInterface.LuaByteBuffer>>.Init(factory.System_Action_bool_LuaInterface_LuaByteBuffer);
+		DelegateTraits<System.Action<bool,byte[]>>.Init(factory.System_Action_bool_bytes);
 		DelegateTraits<System.Action<SuperScrollView.LoopListView2,SuperScrollView.LoopListViewItem2>>.Init(factory.System_Action_SuperScrollView_LoopListView2_SuperScrollView_LoopListViewItem2);
 		DelegateTraits<System.Action<SuperScrollView.LoopListView2>>.Init(factory.System_Action_SuperScrollView_LoopListView2);
 		DelegateTraits<System.Func<SuperScrollView.LoopListView2,int,SuperScrollView.LoopListViewItem2>>.Init(factory.System_Func_SuperScrollView_LoopListView2_int_SuperScrollView_LoopListViewItem2);
@@ -241,6 +245,8 @@ public class DelegateFactory
 		TypeTraits<RegistFunction>.Init(factory.Check_RegistFunction);
 		TypeTraits<Cinemachine.CinemachineVirtualCamera.CreatePipelineDelegate>.Init(factory.Check_Cinemachine_CinemachineVirtualCamera_CreatePipelineDelegate);
 		TypeTraits<Cinemachine.CinemachineVirtualCamera.DestroyPipelineDelegate>.Init(factory.Check_Cinemachine_CinemachineVirtualCamera_DestroyPipelineDelegate);
+		TypeTraits<System.Action<bool,LuaInterface.LuaByteBuffer>>.Init(factory.Check_System_Action_bool_LuaInterface_LuaByteBuffer);
+		TypeTraits<System.Action<bool,byte[]>>.Init(factory.Check_System_Action_bool_bytes);
 		TypeTraits<System.Action<SuperScrollView.LoopListView2,SuperScrollView.LoopListViewItem2>>.Init(factory.Check_System_Action_SuperScrollView_LoopListView2_SuperScrollView_LoopListViewItem2);
 		TypeTraits<System.Action<SuperScrollView.LoopListView2>>.Init(factory.Check_System_Action_SuperScrollView_LoopListView2);
 		TypeTraits<System.Func<SuperScrollView.LoopListView2,int,SuperScrollView.LoopListViewItem2>>.Init(factory.Check_System_Func_SuperScrollView_LoopListView2_int_SuperScrollView_LoopListViewItem2);
@@ -319,6 +325,8 @@ public class DelegateFactory
 		StackTraits<RegistFunction>.Push = factory.Push_RegistFunction;
 		StackTraits<Cinemachine.CinemachineVirtualCamera.CreatePipelineDelegate>.Push = factory.Push_Cinemachine_CinemachineVirtualCamera_CreatePipelineDelegate;
 		StackTraits<Cinemachine.CinemachineVirtualCamera.DestroyPipelineDelegate>.Push = factory.Push_Cinemachine_CinemachineVirtualCamera_DestroyPipelineDelegate;
+		StackTraits<System.Action<bool,LuaInterface.LuaByteBuffer>>.Push = factory.Push_System_Action_bool_LuaInterface_LuaByteBuffer;
+		StackTraits<System.Action<bool,byte[]>>.Push = factory.Push_System_Action_bool_bytes;
 		StackTraits<System.Action<SuperScrollView.LoopListView2,SuperScrollView.LoopListViewItem2>>.Push = factory.Push_System_Action_SuperScrollView_LoopListView2_SuperScrollView_LoopListViewItem2;
 		StackTraits<System.Action<SuperScrollView.LoopListView2>>.Push = factory.Push_System_Action_SuperScrollView_LoopListView2;
 		StackTraits<System.Func<SuperScrollView.LoopListView2,int,SuperScrollView.LoopListViewItem2>>.Push = factory.Push_System_Func_SuperScrollView_LoopListView2_int_SuperScrollView_LoopListViewItem2;
@@ -4430,6 +4438,124 @@ public class DelegateFactory
 	}
 
 	void Push_Cinemachine_CinemachineVirtualCamera_DestroyPipelineDelegate(IntPtr L, Cinemachine.CinemachineVirtualCamera.DestroyPipelineDelegate o)
+	{
+		ToLua.Push(L, o);
+	}
+
+	class System_Action_bool_LuaInterface_LuaByteBuffer_Event : LuaDelegate
+	{
+		public System_Action_bool_LuaInterface_LuaByteBuffer_Event(LuaFunction func) : base(func) { }
+		public System_Action_bool_LuaInterface_LuaByteBuffer_Event(LuaFunction func, LuaTable self) : base(func, self) { }
+
+		public void Call(bool param0, LuaInterface.LuaByteBuffer param1)
+		{
+			func.BeginPCall();
+			func.Push(param0);
+			func.Push(param1);
+			func.PCall();
+			func.EndPCall();
+		}
+
+		public void CallWithSelf(bool param0, LuaInterface.LuaByteBuffer param1)
+		{
+			func.BeginPCall();
+			func.Push(self);
+			func.Push(param0);
+			func.Push(param1);
+			func.PCall();
+			func.EndPCall();
+		}
+	}
+
+	public System.Action<bool,LuaInterface.LuaByteBuffer> System_Action_bool_LuaInterface_LuaByteBuffer(LuaFunction func, LuaTable self, bool flag)
+	{
+		if (func == null)
+		{
+			System.Action<bool,LuaInterface.LuaByteBuffer> fn = delegate(bool param0, LuaInterface.LuaByteBuffer param1) { };
+			return fn;
+		}
+
+		if(!flag)
+		{
+			System_Action_bool_LuaInterface_LuaByteBuffer_Event target = new System_Action_bool_LuaInterface_LuaByteBuffer_Event(func);
+			System.Action<bool,LuaInterface.LuaByteBuffer> d = target.Call;
+			target.method = d.Method;
+			return d;
+		}
+		else
+		{
+			System_Action_bool_LuaInterface_LuaByteBuffer_Event target = new System_Action_bool_LuaInterface_LuaByteBuffer_Event(func, self);
+			System.Action<bool,LuaInterface.LuaByteBuffer> d = target.CallWithSelf;
+			target.method = d.Method;
+			return d;
+		}
+	}
+
+	bool Check_System_Action_bool_LuaInterface_LuaByteBuffer(IntPtr L, int pos)
+	{
+		return TypeChecker.CheckDelegateType<System.Action<bool,LuaInterface.LuaByteBuffer>>(L, pos);
+	}
+
+	void Push_System_Action_bool_LuaInterface_LuaByteBuffer(IntPtr L, System.Action<bool,LuaInterface.LuaByteBuffer> o)
+	{
+		ToLua.Push(L, o);
+	}
+
+	class System_Action_bool_bytes_Event : LuaDelegate
+	{
+		public System_Action_bool_bytes_Event(LuaFunction func) : base(func) { }
+		public System_Action_bool_bytes_Event(LuaFunction func, LuaTable self) : base(func, self) { }
+
+		public void Call(bool param0, byte[] param1)
+		{
+			func.BeginPCall();
+			func.Push(param0);
+			func.Push(param1);
+			func.PCall();
+			func.EndPCall();
+		}
+
+		public void CallWithSelf(bool param0, byte[] param1)
+		{
+			func.BeginPCall();
+			func.Push(self);
+			func.Push(param0);
+			func.Push(param1);
+			func.PCall();
+			func.EndPCall();
+		}
+	}
+
+	public System.Action<bool,byte[]> System_Action_bool_bytes(LuaFunction func, LuaTable self, bool flag)
+	{
+		if (func == null)
+		{
+			System.Action<bool,byte[]> fn = delegate(bool param0, byte[] param1) { };
+			return fn;
+		}
+
+		if(!flag)
+		{
+			System_Action_bool_bytes_Event target = new System_Action_bool_bytes_Event(func);
+			System.Action<bool,byte[]> d = target.Call;
+			target.method = d.Method;
+			return d;
+		}
+		else
+		{
+			System_Action_bool_bytes_Event target = new System_Action_bool_bytes_Event(func, self);
+			System.Action<bool,byte[]> d = target.CallWithSelf;
+			target.method = d.Method;
+			return d;
+		}
+	}
+
+	bool Check_System_Action_bool_bytes(IntPtr L, int pos)
+	{
+		return TypeChecker.CheckDelegateType<System.Action<bool,byte[]>>(L, pos);
+	}
+
+	void Push_System_Action_bool_bytes(IntPtr L, System.Action<bool,byte[]> o)
 	{
 		ToLua.Push(L, o);
 	}

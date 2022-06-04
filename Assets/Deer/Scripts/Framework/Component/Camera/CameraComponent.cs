@@ -7,10 +7,13 @@
 //版 本 : 0.1 
 // ===============================================
 using Cinemachine;
+using LuaInterface;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 using UnityGameFramework.Runtime;
 
 public enum CameraType 
@@ -37,6 +40,7 @@ public class CameraComponent : GameFrameworkComponent
         get { return m_MainCamera; }
         set { m_MainCamera = value; }
     }
+
     /// <summary>
     /// 第三人称跟随相机
     /// </summary>
@@ -49,6 +53,11 @@ public class CameraComponent : GameFrameworkComponent
     private CinemachineFreeLook m_FollowFreeCamera;
     [SerializeField]
     private CinemachineStateDrivenCamera m_FollowStateDrivenCamera;
+    public bool DisFreeLookCameraRotation;
+    /// <summary>
+    /// 相机灵敏度
+    /// </summary>
+    private float CameraSensitivity = 0.5f;
 
     #region 小地图
     /// <summary>
@@ -78,12 +87,59 @@ public class CameraComponent : GameFrameworkComponent
         {
             m_FollowMiniMapCamera.transform.position = m_OffsetPosition + m_MiniMapFollowTarget.transform.position;
         }
+        if (m_FollowFreeCamera != null && m_FollowFreeCamera.Follow != null)
+        {
+            m_FollowFreeCamera.Follow.transform.eulerAngles = new Vector3(m_FollowFreeCamera.Follow.transform.eulerAngles.x, m_MainCamera.transform.rotation.eulerAngles.y, m_FollowFreeCamera.Follow.transform.eulerAngles.z);
+            //m_MainCamera.transform.position = new Vector3(m_FollowFreeCamera.LookAt.transform.position.x, m_MainCamera.transform.position.y, m_FollowFreeCamera.LookAt.transform.position.z);
+        }
     }
-
     public void OpenCameraType()
     {
         //m_FollowCamera.
     }
+    #region FreeLookCamera
+    public void SetFreeLookCameraRotateSpeed(float xSpeed,float ySpeed)
+    {
+        m_FollowFreeCamera.m_XAxis.m_MaxSpeed = xSpeed;
+        m_FollowFreeCamera.m_YAxis.m_MaxSpeed = ySpeed;
+    }
+    public void SetFreeLookCameraXAxis(float speed, float accelTime, float decelTime)
+    {
+        m_FollowFreeCamera.m_XAxis.m_MaxSpeed = speed;
+        m_FollowFreeCamera.m_XAxis.m_AccelTime = accelTime;
+        m_FollowFreeCamera.m_XAxis.m_DecelTime = decelTime;
+    }
+    public void SetFreeLookCameraYAxis(float speed, float accelTime, float decelTime)
+    {
+        m_FollowFreeCamera.m_YAxis.m_MaxSpeed = speed;
+        m_FollowFreeCamera.m_YAxis.m_AccelTime = accelTime;
+        m_FollowFreeCamera.m_YAxis.m_DecelTime = decelTime;
+    }
+    public void FollowAndFreeViewTarget(Transform followTrans, Transform lookAtTrans)
+    {
+        if (followTrans != null)
+        {
+            m_FollowFreeCamera.Follow = followTrans;
+            m_FollowFreeCamera.LookAt = lookAtTrans;
+            m_FollowFreeCamera.gameObject.SetActive(true);
+        }
+        else
+        {
+            m_FollowFreeCamera.gameObject.SetActive(false);
+        }
+    }
+
+    public void ChangeFreeViewCameraFov(float fov)
+    {
+        m_FollowFreeCamera.m_Lens.FieldOfView = fov;
+    }
+    [NoToLua]
+    public CinemachineFreeLook GetFollowFreeCamera()
+    {
+        return m_FollowFreeCamera;
+    }
+    #endregion
+
     public void LookAtTarget(Transform transform) 
     {
         m_FollowLockCamera.LookAt = transform;  
@@ -118,20 +174,6 @@ public class CameraComponent : GameFrameworkComponent
         else 
         {
             m_FollowLockCamera.gameObject.SetActive(false);
-        }
-    }
-    
-    public void FollowAndFreeViewTarget(Transform followTrans,Transform lookAtTrans)
-    {
-        if (followTrans != null)
-        {
-            m_FollowFreeCamera.Follow = followTrans;
-            m_FollowFreeCamera.LookAt = lookAtTrans;
-            m_FollowFreeCamera.gameObject.SetActive(true);
-        }
-        else
-        {
-            m_FollowFreeCamera.gameObject.SetActive(false);
         }
     }
     

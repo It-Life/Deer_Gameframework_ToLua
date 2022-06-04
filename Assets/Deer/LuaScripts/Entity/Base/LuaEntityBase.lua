@@ -14,6 +14,7 @@ function LuaEntityBase:__init(...)
     self.m_csEntity = nil
     self.m_entityId = 0
     self.m_luaEntityData = nil
+    self.m_isValid = false
 end
 
 function LuaEntityBase:__delete(...)
@@ -36,19 +37,43 @@ function LuaEntityBase:GetCsEntity()
     return self.m_csEntity
 end
 
+function LuaEntityBase:GetLuaEntityData()
+    return self.m_luaEntityData
+end
+
+function LuaEntityBase:Valid()
+    return self.m_isValid
+end
+
 ---@param entityId number
 ---@param csEntity EntityLogicBase
 ---@param luaEntityData EntityDataBase
 function LuaEntityBase:OnShow(entityId,csEntity,luaEntityData)
+    self.m_isValid = true
     self.m_csEntity = csEntity
     self.m_entityId = entityId
     self.m_luaEntityData = luaEntityData
     if csEntity then
+        csEntity.m_LuaData = luaEntityData
+        csEntity:InitLuaTable(self)
         csEntity.CachedTransform.name = string.format("Entity %s",self.m_entityId)
+        csEntity.CachedTransform.localPosition = luaEntityData:GetPosition();
     end
 end
 
 function LuaEntityBase:OnHide()
+    self.m_isValid = false
+    self.m_csEntity = nil
+    self.m_entityId = nil
+    self.m_luaEntityData = nil
+    self:Delete()
+end
+---@param physicsEnum PhysicsEnum
+function LuaEntityBase:OnCollision(physicsEnum,gameObject)
+    Logger.Info(""..physicsEnum)
+end
+
+function LuaEntityBase:OnTrigger(physicsEnum,gameObject)
 
 end
 

@@ -1,6 +1,7 @@
 ﻿using Deer;
 using UGFExtensions.SpriteCollection;
 using UGFExtensions.Texture;
+using UGFExtensions.Timer;
 using UnityEngine;
 
 /// <summary>
@@ -66,6 +67,11 @@ public partial class GameEntry
         get;
         private set;
     }
+    public static AssetObjectComponent AssetObject
+    {
+        get;
+        private set;
+    }
     private static void InitCustomComponents()
     {
         // 注册自定义的组件
@@ -80,6 +86,7 @@ public partial class GameEntry
         Timer = UnityGameFramework.Runtime.GameEntry.GetComponent<TimerComponent>();
         TextureSet = UnityGameFramework.Runtime.GameEntry.GetComponent<TextureSetComponent>();
         SpriteCollection = UnityGameFramework.Runtime.GameEntry.GetComponent<SpriteCollectionComponent>();
+        AssetObject = UnityGameFramework.Runtime.GameEntry.GetComponent<AssetObjectComponent>();
         InitComponentsSet();
     }
 

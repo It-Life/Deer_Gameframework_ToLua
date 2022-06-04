@@ -8,8 +8,8 @@ public class GameSettingsComponentWrap
 	{
 		L.BeginClass(typeof(GameSettingsComponent), typeof(UnityGameFramework.Runtime.GameFrameworkComponent));
 		L.RegFunction("OwnerSourcePath", new LuaCSFunction(OwnerSourcePath));
-		L.RegFunction("SetStartAssetInfos", new LuaCSFunction(SetStartAssetInfos));
-		L.RegFunction("GetAllAsset", new LuaCSFunction(GetAllAsset));
+		L.RegFunction("GetConfigDownLoadPath", new LuaCSFunction(GetConfigDownLoadPath));
+		L.RegFunction("GetResourcesDownLoadPath", new LuaCSFunction(GetResourcesDownLoadPath));
 		L.RegFunction("__eq", new LuaCSFunction(op_Equality));
 		L.RegFunction("__tostring", new LuaCSFunction(ToLua.op_ToString));
 		L.RegVar("ForceUpdateGame", new LuaCSFunction(get_ForceUpdateGame), new LuaCSFunction(set_ForceUpdateGame));
@@ -17,6 +17,8 @@ public class GameSettingsComponentWrap
 		L.RegVar("g_appStage", new LuaCSFunction(get_g_appStage), null);
 		L.RegVar("g_resType", new LuaCSFunction(get_g_resType), null);
 		L.RegVar("g_serverType", new LuaCSFunction(get_g_serverType), null);
+		L.RegVar("ReadCommonConfig", new LuaCSFunction(get_ReadCommonConfig), null);
+		L.RegVar("SystemInfoID", new LuaCSFunction(get_SystemInfoID), null);
 		L.RegVar("CompleteDownLoadPath", new LuaCSFunction(get_CompleteDownLoadPath), null);
 		L.EndClass();
 	}
@@ -39,16 +41,16 @@ public class GameSettingsComponentWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int SetStartAssetInfos(IntPtr L)
+	static int GetConfigDownLoadPath(IntPtr L)
 	{
 		try
 		{
-			ToLua.CheckArgsCount(L, 3);
+			ToLua.CheckArgsCount(L, 2);
 			GameSettingsComponent obj = (GameSettingsComponent)ToLua.CheckObject<GameSettingsComponent>(L, 1);
 			string arg0 = ToLua.CheckString(L, 2);
-			System.Collections.Generic.List<string> arg1 = (System.Collections.Generic.List<string>)ToLua.CheckObject(L, 3, TypeTraits<System.Collections.Generic.List<string>>.type);
-			obj.SetStartAssetInfos(arg0, arg1);
-			return 0;
+			string o = obj.GetConfigDownLoadPath(arg0);
+			LuaDLL.lua_pushstring(L, o);
+			return 1;
 		}
 		catch (Exception e)
 		{
@@ -57,15 +59,14 @@ public class GameSettingsComponentWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int GetAllAsset(IntPtr L)
+	static int GetResourcesDownLoadPath(IntPtr L)
 	{
 		try
 		{
-			ToLua.CheckArgsCount(L, 2);
+			ToLua.CheckArgsCount(L, 1);
 			GameSettingsComponent obj = (GameSettingsComponent)ToLua.CheckObject<GameSettingsComponent>(L, 1);
-			string arg0 = ToLua.CheckString(L, 2);
-			System.Collections.Generic.List<string> o = obj.GetAllAsset(arg0);
-			ToLua.PushSealed(L, o);
+			string o = obj.GetResourcesDownLoadPath();
+			LuaDLL.lua_pushstring(L, o);
 			return 1;
 		}
 		catch (Exception e)
@@ -184,6 +185,44 @@ public class GameSettingsComponentWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o, "attempt to index g_serverType on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_ReadCommonConfig(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			GameSettingsComponent obj = (GameSettingsComponent)o;
+			bool ret = obj.ReadCommonConfig;
+			LuaDLL.lua_pushboolean(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index ReadCommonConfig on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_SystemInfoID(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			GameSettingsComponent obj = (GameSettingsComponent)o;
+			string ret = obj.SystemInfoID;
+			LuaDLL.lua_pushstring(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index SystemInfoID on a nil value");
 		}
 	}
 

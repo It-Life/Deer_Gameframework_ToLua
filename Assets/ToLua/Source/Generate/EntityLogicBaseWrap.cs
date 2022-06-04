@@ -7,10 +7,32 @@ public class EntityLogicBaseWrap
 	public static void Register(LuaState L)
 	{
 		L.BeginClass(typeof(EntityLogicBase), typeof(UnityGameFramework.Runtime.EntityLogic));
+		L.RegFunction("InitLuaTable", new LuaCSFunction(InitLuaTable));
 		L.RegFunction("__eq", new LuaCSFunction(op_Equality));
 		L.RegFunction("__tostring", new LuaCSFunction(ToLua.op_ToString));
+		L.RegVar("m_LuaData", new LuaCSFunction(get_m_LuaData), new LuaCSFunction(set_m_LuaData));
+		L.RegVar("m_LuaOwner", new LuaCSFunction(get_m_LuaOwner), new LuaCSFunction(set_m_LuaOwner));
+		L.RegVar("m_OnCollision", new LuaCSFunction(get_m_OnCollision), new LuaCSFunction(set_m_OnCollision));
+		L.RegVar("m_OnTrigger", new LuaCSFunction(get_m_OnTrigger), new LuaCSFunction(set_m_OnTrigger));
 		L.RegVar("Id", new LuaCSFunction(get_Id), null);
 		L.EndClass();
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int InitLuaTable(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			EntityLogicBase obj = (EntityLogicBase)ToLua.CheckObject<EntityLogicBase>(L, 1);
+			LuaTable arg0 = ToLua.CheckLuaTable(L, 2);
+			obj.InitLuaTable(arg0);
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
@@ -32,6 +54,82 @@ public class EntityLogicBaseWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_m_LuaData(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			EntityLogicBase obj = (EntityLogicBase)o;
+			LuaInterface.LuaTable ret = obj.m_LuaData;
+			ToLua.Push(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index m_LuaData on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_m_LuaOwner(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			EntityLogicBase obj = (EntityLogicBase)o;
+			LuaInterface.LuaTable ret = obj.m_LuaOwner;
+			ToLua.Push(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index m_LuaOwner on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_m_OnCollision(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			EntityLogicBase obj = (EntityLogicBase)o;
+			LuaInterface.LuaFunction ret = obj.m_OnCollision;
+			ToLua.Push(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index m_OnCollision on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_m_OnTrigger(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			EntityLogicBase obj = (EntityLogicBase)o;
+			LuaInterface.LuaFunction ret = obj.m_OnTrigger;
+			ToLua.Push(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index m_OnTrigger on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int get_Id(IntPtr L)
 	{
 		object o = null;
@@ -47,6 +145,82 @@ public class EntityLogicBaseWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o, "attempt to index Id on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_m_LuaData(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			EntityLogicBase obj = (EntityLogicBase)o;
+			LuaTable arg0 = ToLua.CheckLuaTable(L, 2);
+			obj.m_LuaData = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index m_LuaData on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_m_LuaOwner(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			EntityLogicBase obj = (EntityLogicBase)o;
+			LuaTable arg0 = ToLua.CheckLuaTable(L, 2);
+			obj.m_LuaOwner = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index m_LuaOwner on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_m_OnCollision(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			EntityLogicBase obj = (EntityLogicBase)o;
+			LuaFunction arg0 = ToLua.CheckLuaFunction(L, 2);
+			obj.m_OnCollision = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index m_OnCollision on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_m_OnTrigger(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			EntityLogicBase obj = (EntityLogicBase)o;
+			LuaFunction arg0 = ToLua.CheckLuaFunction(L, 2);
+			obj.m_OnTrigger = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index m_OnTrigger on a nil value");
 		}
 	}
 }

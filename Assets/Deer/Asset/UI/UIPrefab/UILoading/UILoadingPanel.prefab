@@ -385,6 +385,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
         type: 3}
+      propertyPath: _componentBinderInfos.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
       propertyPath: _uIOutletInfos.Array.data[0].Name
       value: button
       objectReference: {fileID: 0}
@@ -515,6 +520,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
         type: 3}
+      propertyPath: _componentBinderInfos.Array.data[0].Name
+      value: progressValue
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
+      propertyPath: _componentBinderInfos.Array.data[0].Object
+      value: 
+      objectReference: {fileID: 5043556287224639454}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
       propertyPath: _uIComponentBinderInfos.Array.data[0].Name
       value: progress
       objectReference: {fileID: 0}
@@ -548,6 +563,16 @@ PrefabInstance:
       propertyPath: _uIOutletInfos.Array.data[4].ComponentType
       value: TextMeshProUGUI
       objectReference: {fileID: 0}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
+      propertyPath: _componentBinderInfos.Array.data[0].soundId
+      value: 1002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
+      propertyPath: _componentBinderInfos.Array.data[0].componet
+      value: 
+      objectReference: {fileID: 8440745827819050182}
     - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
         type: 3}
       propertyPath: _uIComponentBinderInfos.Array.data[0].Object
@@ -585,6 +610,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
         type: 3}
+      propertyPath: _componentBinderInfos.Array.data[0].m_soundId
+      value: BtnDefaultClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
       propertyPath: _uIComponentBinderInfos.Array.data[0].soundId
       value: 1002
       objectReference: {fileID: 0}
@@ -613,6 +643,16 @@ PrefabInstance:
       propertyPath: _uIComponentBinderInfos.Array.data[1].m_soundId
       value: BtnDefaultClick
       objectReference: {fileID: 0}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
+      propertyPath: _componentBinderInfos.Array.data[0].ComponentType
+      value: Image
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
+        type: 3}
+      propertyPath: _componentBinderInfos.Array.data[0].componetPreview
+      value: 
+      objectReference: {fileID: 8440745827819050182}
     - target: {fileID: 2025972649033267022, guid: ee434b8e75f92804ca01e3be759e7c7f,
         type: 3}
       propertyPath: _uIComponentBinderInfos.Array.data[0].ComponentType

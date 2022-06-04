@@ -14,6 +14,7 @@ local logType =
 {
     Debug = "Debug",
     Info = "Info",
+    ColorInfo = "ColorInfo",
     Warning = "Warning",
     Error = "Error",
     Fatal = "Fatal",
@@ -25,6 +26,18 @@ end
 
 function Logger.Info(message,arg1,arg2,arg3,arg4)
     Logger.__InputLog(logType.Info,message,arg1,arg2,arg3,arg4)
+end
+---打印颜色日志，EnableDebugAndAboveLogs EnableInfoAndAboveLogs 和 EnableAllLogs 显示
+---@param message string
+---@param color UnityEngine.Color
+---@param color Color
+---@param color ColorType
+function Logger.ColorInfo(color,message)
+    if GameEntry.GameSettings.g_logEnum == LogEnum.EnableDebugAndAboveLogs
+            or GameEntry.GameSettings.g_logEnum == LogEnum.EnableAllLogs
+            or GameEntry.GameSettings.g_logEnum == LogEnum.EnableInfoAndAboveLogs then
+        Log.ColorInfo(color,debug.traceback(message,3))
+    end
 end
 
 function Logger.Warning(message,arg1,arg2,arg3,arg4)
@@ -64,7 +77,7 @@ function Logger.__InputLog(type,message,arg1,arg2,arg3,arg4)
         elseif type == logType.Warning then
             Log.Warning(debug.traceback(_strMessage,3))
         elseif type == logType.Error then
-            Log.Error(debug.traceback(_strMessage,3))
+            --Log.Error(debug.traceback(_strMessage,3))
         elseif type == logType.Fatal then
             Log.Error(debug.traceback(_strMessage,3))
         else
@@ -78,25 +91,25 @@ function Logger.__InputLog(type,message,arg1,arg2,arg3,arg4)
         elseif type == logType.Error then
             Log.Error(debug.traceback(_strMessage,3))
         elseif type == logType.Fatal then
-            error(debug.traceback(_strMessage,3))
+            Log.Error(debug.traceback(_strMessage,3))
         end
     elseif GameEntry.GameSettings.g_logEnum == LogEnum.EnableWarningAndAboveLogs then
         if type == logType.Warning then
             Log.Warning(debug.traceback(_strMessage,3))
         elseif type == logType.Error then
-            error(debug.traceback(_strMessage,3))
+            Log.Error(debug.traceback(_strMessage,3))
         elseif type == logType.Fatal then
-            error(debug.traceback(_strMessage,3))
+            Log.Error(debug.traceback(_strMessage,3))
         end
     elseif GameEntry.GameSettings.g_logEnum == LogEnum.EnableErrorAndAboveLogs then
         if type == logType.Error then
-            error(debug.traceback(_strMessage,3))
+            Log.Error(debug.traceback(_strMessage,3))
         elseif type == logType.Fatal then
-            error(debug.traceback(_strMessage,3))
+            Log.Error(debug.traceback(_strMessage,3))
         end
     elseif GameEntry.GameSettings.g_logEnum == LogEnum.EnableFatalAndAboveLogs then
         if type == logType.Fatal then
-            error(debug.traceback(_strMessage,3))
+            Log.Error(debug.traceback(_strMessage,3))
         end
     end
 end

@@ -9,6 +9,7 @@ public class LuaComponentWrap
 		L.BeginClass(typeof(LuaComponent), typeof(UnityGameFramework.Runtime.GameFrameworkComponent));
 		L.RegFunction("StartLuaMain", new LuaCSFunction(StartLuaMain));
 		L.RegFunction("GetMainState", new LuaCSFunction(GetMainState));
+		L.RegFunction("IsInitLuaComplete", new LuaCSFunction(IsInitLuaComplete));
 		L.RegFunction("CallFunction", new LuaCSFunction(CallFunction));
 		L.RegFunction("LuaGC", new LuaCSFunction(LuaGC));
 		L.RegFunction("LoadFile", new LuaCSFunction(LoadFile));
@@ -55,6 +56,23 @@ public class LuaComponentWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int IsInitLuaComplete(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 1);
+			LuaComponent obj = (LuaComponent)ToLua.CheckObject<LuaComponent>(L, 1);
+			bool o = obj.IsInitLuaComplete();
+			LuaDLL.lua_pushboolean(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int CallFunction(IntPtr L)
 	{
 		try
@@ -77,6 +95,17 @@ public class LuaComponentWrap
 				UnityEngine.GameObject arg1 = (UnityEngine.GameObject)ToLua.CheckObject<UnityEngine.GameObject>(L, 3);
 				int arg2 = (int)LuaDLL.luaL_checkinteger(L, 4);
 				object[] o = obj.CallFunction(arg0, arg1, arg2);
+				ToLua.Push(L, o);
+				return 1;
+			}
+			else if (count == 5)
+			{
+				LuaComponent obj = (LuaComponent)ToLua.CheckObject<LuaComponent>(L, 1);
+				string arg0 = ToLua.CheckString(L, 2);
+				UnityEngine.GameObject arg1 = (UnityEngine.GameObject)ToLua.CheckObject<UnityEngine.GameObject>(L, 3);
+				int arg2 = (int)LuaDLL.luaL_checkinteger(L, 4);
+				bool arg3 = LuaDLL.luaL_checkboolean(L, 5);
+				object[] o = obj.CallFunction(arg0, arg1, arg2, arg3);
 				ToLua.Push(L, o);
 				return 1;
 			}

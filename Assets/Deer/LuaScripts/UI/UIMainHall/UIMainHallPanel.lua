@@ -17,14 +17,14 @@ UIMainHallPanel = UIMainHallPanel --Assets/Deer/Asset/UI/UIPrefab/UIMainHall/UIM
 --------------Do not modify!-------------
 local UIMainHallPanel = Class('UIMainHallPanel', UIBaseClass)
 
-function UIMainHallPanel:OnAwake()
-    self.super.OnAwake(self)
+function UIMainHallPanel:OnShow()
+    self.super.OnShow(self)
     self.m_isMoveing = false
     self:RegisterEvent()
     self.joystick.OnValueChanged:AddListener(function(v)
         if v.magnitude ~= 0 then
             self.m_isMoveing = true
-            local messengerInfo = MessengerInfo.New()
+            local messengerInfo = {}
             messengerInfo.param1 = v.x
             messengerInfo.param2 = v.y
             LuaGameEntry.LuaEvent:SendLuaEvent(EventId.EVENT_LUA_GAME_MOVE_DIRECTION,messengerInfo,true)
@@ -35,16 +35,7 @@ function UIMainHallPanel:OnAwake()
             end
         end
     end)
-end
-
-function UIMainHallPanel:OnEnable()
-    self.super.OnEnable(self)
-
-end
-
-function UIMainHallPanel:OnStart()
-    self.super.OnStart(self)
-    GObjUtils.GetAllChildren(self.leftBtnPart,typeof(UIButtonSuper),function(nIndex,btnChild)
+        GObjUtils.GetAllChildren(self.leftBtnPart,typeof(UIButtonSuper),function(nIndex,btnChild)
         UIUtils.RegisterClick(btnChild,function()
             self:OnLeftPartBtn(btnChild,nIndex)
         end)
@@ -58,13 +49,8 @@ function UIMainHallPanel:OnStart()
     end)
 end
 
-function UIMainHallPanel:OnDisable()
-    self.super.OnDisable(self)
-
-end
-
-function UIMainHallPanel:OnDestroy()
-    self.super.OnDestroy(self)
+function UIMainHallPanel:OnHide()
+    self.super.OnHide(self)
 
     self:UnRegisterEvent()
 end

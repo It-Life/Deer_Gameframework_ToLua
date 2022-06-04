@@ -7,10 +7,7 @@ public class UIButtonSuperWrap
 	public static void Register(LuaState L)
 	{
 		L.BeginClass(typeof(UIButtonSuper), typeof(UnityEngine.UI.Button));
-		L.RegFunction("OnPointerDown", new LuaCSFunction(OnPointerDown));
-		L.RegFunction("OnPointerUp", new LuaCSFunction(OnPointerUp));
-		L.RegFunction("OnPointerExit", new LuaCSFunction(OnPointerExit));
-		L.RegFunction("OnPointerClick", new LuaCSFunction(OnPointerClick));
+		L.RegFunction("OnDrag", new LuaCSFunction(OnDrag));
 		L.RegFunction("__eq", new LuaCSFunction(op_Equality));
 		L.RegFunction("__tostring", new LuaCSFunction(ToLua.op_ToString));
 		L.RegVar("m_CanClick", new LuaCSFunction(get_m_CanClick), new LuaCSFunction(set_m_CanClick));
@@ -21,69 +18,23 @@ public class UIButtonSuperWrap
 		L.RegVar("m_ResponseOnceByPress", new LuaCSFunction(get_m_ResponseOnceByPress), new LuaCSFunction(set_m_ResponseOnceByPress));
 		L.RegVar("m_LongPressDurationTime", new LuaCSFunction(get_m_LongPressDurationTime), new LuaCSFunction(set_m_LongPressDurationTime));
 		L.RegVar("onPress", new LuaCSFunction(get_onPress), new LuaCSFunction(set_onPress));
+		L.RegVar("IsDraging", new LuaCSFunction(get_IsDraging), null);
+		L.RegVar("FingerId", new LuaCSFunction(get_FingerId), null);
+		L.RegVar("IsDown", new LuaCSFunction(get_IsDown), null);
+		L.RegVar("IsPress", new LuaCSFunction(get_IsPress), null);
+		L.RegVar("IsDownExit", new LuaCSFunction(get_IsDownExit), null);
 		L.EndClass();
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int OnPointerDown(IntPtr L)
+	static int OnDrag(IntPtr L)
 	{
 		try
 		{
 			ToLua.CheckArgsCount(L, 2);
 			UIButtonSuper obj = (UIButtonSuper)ToLua.CheckObject<UIButtonSuper>(L, 1);
 			UnityEngine.EventSystems.PointerEventData arg0 = (UnityEngine.EventSystems.PointerEventData)ToLua.CheckObject<UnityEngine.EventSystems.PointerEventData>(L, 2);
-			obj.OnPointerDown(arg0);
-			return 0;
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int OnPointerUp(IntPtr L)
-	{
-		try
-		{
-			ToLua.CheckArgsCount(L, 2);
-			UIButtonSuper obj = (UIButtonSuper)ToLua.CheckObject<UIButtonSuper>(L, 1);
-			UnityEngine.EventSystems.PointerEventData arg0 = (UnityEngine.EventSystems.PointerEventData)ToLua.CheckObject<UnityEngine.EventSystems.PointerEventData>(L, 2);
-			obj.OnPointerUp(arg0);
-			return 0;
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int OnPointerExit(IntPtr L)
-	{
-		try
-		{
-			ToLua.CheckArgsCount(L, 2);
-			UIButtonSuper obj = (UIButtonSuper)ToLua.CheckObject<UIButtonSuper>(L, 1);
-			UnityEngine.EventSystems.PointerEventData arg0 = (UnityEngine.EventSystems.PointerEventData)ToLua.CheckObject<UnityEngine.EventSystems.PointerEventData>(L, 2);
-			obj.OnPointerExit(arg0);
-			return 0;
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int OnPointerClick(IntPtr L)
-	{
-		try
-		{
-			ToLua.CheckArgsCount(L, 2);
-			UIButtonSuper obj = (UIButtonSuper)ToLua.CheckObject<UIButtonSuper>(L, 1);
-			UnityEngine.EventSystems.PointerEventData arg0 = (UnityEngine.EventSystems.PointerEventData)ToLua.CheckObject<UnityEngine.EventSystems.PointerEventData>(L, 2);
-			obj.OnPointerClick(arg0);
+			obj.OnDrag(arg0);
 			return 0;
 		}
 		catch (Exception e)
@@ -259,6 +210,101 @@ public class UIButtonSuperWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o, "attempt to index onPress on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_IsDraging(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UIButtonSuper obj = (UIButtonSuper)o;
+			bool ret = obj.IsDraging;
+			LuaDLL.lua_pushboolean(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index IsDraging on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_FingerId(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UIButtonSuper obj = (UIButtonSuper)o;
+			int ret = obj.FingerId;
+			LuaDLL.lua_pushinteger(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index FingerId on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_IsDown(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UIButtonSuper obj = (UIButtonSuper)o;
+			bool ret = obj.IsDown;
+			LuaDLL.lua_pushboolean(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index IsDown on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_IsPress(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UIButtonSuper obj = (UIButtonSuper)o;
+			bool ret = obj.IsPress;
+			LuaDLL.lua_pushboolean(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index IsPress on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_IsDownExit(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UIButtonSuper obj = (UIButtonSuper)o;
+			bool ret = obj.IsDownExit;
+			LuaDLL.lua_pushboolean(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index IsDownExit on a nil value");
 		}
 	}
 

@@ -24,7 +24,11 @@ public class TextAssetInspector : Editor
         bool enabled = GUI.enabled;
         GUI.enabled = true;
         string assetPath = AssetDatabase.GetAssetPath(target);
-        if (assetPath.EndsWith(".md") || assetPath.EndsWith(".xml"))
+        if (assetPath.EndsWith(".md") 
+            || assetPath.EndsWith(".xml") 
+            || assetPath.EndsWith(".txt") 
+            || assetPath.EndsWith(".html")
+            || assetPath.EndsWith(".csv"))
         {
             string luaFile = File.ReadAllText(assetPath);
             string text;

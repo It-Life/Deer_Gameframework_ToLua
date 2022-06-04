@@ -66,7 +66,7 @@ public class UIButtonSuperEditor : ButtonEditor
 
 #endif
 
-public class UIButtonSuper : Button
+public class UIButtonSuper : Button, IDragHandler
 {
     [Tooltip("是否可以点击")]
     public bool m_CanClick = true;
@@ -88,8 +88,13 @@ public class UIButtonSuper : Button
  
     private bool isDown = false;
     private bool isPress = false;
+    private bool isDownExit = false;
     private float downTime = 0;
- 
+
+    private int fingerId = int.MinValue;
+    public bool IsDraging { get { return fingerId != int.MinValue; } } //摇杆拖拽状态
+    public int FingerId { get { return fingerId; } }
+
     private float clickIntervalTime = 0;
     private int clickTimes = 0;
     void Update() {
@@ -108,23 +113,35 @@ public class UIButtonSuper : Button
             }
         }
         if (clickTimes >= 1) {
-            clickIntervalTime += Time.deltaTime;
-            if (clickIntervalTime >= m_DoubleClickIntervalTime) {
-                if (clickTimes >= 2) {
-                    if (m_CanDoubleClick)
-                    {
-                        onDoubleClick.Invoke();
-                    }
-                }
-                else {
-                    if (m_CanClick)
-                    {
-                        onClick.Invoke();
-                    }
-                }
+            if (!m_CanLongPress && !m_CanDoubleClick && m_CanClick)
+            {
+                onClick.Invoke();
                 clickTimes = 0;
-                clickIntervalTime = 0;
             }
+            else 
+            {
+                clickIntervalTime += Time.deltaTime;
+                if (clickIntervalTime >= m_DoubleClickIntervalTime)
+                {
+                    if (clickTimes >= 2)
+                    {
+                        if (m_CanDoubleClick)
+                        {
+                            onDoubleClick.Invoke();
+                        }
+                    }
+                    else
+                    {
+                        if (m_CanClick)
+                        {
+                            onClick.Invoke();
+                        }
+                    }
+                    clickTimes = 0;
+                    clickIntervalTime = 0;
+                }
+            }
+
         }
     }
     /// <summary>
@@ -141,23 +158,45 @@ public class UIButtonSuper : Button
     { 
         get { return isPress; }
     }
+    /// <summary>
+    /// 是否按钮按下后离开按钮位置
+    /// </summary>
+    public bool IsDownExit
+    {
+        get { return isDownExit; }
+    }
 
     [NoToLua]
     public override void OnPointerDown(PointerEventData eventData) {
+        if (eventData.pointerId < -1 || IsDraging) return; //适配 Touch：只响应一个Touch；适配鼠标：只响应左键
         base.OnPointerDown(eventData);
+        fingerId = eventData.pointerId;
+
+        //Log.ColorInfo(ColorType.blue, "OnPointerDown:" + eventData.pointerId);
+        GameEntry.UI.ButtonDownList?.Add(this);
         isDown = true;
+        isDownExit = false;
         downTime = 0;
     }
     [NoToLua]
     public override void OnPointerUp(PointerEventData eventData) {
+        if (fingerId != eventData.pointerId) return;//正确的手指抬起时才会；
         base.OnPointerUp(eventData);
+        //Log.ColorInfo(ColorType.blue, "OnPointerUp:" + eventData.pointerId);
+        if (GameEntry.UI.ButtonDownList.Contains(this))
+        {
+            GameEntry.UI.ButtonDownList.Remove(this);
+        }
+        fingerId = int.MinValue;
         isDown = false;
+        isDownExit = true;
     }
     [NoToLua]
     public override void OnPointerExit(PointerEventData eventData) {
+        if (fingerId != eventData.pointerId) return;//正确的手指抬起时才会；
         base.OnPointerExit(eventData);
-        isDown = false;
         isPress = false;
+        isDownExit = true ;
     }
     [NoToLua]
     public override void OnPointerClick(PointerEventData eventData) {
@@ -166,5 +205,9 @@ public class UIButtonSuper : Button
         }
         else
             isPress = false;
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
     }
 }

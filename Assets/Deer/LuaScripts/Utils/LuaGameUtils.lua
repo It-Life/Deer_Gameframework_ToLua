@@ -19,6 +19,11 @@ function LuaGameUtils.GetUIPrefabPath(strPath)
     return str
 end
 
+function LuaGameUtils.GetHealthBarPrefabPath(strPath)
+    local str = string.format("Assets/Deer/Asset/UI/Prefab/HealthBar/%s.prefab",strPath)
+    return str
+end
+
 function LuaGameUtils.GetUIAtlasPath(strPath)
     local str = string.format("Assets/Deer/Asset/UI/UIArt/Atlas/%s.asset",strPath)
     return str
@@ -31,6 +36,16 @@ end
 
 function LuaGameUtils.GetScenePath(strPath)
     local str = string.format("Assets/Deer/Asset/Scenes/%s.unity",strPath)
+    return str
+end
+
+function LuaGameUtils.GetScenePrefabPath(strPath)
+    local str = string.format("Assets/Deer/Asset/ScenesResources/Prefab/%s.prefab",strPath)
+    return str
+end
+
+function LuaGameUtils.GetCharacterUIPrefabPath(strPath)
+    local str = string.format("Assets/Deer/Asset/EntityPrefabs/Character/UI/%s.prefab",strPath)
     return str
 end
 

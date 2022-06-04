@@ -15,6 +15,7 @@ using Deer;
 using Google.Protobuf.WellKnownTypes;
 using UnityEngine;
 using UnityGameFramework.Runtime;
+using LuaInterface;
 
 [DisallowMultipleComponent]
 [AddComponentMenu("Deer/GameSettings")]
@@ -25,6 +26,7 @@ public class GameSettingsComponent : GameFrameworkComponent
     [SerializeField] private ResourceIdEnum m_resType = ResourceIdEnum.Dx;
     [SerializeField] private ServerTypeEnum m_serverType = ServerTypeEnum.Intranet;
 
+    [SerializeField] private bool m_readCommonConfig = false;
     private static LogEnum m_logEnum = LogEnum.DisableAllLogs;
 
     private Dictionary<string, List<string>> m_StartAssetInfos = new Dictionary<string, List<string>>();
@@ -78,6 +80,16 @@ public class GameSettingsComponent : GameFrameworkComponent
         get { return m_serverType; }
     }
 
+    public bool ReadCommonConfig 
+    {
+        get { return m_readCommonConfig; }
+    }
+    
+    public string SystemInfoID
+    {
+        get { return SystemInfo.deviceUniqueIdentifier; }
+    }
+
     /// <summary>
     /// 获取资源下载完整地址
     /// </summary>
@@ -95,22 +107,39 @@ public class GameSettingsComponent : GameFrameworkComponent
             {
                 url = ResourcesPathData.InnerResourceSourceUrl;
             }
-            url += OwnerSourcePath();
-            Log.Info("CompleteDownLoadPath:"+url);
             return url;
         }
     }
 
     public string OwnerSourcePath()
     {
-        return "/" + (int)g_resType;
+        string path = ((int)g_resType).ToString();
+        return path;
     }
 
+    public string GetConfigDownLoadPath(string fileName) 
+    {
+        string path = CompleteDownLoadPath;
+        if (ReadCommonConfig)
+        {
+            path = path + "/Common/"+ fileName;
+        }
+        else 
+        {
+            path = path + "/" + OwnerSourcePath()+ "/" +ResourcesPathData.GetPlatformName() + "/" + fileName;
+        }
+        return path;
+    }
+    public string GetResourcesDownLoadPath()
+    {
+        return CompleteDownLoadPath + "/" + OwnerSourcePath() + "/" + ResourcesPathData.GetPlatformName();
+    }
     /// <summary>
     /// 设置资源列表
     /// </summary>
     /// <param name="startPath"></param>
     /// <param name="list"></param>
+    [NoToLua]
     public void SetStartAssetInfos(string startPath, List<string> list)
     {
         if (m_StartAssetInfos.TryGetValue(startPath, out var result))
@@ -128,6 +157,7 @@ public class GameSettingsComponent : GameFrameworkComponent
     /// </summary>
     /// <param name="startName"></param>
     /// <returns></returns>
+    [NoToLua]
     public List<string> GetAllAsset(string startName)
     {
         if (m_StartAssetInfos.TryGetValue(startName, out var result))

@@ -7,10 +7,9 @@
 //版 本 : 0.1 
 // ===============================================
 using GameFramework;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityGameFramework.Runtime;
+using LuaInterface;
 
 
 public class EntityLogicBase : EntityLogic
@@ -21,6 +20,20 @@ public class EntityLogicBase : EntityLogic
         {
             return Entity.Id;
         }
+    }
+
+    public LuaTable m_LuaData;
+
+    public LuaTable m_LuaOwner;
+
+    public LuaFunction m_OnCollision;
+    public LuaFunction m_OnTrigger;
+
+    public void InitLuaTable(LuaTable luaTable) 
+    {
+        m_LuaOwner = luaTable;
+        m_OnCollision = luaTable.GetLuaFunction("OnCollision");
+        m_OnTrigger = luaTable.GetLuaFunction("OnTrigger");
     }
 
 #if UNITY_2017_3_OR_NEWER
@@ -62,6 +75,9 @@ public class EntityLogicBase : EntityLogic
 #endif
     {
         base.OnHide(isShutdown, userData);
+        m_OnCollision  =null;
+        m_OnTrigger = null;
+        m_LuaOwner = null;
         MessengerInfo messengerInfo = ReferencePool.Acquire<MessengerInfo>();
         messengerInfo.param1 = Id;
         messengerInfo.param2 = userData;
@@ -116,45 +132,136 @@ public class EntityLogicBase : EntityLogic
 
     private void OnCollisionEnter(Collision collision)
     {
-        MessengerInfo messengerInfo = new MessengerInfo();
-        messengerInfo.param1 = 1;
-        messengerInfo.param2 = collision.gameObject;
-        GameEntry.Messenger.SendEvent(EventName.EVENT_CS_GAME_ENTITY_COLLISION, messengerInfo);
+        //Log.Error("OnCollisionEnter");
+        if (m_LuaData == null)
+        {
+            return;
+        }
+        var m_canCollisionEnter = m_LuaData["m_canCollisionEnter"];
+        if (m_canCollisionEnter == null) 
+        {
+            return ;
+        }
+        bool isCanCollision = m_canCollisionEnter.ToString().Equals("True");
+        if (!isCanCollision)
+        {
+            return;
+        }
+        if (m_OnCollision != null)
+        {
+            Log.Info("OnCollisionEnter gameobject name is " + collision.gameObject.name);
+            m_OnCollision.Call(m_LuaOwner, 1, collision.gameObject);
+        }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        MessengerInfo messengerInfo = new MessengerInfo();
-        messengerInfo.param1 = 3;
-        messengerInfo.param2 = collision.gameObject;
-        GameEntry.Messenger.SendEvent(EventName.EVENT_CS_GAME_ENTITY_COLLISION, messengerInfo);
+        if (m_LuaData == null)
+        {
+            return;
+        }
+        var m_canCollisionExit = m_LuaData["m_canCollisionExit"];
+        if (m_canCollisionExit == null)
+        {
+            return;
+        }
+        bool isCanCollision = m_canCollisionExit.ToString().Equals("True");
+        if (!isCanCollision)
+        {
+            return;
+        }
+        if (m_OnCollision != null)
+        {
+            Log.Info("OnCollisionExit gameobject name is " + collision.gameObject.name);
+            m_OnCollision.Call(m_LuaOwner, 3, collision.gameObject);
+        }
     }
     private void OnCollisionStay(Collision collision)
     {
-        MessengerInfo messengerInfo = new MessengerInfo();
-        messengerInfo.param1 = 2;
-        messengerInfo.param2 = collision.gameObject;
-        GameEntry.Messenger.SendEvent(EventName.EVENT_CS_GAME_ENTITY_COLLISION, messengerInfo);
+        if (m_LuaData == null)
+        {
+            return;
+        }
+        var m_canCollisionStay = m_LuaData["m_canCollisionStay"];
+        if (m_canCollisionStay == null)
+        {
+            return;
+        }
+        bool isCanCollision = m_canCollisionStay.ToString().Equals("True");
+        if (!isCanCollision)
+        {
+            return;
+        }
+        if (m_OnCollision != null)
+        {
+            Log.Info("OnCollisionStay gameobject name is " + collision.gameObject.name);
+            m_OnCollision.Call(m_LuaOwner, 2, collision.gameObject);
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
-        MessengerInfo messengerInfo = new MessengerInfo();
-        messengerInfo.param1 = 1;
-        messengerInfo.param2 = other.gameObject;
-        GameEntry.Messenger.SendEvent(EventName.EVENT_CS_GAME_ENTITY_TRIGGER, messengerInfo);
+        if (m_LuaData == null)
+        {
+            return;
+        }
+        var m_canTriggerEnter = m_LuaData["m_canTriggerEnter"];
+        if (m_canTriggerEnter == null)
+        {
+            return;
+        }
+        bool isCanCollision = m_canTriggerEnter.ToString().Equals("True");
+        if (!isCanCollision)
+        {
+            return;
+        }
+        if (m_OnTrigger != null)
+        {
+            Log.Info("OnTriggerEnter gameobject name is " + other.gameObject.name);
+            m_OnTrigger.Call(m_LuaOwner, 1, other.gameObject);
+        }
     }
     private void OnTriggerExit(Collider other)
     {
-        MessengerInfo messengerInfo = new MessengerInfo();
-        messengerInfo.param1 = 3;
-        messengerInfo.param2 = other.gameObject;
-        GameEntry.Messenger.SendEvent(EventName.EVENT_CS_GAME_ENTITY_TRIGGER, messengerInfo);
+        if (m_LuaData == null)
+        {
+            return;
+        }
+        var m_canTriggerExit = m_LuaData["m_canTriggerExit"];
+        if (m_canTriggerExit == null)
+        {
+            return;
+        }
+        bool isCanCollision = m_canTriggerExit.ToString().Equals("True");
+        if (!isCanCollision)
+        {
+            return;
+        }
+        if (m_OnTrigger != null)
+        {
+            Log.Info("OnTriggerExit gameobject name is " + other.gameObject.name);
+            m_OnTrigger.Call(m_LuaOwner, 3, other.gameObject);
+        }
     }
     private void OnTriggerStay(Collider other)
     {
-        MessengerInfo messengerInfo = new MessengerInfo();
-        messengerInfo.param1 = 2;
-        messengerInfo.param2 = other.gameObject;
-        GameEntry.Messenger.SendEvent(EventName.EVENT_CS_GAME_ENTITY_TRIGGER, messengerInfo);
+        if (m_LuaData == null)
+        {
+            return;
+        }
+        var m_canTriggerStay = m_LuaData["m_canTriggerStay"];
+        if (m_canTriggerStay == null)
+        {
+            return;
+        }
+        bool isCanCollision = m_canTriggerStay.ToString().Equals("True");
+        if (!isCanCollision)
+        {
+            return;
+        }
+        if (m_OnTrigger != null)
+        {
+            Log.Info("OnTriggerStay gameobject name is " + other.gameObject.name);
+            m_OnTrigger.Call(m_LuaOwner, 2, other.gameObject);
+        }
     }
 }

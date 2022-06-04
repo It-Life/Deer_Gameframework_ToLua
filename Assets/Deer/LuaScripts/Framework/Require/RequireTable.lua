@@ -5,7 +5,7 @@ require "Framework.Common.BaseClass"
 require "Framework.Common.SingletonClass"
 require "Framework.Common.ManagerBaseClass"
 require "Framework.Common.UIBaseClass"
-require "Framework.Common.UIBaseClass"
+require "Framework.Common.UISubBaseClass"
 require "Framework.Common.Queue"
 require "Framework.Common.Stack"
 
@@ -23,15 +23,14 @@ require "UI.Require.RequireUI"
 require "DataConfig.Require.RequireDataConfig"
 ---流程
 require "Procedure.Require.RequireProcedure"
----DataUser
-require "DataUser.Require.RequireDataUser"
 ---Entity
 require "Entity.Require.RequireEntity"
 ---SceneScript
 require "SceneScript.Require.RequireSceneScript"
-
 ---Base
 require "Base.LuaGameEntry"
+---DataUser
+require "DataUser.Require.RequireDataUser"
 
 
 

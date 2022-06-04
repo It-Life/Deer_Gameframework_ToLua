@@ -100,6 +100,22 @@ public sealed class LuaComponent : GameFrameworkComponent
         return null;
     }
 
+    public object[] CallFunction(string funcName, GameObject gameObject, int num,bool boolValue)
+    {
+        if (_luaState == null)
+        {
+            return null;
+        }
+
+        LuaFunction func = _luaState.GetFunction(funcName);
+        if (func != null)
+        {
+            return func.Invoke<GameObject, int,bool, object[]>(gameObject, num, boolValue);
+        }
+
+        return null;
+    }
+
     public void LuaGC()
     {
         if (GetMainState() != null)

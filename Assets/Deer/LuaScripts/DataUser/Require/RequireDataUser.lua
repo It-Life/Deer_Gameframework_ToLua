@@ -8,7 +8,9 @@
 ---版 本 : 0.1 
 ---===============================================
 ---RequireDataUser
-require "Framework.DataUser.DataUserManager"
 require "Framework.DataUser.DataUserBase"
 require "DataUser.Config.DataUserNames"
 require "DataUser.Config.DataUserDefine"
+
+
+--require "DataUser.Base.LuaGameManager"

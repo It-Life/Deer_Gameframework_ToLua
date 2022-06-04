@@ -64,6 +64,6 @@ public static class InputExtension
         };
         var list = new List<RaycastResult>();
         EventSystem.current.RaycastAll(data, list);
-        return list.Count > 0 && list[0].module is GraphicRaycaster&&!list[0].gameObject.name.StartsWith(filterPrefix);
+        return list.Count > 0 && list[0].gameObject.transform is RectTransform &&!list[0].gameObject.name.StartsWith(filterPrefix);
     }
 }

@@ -19,7 +19,8 @@ namespace Deer
     public partial class ComponentBinder : MonoBehaviour
     {
         public List<ComponentBinderInfo> _componentBinderInfos = new List<ComponentBinderInfo>();
-
+        public List<SubPanelInfo> _subPanelInfo = new List<SubPanelInfo>();
+        public List<PanelItemInfo> _panelItemInfo = new List<PanelItemInfo>();
         private UIEventBinder _uiEventBinder;
 
         [LabelWidth(55)]
@@ -38,6 +39,7 @@ namespace Deer
         public void BindLua(LuaTable luaTable)
         {
             ComponentBinderInfo componentBinderInfo = null;
+            string funName = "";
             for (var i = 0; i < _componentBinderInfos.Count; i++)
             {
                 componentBinderInfo = _componentBinderInfos[i];
@@ -48,7 +50,7 @@ namespace Deer
                     if (componentBinderInfo.canClick)
                     {
                         UIButtonSuper btn = componentBinderInfo.componet as UIButtonSuper;
-                        string funName = string.Format($"OnClick{componentBinderInfo.Name.ToUpperFirst()}Btn");
+                        funName = string.Format($"OnClick{componentBinderInfo.Name.ToUpperFirst()}Btn");
                         GetUIEventBinder().AddPress(btn, luaTable, luaTable.GetLuaFunction(funName),PressType.onClick, componentBinderInfo.m_soundId);
                         if (componentBinderInfo.canDoubleClick)
                         {
@@ -62,6 +64,28 @@ namespace Deer
                         }
                     }
 
+                }
+            }
+            if (_subPanelInfo.Count>0)
+            {
+                SubPanelInfo subPanelInfo = null;
+                funName = "__InstantiationAllSubPanel";
+                for (int i = 0; i < _subPanelInfo.Count; i++)
+                {
+                    subPanelInfo = _subPanelInfo[i];
+                    luaTable[subPanelInfo.Name] = subPanelInfo.Name;
+                    luaTable.GetLuaFunction(funName).Call(luaTable, subPanelInfo.Name, subPanelInfo.Object, subPanelInfo.SubPanelNode);
+                }
+            }
+            if (_panelItemInfo.Count > 0)
+            {
+                PanelItemInfo panelItemInfo = null;
+                funName = "__InstantiationAllPanelUnit";
+                for (int i = 0; i < _panelItemInfo.Count; i++)
+                {
+                    panelItemInfo = _panelItemInfo[i];
+                    luaTable[panelItemInfo.Name] = panelItemInfo.Name;
+                    luaTable.GetLuaFunction(funName).Call(luaTable, panelItemInfo.Name, panelItemInfo.Object);
                 }
             }
         }

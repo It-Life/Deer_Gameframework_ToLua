@@ -71,27 +71,27 @@ namespace Deer
         {
             UnityWebRequest webRequest = UnityWebRequest.Get(filePath);
             yield return webRequest.SendWebRequest();
-            if (webRequest.isDone && webRequest.error == null)
+            if (webRequest.isDone)
             {
                 byte[] bytes = webRequest.downloadHandler.data;
                 Action<bool, byte[]> readStreamingAssetComplete;
                 m_ReadStreamingAssetCompletes.TryGetValue(filePath, out readStreamingAssetComplete);
                 readStreamingAssetComplete?.Invoke(true, bytes);
+                if (readStreamingAssetComplete != null)
+                {
+                    m_ReadStreamingAssetCompletes.Remove(filePath);
+                }
             }
             else 
             {
-                if (webRequest.error != null)
-                {
-                    Log.Error("can not read file :" + filePath + webRequest.error);
-                }
-                else 
-                {
-                    Log.Error("can not read file :" + filePath);
-
-                }
+                Log.Error("can not read file :"+ filePath);
                 Action<bool, byte[]> readStreamingAssetComplete;
                 m_ReadStreamingAssetCompletes.TryGetValue(filePath, out readStreamingAssetComplete);
                 readStreamingAssetComplete?.Invoke(false, null);
+                if (readStreamingAssetComplete != null)
+                {
+                    m_ReadStreamingAssetCompletes.Remove(filePath);
+                }
             }
             webRequest.Dispose();
         }
@@ -171,7 +171,6 @@ namespace Deer
                     string filePath = elem.GetAttribute("file");
                     string fileMd5 = elem.GetAttribute("md5");
                     string fileSize = elem.GetAttribute("size");
-
                     ConfigInfo configInfo = new ConfigInfo()
                     {
                         Name = fileName,
@@ -190,7 +189,6 @@ namespace Deer
                     }
                 }
             }
-
             StartCoroutine(MoveConfigFileToReadWritePath());
         }
         /// <summary>
@@ -206,6 +204,10 @@ namespace Deer
                 if (PlayerPrefs.GetInt(PrefsKey.FIRST_MOVE_READWRITE_PATH,0) == 0 && !File.Exists(filePath))
                 {
                     UnityWebRequest webRequest = UnityWebRequest.Get(Application.streamingAssetsPath + config.Key);
+                    if (webRequest == null)
+                    {
+                        continue;
+                    }
                     yield return webRequest.SendWebRequest();
                     if (webRequest.isDone)
                     {
@@ -214,13 +216,17 @@ namespace Deer
                         {
                             Directory.CreateDirectory(directory);
                         }
-
                         var bytes = webRequest.downloadHandler.data;
-
-                        FileStream nFile = new FileStream(filePath, FileMode.Create);
-                        nFile.Write(bytes, 0, bytes.Length);
-                        nFile.Flush();
-                        nFile.Close();
+                        if (bytes != null)
+                        {
+                            FileStream nFile = new FileStream(filePath, FileMode.Create);
+                            if (nFile != null)
+                            {
+                                nFile.Write(bytes, 0, bytes.Length);
+                                nFile.Flush();
+                                nFile.Close();
+                            }
+                        }
                     }
                     webRequest.Dispose();
                 }
@@ -285,7 +291,7 @@ namespace Deer
             foreach (var config in m_NeedUpdateConfigs)
             {
                 string downloadPath = Path.Combine(GameEntry.Resource.ReadWritePath + config.Value.Path);
-                string downloadUri = Path.Combine(GameEntry.Resource.UpdatePrefixUri + config.Value.Path);
+                string downloadUri = GameEntry.GameSettings.GetConfigDownLoadPath(config.Value.Path);
                 GameEntry.Download.AddDownload(downloadPath, downloadUri, config.Value);
             }
         }
@@ -339,7 +345,7 @@ namespace Deer
             {
                 configInfo.RetryCount++;
                 string downloadPath = Path.Combine(GameEntry.Resource.ReadWritePath + configInfo.Path);
-                string downloadUri = Path.Combine(GameEntry.Resource.UpdatePrefixUri + configInfo.Path);
+                string downloadUri = GameEntry.GameSettings.GetConfigDownLoadPath(configInfo.Path);
                 GameEntry.Download.AddDownload(downloadPath, downloadUri, configInfo);
             }
             else

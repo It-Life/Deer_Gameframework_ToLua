@@ -8,10 +8,14 @@ public class CameraComponentWrap
 	{
 		L.BeginClass(typeof(CameraComponent), typeof(UnityGameFramework.Runtime.GameFrameworkComponent));
 		L.RegFunction("OpenCameraType", new LuaCSFunction(OpenCameraType));
+		L.RegFunction("SetFreeLookCameraRotateSpeed", new LuaCSFunction(SetFreeLookCameraRotateSpeed));
+		L.RegFunction("SetFreeLookCameraXAxis", new LuaCSFunction(SetFreeLookCameraXAxis));
+		L.RegFunction("SetFreeLookCameraYAxis", new LuaCSFunction(SetFreeLookCameraYAxis));
+		L.RegFunction("FollowAndFreeViewTarget", new LuaCSFunction(FollowAndFreeViewTarget));
+		L.RegFunction("ChangeFreeViewCameraFov", new LuaCSFunction(ChangeFreeViewCameraFov));
 		L.RegFunction("LookAtTarget", new LuaCSFunction(LookAtTarget));
 		L.RegFunction("FollowTarget", new LuaCSFunction(FollowTarget));
 		L.RegFunction("FollowAndLockViewTarget", new LuaCSFunction(FollowAndLockViewTarget));
-		L.RegFunction("FollowAndFreeViewTarget", new LuaCSFunction(FollowAndFreeViewTarget));
 		L.RegFunction("CameraActive", new LuaCSFunction(CameraActive));
 		L.RegFunction("GetAxisCustom", new LuaCSFunction(GetAxisCustom));
 		L.RegFunction("SetMiniMapFollowTarget", new LuaCSFunction(SetMiniMapFollowTarget));
@@ -19,6 +23,7 @@ public class CameraComponentWrap
 		L.RegFunction("MiniMapZoomOut", new LuaCSFunction(MiniMapZoomOut));
 		L.RegFunction("__eq", new LuaCSFunction(op_Equality));
 		L.RegFunction("__tostring", new LuaCSFunction(ToLua.op_ToString));
+		L.RegVar("DisFreeLookCameraRotation", new LuaCSFunction(get_DisFreeLookCameraRotation), new LuaCSFunction(set_DisFreeLookCameraRotation));
 		L.RegVar("MainCamera", new LuaCSFunction(get_MainCamera), new LuaCSFunction(set_MainCamera));
 		L.EndClass();
 	}
@@ -31,6 +36,97 @@ public class CameraComponentWrap
 			ToLua.CheckArgsCount(L, 1);
 			CameraComponent obj = (CameraComponent)ToLua.CheckObject<CameraComponent>(L, 1);
 			obj.OpenCameraType();
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int SetFreeLookCameraRotateSpeed(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 3);
+			CameraComponent obj = (CameraComponent)ToLua.CheckObject<CameraComponent>(L, 1);
+			float arg0 = (float)LuaDLL.luaL_checknumber(L, 2);
+			float arg1 = (float)LuaDLL.luaL_checknumber(L, 3);
+			obj.SetFreeLookCameraRotateSpeed(arg0, arg1);
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int SetFreeLookCameraXAxis(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 4);
+			CameraComponent obj = (CameraComponent)ToLua.CheckObject<CameraComponent>(L, 1);
+			float arg0 = (float)LuaDLL.luaL_checknumber(L, 2);
+			float arg1 = (float)LuaDLL.luaL_checknumber(L, 3);
+			float arg2 = (float)LuaDLL.luaL_checknumber(L, 4);
+			obj.SetFreeLookCameraXAxis(arg0, arg1, arg2);
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int SetFreeLookCameraYAxis(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 4);
+			CameraComponent obj = (CameraComponent)ToLua.CheckObject<CameraComponent>(L, 1);
+			float arg0 = (float)LuaDLL.luaL_checknumber(L, 2);
+			float arg1 = (float)LuaDLL.luaL_checknumber(L, 3);
+			float arg2 = (float)LuaDLL.luaL_checknumber(L, 4);
+			obj.SetFreeLookCameraYAxis(arg0, arg1, arg2);
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int FollowAndFreeViewTarget(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 3);
+			CameraComponent obj = (CameraComponent)ToLua.CheckObject<CameraComponent>(L, 1);
+			UnityEngine.Transform arg0 = (UnityEngine.Transform)ToLua.CheckObject<UnityEngine.Transform>(L, 2);
+			UnityEngine.Transform arg1 = (UnityEngine.Transform)ToLua.CheckObject<UnityEngine.Transform>(L, 3);
+			obj.FollowAndFreeViewTarget(arg0, arg1);
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int ChangeFreeViewCameraFov(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			CameraComponent obj = (CameraComponent)ToLua.CheckObject<CameraComponent>(L, 1);
+			float arg0 = (float)LuaDLL.luaL_checknumber(L, 2);
+			obj.ChangeFreeViewCameraFov(arg0);
 			return 0;
 		}
 		catch (Exception e)
@@ -108,24 +204,6 @@ public class CameraComponentWrap
 			UnityEngine.Transform arg0 = (UnityEngine.Transform)ToLua.CheckObject<UnityEngine.Transform>(L, 2);
 			UnityEngine.Transform arg1 = (UnityEngine.Transform)ToLua.CheckObject<UnityEngine.Transform>(L, 3);
 			obj.FollowAndLockViewTarget(arg0, arg1);
-			return 0;
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int FollowAndFreeViewTarget(IntPtr L)
-	{
-		try
-		{
-			ToLua.CheckArgsCount(L, 3);
-			CameraComponent obj = (CameraComponent)ToLua.CheckObject<CameraComponent>(L, 1);
-			UnityEngine.Transform arg0 = (UnityEngine.Transform)ToLua.CheckObject<UnityEngine.Transform>(L, 2);
-			UnityEngine.Transform arg1 = (UnityEngine.Transform)ToLua.CheckObject<UnityEngine.Transform>(L, 3);
-			obj.FollowAndFreeViewTarget(arg0, arg1);
 			return 0;
 		}
 		catch (Exception e)
@@ -237,6 +315,25 @@ public class CameraComponentWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_DisFreeLookCameraRotation(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			CameraComponent obj = (CameraComponent)o;
+			bool ret = obj.DisFreeLookCameraRotation;
+			LuaDLL.lua_pushboolean(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index DisFreeLookCameraRotation on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int get_MainCamera(IntPtr L)
 	{
 		object o = null;
@@ -252,6 +349,25 @@ public class CameraComponentWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o, "attempt to index MainCamera on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_DisFreeLookCameraRotation(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			CameraComponent obj = (CameraComponent)o;
+			bool arg0 = LuaDLL.luaL_checkboolean(L, 2);
+			obj.DisFreeLookCameraRotation = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index DisFreeLookCameraRotation on a nil value");
 		}
 	}
 

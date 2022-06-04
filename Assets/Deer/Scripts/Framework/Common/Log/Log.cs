@@ -19,8 +19,10 @@ public static class Log
     [Conditional("ENABLE_DEBUG_AND_ABOVE_LOG")]
     public static void ColorInfo(UnityEngine.Color color, string message)
     {
-        string colorString = UnityEngine.ColorUtility.ToHtmlStringRGB(color);
-        UnityEngine.Debug.Log(Utility.Text.Format("<color=#{0}>color : '{1}'   {2}</color>", colorString, color.ToString(), message));
+        string colorString = UnityEngine.ColorUtility.ToHtmlStringRGBA(color);
+        string[] lines = message.Split('\n');
+        string traceback = message.Replace(lines[0], "");
+        UnityEngine.Debug.Log(Utility.Text.Format("<color=#{0}>color : '{1}'   {2}</color>{3}", colorString, color.ToString(), lines[0], traceback));
     }
 
     /// <summary>
@@ -38,7 +40,9 @@ public static class Log
         {
             colorString = "0" + colorString;
         }
-        UnityEngine.Debug.Log(Utility.Text.Format("<color=#{0}>ColorType :'{1}'   {2}</color>", colorString, colorType.ToString(), message));
+        string[] lines = message.Split('\n');
+        string traceback = message.Replace(lines[0], "");
+        UnityEngine.Debug.Log(Utility.Text.Format("<color=#{0}>color : '{1}'   {2}</color>{3}", colorString, colorType.ToString(), lines[0], traceback));
     }
 
     /// <summary>

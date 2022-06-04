@@ -15,6 +15,7 @@ public class zFrame_UI_JoystickWrap
 		L.RegVar("OnPointerDown", new LuaCSFunction(get_OnPointerDown), new LuaCSFunction(set_OnPointerDown));
 		L.RegVar("OnPointerUp", new LuaCSFunction(get_OnPointerUp), new LuaCSFunction(set_OnPointerUp));
 		L.RegVar("IsDraging", new LuaCSFunction(get_IsDraging), null);
+		L.RegVar("FingerId", new LuaCSFunction(get_FingerId), null);
 		L.RegVar("ShowDirectionArrow", new LuaCSFunction(get_ShowDirectionArrow), new LuaCSFunction(set_ShowDirectionArrow));
 		L.RegVar("IsDynamic", new LuaCSFunction(get_IsDynamic), new LuaCSFunction(set_IsDynamic));
 		L.EndClass();
@@ -149,6 +150,25 @@ public class zFrame_UI_JoystickWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o, "attempt to index IsDraging on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_FingerId(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			zFrame.UI.Joystick obj = (zFrame.UI.Joystick)o;
+			int ret = obj.FingerId;
+			LuaDLL.lua_pushinteger(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index FingerId on a nil value");
 		}
 	}
 

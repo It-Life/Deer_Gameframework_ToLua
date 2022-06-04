@@ -198,6 +198,20 @@ end
                     }
                 }
             }
+            for (int i = 0; i < _subPanelInfo.Count; i++)
+            {
+                var inf = _subPanelInfo[i];
+                string fieldStr = $"---@field {inf.Name} string\n";
+                s += fieldStr;
+                fieldStrList.Add(fieldStr.Remove(fieldStr.Length - 1));
+            }
+            for (int i = 0; i < _panelItemInfo.Count; i++)
+            {
+                var inf = _panelItemInfo[i];
+                string fieldStr = $"---@field {inf.Name} string\n";
+                s += fieldStr;
+                fieldStrList.Add(fieldStr.Remove(fieldStr.Length - 1));
+            }
 
             s += FieldEnd;
             fieldStrList.Add(FieldEnd);
@@ -246,7 +260,7 @@ end
                             GameEditorConfig.version);*/
 
             GameObject openPrefabThatContentsIsPartOf =
-                AssetDatabase.LoadAssetAtPath<GameObject>(prefabStage.prefabAssetPath);
+                AssetDatabase.LoadAssetAtPath<GameObject>(prefabStage.assetPath);
             string prefabPath = AssetDatabase.GetAssetPath(openPrefabThatContentsIsPartOf);
 
             s = s.Replace("$UI_RES", prefabPath);
@@ -336,10 +350,7 @@ end
                 {
                     s += pair.Value;
                 }
-
                 s += returnStr;
- /*               File.CreateText(scriptPath);
-                File.WriteAllText(scriptPath, s);*/
                 FileUtils.CreateFile(scriptPath, s, true);
             }
 
@@ -408,34 +419,19 @@ end
         }
         private static string CovertString(ref string s, string pcls)
         {
-            if (pcls == "UIBaseClass")
+            if (pcls == "UIBaseClass" || pcls == "UISubBaseClass")
             {
                 s += @"
 local $UI_NAME = Class('$UI_NAME', $P_Class)
 
-function $UI_NAME:OnAwake()
-    self.super.OnAwake(self)
+function $UI_NAME:OnShow()
+    self.super.OnShow(self)
     self:RegisterEvent()
 
 end
 
-function $UI_NAME:OnEnable()
-    self.super.OnEnable(self)
-    
-end
-
-function $UI_NAME:OnStart()
-    self.super.OnStart(self)
-    
-end
-
-function $UI_NAME:OnDisable()
-    self.super.OnDisable(self)
-   
-end
-
-function $UI_NAME:OnDestroy()
-    self.super.OnDestroy(self)
+function $UI_NAME:OnHide()
+    self.super.OnHide(self)
     self:UnRegisterEvent()
 
 end

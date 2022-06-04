@@ -7,16 +7,93 @@ public class Deer_DeerUIComponentWrap
 	public static void Register(LuaState L)
 	{
 		L.BeginClass(typeof(Deer.DeerUIComponent), typeof(UnityGameFramework.Runtime.GameFrameworkComponent));
+		L.RegFunction("IsButtonDraging", new LuaCSFunction(IsButtonDraging));
+		L.RegFunction("IsJoystickDraging", new LuaCSFunction(IsJoystickDraging));
+		L.RegFunction("IsJoystickTouch", new LuaCSFunction(IsJoystickTouch));
 		L.RegFunction("LoadAssetAsync", new LuaCSFunction(LoadAssetAsync));
 		L.RegFunction("Unspawn", new LuaCSFunction(Unspawn));
 		L.RegFunction("IsLoadingUIForm", new LuaCSFunction(IsLoadingUIForm));
 		L.RegFunction("__eq", new LuaCSFunction(op_Equality));
 		L.RegFunction("__tostring", new LuaCSFunction(ToLua.op_ToString));
+		L.RegVar("JoystickList", new LuaCSFunction(get_JoystickList), new LuaCSFunction(set_JoystickList));
+		L.RegVar("ButtonDownList", new LuaCSFunction(get_ButtonDownList), new LuaCSFunction(set_ButtonDownList));
+		L.RegVar("UICamera", new LuaCSFunction(get_UICamera), new LuaCSFunction(set_UICamera));
+		L.RegVar("HealthbarRoot", new LuaCSFunction(get_HealthbarRoot), new LuaCSFunction(set_HealthbarRoot));
 		L.RegVar("InstanceAutoReleaseInterval", new LuaCSFunction(get_InstanceAutoReleaseInterval), new LuaCSFunction(set_InstanceAutoReleaseInterval));
 		L.RegVar("InstanceCapacity", new LuaCSFunction(get_InstanceCapacity), new LuaCSFunction(set_InstanceCapacity));
 		L.RegVar("InstanceExpireTime", new LuaCSFunction(get_InstanceExpireTime), new LuaCSFunction(set_InstanceExpireTime));
 		L.RegVar("InstancePriority", new LuaCSFunction(get_InstancePriority), new LuaCSFunction(set_InstancePriority));
 		L.EndClass();
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int IsButtonDraging(IntPtr L)
+	{
+		try
+		{
+			int count = LuaDLL.lua_gettop(L);
+
+			if (count == 2)
+			{
+				Deer.DeerUIComponent obj = (Deer.DeerUIComponent)ToLua.CheckObject<Deer.DeerUIComponent>(L, 1);
+				int arg0 = (int)LuaDLL.luaL_checkinteger(L, 2);
+				bool o = obj.IsButtonDraging(arg0);
+				LuaDLL.lua_pushboolean(L, o);
+				return 1;
+			}
+			else if (count == 3)
+			{
+				Deer.DeerUIComponent obj = (Deer.DeerUIComponent)ToLua.CheckObject<Deer.DeerUIComponent>(L, 1);
+				int arg0 = (int)LuaDLL.luaL_checkinteger(L, 2);
+				string arg1 = ToLua.CheckString(L, 3);
+				bool o = obj.IsButtonDraging(arg0, arg1);
+				LuaDLL.lua_pushboolean(L, o);
+				return 1;
+			}
+			else
+			{
+				return LuaDLL.luaL_throw(L, "invalid arguments to method: Deer.DeerUIComponent.IsButtonDraging");
+			}
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int IsJoystickDraging(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 1);
+			Deer.DeerUIComponent obj = (Deer.DeerUIComponent)ToLua.CheckObject<Deer.DeerUIComponent>(L, 1);
+			bool o = obj.IsJoystickDraging();
+			LuaDLL.lua_pushboolean(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int IsJoystickTouch(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			Deer.DeerUIComponent obj = (Deer.DeerUIComponent)ToLua.CheckObject<Deer.DeerUIComponent>(L, 1);
+			int arg0 = (int)LuaDLL.luaL_checkinteger(L, 2);
+			bool o = obj.IsJoystickTouch(arg0);
+			LuaDLL.lua_pushboolean(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
@@ -108,6 +185,82 @@ public class Deer_DeerUIComponentWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_JoystickList(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Deer.DeerUIComponent obj = (Deer.DeerUIComponent)o;
+			System.Collections.Generic.List<zFrame.UI.Joystick> ret = obj.JoystickList;
+			ToLua.PushSealed(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index JoystickList on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_ButtonDownList(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Deer.DeerUIComponent obj = (Deer.DeerUIComponent)o;
+			System.Collections.Generic.List<UIButtonSuper> ret = obj.ButtonDownList;
+			ToLua.PushSealed(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index ButtonDownList on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_UICamera(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Deer.DeerUIComponent obj = (Deer.DeerUIComponent)o;
+			UnityEngine.Camera ret = obj.UICamera;
+			ToLua.PushSealed(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index UICamera on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_HealthbarRoot(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Deer.DeerUIComponent obj = (Deer.DeerUIComponent)o;
+			HealthbarRoot ret = obj.HealthbarRoot;
+			ToLua.Push(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index HealthbarRoot on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int get_InstanceAutoReleaseInterval(IntPtr L)
 	{
 		object o = null;
@@ -180,6 +333,82 @@ public class Deer_DeerUIComponentWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o, "attempt to index InstancePriority on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_JoystickList(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Deer.DeerUIComponent obj = (Deer.DeerUIComponent)o;
+			System.Collections.Generic.List<zFrame.UI.Joystick> arg0 = (System.Collections.Generic.List<zFrame.UI.Joystick>)ToLua.CheckObject(L, 2, TypeTraits<System.Collections.Generic.List<zFrame.UI.Joystick>>.type);
+			obj.JoystickList = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index JoystickList on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_ButtonDownList(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Deer.DeerUIComponent obj = (Deer.DeerUIComponent)o;
+			System.Collections.Generic.List<UIButtonSuper> arg0 = (System.Collections.Generic.List<UIButtonSuper>)ToLua.CheckObject(L, 2, TypeTraits<System.Collections.Generic.List<UIButtonSuper>>.type);
+			obj.ButtonDownList = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index ButtonDownList on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_UICamera(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Deer.DeerUIComponent obj = (Deer.DeerUIComponent)o;
+			UnityEngine.Camera arg0 = (UnityEngine.Camera)ToLua.CheckObject<UnityEngine.Camera>(L, 2);
+			obj.UICamera = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index UICamera on a nil value");
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_HealthbarRoot(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			Deer.DeerUIComponent obj = (Deer.DeerUIComponent)o;
+			HealthbarRoot arg0 = (HealthbarRoot)ToLua.CheckObject<HealthbarRoot>(L, 2);
+			obj.HealthbarRoot = arg0;
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o, "attempt to index HealthbarRoot on a nil value");
 		}
 	}
 
